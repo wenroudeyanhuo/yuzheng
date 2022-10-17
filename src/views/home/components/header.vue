@@ -3,12 +3,12 @@
   <div  class="bgBackground"  :style="background">
 <!--    class="bgBackground"  :style="background"-->
     <div>
-      <el-image style="width: 400px; height: 50px" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/text@2x.png')" fit="fill" class="tupian"></el-image>
+      <el-image style="width: 400px; height: 50px" :src="require('@/assets/text@2x.png')" fit="fill" class="tupian"></el-image>
       <el-button id="1" style="border: none" align="center" class="el-icon-liuyanban" @click="redirect('/test1')">人机联防</el-button>
       <el-button  id="2" style="border: none"align="center"  class="el-icon-liuyanban" @click="redirect('/test2')">预警事件</el-button>
       <el-button id="3"  style="border: none" align="center"  class="el-icon-liuyanban" @click="redirect('/test2')">视频广场</el-button>
       <el-button id="4" size="mini" style="border: none" align="center"  class="el-icon-guanli" @click="redirect('/test2')">
-        <el-image style="width: 35px; height: 35px" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/icon_my@2x.png')" fit="fill" class="tempimg"></el-image>
+        <el-image style="width: 35px; height: 35px" :src="require('@/assets/icon_my@2x.png')" fit="fill" class="tempimg"></el-image>
        <span style="font-size: 19px">超级管理员</span>
       </el-button>
 

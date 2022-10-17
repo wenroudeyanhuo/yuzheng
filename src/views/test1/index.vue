@@ -4,7 +4,7 @@
       <el-card class="box-card">
         <div  class="clearfix" :style="background">
           <!--          style="border: none" align="center"-->
-          <el-image style="width: 30px; height: 27px" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/2.png')" fit="fill" class="tempimg"></el-image>
+          <el-image style="width: 30px; height: 27px" :src="require('@/assets/2.png')" fit="fill" class="tempimg"></el-image>
           <span class="span">                   监控/预警/巡检</span>
 <!--          <el-button @click="card_click(0)" :style="{color:m_color[0]}">卡片1</el-button>-->
 <!--          <el-button @click="card_click(1)" :style="{color:m_color[1]}">卡片2</el-button>-->
@@ -12,10 +12,10 @@
 
           <!--          <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
         </div>
-        <el-image style="width: 30px; height: 31px;margin:25px" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/icon_jiankong.png')" fit="fill" ></el-image>
+        <el-image style="width: 30px; height: 31px;margin:25px" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>
 
-        <el-image style="width: 29px; height: 29px;margin:25px" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/icon_type@3x.png')" fit="fill"></el-image>
-        <el-image style="width: 29px; height: 29px;margin:30px" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/9.png')" fit="fill" ></el-image>
+        <el-image style="width: 29px; height: 29px;margin:25px" :src="require('@/assets/icon_type@3x.png')" fit="fill"></el-image>
+        <el-image style="width: 29px; height: 29px;margin:30px" :src="require('@/assets/9.png')" fit="fill" ></el-image>
 
         <el-button-group class="card-toggle-table">
           <el-tooltip
@@ -48,10 +48,10 @@
         <el-row v-if="cardType">
             <el-card class="box-card2">
               <div>
-                <el-image style="width: 30px; height: 31px;" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/icon_number@2x.png')" fit="fill" ></el-image>
+                <el-image style="width: 30px; height: 31px;" :src="require('@/assets/icon_number@2x.png')" fit="fill" ></el-image>
                 <span  class="span1">7</span>
                 <span  class="span2">点位数量</span>
-                <el-image style="width: 29px; height: 29px;" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/icon_area@2x.png')" fit="fill" ></el-image>
+                <el-image style="width: 29px; height: 29px;" :src="require('@/assets/icon_area@2x.png')" fit="fill" ></el-image>
                 <span  class="span1">4</span>
                 <span  class="span2">涉及区域</span>
               </div>
@@ -204,10 +204,10 @@
       <el-card class="box-card">
         <div :style="background">
           <!--          style="border: none" align="center"-->
-          <el-image style="width: 30px; height: 27px" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/6.png')" fit="fill" class="tempimg"></el-image>
+          <el-image style="width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
           <span class="span">                   预警数统计</span>
 
-          <el-image style="width: 135px; height: 120px" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/1.png')" fit="fill" class="tempimg"></el-image>
+          <el-image style="width: 135px; height: 120px" :src="require('@/assets/1.png')" fit="fill" class="tempimg"></el-image>
           <div class="wenzi_1">
             <span style="color: white;" class="span">今日预警数  </span>
             <span style="color: yellow;">6</span>
@@ -224,11 +224,11 @@
 
         <div  class="clearfix" :style="background">
           <!--          style="border: none" align="center"-->
-          <el-image style="width: 30px; height: 27px" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/6.png')" fit="fill" class="tempimg"></el-image>
+          <el-image style="width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
           <span class="span">                   处理数统计</span>
         </div>
         <div>
-          <el-image style="width: 135px; height: 120px" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/4.png')" fit="fill" class="tempimg"></el-image>
+          <el-image style="width: 135px; height: 120px" :src="require('@/assets/4.png')" fit="fill" class="tempimg"></el-image>
           <div class="wenzi_4">
             <span class="span">今日处理数  </span>
             <span style="color: yellow;">6</span>
@@ -249,7 +249,7 @@
 
         <div  class="clearfix" :style="background">
           <!--          style="border: none" align="center"-->
-          <el-image style="width: 30px; height: 27px" :src="require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/6.png')" fit="fill" class="tempimg"></el-image>
+          <el-image style="width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
           <span class="span">                   事件趋势日历</span>
         </div>
         <div class="home">
@@ -840,7 +840,7 @@ export default {
 
     return{
       //for_barch
-      for_brach:[{title:'1',src:require('/ideaproject/训练项目/fishery/flash-vue-cockpit/public/for_brach/1.jpg'),key:0},{title:'2',src:require('/ideaproject/训练项目/fishery//flash-vue-cockpit/public/for_brach/2.jpg'),key:1},{title:'3',src:require('/ideaproject/训练项目/fishery//flash-vue-cockpit/public/for_brach/3.jpg'),key: 2}],
+      for_brach:[{title:'1',src:require('@/assets/for_brach/1.jpg'),key:0},{title:'2',src:require('@/assets/for_brach/2.jpg'),key:1},{title:'3',src:require('@/assets/for_brach/3.jpg'),key: 2}],
       urls:['https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
         'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
         'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',

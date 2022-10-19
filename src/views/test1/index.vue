@@ -166,7 +166,7 @@
 <!--懒加载-->
 <!--          <template>-->
 <!--            <div class="demo-image__lazy">-->
-<!--              <el-image v-for="url in urls" :key="url" :src="url" label="图片"></el-image>-->
+<!--              <el-image v-for="url in urls" :key="url" :src="url" label="图片git pull --rebase origin master"></el-image>-->
 <!--            </div>-->
 <!--          </template>-->
 <!--          这里我打算继续用卡片-->

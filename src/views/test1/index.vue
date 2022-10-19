@@ -240,6 +240,15 @@
 
       </el-card>
     </el-col>
+    <el-card class="box-card4">
+
+      <template>
+        <el-radio  class="card_bottom" v-model="radio" label="1">点位显示</el-radio>
+        <el-radio class="card_bottom"v-model="radio" label="2">覆盖范围</el-radio>
+        <el-radio class="card_bottom"v-model="radio" label="3">事件显示</el-radio>
+        <el-radio class="card_bottom"v-model="radio" label="4">热力图</el-radio>
+      </template>
+    </el-card>
 
     <el-col :span="5">
       <el-card class="box-card">
@@ -351,6 +360,25 @@
 <!--</script>-->
 
 <style  lang="scss"  scoped>
+//点击前的样式
+::v-deep
+.el-radio__inner{
+  border-radius:0;
+  width: 20px;
+  height: 20px;
+  color: #FFFFFF;
+}
+.el-radio__inner::after {
+  width: 22px;
+  height: 22px;
+  //让圆框变成方框
+  border-radius: 0;
+  color: #FFFFFF;
+}
+//点击后的字体颜色
+.el-radio__input.is-checked+.el-radio__label {
+  color: #FFFFFF;
+}
 //::v-deep .el-card__body{
 //  //padding: 0px 0px;
 //
@@ -849,6 +877,23 @@ input::-webkit-input-placeholder{
     padding: 0px 0px;
 
   }
+.box-card4
+{
+  //display: flex;
+  position:absolute;
+  margin-top:600px;
+  //margin-right:500px;
+  right: 350px;
+  height:200px;
+  width: 150px;
+  padding: 0px 0px;
+  border: none;
+  background-color:#000088 ;
+  opacity:0.7;
+}
+.card_bottom{
+  line-height: 40px;
+}
 .app-wrapper {
   background-image: url("~@/../public/位图.png");
   height:100vh;
@@ -953,6 +998,8 @@ export default {
   data(){
 
     return{
+      //
+      radio:'1',
       //for_barch
       for_brach:[{title:'1',src:require('@/assets/for_brach/1.jpg'),key:0},{title:'2',src:require('@/assets/for_brach/2.jpg'),key:1},{title:'3',src:require('@/assets/for_brach/3.jpg'),key: 2}],
       urls:['',
@@ -1039,6 +1086,7 @@ export default {
   },
 
   methods: {
+
     handleStartDateChange() {
       if (this.startDate && this.startDate.length > 0) {
         const timestampBegin = +new Date(this.startDate[0])

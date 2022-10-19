@@ -164,32 +164,73 @@
 <!--          </div>-->
 
 <!--懒加载-->
-          <template>
-            <div class="demo-image__lazy">
-              <el-image v-for="url in urls" :key="url" :src="url" label="图片"></el-image>
-            </div>
-          </template>
+<!--          <template>-->
+<!--            <div class="demo-image__lazy">-->
+<!--              <el-image v-for="url in urls" :key="url" :src="url" label="图片"></el-image>-->
+<!--            </div>-->
+<!--          </template>-->
+<!--          这里我打算继续用卡片-->
+          <el-card class="box-card3">
+            <<div>
+            <ul>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+              </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+              </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+              </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+            </ul>
+          </div>
+          </el-card>
 
 
 
@@ -310,6 +351,63 @@
 <!--</script>-->
 
 <style  lang="scss"  scoped>
+//::v-deep .el-card__body{
+//  //padding: 0px 0px;
+//
+//}
+ul {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  margin-left: 0px;
+  overflow: scroll;
+}
+li {
+  color: #FFFFFF;
+
+  width:230px;
+  //line-height: 50px;
+}
+/* 滚动条 */
+body *::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+body *::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 2px;
+}
+body *::-webkit-scrollbar-thumb {
+  background: rgb(205, 206, 206);
+
+  border-radius: 10px;
+}
+body *::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+body *::-webkit-scrollbar-corner {
+  background: #fff;
+}
+.table {
+  color: #FFFFFF;
+  height: 700px;
+  overflow: hidden;
+}
+.table:hover {
+  height: 700px;
+  overflow-y: auto;
+}
+.el-tab-pane {
+  height: 500px;
+  overflow-y: auto;
+}
+//懒加载
+img[lazy="loading"]{
+  display:block;
+  width:150px !important;
+  height:150px !important;
+  margin:0 auto;
+}
 
 //for_brach
 .demo-image__lazy {
@@ -715,7 +813,7 @@ input::-webkit-input-placeholder{
 
 .box-card {
 
-  margin-bottom: 20px;
+  //margin-bottom: 20px;
   background-color:#000088 ;
   opacity:0.7;
   height:800px;
@@ -735,6 +833,22 @@ input::-webkit-input-placeholder{
   padding: 0px 0px;
   border: none;
 }
+.box-card3{
+  position: relative;
+  margin-top: 130px;
+  height:700px;
+  width: 320px;
+
+  border: 3px;
+  border-color: #FFFFFF;
+  background-color:#000088 ;
+  padding: 1px 1px;
+
+}
+.box-card3 ::v-deep .el-card__body{
+    padding: 0px 0px;
+
+  }
 .app-wrapper {
   background-image: url("~@/../public/位图.png");
   height:100vh;
@@ -841,13 +955,14 @@ export default {
     return{
       //for_barch
       for_brach:[{title:'1',src:require('@/assets/for_brach/1.jpg'),key:0},{title:'2',src:require('@/assets/for_brach/2.jpg'),key:1},{title:'3',src:require('@/assets/for_brach/3.jpg'),key: 2}],
-      urls:['https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+      urls:['',
         'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
         'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
         'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
         'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
         'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
         'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg',],
+      urls_test:[{title:'1',url:"https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg"},{title:'2',url:"https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg"}],
       //日期范围选择
       startDate: '',
 

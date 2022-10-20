@@ -66,36 +66,53 @@
               </template>
 
 
-<!--              <div >-->
-<!--                <el-collapse accordion v-model="activeNames" @change="handleChange">-->
-<!--                  <el-collapse-item name="1">-->
-<!--                    <span class="collapse-title" slot="title">鄞州区</span>-->
-<!--                    &lt;!&ndash;              到时候改成点击事件&ndash;&gt;-->
-<!--                    <ul>-->
-<!--                      <li v-for="string in aString">-->
-<!--                        <p   class="index_backcol" @click="getMethod()">{{string}}</p>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </el-collapse-item>-->
-<!--                  <el-collapse-item  name="2">-->
-<!--                    <span class="collapse-title" slot="title">海曙区</span>-->
-<!--                    <ul>-->
-<!--                      <li v-for="string in aString1">-->
-<!--                        <p   class="index_backcol" @click="getMethod()">{{string}}</p>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </el-collapse-item>-->
-<!--                  <el-collapse-item  name="3">-->
-<!--                    <span class="collapse-title" slot="title">镇海区</span>-->
-<!--                    <ul>-->
-<!--                      <li v-for="string in  aString2">-->
-<!--                        <p   class="index_backcol" @click="getMethod()">{{string}}</p>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </el-collapse-item>-->
-<!--                </el-collapse>-->
-<!--              </div>-->
+              <el-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</el-button>
+
+              <el-dialog
+                title="提示"
+                :visible.sync="centerDialogVisible"
+                width="90%"
+                height="90%"
+                :show-close="false"
+                center>
+                <el-dialog
+                  width="50%"
+                  title="内层 Dialog"
+                  :visible.sync="innerVisible"
+                  append-to-body>
+                </el-dialog>
+                <div slot="footer" class="dialog-footer">
+                  <el-button @click="outerVisible = false">取 消</el-button>
+                  <el-button type="primary" @click="innerVisible = true">打开内层 Dialog</el-button>
+                </div>
+                <span>需要注意的是内容是默认不居中的</span>
+                <span slot="footer" class="dialog-footer">
+                <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
+                </span>
+              </el-dialog>
+
+
+              <el-descriptions  class="ha" title="用户信息">
+                <el-descriptions-item label="用户名">kooriookami</el-descriptions-item>
+                <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
+                <el-descriptions-item label="居住地">苏州市</el-descriptions-item>
+                <el-descriptions-item label="备注">
+                  <el-tag size="small">学校</el-tag>
+                </el-descriptions-item>
+                <el-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
+              </el-descriptions>
+
+
+
+
+
+
+
+
+
+
             </el-card>
+
 
         </el-row>
 
@@ -118,6 +135,7 @@
               <span style="float: right;font-size: 13px;">{{ item.value }}</span>
             </el-option>
           </el-select>
+
 
 
 
@@ -231,6 +249,9 @@
             </ul>
           </div>
           </el-card>
+
+
+
 
 
 
@@ -360,6 +381,61 @@
 <!--</script>-->
 
 <style  lang="scss"  scoped>
+.ha{
+  background: transparent;
+}
+//弹窗
+::v-deep .el-dialog { // 取消阴影和背景色
+
+  background: #409EFF;
+
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0);
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0);
+  z-index: 1000;
+
+}
+/* 刷新弹窗样式闪烁问题去掉v-cloak下面这个样式 */
+[v-cloak] {
+  display: none;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+}
+.mask {
+  background:transparent;
+  background-color:  #409EFF;
+  //opacity: 0;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 10000
+}
+
+.pop {
+  position: fixed;
+  background-color: #c1c8d6;
+  width: 520px;
+  display: flex;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  z-index: 90;
+  margin-left: -20px;
+  box-shadow: -20px 0 20px 0 rgb(0 0 0 / 10%);
+  flex-direction: column;
+  color: #fff;
+}
+
+.btn {
+  /* background-color: #fff; */
+  border-radius: 4px;
+  border: 1px solid blue;
+  padding: 4px 12px;
+}
 //点击前的样式
 ::v-deep
 .el-radio__inner{
@@ -849,8 +925,10 @@ input::-webkit-input-placeholder{
 
   padding: 0px 0px;
   border: none;
+  z-index: 10;
 }
 .box-card2 {
+  z-index: 10;
 
   margin-bottom: 20px;
   background-color:#000088 ;
@@ -979,25 +1057,26 @@ body > .el-container {
   overflow: auto;
 }
 </style>
-
 <script>
 
 import Header from '../home/components/header'
 import {getOrderDate,updateWorkdate }from "@/api/calendar";
 import Calendar from '@/components/Calendar.vue'
-import moment from 'moment'
-
+import moment from 'moment';
 
 
 export default {
+
   name: 'home',
   components: {
     Header,
-    Calendar
+    Calendar,
   },
   data(){
 
     return{
+      innerVisible: false,
+      centerDialogVisible: false,
       //
       radio:'1',
       //for_barch
@@ -1082,9 +1161,13 @@ export default {
 
   },
   mounted() {
-    this.init();
-  },
 
+  },
+  beforeDestroy() {
+  },
+  created() {
+
+  },
   methods: {
 
     handleStartDateChange() {

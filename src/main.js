@@ -26,6 +26,16 @@ import '@/permission' // permission control
 import Treeselect from "@riophae/vue-treeselect";
 import "@riophae/vue-treeselect/dist/vue-treeselect.css";
 Vue.component('treeselect', Treeselect)
+
+import layer from 'vue-layer'
+import 'vue-layer/lib/vue-layer.css';
+import $ from 'jquery'
+window.$ = $
+window.jQuery = $
+Vue.prototype.$layer = layer(Vue);
+Vue.prototype.$layer = layer(Vue, {
+  msgtime: 3,//目前只有一项，即msg方法的默认消失时间，单位：秒
+});
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api

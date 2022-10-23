@@ -1,11 +1,11 @@
 <template>
-  <el-row>
-    <el-col :span="19">
+  <el-row >
+    <el-col >
       <el-card class="box-card">
         <div  class="clearfix" :style="background">
           <!--          style="border: none" align="center"-->
           <el-image style="width: 30px; height: 27px" :src="require('@/assets/2.png')" fit="fill" class="tempimg"></el-image>
-          <span class="span">                   监控/预警/巡检</span>
+          <span class="span">                 监控/预警/巡检</span>
 <!--          <el-button @click="card_click(0)" :style="{color:m_color[0]}">卡片1</el-button>-->
 <!--          <el-button @click="card_click(1)" :style="{color:m_color[1]}">卡片2</el-button>-->
 <!--          <el-button @click="card_click(2)" :style="{color:m_color[2]}">卡片3</el-button>-->
@@ -62,7 +62,9 @@
               <span></span>
 
               <template>
-                <el-tree style="background:transparent;color: white" :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+                <el-tree style="background:transparent;color: white" :data="data" :props="defaultProps"
+                         @node-click="handleNodeClick">
+                </el-tree>
               </template>
 
 
@@ -1092,13 +1094,12 @@ export default {
       //日期范围选择
       startDate: '',
 
-
-
       // selectedArray: [],
       aString:['宁波松岙大埠1','宁波松岙大埠1','宁波松岙大埠3'],
       aString1:['海曙大埠1','海曙大埠2','海曙大埠3'],
       aString2:['镇海大埠1','镇海大埠2','镇海大埠3'],
       cardType: true,
+      /*测试弹框添加的新内容*/
       currentDay: new Date(),
       currentDateList: [],
       value: new Date(),
@@ -1184,14 +1185,6 @@ export default {
         }
       }
     },
-
-
-
-
-
-
-
-
 
     mouseenter (event, dateInfo) {
       console.log("悬浮进入", event, dateInfo)
@@ -1338,6 +1331,24 @@ export default {
         return true;
       return false;
     },
+    /*新添加的东西*/
+/*    leftClick(event,object,value,element){
+               if(value.level == 1){
+                  this.menuVisible = true;
+                  let menu = document.querySelector("#menu");
+                 /!* 菜单定位基于鼠标点击位置 *!/
+                  menu.style.left = event.clientX + 20 + "px" ;
+                  menu.style.top = event.clientY -10 + "px"
+               }
+    },*/
+ /*   contextmenu(e,data,node,comp){
+
+      if(node.isLeaf){
+        let menu = document.querySelector('.visible')
+        menu.style.display='block'
+      }
+    },*/
+
   }
 };
 

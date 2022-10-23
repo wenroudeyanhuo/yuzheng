@@ -81,7 +81,8 @@
                   width="50%"
                   title="内层 Dialog"
                   :visible.sync="innerVisible"
-                  append-to-body>
+                  :append-to-body="true"
+                  >
                 </el-dialog>
                 <div slot="footer" class="dialog-footer">
                   <el-button @click="outerVisible = false">取 消</el-button>
@@ -93,16 +94,6 @@
                 </span>
               </el-dialog>
 
-
-              <el-descriptions  class="ha" title="用户信息">
-                <el-descriptions-item label="用户名">kooriookami</el-descriptions-item>
-                <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
-                <el-descriptions-item label="居住地">苏州市</el-descriptions-item>
-                <el-descriptions-item label="备注">
-                  <el-tag size="small">学校</el-tag>
-                </el-descriptions-item>
-                <el-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
-              </el-descriptions>
 
 
 
@@ -383,6 +374,16 @@
 <!--</script>-->
 
 <style  lang="scss"  scoped>
+::v-deep .el-dialog{
+  height: 700px;
+}
+::v-deep .el-descriptions__body
+{
+  background: transparent;
+}
+//::v-deep .el-descriptions-item{
+//  background: transparent;
+//}
 .ha{
   background: transparent;
 }

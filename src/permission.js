@@ -9,11 +9,11 @@ import i18n from '@/lang'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
-<<<<<<< HEAD
-const whiteList = ['/login','/test1','/test2','/location1'] // no redirect whitelist
-=======
-const whiteList = ['/login','/test1','/test2','/test3'] // no redirect whitelist
->>>>>>> origin/master
+// <<<<<<< HEAD
+// const whiteList = ['/login','/test1','/test2','/location1'] // no redirect whitelist
+// =======
+const whiteList = ['/login','/test1','/test2','/test3','/location1'] // no redirect whitelist
+// >>>>>>> origin/master
 
 router.beforeEach(async (to, from, next) => {
   // start progress bar

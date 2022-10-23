@@ -14,6 +14,7 @@ import router from './router'
 // import i18n from './lang' // Internationalization
 import '@/icons' // icon
 import '@/permission' // permission control
+//视频播放器
 
 /**
  * 全局引用自定义公共组件
@@ -63,6 +64,9 @@ Vue.use(VueLazyLoad, {
   preLoad: 1,
   attempt: 2,
 })
+
+
+
 new Vue({
   el: '#app',
   router,

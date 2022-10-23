@@ -1,6 +1,6 @@
 <template>
   <el-row >
-    <el-col >
+    <el-col :span="19">
       <el-card class="box-card">
         <div  class="clearfix" :style="background">
           <!--          style="border: none" align="center"-->

@@ -66,36 +66,53 @@
               </template>
 
 
-<!--              <div >-->
-<!--                <el-collapse accordion v-model="activeNames" @change="handleChange">-->
-<!--                  <el-collapse-item name="1">-->
-<!--                    <span class="collapse-title" slot="title">鄞州区</span>-->
-<!--                    &lt;!&ndash;              到时候改成点击事件&ndash;&gt;-->
-<!--                    <ul>-->
-<!--                      <li v-for="string in aString">-->
-<!--                        <p   class="index_backcol" @click="getMethod()">{{string}}</p>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </el-collapse-item>-->
-<!--                  <el-collapse-item  name="2">-->
-<!--                    <span class="collapse-title" slot="title">海曙区</span>-->
-<!--                    <ul>-->
-<!--                      <li v-for="string in aString1">-->
-<!--                        <p   class="index_backcol" @click="getMethod()">{{string}}</p>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </el-collapse-item>-->
-<!--                  <el-collapse-item  name="3">-->
-<!--                    <span class="collapse-title" slot="title">镇海区</span>-->
-<!--                    <ul>-->
-<!--                      <li v-for="string in  aString2">-->
-<!--                        <p   class="index_backcol" @click="getMethod()">{{string}}</p>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </el-collapse-item>-->
-<!--                </el-collapse>-->
-<!--              </div>-->
+              <el-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</el-button>
+
+              <el-dialog
+                title="提示"
+                :visible.sync="centerDialogVisible"
+                width="90%"
+                height="90%"
+                :show-close="false"
+                center>
+                <el-dialog
+                  width="50%"
+                  title="内层 Dialog"
+                  :visible.sync="innerVisible"
+                  append-to-body>
+                </el-dialog>
+                <div slot="footer" class="dialog-footer">
+                  <el-button @click="outerVisible = false">取 消</el-button>
+                  <el-button type="primary" @click="innerVisible = true">打开内层 Dialog</el-button>
+                </div>
+                <span>需要注意的是内容是默认不居中的</span>
+                <span slot="footer" class="dialog-footer">
+                <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
+                </span>
+              </el-dialog>
+
+
+              <el-descriptions  class="ha" title="用户信息">
+                <el-descriptions-item label="用户名">kooriookami</el-descriptions-item>
+                <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
+                <el-descriptions-item label="居住地">苏州市</el-descriptions-item>
+                <el-descriptions-item label="备注">
+                  <el-tag size="small">学校</el-tag>
+                </el-descriptions-item>
+                <el-descriptions-item label="联系地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
+              </el-descriptions>
+
+
+
+
+
+
+
+
+
+
             </el-card>
+
 
         </el-row>
 
@@ -118,6 +135,7 @@
               <span style="float: right;font-size: 13px;">{{ item.value }}</span>
             </el-option>
           </el-select>
+
 
 
 
@@ -164,29 +182,73 @@
 <!--          </div>-->
 
 <!--懒加载-->
-          <template>
-            <div class="demo-image__lazy">
-              <el-image v-for="url in urls" :key="url" :src="url" label="图片"></el-image>
-            </div>
-          </template>
+<!--          <template>-->
+<!--            <div class="demo-image__lazy">-->
+<!--              <el-image v-for="url in urls" :key="url" :src="url" label="图片git pull --rebase origin master"></el-image>-->
+<!--            </div>-->
+<!--          </template>-->
+<!--          这里我打算继续用卡片-->
+          <el-card class="box-card3">
+            <<div>
+            <ul>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+              </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+              </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+              </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+            </ul>
+          </div>
+          </el-card>
 
 
 
@@ -196,6 +258,15 @@
 
       </el-card>
     </el-col>
+    <el-card class="box-card4">
+
+      <template>
+        <el-radio  class="card_bottom" v-model="radio" label="1">点位显示</el-radio>
+        <el-radio class="card_bottom"v-model="radio" label="2">覆盖范围</el-radio>
+        <el-radio class="card_bottom"v-model="radio" label="3">事件显示</el-radio>
+        <el-radio class="card_bottom"v-model="radio" label="4">热力图</el-radio>
+      </template>
+    </el-card>
 
     <el-col :span="5">
       <el-card class="box-card">
@@ -307,6 +378,137 @@
 <!--</script>-->
 
 <style  lang="scss"  scoped>
+.ha{
+  background: transparent;
+}
+//弹窗
+::v-deep .el-dialog { // 取消阴影和背景色
+
+  background: #409EFF;
+
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0);
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0);
+  z-index: 1000;
+
+}
+/* 刷新弹窗样式闪烁问题去掉v-cloak下面这个样式 */
+[v-cloak] {
+  display: none;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+}
+.mask {
+  background:transparent;
+  background-color:  #409EFF;
+  //opacity: 0;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 10000
+}
+
+.pop {
+  position: fixed;
+  background-color: #c1c8d6;
+  width: 520px;
+  display: flex;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  z-index: 90;
+  margin-left: -20px;
+  box-shadow: -20px 0 20px 0 rgb(0 0 0 / 10%);
+  flex-direction: column;
+  color: #fff;
+}
+
+.btn {
+  /* background-color: #fff; */
+  border-radius: 4px;
+  border: 1px solid blue;
+  padding: 4px 12px;
+}
+//点击前的样式
+::v-deep
+.el-radio__inner{
+  border-radius:0;
+  width: 20px;
+  height: 20px;
+  color: #FFFFFF;
+}
+.el-radio__inner::after {
+  width: 22px;
+  height: 22px;
+  //让圆框变成方框
+  border-radius: 0;
+  color: #FFFFFF;
+}
+//点击后的字体颜色
+.el-radio__input.is-checked+.el-radio__label {
+  color: #FFFFFF;
+}
+//::v-deep .el-card__body{
+//  //padding: 0px 0px;
+//
+//}
+ul {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  margin-left: 0px;
+  overflow: scroll;
+}
+li {
+  color: #FFFFFF;
+
+  width:230px;
+  //line-height: 50px;
+}
+/* 滚动条 */
+body *::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+body *::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 2px;
+}
+body *::-webkit-scrollbar-thumb {
+  background: rgb(205, 206, 206);
+
+  border-radius: 10px;
+}
+body *::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+body *::-webkit-scrollbar-corner {
+  background: #fff;
+}
+.table {
+  color: #FFFFFF;
+  height: 700px;
+  overflow: hidden;
+}
+.table:hover {
+  height: 700px;
+  overflow-y: auto;
+}
+.el-tab-pane {
+  height: 500px;
+  overflow-y: auto;
+}
+//懒加载
+img[lazy="loading"]{
+  display:block;
+  width:150px !important;
+  height:150px !important;
+  margin:0 auto;
+}
 
 //for_brach
 .demo-image__lazy {
@@ -712,6 +914,19 @@ input::-webkit-input-placeholder{
 
 .box-card {
 
+  //margin-bottom: 20px;
+  background-color:#000088 ;
+  opacity:0.7;
+  height:800px;
+  width: 300px;
+
+  padding: 0px 0px;
+  border: none;
+  z-index: 10;
+}
+.box-card2 {
+  z-index: 10;
+
   margin-bottom: 20px;
   background-color:#000088 ;
   opacity:0.7;
@@ -721,16 +936,38 @@ input::-webkit-input-placeholder{
   padding: 0px 0px;
   border: none;
 }
-.box-card2 {
+.box-card3{
+  position: relative;
+  margin-top: 130px;
+  height:700px;
+  width: 320px;
 
-  margin-bottom: 20px;
+  border: 3px;
+  border-color: #FFFFFF;
   background-color:#000088 ;
-  opacity:0.7;
-  height:800px;
-  width: 300px;
+  padding: 1px 1px;
 
+}
+.box-card3 ::v-deep .el-card__body{
+    padding: 0px 0px;
+
+  }
+.box-card4
+{
+  //display: flex;
+  position:absolute;
+  margin-top:600px;
+  //margin-right:500px;
+  right: 350px;
+  height:200px;
+  width: 150px;
   padding: 0px 0px;
   border: none;
+  background-color:#000088 ;
+  opacity:0.7;
+}
+.card_bottom{
+  line-height: 40px;
 }
 .app-wrapper {
   background-image: url("~@/../public/位图.png");
@@ -817,34 +1054,38 @@ body > .el-container {
   overflow: auto;
 }
 </style>
-
 <script>
 
 import Header from '../home/components/header'
 import {getOrderDate,updateWorkdate }from "@/api/calendar";
 import Calendar from '@/components/Calendar.vue'
-import moment from 'moment'
-
+import moment from 'moment';
 
 
 export default {
+
   name: 'home',
   components: {
     Header,
-    Calendar
+    Calendar,
   },
   data(){
 
     return{
+      innerVisible: false,
+      centerDialogVisible: false,
+      //
+      radio:'1',
       //for_barch
       for_brach:[{title:'1',src:require('@/assets/for_brach/1.jpg'),key:0},{title:'2',src:require('@/assets/for_brach/2.jpg'),key:1},{title:'3',src:require('@/assets/for_brach/3.jpg'),key: 2}],
-      urls:['https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+      urls:['',
         'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
         'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
         'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
         'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
         'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
         'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg',],
+      urls_test:[{title:'1',url:"https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg"},{title:'2',url:"https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg"}],
       //日期范围选择
       startDate: '',
 
@@ -917,10 +1158,15 @@ export default {
 
   },
   mounted() {
-    this.init();
-  },
 
+  },
+  beforeDestroy() {
+  },
+  created() {
+
+  },
   methods: {
+
     handleStartDateChange() {
       if (this.startDate && this.startDate.length > 0) {
         const timestampBegin = +new Date(this.startDate[0])

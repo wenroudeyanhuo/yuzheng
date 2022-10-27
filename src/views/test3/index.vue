@@ -119,10 +119,10 @@
 
   padding: 0px 0px;
   border: none;
-  z-index: 10;
+  z-index: 100;
 }
 .box-card1 {
-  z-index: 10;
+  z-index: 100;
 
   margin-bottom: 20px;
   background-color:#000088 ;

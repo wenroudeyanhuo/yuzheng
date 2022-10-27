@@ -1,6 +1,6 @@
 <template>
-  <el-row >
-    <el-col :span="19">
+  <el-row>
+    <el-col :span="19" class="el-col-cock1">
       <el-card class="box-card">
         <div  class="clearfix" :style="background">
           <!--          style="border: none" align="center"-->
@@ -67,40 +67,17 @@
                 </el-tree>
               </template>
 
-
-              <el-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</el-button>
-
-              <el-dialog
-                title="提示"
-                :visible.sync="centerDialogVisible"
-                width="90%"
-                height="90%"
-                :show-close="false"
-                center>
-                <el-dialog
-                  width="50%"
-                  title="内层 Dialog"
-                  :visible.sync="innerVisible"
-                  :append-to-body="true"
-                  >
-                </el-dialog>
-                <div slot="footer" class="dialog-footer">
-                  <el-button @click="outerVisible = false">取 消</el-button>
-                  <el-button type="primary" @click="innerVisible = true">打开内层 Dialog</el-button>
+<!--                弹窗-->
+              <div class="main">
+                <span id="hide" @click="hide_onclick">点开</span>
+              </div>
+              <div class="cover" id="box">
+                <div>
+                  <div>
+                    <span id="Closehide" @click="Closehide_onclick">关闭</span>
+                  </div>
                 </div>
-                <span>需要注意的是内容是默认不居中的</span>
-                <span slot="footer" class="dialog-footer">
-                <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
-                </span>
-              </el-dialog>
-
-
-
-
-
-
-
-
+              </div>
 
 
 
@@ -251,18 +228,22 @@
 
       </el-card>
     </el-col>
-    <el-card class="box-card4">
 
-      <template>
-        <el-radio  class="card_bottom" v-model="radio" label="1">点位显示</el-radio>
-        <el-radio class="card_bottom"v-model="radio" label="2">覆盖范围</el-radio>
-        <el-radio class="card_bottom"v-model="radio" label="3">事件显示</el-radio>
-        <el-radio class="card_bottom"v-model="radio" label="4">热力图</el-radio>
-      </template>
-    </el-card>
+    <el-col :span="1" class="el-col-cock2">
+      <el-card class="box-card4">
 
-    <el-col :span="5">
-      <el-card class="box-card">
+        <template>
+          <el-radio  class="card_bottom" v-model="radio" label="1">点位显示</el-radio>
+          <el-radio class="card_bottom"v-model="radio" label="2">覆盖范围</el-radio>
+          <el-radio class="card_bottom"v-model="radio" label="3">事件显示</el-radio>
+          <el-radio class="card_bottom"v-model="radio" label="4">热力图</el-radio>
+        </template>
+      </el-card>
+    </el-col>
+
+
+    <el-col :span="4" class="el-col-cock3">
+      <el-card class="box-card1">
         <div :style="background">
           <!--          style="border: none" align="center"-->
           <el-image style="width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
@@ -344,36 +325,72 @@
     </el-col>
   </el-row>
 </template>
-<!--<script>-->
-<!--export default {-->
-
-<!--  name: 'Test1',-->
-<!--  data()-->
-<!--  {-->
-<!--    return {-->
-<!--      imgList:['public/bg_top_title.png'],-->
-<!--      background: {-->
-<!--        // 背景图片地址-->
-<!--        backgroundImage: 'url(' + require('../../../public/位图.png') + ')',-->
-<!--        // 背景图片是否重复-->
-<!--        backgroundRepeat: 'no-repeat',-->
-<!--        // 背景图片大小-->
-<!--        backgroundSize: 'cover',-->
-<!--        // 背景颜色-->
-<!--        backgroundColor: '#000',-->
-<!--        // 背景图片位置-->
-<!--        backgroundPosition: 'center top'-->
-<!--      }-->
-<!--    }-->
-<!--  },-->
-
-<!--}-->
-<!--</script>-->
-
 <style  lang="scss"  scoped>
-::v-deep .el-dialog{
-  height: 700px;
+//el-col  z-index问题
+
+::v-deep .el-col-cock1{
+  position: relative;
+  z-index:101;
 }
+::v-deep.el-col-cock2{
+  z-index:100;
+}
+::v-deep.el-col-cock3{
+  z-index:100;
+}
+//手写弹窗
+.main {
+  height: 100%;
+  /* text-align: center; */
+  display: flex;
+  margin-left: 1px;
+  z-index: 101;
+}
+
+.main span {
+  font-size: 18px;
+  color: #fff;
+
+}
+
+.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:#444444;
+  z-index: 99999;
+}
+
+.cover>div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.cover div div {
+  width: 90%;
+  height: 70%;
+  background: #000088 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.cover div div span {
+  color: white;
+  font-size: 18px;
+  z-index: 99999;
+}
+
+#box{
+  display: none;
+}
+
 ::v-deep .el-descriptions__body
 {
   background: transparent;
@@ -381,54 +398,6 @@
 //::v-deep .el-descriptions-item{
 //  background: transparent;
 //}
-.ha{
-  background: transparent;
-}
-//弹窗
-::v-deep .el-dialog { // 取消阴影和背景色
-
-  background: #409EFF;
-
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0);
-
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0);
-  z-index: 1000;
-
-}
-/* 刷新弹窗样式闪烁问题去掉v-cloak下面这个样式 */
-[v-cloak] {
-  display: none;
-}
-.box{
-  display: flex;
-  flex-direction: column;
-}
-.mask {
-  background:transparent;
-  background-color:  #409EFF;
-  //opacity: 0;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 100%;
-  height: 100%;
-  z-index: 10000
-}
-
-.pop {
-  position: fixed;
-  background-color: #c1c8d6;
-  width: 520px;
-  display: flex;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  z-index: 90;
-  margin-left: -20px;
-  box-shadow: -20px 0 20px 0 rgb(0 0 0 / 10%);
-  flex-direction: column;
-  color: #fff;
-}
 
 .btn {
   /* background-color: #fff; */
@@ -694,14 +663,14 @@ li{
   font-size: 12px;
   .date {
     font-size: 16px;
-    z-index: 4;
+    z-index: 100;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 20px;
   }
   .solar-terms {
-    z-index: 4;
+    z-index: 100;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -711,12 +680,12 @@ li{
     position: absolute;
     font-weight: bold;
     margin: 10px 0 0 10px;
-    z-index: 4;
+    z-index: 100;
   }
   .red-word {
     color: #ff4949;
     position: absolute;
-    z-index: 4;
+    z-index: 100;
   }
 }
 
@@ -925,10 +894,22 @@ input::-webkit-input-placeholder{
 
   padding: 0px 0px;
   border: none;
-  z-index: 10;
+  z-index: 101;
+}
+.box-card1 {
+
+  //margin-bottom: 20px;
+  background-color:#000088 ;
+  opacity:0.7;
+  height:800px;
+  width: 300px;
+
+  padding: 0px 0px;
+  border: none;
+  z-index: 100;
 }
 .box-card2 {
-  z-index: 10;
+  z-index: 100;
 
   margin-bottom: 20px;
   background-color:#000088 ;
@@ -940,6 +921,7 @@ input::-webkit-input-placeholder{
   border: none;
 }
 .box-card3{
+  z-index: 100;
   position: relative;
   margin-top: 130px;
   height:700px;
@@ -1075,8 +1057,11 @@ export default {
   data(){
 
     return{
+      //手写弹窗的数据
+      box:document.getElementById('box'),
+      hide:document.getElementById('hide'),
+      CloseHide:document.getElementById('Closehide'),
       innerVisible: false,
-      centerDialogVisible: false,
       //
       radio:'1',
       //for_barch
@@ -1168,6 +1153,14 @@ export default {
 
   },
   methods: {
+    hide_onclick()
+    {
+      box.style.display = "block";
+    },
+    Closehide_onclick()
+    {
+      box.style.display = "none";
+    },
 
     handleStartDateChange() {
       if (this.startDate && this.startDate.length > 0) {

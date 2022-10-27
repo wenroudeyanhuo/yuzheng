@@ -6,42 +6,75 @@
           <!--          style="border: none" align="center"-->
           <el-image style="width: 30px; height: 27px" :src="require('@/assets/2.png')" fit="fill" class="tempimg"></el-image>
           <span class="span">                 监控/预警/巡检</span>
-<!--          <el-button @click="card_click(0)" :style="{color:m_color[0]}">卡片1</el-button>-->
-<!--          <el-button @click="card_click(1)" :style="{color:m_color[1]}">卡片2</el-button>-->
-<!--          <el-button @click="card_click(2)" :style="{color:m_color[2]}">卡片3</el-button>-->
-
-          <!--          <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
         </div>
-        <el-image style="width: 30px; height: 31px;margin:25px" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>
 
-        <el-image style="width: 29px; height: 29px;margin:25px" :src="require('@/assets/icon_type@3x.png')" fit="fill"></el-image>
-        <el-image style="width: 29px; height: 29px;margin:30px" :src="require('@/assets/9.png')" fit="fill" ></el-image>
+<!--        第一个图片点击事件-->
+        <div class="main">
+          <el-image id="hide" @click="hide_onclick" style="width: 30px; height: 31px;margin:25px" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>
+          <!--                <span id="hide" @click="hide_onclick">点开</span>-->
+        </div>
+        <div class="cover" id="box">
+          <div>
+            <div>
+              <span id="Closehide" @click="Closehide_onclick">关闭</span>
+            </div>
+          </div>
+        </div>
 
-        <el-button-group class="card-toggle-table">
+<!--第二个图片点击事件  未完成-->
+<!--        修改el-buton-group  -->
+        <el-button-group>
           <el-tooltip
             v-if="cardType"
             class="item"
             effect="dark"
-            content="切换成表格"
             placement="top-start"
           >
-            <el-button size="mini" plain icon="el-icon-s-grid" @click="toggle" />
+            <el-button size="mini" @click="toggle" class="change"/>
           </el-tooltip>
           <el-tooltip
             v-else
             class="item"
             effect="dark"
-            content="切换成卡片"
             placement="top-start"
           >
             <el-button
               size="mini"
-              plain
-              icon="el-icon-bank-card"
               @click="toggle"
+              class="change"
             />
           </el-tooltip>
         </el-button-group>
+
+<!--          <el-image class="tupian2" style="width: 29px; height: 29px;margin:25px" :src="require('@/assets/icon_type@3x.png')" fit="fill"></el-image>-->
+<!--        第三个图片点击事件 未完成-->
+          <el-image  class="tupian3" style="width: 29px; height: 29px;margin:30px" :src="require('@/assets/9.png')" fit="fill" ></el-image>
+
+
+
+
+<!--        <el-button-group class="card-toggle-table">-->
+<!--          <el-tooltip-->
+<!--            v-if="cardType"-->
+<!--            class="item"-->
+<!--            effect="dark"-->
+<!--            placement="top-start"-->
+<!--          >-->
+<!--            <el-button size="mini" @click="toggle" />-->
+<!--          </el-tooltip>-->
+<!--          <el-tooltip-->
+<!--            v-else-->
+<!--            class="item"-->
+<!--            effect="dark"-->
+<!--            placement="top-start"-->
+<!--          >-->
+<!--            <el-button-->
+<!--              size="mini"-->
+<!--              @click="toggle"-->
+<!--              class="change"-->
+<!--            />-->
+<!--          </el-tooltip>-->
+<!--        </el-button-group>-->
 
 
         <!-- 如果cardType为true,则显示卡片风格 -->
@@ -67,17 +100,18 @@
                 </el-tree>
               </template>
 
-<!--                弹窗-->
-              <div class="main">
-                <span id="hide" @click="hide_onclick">点开</span>
-              </div>
-              <div class="cover" id="box">
-                <div>
-                  <div>
-                    <span id="Closehide" @click="Closehide_onclick">关闭</span>
-                  </div>
-                </div>
-              </div>
+<!--&lt;!&ndash;                弹窗模板&ndash;&gt;-->
+<!--              <div class="main">-->
+<!--                <el-image id="hide" @click="hide_onclick" style="width: 30px; height: 31px;margin:25px" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>-->
+<!--&lt;!&ndash;                <span id="hide" @click="hide_onclick">点开</span>&ndash;&gt;-->
+<!--              </div>-->
+<!--              <div class="cover" id="box">-->
+<!--                <div>-->
+<!--                  <div>-->
+<!--                    <span id="Closehide" @click="Closehide_onclick">关闭</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
 
 
 
@@ -326,6 +360,14 @@
   </el-row>
 </template>
 <style  lang="scss"  scoped>
+
+//切换表格
+::v-deep .change{
+  background-image:url("/../../assets/icon_type@3x.png");
+}
+//.card-toggle-table{
+//  position: fixed;
+//}
 //el-col  z-index问题
 
 ::v-deep .el-col-cock1{
@@ -338,12 +380,13 @@
 ::v-deep.el-col-cock3{
   z-index:100;
 }
-//手写弹窗
+//手写弹窗1
 .main {
+  position: fixed;
   height: 100%;
   /* text-align: center; */
   display: flex;
-  margin-left: 1px;
+  margin-left: 10px;
   z-index: 101;
 }
 
@@ -386,7 +429,36 @@
   font-size: 18px;
   z-index: 99999;
 }
+//手写弹窗2
+.main2 {
+  position: fixed;
+  height: 100%;
+  /* text-align: center; */
+  display: flex;
+  margin-left: 100px;
+  z-index: 101;
+}
 
+.main2 span {
+  font-size: 18px;
+  color: #fff;
+
+}
+//手写弹窗3
+.main3 {
+  position: fixed;
+  height: 100%;
+  /* text-align: center; */
+  display: flex;
+  margin-left: 200px;
+  z-index: 101;
+}
+
+.main3 span {
+  font-size: 18px;
+  color: #fff;
+
+}
 #box{
   display: none;
 }
@@ -762,6 +834,21 @@ li{
   position: absolute;
   left:1360px; //只是假定的值，具体需测量
   top:80px;
+
+}
+//点击事件中的图片
+.tupian2{
+  z-index:100;
+  position: absolute;
+  left:110px; //只是假定的值，具体需测量
+  top:45px;
+
+}
+.tupian3{
+  z-index:100;
+  position: absolute;
+  left:200px; //只是假定的值，具体需测量
+  top:40px;
 
 }
 .wenzi_1{

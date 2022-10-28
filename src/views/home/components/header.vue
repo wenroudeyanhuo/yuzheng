@@ -89,6 +89,12 @@ export default {
   height: 37px;
   /*border: 2px dashed;*/
 }
+.el-icon-liuyanban:hover{
+
+  background-image: url('~@/../src/assets/icon_select_pre@2x.png');
+
+}
+
 .el-icon-guanli{
   color: white;
   background-color:transparent;

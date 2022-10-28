@@ -7,11 +7,12 @@
           <el-image style="width: 30px; height: 27px" :src="require('@/assets/2.png')" fit="fill" class="tempimg"></el-image>
           <span class="span">                 监控/预警/巡检</span>
         </div>
-
+<!--        统筹整个块-->
+      <div style="margin: 30px">
 <!--        第一个图片点击事件-->
-        <div class="main">
-          <el-image id="hide" @click="hide_onclick" style="width: 30px; height: 31px;margin:25px" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>
-          <!--                <span id="hide" @click="hide_onclick">点开</span>-->
+        <div class="main" style="width: 30px; height: 31px;">
+          <el-button id="hide" @click="hide_onclick" style="width: 30px; height: 31px;"></el-button>
+<!--          <el-image id="hide" @click="hide_onclick" style="width: 30px; height: 31px;" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>-->
         </div>
         <div class="cover" id="box">
           <div>
@@ -21,16 +22,18 @@
           </div>
         </div>
 
-<!--第二个图片点击事件  未完成-->
-<!--        修改el-buton-group  -->
+<!--第二个图片点击事件 -->
+<!--        修改el-buton-group   调整位置 -->
+        <div  class="position-button-group">
         <el-button-group>
           <el-tooltip
             v-if="cardType"
             class="item"
             effect="dark"
             placement="top-start"
+
           >
-            <el-button size="mini" @click="toggle" class="change"/>
+            <el-button  style="width: 29px; height: 29px;margin:30px" @click="toggle" class="change"/>
           </el-tooltip>
           <el-tooltip
             v-else
@@ -39,42 +42,22 @@
             placement="top-start"
           >
             <el-button
-              size="mini"
+
               @click="toggle"
               class="change"
+              style="width: 29px; height: 29px;margin:30px"
             />
           </el-tooltip>
         </el-button-group>
+        </div>
+
 
 <!--          <el-image class="tupian2" style="width: 29px; height: 29px;margin:25px" :src="require('@/assets/icon_type@3x.png')" fit="fill"></el-image>-->
 <!--        第三个图片点击事件 未完成-->
           <el-image  class="tupian3" style="width: 29px; height: 29px;margin:30px" :src="require('@/assets/9.png')" fit="fill" ></el-image>
 
 
-
-
-<!--        <el-button-group class="card-toggle-table">-->
-<!--          <el-tooltip-->
-<!--            v-if="cardType"-->
-<!--            class="item"-->
-<!--            effect="dark"-->
-<!--            placement="top-start"-->
-<!--          >-->
-<!--            <el-button size="mini" @click="toggle" />-->
-<!--          </el-tooltip>-->
-<!--          <el-tooltip-->
-<!--            v-else-->
-<!--            class="item"-->
-<!--            effect="dark"-->
-<!--            placement="top-start"-->
-<!--          >-->
-<!--            <el-button-->
-<!--              size="mini"-->
-<!--              @click="toggle"-->
-<!--              class="change"-->
-<!--            />-->
-<!--          </el-tooltip>-->
-<!--        </el-button-group>-->
+      </div>
 
 
         <!-- 如果cardType为true,则显示卡片风格 -->
@@ -125,7 +108,7 @@
           v-else
           ref="ruleForm"
           :data="roles"
-          style="width: 100%; font-size: 13px;"
+          style="width: 100%; font-size: 13px;position:relative;top: -50px"
           :model="ruleForm"
         >
           <el-select   v-model="ruleForm.cities" :popper-append-to-body="false"  clearable prop-class="select-down" placeholder="事件类型"  class="select_shijian" >
@@ -361,6 +344,16 @@
 </template>
 <style  lang="scss"  scoped>
 
+//
+.position-button-group{
+  height: 30px;
+  width: 30px;
+  position: relative;
+  top:-70px;
+  left: 100px;
+  z-index: 101;
+}
+
 //切换表格
 ::v-deep .change{
   background-image:url("/../../assets/icon_type@3x.png");
@@ -382,12 +375,11 @@
 }
 //手写弹窗1
 .main {
-  position: fixed;
-  height: 100%;
-  /* text-align: center; */
-  display: flex;
-  margin-left: 10px;
-  z-index: 101;
+  background-image: url("~@/assets/icon_jiankong.png");
+  position: relative;
+  left: 10px;
+  top: -10px;
+  z-index: 99998;
 }
 
 .main span {
@@ -429,36 +421,7 @@
   font-size: 18px;
   z-index: 99999;
 }
-//手写弹窗2
-.main2 {
-  position: fixed;
-  height: 100%;
-  /* text-align: center; */
-  display: flex;
-  margin-left: 100px;
-  z-index: 101;
-}
 
-.main2 span {
-  font-size: 18px;
-  color: #fff;
-
-}
-//手写弹窗3
-.main3 {
-  position: fixed;
-  height: 100%;
-  /* text-align: center; */
-  display: flex;
-  margin-left: 200px;
-  z-index: 101;
-}
-
-.main3 span {
-  font-size: 18px;
-  color: #fff;
-
-}
 #box{
   display: none;
 }
@@ -672,22 +635,14 @@ li{
 
 ::v-deep .el-button-group {
   display: flex;
-  justify-content: space-around;
+  //justify-content: space-around;
   align-items: center;
 }
 
-::v-deep .el-button-group > .el-button:first-child:before {
-  content: "<";
-}
-
-::v-deep .el-button-group > .el-button:last-child:before {
-  content: ">";
-}
-
-::v-deep .el-button-group > .el-button:first-child span,
-::v-deep .el-button-group > .el-button:last-child span {
-  display: none;
-}
+//::v-deep .el-button-group > .el-button:first-child span,
+//::v-deep .el-button-group > .el-button:last-child span {
+//  display: none;
+//}
 
 ::v-deep .el-button {
   border: 0;
@@ -783,18 +738,20 @@ li{
   align-items: center;
 }
 
+//第二张图片作用在点击上
 >>> .el-button-group > .el-button:first-child:before {
-  content: "<";
+  content:  url('~@/assets/icon_type@3x.png');
 }
 
 >>> .el-button-group > .el-button:last-child:before {
-  content: ">";
+  content: url('~@/assets/icon_type@3x.png');
 }
 
 >>> .el-button-group > .el-button:first-child span,
 >>> .el-button-group > .el-button:last-child span {
   display: none;
 }
+
 
 >>> .el-button {
   border: 0;
@@ -958,7 +915,8 @@ input::-webkit-input-placeholder{
   display: inline-block;
   overflow: hidden;
 }
-.item {
+::v-deep .item {
+  background-image: url("/../../assets/icon_type@3x.png");
   margin-bottom: 18px;
 }
 
@@ -997,6 +955,7 @@ input::-webkit-input-placeholder{
 }
 .box-card2 {
   z-index: 100;
+  margin-top: -70px;
 
   margin-bottom: 20px;
   background-color:#000088 ;

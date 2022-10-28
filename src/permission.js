@@ -9,8 +9,7 @@ import i18n from '@/lang'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
-const whiteList = ['/login','/test1','/test3','/test2','/location1','/location2'] // no redirect whitelist
-
+const whiteList = ['/login','/test1','/test2','/test3','/location1'] // no redirect whitelist
 router.beforeEach(async (to, from, next) => {
   // start progress bar
   NProgress.start()

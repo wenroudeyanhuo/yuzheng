@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bedec0d4-21b7-40de-a8b9-c12bbe0c997e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/测试1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/8.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/permission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/location/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/location/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/location/index1.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/location/index1.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +89,11 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试" />
+    <MESSAGE value="warning" />
+    <option name="LAST_COMMIT_MESSAGE" value="warning" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

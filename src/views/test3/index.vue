@@ -2,9 +2,9 @@
   <el-row>
     <el-col :span="5">
       <el-card class="box-card">
-           <div  class="clearfix" :style="background">
+           <div  style="width: 300px;height: 40px" class="clearfix" :style="background">
       <!--          style="border: none" align="center"-->
-      <span>监控点位</span>
+      <span style="position:absolute;color:white;left:120px;top:30px">监控点位</span>
 
     </div>
 
@@ -29,42 +29,86 @@
     </el-col>
     <el-col :span="19">
       <el-card class="box-card1">
-<!--        视频播放器-->
-        <div class='demo'>
-          <div v-for="video in videoList" :key="video">
-            <video-player class="video-player vjs-custom-skin"
-                          ref="videoPlayer"
-                          :playsinline="true"
-                          :options="playerOptions">
-            </video-player>
+<!--        头-->
+        <div style="background-color:#409EFF;top:10px;width: 1200px;height: 40px;margin-left: -10px" >
+          <el-image style="width: 60px;height: 60px ;position: relative;top:-15px;left: -25px" :src="require('@/assets/icon_title_dianwei@2x.png')" fit="fill"></el-image>
+
+
+          <div class=TabsShow>
+            <TabsShow msg=""/>
           </div>
         </div>
 
 
 
 
-        <!--        分页-->
-        <el-pagination class="fenye_1"
-          background
-          layout="prev, pager, next"
-          :total="100">
-        </el-pagination>
+
 
       </el-card>
     </el-col>
   </el-row>
 </template>
 <style  lang="scss"  scoped>
+//头
+//.TabsShow{
+//  position: absolute;
+//  top:1px;
+//  right:-600px;
+//
+//}
+//#test3 {
+//  text-align: center;
+//  margin-top: 60px;
+//}
+//视频播放器
+.video_text{
+  width: 70%;
+  margin: 0 auto;
+}
+video:focus{
+  outline: 0;      //去掉选中蓝框
+}
+.video-js .vjs-big-play-button{
+  /*对播放按钮的样式进行设置*/
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+}
 .demo {
   height: 450px;
   width: 450px;
 }
 //分页
 .fenye_1{
-  position: relative;
+  position: absolute;
+  left: 100px;
 
 }
 //输入框
+input[type="text"],input[type="password"],input[type="email"]{
+
+  -web-kit-appearance:none;
+  -moz-appearance: none;
+  outline:0;
+
+  box-sizing: border-box;
+  text-align:left;
+  font-size:1.2em;
+  height:2.1em;
+  border-radius:5px;
+  border:1px solid #c8cccf;
+  color:white;;
+  display:block;
+  padding:0 1em;
+  text-decoration:none;
+  width:100%;
+}
+input::-webkit-input-placeholder{
+  color: white;
+}
 ::v-deep .el-input__inner {
   padding: 0;
   background: transparent;
@@ -135,37 +179,18 @@
 }
 </style>
 <script>
+import TabsShow from './components/signal_one';
 
 export default {
   name: "test3",
+  components:{
+    TabsShow,
+  },
   mounted()
   {
   },
   data() {
     return {
-      playerOptions: {
-        playbackRates: [0.5, 1.0, 1.5, 2.0], // 可选的播放速度
-        autoplay: false, // 如果为true,浏览器准备好时开始回放。
-        muted: false, // 默认情况下将会消除任何音频。
-        loop: false, // 是否视频一结束就重新开始。
-        preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
-        language: 'zh-CN',
-        aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
-        fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
-        sources: [{
-          type: "video/mp4", // 类型
-          src: 'http://www.si-tech.com.cn/pub-ui/images/radio/sitech.mp4' // url地址
-        }],
-        poster: '', // 封面地址
-        notSupportedMessage: '此视频暂无法播放，请稍后再试', // 允许覆盖Video.js无法播放媒体源时显示的默认信息。
-        controlBar: {
-          timeDivider: true, // 当前时间和持续时间的分隔符
-          durationDisplay: true, // 显示持续时间
-          remainingTimeDisplay: false, // 是否显示剩余时间功能
-          fullscreenToggle: true // 是否显示全屏按钮
-        }
-      },
-
       background: {
         // 背景图片地址
         backgroundImage: 'url(' + require('../../../public/bg_title@2x.png') + ')',
@@ -218,9 +243,7 @@ export default {
   methods: {
 
     },
-    handleNodeClick(data) {
-      console.log(data);
-    }
+
   }
 
 

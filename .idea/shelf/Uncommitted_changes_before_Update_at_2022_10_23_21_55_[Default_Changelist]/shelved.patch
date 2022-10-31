@@ -1,0 +1,88 @@
+Index: src/permission.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import router from './router'\r\nimport store from './store'\r\nimport { Message } from 'element-ui'\r\nimport NProgress from 'nprogress' // progress bar\r\nimport 'nprogress/nprogress.css' // progress bar style\r\nimport { getToken } from '@/utils/auth' // get token from cookie\r\nimport getPageTitle from '@/utils/get-page-title'\r\nimport i18n from '@/lang'\r\n\r\nNProgress.configure({ showSpinner: false }) // NProgress Configuration\r\n\r\n<<<<<<< HEAD\r\nconst whiteList = ['/login','/test1','/test2','/location1'] // no redirect whitelist\r\n=======\r\nconst whiteList = ['/login','/test1','/test2','/test3'] // no redirect whitelist\r\n>>>>>>> origin/master\r\n\r\nrouter.beforeEach(async (to, from, next) => {\r\n  // start progress bar\r\n  NProgress.start()\r\n  // set page title,如果不使用国际化,to.meta.title\r\n  document.title = getPageTitle(i18n.t(to.meta.title))\r\n  // document.title = getPageTitle(i18n.t('route.'+to.name))\r\n\r\n  // determine whether the user has logged in\r\n  const hasToken = getToken()\r\n\r\n  if (hasToken) {\r\n    if (to.path === '/login') {\r\n      // if is logged in, redirect to the home page\r\n      next({ path: '/' })\r\n      NProgress.done()\r\n    } else {\r\n      const hasRoles = store.getters.roles && store.getters.roles.length > 0\r\n      if (hasRoles) {\r\n        next()\r\n      } else {\r\n        try {\r\n          // get user info\r\n          const userInfo = await store.dispatch('user/getInfo')\r\n          router.addRoutes(userInfo.routes)\r\n          next({ ...to, replace: true })\r\n        } catch (error) {\r\n          // remove token and go to login page to re-login\r\n          await store.dispatch('user/resetToken')\r\n          Message.error(error || 'Has Error')\r\n          next(`/login?redirect=${to.path}`)\r\n          NProgress.done()\r\n        }\r\n      }\r\n    }\r\n  } else {\r\n    /* has no token*/\r\n    if (whiteList.indexOf(to.path) !== -1) {\r\n      // in the free login whitelist, go directly\r\n      next()\r\n    } else {\r\n      // other pages that do not have permission to access are redirected to the login page.\r\n      next(`/login?redirect=${to.path}`)\r\n      NProgress.done()\r\n    }\r\n  }\r\n})\r\n\r\nrouter.afterEach(() => {\r\n  // finish progress bar\r\n  NProgress.done()\r\n})\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/permission.js b/src/permission.js
+--- a/src/permission.js	(revision 135d24aa58edf2a5b1188eb3d042aa7cf216b251)
++++ b/src/permission.js	(date 1666494723130)
+@@ -9,11 +9,11 @@
+ 
+ NProgress.configure({ showSpinner: false }) // NProgress Configuration
+ 
+-<<<<<<< HEAD
+-const whiteList = ['/login','/test1','/test2','/location1'] // no redirect whitelist
+-=======
+-const whiteList = ['/login','/test1','/test2','/test3'] // no redirect whitelist
+->>>>>>> origin/master
++/*<<<<<<< HEAD*/
++/*const whiteList = ['/login','/test1','/test2','/location1'] // no redirect whitelist
++=======*!/*/
++const whiteList = ['/login','/test1','/test2','/test3','/location1'] // no redirect whitelist
++/*>>>>>>> origin/master*/
+ 
+ router.beforeEach(async (to, from, next) => {
+   // start progress bar
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"bedec0d4-21b7-40de-a8b9-c12bbe0c997e\" name=\"Default Changelist\" comment=\"warning\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/assets/cccc.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/assets/icon_title_dianwei.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/package.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/permission.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/permission.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/views/location/index.vue\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/views/location/index.vue\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/views/test1/index.vue\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/views/test1/index.vue\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/测试1.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/测试1.txt\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"5\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"localRepository\" value=\"D:\\Maven\\apache-maven-3.8.1\\maven-repo\" />\r\n        <option name=\"mavenHome\" value=\"$PROJECT_DIR$/../../../../Maven/apache-maven-3.8.1\" />\r\n        <option name=\"userSettingsFile\" value=\"D:\\Maven\\apache-maven-3.8.1\\conf\\settings.xml\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2FLuoC4DgGXWwBUWxcccsUfSl7b\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showExcludedFiles\" value=\"false\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showVisibilityIcons\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/src/assets\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"yarn\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"settings.nodejs\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\yuzheng\\yuzheng\\src\\assets\" />\r\n      <recent name=\"D:\\yuzheng\\yuzheng\\src\\assets\\img\" />\r\n      <recent name=\"D:\\yuzheng\\yuzheng\\src\\assets\\warning\" />\r\n      <recent name=\"D:\\yuzheng\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\yuzheng\\yuzheng\\src\\assets\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"bedec0d4-21b7-40de-a8b9-c12bbe0c997e\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1664283857060</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1664283857060</updated>\r\n      <workItem from=\"1664283860305\" duration=\"382000\" />\r\n      <workItem from=\"1664284629266\" duration=\"2478000\" />\r\n      <workItem from=\"1665978060080\" duration=\"896000\" />\r\n      <workItem from=\"1665978990339\" duration=\"4485000\" />\r\n      <workItem from=\"1665996455419\" duration=\"2630000\" />\r\n      <workItem from=\"1666085650364\" duration=\"3123000\" />\r\n      <workItem from=\"1666158751036\" duration=\"380000\" />\r\n      <workItem from=\"1666178250050\" duration=\"59000\" />\r\n      <workItem from=\"1666178330609\" duration=\"10466000\" />\r\n      <workItem from=\"1666224997502\" duration=\"21585000\" />\r\n      <workItem from=\"1666329474830\" duration=\"2814000\" />\r\n      <workItem from=\"1666485154337\" duration=\"48000\" />\r\n      <workItem from=\"1666485236282\" duration=\"2055000\" />\r\n      <workItem from=\"1666487334158\" duration=\"2498000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"测试\">\r\n      <created>1665996982749</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1665996982749</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"测试\" />\r\n    <MESSAGE value=\"warning\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"warning\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 135d24aa58edf2a5b1188eb3d042aa7cf216b251)
++++ b/.idea/workspace.xml	(date 1666502723946)
+@@ -4,15 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="bedec0d4-21b7-40de-a8b9-c12bbe0c997e" name="Default Changelist" comment="warning">
+-      <change afterPath="$PROJECT_DIR$/src/assets/cccc.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/assets/icon_title_dianwei.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
++    <list default="true" id="bedec0d4-21b7-40de-a8b9-c12bbe0c997e" name="Default Changelist" comment="">
+       <change beforePath="$PROJECT_DIR$/src/permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/permission.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/views/location/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/location/index.vue" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/views/test1/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/test1/index.vue" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/测试1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/测试1.txt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -107,7 +100,7 @@
+       <workItem from="1666329474830" duration="2814000" />
+       <workItem from="1666485154337" duration="48000" />
+       <workItem from="1666485236282" duration="2055000" />
+-      <workItem from="1666487334158" duration="2498000" />
++      <workItem from="1666487334158" duration="4575000" />
+     </task>
+     <task id="LOCAL-00001" summary="测试">
+       <created>1665996982749</created>
+@@ -116,7 +109,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1665996982749</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="warning">
++      <created>1666493455202</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1666493455202</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -146,6 +146,8 @@
+     </option>
+   </component>
+   <component name="VcsManagerConfiguration">
++    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
++    <option name="CHECK_NEW_TODO" value="false" />
+     <MESSAGE value="测试" />
+     <MESSAGE value="warning" />
+     <option name="LAST_COMMIT_MESSAGE" value="warning" />

@@ -1,5 +1,5 @@
 <template>
-  <el-row type="flex"style="background-color: #0f2c4e;">
+  <el-row type="flex" style="background-color: #0f2c4e;">
     <el-col :span="12">
       <div style="background-color: #203f5e;height: 40px;">
         <el-image style="width: 40px;height: 40px;vertical-align:middle;" :src="require('@/assets/icon_title_dianwei.png')"></el-image>
@@ -31,7 +31,7 @@
             <div>
               <el-image class="image"
                         style="  display: block ;width: 370px;height:180px;margin-bottom: 8px;"
-                        :src="require('@/assets/8.png')"
+                        :src="require('@/assets/warning.jpg')"
               ></el-image>
               <span class="span8">疑似船只
                 <span style="font-size: 15px">(类型)</span>
@@ -43,7 +43,7 @@
             <div>
               <el-image   class="image"
                           style="  display: block ;width: 370px;height:180px;margin-bottom: 8px;"
-                          :src="require('@/assets/8.png')"
+                          :src="require('@/assets/warning.jpg')"
               ></el-image>
               <span class="span8">疑似船只
                 <span style="font-size: 15px">(类型)</span>
@@ -55,7 +55,7 @@
             <div>
               <el-image  class="image"
                          style="  display: block ;width: 370px;height:180px;margin-bottom: 8px;"
-                        :src="require('@/assets/8.png')"
+                        :src="require('@/assets/warning.jpg')"
               ></el-image>
               <span class="span8">疑似船只
                 <span style="font-size: 15px">(类型)</span>
@@ -67,7 +67,7 @@
             <div>
               <el-image  class="image"
                          style="  display: block ;width: 370px;height:180px;margin-bottom: 8px;"
-                        :src="require('@/assets/8.png')"
+                        :src="require('@/assets/warning.jpg')"
               ></el-image>
               <span class="span8">疑似船只
                 <span style="font-size: 15px">(类型)</span>
@@ -79,7 +79,7 @@
             <div>
               <el-image  class="image"
                          style="  display: block ;width: 370px;height:180px;margin-bottom: 8px;"
-                        :src="require('@/assets/8.png')"
+                        :src="require('@/assets/warning.jpg')"
               ></el-image>
               <span class="span8">疑似船只
                 <span style="font-size: 15px">(类型)</span>
@@ -91,7 +91,7 @@
             <div>
               <el-image  class="image"
                          style="  display: block ;width: 370px;height:180px;margin-bottom: 8px;"
-                        :src="require('@/assets/8.png')"
+                        :src="require('@/assets/warning.jpg')"
               ></el-image>
               <span class="span8">疑似船只
                 <span style="font-size: 15px">(类型)</span>
@@ -103,7 +103,7 @@
             <div>
               <el-image  class="image"
                          style="  display: block ;width: 370px;height:180px;margin-bottom: 8px;"
-                        :src="require('@/assets/8.png')"
+                        :src="require('@/assets/warning.jpg')"
               ></el-image>              <span class="span8">疑似船只
                 <span style="font-size: 15px">(类型)</span>
               </span>
@@ -114,7 +114,7 @@
             <div>
               <el-image  class="image"
                          style="  display: block ;width: 370px;height:180px;margin-bottom: 8px;"
-                        :src="require('@/assets/8.png')"
+                        :src="require('@/assets/warning.jpg')"
               ></el-image>              <span class="span8">疑似船只
                 <span style="font-size: 15px">(类型)</span>
               </span>
@@ -135,7 +135,7 @@
                  :class="{ active : index==current }"
                  style="margin: 0 15px 0 15px"
             >{{item}}</div>
-            <el-icon class="el-icon-setting"style="margin-right: 15px" ></el-icon>
+            <el-icon class="el-icon-setting" style="margin-right: 15px" ></el-icon>
           </div>
           <!--    下划线   -->
           <div class="nav-line" :style="{transform : `translateX(${X}px) translateX(-50%)`}"></div>
@@ -156,17 +156,42 @@
           <!-- 这里的所有数据，后台交互改变数据       -->
           <!--      direction="vertical" 是指文字的排列方式  -->
           <el-descriptions  :column="1" :span="2">
-            <el-descriptions-item label="预警类型" label-class-name="my-label" content-class-name="my-content">疑似船只</el-descriptions-item>
-            <el-descriptions-item label="预警方位"> A5</el-descriptions-item>
-            <el-descriptions-item label="预警时间">2022-08-06 13:40:02</el-descriptions-item>
-            <el-descriptions-item label="预警状态">
-              <el-tag size="small">待处理</el-tag>
+            <el-descriptions-item label="预警类型"
+                                  label-class-name="my-label"
+                                  content-class-name="my-content"
+            >疑似船只</el-descriptions-item>
+            <el-descriptions-item label="预警方位"
+                                  label-class-name="my-label"
+                                  content-class-name="my-content"
+            > A5</el-descriptions-item>
+            <el-descriptions-item label="预警时间"
+                                  label-class-name="my-label"
+                                  content-class-name="my-content"
+            >2022-08-06 13:40:02</el-descriptions-item>
+            <el-descriptions-item label="预警状态"
+                                  label-class-name="my-label1"
+            ><el-tag size="small">待处理</el-tag>
             </el-descriptions-item>
-            <el-descriptions-item label="推送时间">2022-08-06 13:40:02</el-descriptions-item>
-            <el-descriptions-item label="负责人">田七</el-descriptions-item>
-            <el-descriptions-item label="联系方式">12345678909</el-descriptions-item>
-            <el-descriptions-item label="推送内容">有疑似报警</el-descriptions-item>
-            <el-descriptions-item label="反馈信息">-</el-descriptions-item>
+            <el-descriptions-item label="推送时间"
+                                  label-class-name="my-label"
+                                  content-class-name="my-content"
+            >2022-08-06 13:40:02</el-descriptions-item>
+            <el-descriptions-item label="负责人"
+                                  label-class-name="my-label"
+                                  content-class-name="my-content"
+            >田七</el-descriptions-item>
+            <el-descriptions-item label="联系方式"
+                                  label-class-name="my-label"
+                                  content-class-name="my-content"
+            >12345678909</el-descriptions-item>
+            <el-descriptions-item label="推送内容"
+                                  label-class-name="my-label"
+                                  content-class-name="my-content"
+            >有疑似报警</el-descriptions-item>
+            <el-descriptions-item label="反馈信息"
+                                  label-class-name="my-label"
+                                  content-class-name="my-content"
+            >-</el-descriptions-item>
           </el-descriptions>
       </div>
     </el-col>
@@ -252,11 +277,7 @@ ul.imgList li{
 ul .imgList li div{
   color: black;
 }
-/*::v-deep ul .imgList li  .el-image__inner{
-  display: block;
-  width: 160px;
-  height:90px;
-}*/
+
 
 ul .imgList li span{
   font-size: 6px;
@@ -276,15 +297,29 @@ ul .imgList li span{
   //margin-left: 20px;
 }
 .border{
-  border:1px solid #ccc;
+  border:1px solid #d7ce91;
 }
 
 ::v-deep .el-descriptions__body {
   background: transparent;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-left: 60px;
+  margin-top: 30px;
+/*  color:#dce7e7;*/
+}
+::v-deep .my-label{
+  margin-bottom: 5px;
+  color: #3fd9d5;
+
+}
+::v-deep .my-label1{
+  margin-bottom: 30px;
+  color: #3fd9d5;
+}
+::v-deep .my-content{
+  margin-bottom: 5px;
   color:#dce7e7;
 }
+
 /*下划线颜色*/
 #nav1{
   box-sizing: border-box;

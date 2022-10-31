@@ -47,7 +47,7 @@
     </div>
     <!--    第二种方式   还需要布一下局-->
     <div class="second2" v-else-if="isActive==1">
-     <div>
+      <div>
 
 
         <tr v-for="(item, index) in dataShow1" :class="{ 'alt': index%2==1 }">
@@ -66,7 +66,7 @@
           </div>
           <!--        <td>{{ item.school }}</td>-->
         </tr>
-     </div>
+      </div>
       <div class="page1">
         <button>
           <a href="#"  v-on:click="prePage">
@@ -91,12 +91,9 @@
 </template>
 
 <script>
-import 'video.js/dist/video-js.css'
-import { videoPlayer } from 'vue-video-player'
 export default {
   name: 'TabsShow',
   components:{
-    videoPlayer
   },
   data() {
     return {

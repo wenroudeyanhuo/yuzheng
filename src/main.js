@@ -16,6 +16,7 @@ import '@/icons' // icon
 import '@/permission' // permission control
 //视频播放器
 import Video from 'video.js'
+import 'video.js/dist/video-js.css'
 import 'videojs-contrib-hls'
 Vue.prototype.$video = Video
 

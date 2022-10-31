@@ -7,98 +7,113 @@
           <el-image style="width: 30px; height: 27px" :src="require('@/assets/2.png')" fit="fill" class="tempimg"></el-image>
           <span class="span">                 监控/预警/巡检</span>
         </div>
-<!--        统筹整个块-->
-      <div style="margin: 30px">
-<!--        第一个图片点击事件-->
-        <div class="main" style="width: 30px; height: 31px;">
-          <el-button id="hide" @click="hide_onclick" style="width: 30px; height: 31px;"></el-button>
-<!--          <el-image id="hide" @click="hide_onclick" style="width: 30px; height: 31px;" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>-->
-        </div>
-        <div class="cover" id="box">
-          <div>
-            <div>
-              <span id="Closehide" @click="Closehide_onclick">关闭</span>
-            </div>
+
+
+
+        <!--        统筹整个块-->
+        <div style="margin: 30px">
+          <!--        第一个图片点击事件-->
+          <div class="main" style="width: 30px; height: 31px;">
+            <el-button id="hide" @click="hide_onclick" style="width: 30px; height: 31px;"></el-button>
+            <!--          <el-image id="hide" @click="hide_onclick" style="width: 30px; height: 31px;" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>-->
           </div>
-        </div>
 
-<!--第二个图片点击事件 -->
-<!--        修改el-buton-group   调整位置 -->
-        <div  class="position-button-group">
-        <el-button-group>
-          <el-tooltip
-            v-if="cardType"
-            class="item"
-            effect="dark"
-            placement="top-start"
-
-          >
-            <el-button  style="width: 29px; height: 29px;margin:30px" @click="toggle" class="change"/>
-          </el-tooltip>
-          <el-tooltip
-            v-else
-            class="item"
-            effect="dark"
-            placement="top-start"
-          >
-            <el-button
-
-              @click="toggle"
-              class="change"
-              style="width: 29px; height: 29px;margin:30px"
-            />
-          </el-tooltip>
-        </el-button-group>
-        </div>
+          <!-- background的不透明度有问题 -->
+          <div class="cover" id="box">
+             <div>
+              <!-- 宽高问题 -->
+             <div style=" height: 800px;width: 1400px;">
+              <!-- 背景色有问题 -->
+                <div style="height: 60px;width: 1400px;background: #203c5a;margin-bottom: 740px">
+                  <el-image style="height: 60px;width:60px;margin-right: 60px;background: #203c5a;" :src="require('@/assets/icon_title_dianwei@2x.png')" fit="fill"></el-image>
+                  <div class=Show>
+                    <Show msg=""/>
+                  </div>
+                  <span id="Closehide" @click="Closehide_onclick">关闭</span>
+                </div>
+             </div>
+             </div>
+          </div>
 
 
-<!--          <el-image class="tupian2" style="width: 29px; height: 29px;margin:25px" :src="require('@/assets/icon_type@3x.png')" fit="fill"></el-image>-->
-<!--        第三个图片点击事件 未完成-->
+
+          <!--第二个图片点击事件 -->
+          <!--        修改el-buton-group   调整位置 -->
+          <div  class="position-button-group">
+            <el-button-group>
+              <el-tooltip
+                v-if="cardType"
+                class="item"
+                effect="dark"
+                placement="top-start"
+
+              >
+                <el-button  style="width: 29px; height: 29px;margin:30px" @click="toggle" class="change"/>
+              </el-tooltip>
+              <el-tooltip
+                v-else
+                class="item"
+                effect="dark"
+                placement="top-start"
+              >
+                <el-button
+
+                  @click="toggle"
+                  class="change"
+                  style="width: 29px; height: 29px;margin:30px"
+                />
+              </el-tooltip>
+            </el-button-group>
+          </div>
+
+
+          <!--          <el-image class="tupian2" style="width: 29px; height: 29px;margin:25px" :src="require('@/assets/icon_type@3x.png')" fit="fill"></el-image>-->
+          <!--        第三个图片点击事件 未完成-->
           <el-image  class="tupian3" style="width: 29px; height: 29px;margin:30px" :src="require('@/assets/9.png')" fit="fill" ></el-image>
 
 
-      </div>
+        </div>
 
 
         <!-- 如果cardType为true,则显示卡片风格 -->
         <el-row v-if="cardType">
-            <el-card class="box-card2">
-              <div>
-                <el-image style="width: 30px; height: 31px;" :src="require('@/assets/icon_number@2x.png')" fit="fill" ></el-image>
-                <span  class="span1">7</span>
-                <span  class="span2">点位数量</span>
-                <el-image style="width: 29px; height: 29px;" :src="require('@/assets/icon_area@2x.png')" fit="fill" ></el-image>
-                <span  class="span1">4</span>
-                <span  class="span2">涉及区域</span>
-              </div>
+          <el-card class="box-card2">
+            <div>
+              <el-image style="width: 30px; height: 31px;" :src="require('@/assets/icon_number@2x.png')" fit="fill" ></el-image>
+              <span  class="span1">7</span>
+              <span  class="span2">点位数量</span>
+              <el-image style="width: 29px; height: 29px;" :src="require('@/assets/icon_area@2x.png')" fit="fill" ></el-image>
+              <span  class="span1">4</span>
+              <span  class="span2">涉及区域</span>
+            </div>
 
-              <div>
-                <input style="background:transparent;margin-bottom: 20px;margin-top: 20px" type="text"  maxlength="11"  placeholder="输入点位关键词"></input>
-              </div>
-              <span></span>
+            <div>
+              <input style="background:transparent;margin-bottom: 20px;margin-top: 20px" type="text"  maxlength="11"  placeholder="输入点位关键词"> </input>
+            </div>
+            <span></span>
 
-              <template>
-                <el-tree style="background:transparent;color: white" :data="data" :props="defaultProps"
-                         @node-click="handleNodeClick">
-                </el-tree>
-              </template>
+            <template>
+              <el-tree style="background:transparent;color: white" :data="data" :props="defaultProps"
+                       @node-click="handleNodeClick">
+              </el-tree>
+            </template>
 
-<!--&lt;!&ndash;                弹窗模板&ndash;&gt;-->
-<!--              <div class="main">-->
-<!--                <el-image id="hide" @click="hide_onclick" style="width: 30px; height: 31px;margin:25px" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>-->
-<!--&lt;!&ndash;                <span id="hide" @click="hide_onclick">点开</span>&ndash;&gt;-->
-<!--              </div>-->
-<!--              <div class="cover" id="box">-->
-<!--                <div>-->
-<!--                  <div>-->
-<!--                    <span id="Closehide" @click="Closehide_onclick">关闭</span>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
+            <!--&lt;!&ndash;                弹窗模板&ndash;&gt;-->
+            <!--              <div class="main">-->
+            <!--                <el-image id="hide" @click="hide_onclick" style="width: 30px; height: 31px;margin:25px" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>-->
+            <!--&lt;!&ndash;                <span id="hide" @click="hide_onclick">点开</span>&ndash;&gt;-->
+            <!--              </div>-->
+            <!--              <div class="cover" id="box">-->
+            <!--                <div>-->
+            <!--                  <div>-->
+            <!--                    <span id="Closehide" @click="Closehide_onclick">关闭</span>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
 
 
 
-            </el-card>
+          </el-card>
 
 
         </el-row>
@@ -137,7 +152,7 @@
             </el-option>
           </el-select>
 
-<!--          日期范围选择-->
+          <!--          日期范围选择-->
           <div class="block1">
             <el-date-picker v-model="startDate" type="daterange" range-separator=" 至 " start-placeholder="开始日期" end-placeholder="结束日期"
                             style="background: transparent;position: absolute;top: 45px;width:260px;color: #FFFFFF" value-format="yyyy-MM-dd" @change="handleStartDateChange">
@@ -160,74 +175,74 @@
           </el-select>
 
 
-<!--          <div class="for_brach" v-for="(contents,index) in for_brach" :key="index">-->
-<!--            <div>-->
-<!--              <el-image :src="contents.src"/>-->
-<!--              <p v-html="contents.title"></p>-->
-<!--            </div>-->
+          <!--          <div class="for_brach" v-for="(contents,index) in for_brach" :key="index">-->
+          <!--            <div>-->
+          <!--              <el-image :src="contents.src"/>-->
+          <!--              <p v-html="contents.title"></p>-->
+          <!--            </div>-->
 
-<!--          </div>-->
+          <!--          </div>-->
 
-<!--懒加载-->
-<!--          <template>-->
-<!--            <div class="demo-image__lazy">-->
-<!--              <el-image v-for="url in urls" :key="url" :src="url" label="图片git pull --rebase origin master"></el-image>-->
-<!--            </div>-->
-<!--          </template>-->
-<!--          这里我打算继续用卡片-->
+          <!--懒加载-->
+          <!--          <template>-->
+          <!--            <div class="demo-image__lazy">-->
+          <!--              <el-image v-for="url in urls" :key="url" :src="url" label="图片git pull --rebase origin master"></el-image>-->
+          <!--            </div>-->
+          <!--          </template>-->
+          <!--          这里我打算继续用卡片-->
           <el-card class="box-card3">
-            <<div>
-            <ul>
-              <li>
+            <div>
+            <ul class="ul1">
+              <li class="li1">
                 <div>
                   <span class="span">文字                                                      文字1</span>
                   <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
 
               </li>
-              <li>
-                <div>
-                  <span class="span">文字                                                      文字1</span>
-                <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-              </div>
-              </li>
-              <li>
-                <div>
-                  <span class="span">文字                                                      文字1</span>
-                <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-              </div>
-              </li>
-              <li>
-                <div>
-                  <span class="span">文字                                                      文字1</span>
-                <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-              </div>
-              </li>
-              <li>
+              <li class="li1">
                 <div>
                   <span class="span">文字                                                      文字1</span>
                   <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
-              <li>
+              <li class="li1">
                 <div>
                   <span class="span">文字                                                      文字1</span>
                   <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
-              <li>
+              <li class="li1">
                 <div>
                   <span class="span">文字                                                      文字1</span>
                   <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
-              <li>
+              <li class="li1">
                 <div>
                   <span class="span">文字                                                      文字1</span>
                   <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
-              <li>
+              <li v>
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+              <li class="li1">
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+              <li class="li1">
+                <div>
+                  <span class="span">文字                                                      文字1</span>
+                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                </div>
+              </li>
+              <li class="li1">
                 <div>
                   <span class="span">文字                                                      文字1</span>
                   <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
@@ -251,9 +266,9 @@
 
         <template>
           <el-radio  class="card_bottom" v-model="radio" label="1">点位显示</el-radio>
-          <el-radio class="card_bottom"v-model="radio" label="2">覆盖范围</el-radio>
-          <el-radio class="card_bottom"v-model="radio" label="3">事件显示</el-radio>
-          <el-radio class="card_bottom"v-model="radio" label="4">热力图</el-radio>
+          <el-radio class="card_bottom" v-model="radio" label="2">覆盖范围</el-radio>
+          <el-radio class="card_bottom" v-model="radio" label="3">事件显示</el-radio>
+          <el-radio class="card_bottom" v-model="radio" label="4">热力图</el-radio>
         </template>
       </el-card>
     </el-col>
@@ -276,7 +291,7 @@
             <span style="color: yellow;">6</span>
           </div>
           <div class="wenzi_3">
-            <span style="color: white;"class="span">累计预警数  </span>
+            <span style="color: white;" class="span">累计预警数  </span>
             <span style="color: yellow;">6</span>
           </div>
         </div>
@@ -325,25 +340,27 @@
             </template>
           </Calendar>
         </div>
-<!--        <div>-->
-<!--          <el-calendar v-model="valueData">-->
-<!--            <template-->
-<!--              slot="dateCell"-->
-<!--              slot-scope="{data}">-->
-<!--              &lt;!&ndash;自定义内容&ndash;&gt;-->
-<!--              <div>-->
-<!--                <div class="calendar-day" >{{ data.day.split('-').slice(2).join('-') }}</div>-->
-<!--              </div>-->
-<!--            </template>-->
-<!--          </el-calendar>-->
-<!--        </div>-->
+        <!--        <div>-->
+        <!--          <el-calendar v-model="valueData">-->
+        <!--            <template-->
+        <!--              slot="dateCell"-->
+        <!--              slot-scope="{data}">-->
+        <!--              &lt;!&ndash;自定义内容&ndash;&gt;-->
+        <!--              <div>-->
+        <!--                <div class="calendar-day" >{{ data.day.split('-').slice(2).join('-') }}</div>-->
+        <!--              </div>-->
+        <!--            </template>-->
+        <!--          </el-calendar>-->
+        <!--        </div>-->
 
       </el-card>
     </el-col>
   </el-row>
 </template>
 <style  lang="scss"  scoped>
-
+.tab_title{
+  position: relative;
+}
 //
 .position-button-group{
   height: 30px;
@@ -407,9 +424,11 @@
 }
 
 .cover div div {
-  width: 90%;
-  height: 70%;
-  background: #000088 ;
+  // width: 90%;
+  // height: 70%;
+  //background: #000088 ;
+
+  background: rgba($color: #000088, $alpha: 70%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -463,14 +482,14 @@
 //  //padding: 0px 0px;
 //
 //}
-ul {
+.ul1 {
   position: relative;
   width: 400px;
   height: 500px;
   margin-left: 0px;
   overflow: scroll;
 }
-li {
+.li1 {
   color: #FFFFFF;
 
   width:230px;
@@ -562,7 +581,7 @@ img[lazy="loading"]{
 }
 ::v-deep
   //下拉框面板
-  .el-select-dropdown{
+.el-select-dropdown{
   font-size: 30px;
   color: black;
   //background-color:transparent;
@@ -980,9 +999,9 @@ input::-webkit-input-placeholder{
 
 }
 .box-card3 ::v-deep .el-card__body{
-    padding: 0px 0px;
+  padding: 0px 0px;
 
-  }
+}
 .box-card4
 {
   //display: flex;
@@ -1085,11 +1104,13 @@ body > .el-container {
   overflow: auto;
 }
 </style>
+
 <script>
 
 import Header from '../home/components/header'
 import {getOrderDate,updateWorkdate }from "@/api/calendar";
 import Calendar from '@/components/Calendar.vue'
+import Show from "@/views/test1/components/show";
 import moment from 'moment';
 
 
@@ -1099,10 +1120,12 @@ export default {
   components: {
     Header,
     Calendar,
+    Show,
   },
   data(){
 
     return{
+      tab:0, //默认选中第一个tab
       //手写弹窗的数据
       box:document.getElementById('box'),
       hide:document.getElementById('hide'),
@@ -1151,43 +1174,43 @@ export default {
       shebei:[{'value':'设备1','label':'1'},{'value':'设备2','label':'2'},{'value':'设备3','label':'3'}],
       chulizhuangtai:[{'value':'待处理','label':'1'},{'value':'已处理','label':'2'}],
       data: [{
-                label: '鄞州区',
-                children: [{
-                  label: '宁波松岙大埠1',
-                },{
-                  label: '宁波松岙大埠2',
-                },{
-                  label: '宁波松岙大埠3',
-                }]
-            },
-            {
-                 label: '海曙区',
-                  children: [{
-                    label: '海曙大埠1',
-                }, {
-                   label: '海曙大埠2',
-                   }, {
-                    label: '海曙大埠3',
-                  }]
-              },
-            {
-                 label: '镇海区',
-                   children: [{
-                    label: '镇海大埠1',
-              }, {
-                     label: '镇海大埠2',
+        label: '鄞州区',
+        children: [{
+          label: '宁波松岙大埠1',
+        },{
+          label: '宁波松岙大埠2',
+        },{
+          label: '宁波松岙大埠3',
+        }]
+      },
+        {
+          label: '海曙区',
+          children: [{
+            label: '海曙大埠1',
+          }, {
+            label: '海曙大埠2',
+          }, {
+            label: '海曙大埠3',
+          }]
+        },
+        {
+          label: '镇海区',
+          children: [{
+            label: '镇海大埠1',
+          }, {
+            label: '镇海大埠2',
 
-                  }, {
-                     label: '镇海大埠3',
+          }, {
+            label: '镇海大埠3',
 
-                   }]
-              }],
-            defaultProps: {
-                 children: 'children',
-                  label: 'label'
-              }
-           }
-           ;
+          }]
+        }],
+      defaultProps: {
+        children: 'children',
+        label: 'label'
+      }
+    }
+      ;
 
   },
   mounted() {
@@ -1369,22 +1392,22 @@ export default {
       return false;
     },
     /*新添加的东西*/
-/*    leftClick(event,object,value,element){
-               if(value.level == 1){
-                  this.menuVisible = true;
-                  let menu = document.querySelector("#menu");
-                 /!* 菜单定位基于鼠标点击位置 *!/
-                  menu.style.left = event.clientX + 20 + "px" ;
-                  menu.style.top = event.clientY -10 + "px"
-               }
-    },*/
- /*   contextmenu(e,data,node,comp){
+    /*    leftClick(event,object,value,element){
+                   if(value.level == 1){
+                      this.menuVisible = true;
+                      let menu = document.querySelector("#menu");
+                     /!* 菜单定位基于鼠标点击位置 *!/
+                      menu.style.left = event.clientX + 20 + "px" ;
+                      menu.style.top = event.clientY -10 + "px"
+                   }
+        },*/
+    /*   contextmenu(e,data,node,comp){
 
-      if(node.isLeaf){
-        let menu = document.querySelector('.visible')
-        menu.style.display='block'
-      }
-    },*/
+         if(node.isLeaf){
+           let menu = document.querySelector('.visible')
+           menu.style.display='block'
+         }
+       },*/
 
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="top_show">
     <h1>{{ msg }}</h1>
     <button class="first" @click="isActive=0">方式一</button>
     <button class="second" @click="isActive=1">方式二</button>
@@ -47,7 +47,7 @@
     </div>
     <!--    第二种方式   还需要布一下局-->
     <div class="second2" v-else-if="isActive==1">
-      <div>
+      <div class="test_div">
 
 
         <tr v-for="(item, index) in dataShow1" :class="{ 'alt': index%2==1 }">
@@ -81,10 +81,76 @@
       </div>
 
     </div>
+<!--    第三种-->
     <div class="third3" v-else-if="isActive==2">
+      <div class="test_div">
+
+
+        <tr v-for="(item, index) in dataShow2" :class="{ 'alt': index%2==1 }">
+          <!--        视频播放器-->
+          <!--        但是每次还是要刷新一下才行-->
+          <div class="video_text2">
+            <video
+              id="myVideo2"
+              class="video-js2"
+            >
+              <source
+                :src=item.videoUrl
+                type="video/mp4"
+              >
+            </video>
+          </div>
+          <!--        <td>{{ item.school }}</td>-->
+        </tr>
+      </div>
+      <div class="page1">
+        <button>
+          <a href="#"  v-on:click="prePage">
+            <</a>
+        </button>
+        <button v-for="(item, index) in pageNum2">
+          <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
+        </button>
+        <button>
+          <a href="#" v-on:click="nextPage">></a>
+        </button>
+      </div>
 
     </div>
+<!--    第四种-->
     <div class="fourth4" v-else-if="isActive==3">
+      <div class="test_div">
+
+
+        <tr v-for="(item, index) in dataShow3" :class="{ 'alt': index%2==1 }">
+          <!--        视频播放器-->
+          <!--        但是每次还是要刷新一下才行-->
+          <div class="video_text3">
+            <video
+              id="myVideo3"
+              class="video-js3"
+            >
+              <source
+                :src=item.videoUrl
+                type="video/mp4"
+              >
+            </video>
+          </div>
+          <!--        <td>{{ item.school }}</td>-->
+        </tr>
+      </div>
+      <div class="page1">
+        <button>
+          <a href="#"  v-on:click="prePage">
+            <</a>
+        </button>
+        <button v-for="(item, index) in pageNum3">
+          <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
+        </button>
+        <button>
+          <a href="#" v-on:click="nextPage">></a>
+        </button>
+      </div>
 
     </div>
   </div>
@@ -107,7 +173,7 @@ export default {
         {
 
           'school':'郑州大学',
-          'videoUrl':require("../../../assets/video/1.1(Av817112138,P1).mp4")
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
@@ -117,13 +183,84 @@ export default {
         {
 
           'school':'河南农业大学',
-          'videoUrl':require("../../../assets/video/1.1(Av817112138,P1).mp4")
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
           'school':'河南理工大学',
           'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         }
+
       ],
       pageSize:1,
       currentPage:0,
@@ -133,6 +270,15 @@ export default {
       pageSize1:4,
       currentPage1:0,
       isActive1:-1,
+
+
+      pageSize2:9,
+      currentPage2:0,
+      isActive2:-1,
+
+      pageSize3:16,
+      currentPage3:0,
+      isActive3:-1,
     };
   },
   mounted() {
@@ -158,6 +304,22 @@ export default {
     },
     pageNum1: function(){
       return Math.ceil(this.listArray.length / this.pageSize1) || 1 ;
+    },
+    dataShow2: function(){
+      let start = this.currentPage2*this.pageSize2;
+      let end = Math.min((this.currentPage2+1)*this.pageSize2, this.listArray.length)
+      return this.listArray.slice(start, end)
+    },
+    pageNum2: function(){
+      return Math.ceil(this.listArray.length / this.pageSize2) || 1 ;
+    },
+    dataShow3: function(){
+      let start = this.currentPage3*this.pageSize3;
+      let end = Math.min((this.currentPage3+1)*this.pageSize3, this.listArray.length)
+      return this.listArray.slice(start, end)
+    },
+    pageNum3: function(){
+      return Math.ceil(this.listArray.length / this.pageSize3) || 1 ;
     }
   },
   methods: {
@@ -220,6 +382,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.top_show{
+  z-index: 99999;
+}
+.test_div{
+  z-index: 100;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
 .vjs-custom-skin > .video-js {
   width: 100%;
   font-family: "PingFang SC","Helvetica Neue","Hiragino Sans GB","Segoe UI","Microsoft YaHei","微软雅黑",sans-serif;
@@ -408,14 +580,43 @@ export default {
 
 }
 .video_text{
+  z-index: 100;
   width:500px;
   height:500px;
   margin: 0 auto;
 }
 .video_text1{
-  width:100px;
-  height:100px;
-  margin: 20px;
+  z-index: 100;
+  position: relative;
+  margin-left: 100px;
+  margin-top: -80px;
+
+  width:400px;
+  height:400px;
+
+
+}
+.video_text2{
+  z-index: 100;
+  position: relative;
+  margin-left: 100px;
+  margin-top: -50px;
+
+  width:270px;
+  height:270px;
+
+
+}
+.video_text3{
+  z-index: 100;
+  position: relative;
+  margin-left: 22px;
+  margin-top: -10px;
+
+  width:270px;
+  height:270px;
+
+
 }
 video:focus{
   outline: 0;
@@ -429,8 +630,18 @@ video:focus{
 .video-js1{
 
 
-  width:500px;
-  height:500px;
+  width:400px;
+  height:400px;
+
+}
+.video-js2{
+  width:250px;
+  height:250px;
+
+}
+.video-js3{
+  width:250px;
+  height:250px;
 
 }
 /*.video-js .vjs-big-play-button{*/
@@ -495,9 +706,11 @@ h1{
   top:65px;
   margin-right: 100px;
   line-height:30px;
+  z-index: 100;
 
 }
 .second2{
+  z-index: 100;
 
   background: transparent;
   position: absolute;
@@ -510,6 +723,7 @@ h1{
 
 }
 .third3{
+  z-index: 100;
   position: absolute;
   top:65px;
   background: transparent;
@@ -521,6 +735,7 @@ h1{
 
 }
 .fourth4{
+  z-index: 100;
   background: transparent;
   position: absolute;
   top:65px;

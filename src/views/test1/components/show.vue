@@ -1,11 +1,10 @@
 <template>
   <div>
-    <div style="background: #203c5a;">
+    <div style="background: #003377 ">
     <h1>{{ msg }}</h1>
     <button class="first" @click="isActive = 0">实时监控</button>
     <button class="second" @click="isActive = 1">录像回放</button>
     <button class="third" @click="isActive = 2">预警事件</button>
-    <el-icon class="el-icon-setting"></el-icon>
     </div>
     <div class="first1" v-if="isActive == 0">
       <!-- 实时监控 -->
@@ -32,7 +31,7 @@
           <!-- 后台数据交互     -->
           <span class="span5">8</span>
         </div>
-      
+
       </div>
        <!-- main设计 -->
      <div  class="outer-container" >
@@ -134,7 +133,7 @@
             </div>
           </li>
         </ul>
-        </div> 
+        </div>
       </div>
       <div class="aside" style="display:inline;float: right;">
         <div style="margin-left: 20px;margin-top: 20px;">
@@ -249,17 +248,24 @@ for (var i = 0; i < imgs.length; i++) {
 
 <style  lang="scss" scoped>
 .first{
+  position: relative;
   color:#d9effe;
   background: transparent;
   border: none;
   margin-left: 800px;
+  top:-10px;
+
 }
 .second{
+  top:-10px;
+  position: relative;
   color:#d9effe;
   background: transparent;
   border: none;
 }
 .third{
+  top:-10px;
+  position: relative;
   color:#d9effe;
   background: transparent;
   border: none;

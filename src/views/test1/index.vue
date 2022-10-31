@@ -24,12 +24,13 @@
               <!-- 宽高问题 -->
              <div style=" height: 800px;width: 1400px;">
               <!-- 背景色有问题 -->
-                <div style="height: 60px;width: 1400px;background: #203c5a;margin-bottom: 740px">
-                  <el-image style="height: 60px;width:60px;margin-right: 60px;background: #203c5a;" :src="require('@/assets/icon_title_dianwei@2x.png')" fit="fill"></el-image>
+                <div style="height: 60px;width: 1400px;background-color:#003377 ;margin-bottom: 740px">
+                  <span class="span">   点位详情</span>
+                  <el-image style="position:relative;left:-150px;height: 60px;width:60px;margin-right: 60px;background: transparent" :src="require('@/assets/icon_title_dianwei@2x.png')" fit="fill"></el-image>
                   <div class=Show>
                     <Show msg=""/>
                   </div>
-                  <span id="Closehide" @click="Closehide_onclick">关闭</span>
+                  <el-image  style="position:relative;top:10px;right:-10px;width: 30px;height: 30px" id="Closehide" @click="Closehide_onclick" :src="require('@/assets/chahao.png')" fit="fill"></el-image>
                 </div>
              </div>
              </div>
@@ -411,7 +412,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background:#444444;
+  background:black;
   z-index: 99999;
 }
 

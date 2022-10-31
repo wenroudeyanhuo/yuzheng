@@ -18,7 +18,7 @@
     </div>
 
     <div>
-      <input style="background:transparent;margin-bottom: 20px;margin-top: 20px" type="text"  maxlength="11"  placeholder="请输入合适的点位"></input>
+      <input style="background:transparent;margin-bottom: 20px;margin-top: 20px" type="text"  maxlength="11"  placeholder="请输入合适的点位"/>
     </div>
     <span></span>
 

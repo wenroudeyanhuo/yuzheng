@@ -8,46 +8,48 @@
 
     <div class="first1" v-if="isActive==0">
       <table>
-      <tr v-for="(item, index) in dataShow" :class="{ 'alt': index%2==1 }">
-<!--        视频播放器-->
-<!--        但是每次还是要刷新一下才行-->
-                  <div class="video_text">
-                    <video
-                      id="myVideo"
-                      class="video-js"
-                    >
-                      <source
-                        :src=item.videoUrl
-                        type="video/mp4"
-                      >
-                    </video>
-                  </div>
-<!--        <td>{{ item.school }}</td>-->
-      </tr>
+        <tr v-for="(item, index) in dataShow" :class="{ 'alt': index%2==1 }">
+          <!--        视频播放器-->
+          <!--        但是每次还是要刷新一下才行-->
+          <div class="video_text">
+            <video
+              id="myVideo"
+              class="video-js"
+            >
+              <source
+                :src=item.videoUrl
+                type="video/mp4"
+              >
+            </video>
+          </div>
+          <!--        <td>{{ item.school }}</td>-->
+        </tr>
       </table>
 
 
 
       <div class="page1">
-          <button>
-            <a href="#"  v-on:click="prePage">
-              <</a>
-          </button>
-          <button v-for="(item, index) in pageNum">
-            <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
-          </button>
-          <button>
-            <a href="#" v-on:click="nextPage">></a>
-          </button>
+        <button>
+          <a href="#"  v-on:click="prePage">
+            <</a>
+        </button>
+        <button v-for="(item, index) in pageNum">
+          <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
+        </button>
+        <button>
+          <a href="#" v-on:click="nextPage">></a>
+        </button>
       </div>
 
 
 
 
     </div>
-<!--    第二种方式   还需要布一下局-->
+    <!--    第二种方式   还需要布一下局-->
     <div class="second2" v-else-if="isActive==1">
-      <table>
+     <div>
+
+
         <tr v-for="(item, index) in dataShow1" :class="{ 'alt': index%2==1 }">
           <!--        视频播放器-->
           <!--        但是每次还是要刷新一下才行-->
@@ -64,7 +66,7 @@
           </div>
           <!--        <td>{{ item.school }}</td>-->
         </tr>
-      </table>
+     </div>
       <div class="page1">
         <button>
           <a href="#"  v-on:click="prePage">
@@ -89,10 +91,17 @@
 </template>
 
 <script>
+import 'video.js/dist/video-js.css'
+import { videoPlayer } from 'vue-video-player'
 export default {
   name: 'TabsShow',
+  components:{
+    videoPlayer
+  },
   data() {
     return {
+      playerOptions:[],
+      //视频存放地址
       listArray:[
         {
           'school':'河南农业大学',
@@ -214,6 +223,187 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.vjs-custom-skin > .video-js {
+  width: 100%;
+  font-family: "PingFang SC","Helvetica Neue","Hiragino Sans GB","Segoe UI","Microsoft YaHei","微软雅黑",sans-serif;
+}
+
+.vjs-custom-skin > .video-js .vjs-menu-button-inline.vjs-slider-active,.vjs-custom-skin > .video-js .vjs-menu-button-inline:focus,.vjs-custom-skin > .video-js .vjs-menu-button-inline:hover,.video-js.vjs-no-flex .vjs-menu-button-inline {
+  width: 10em
+}
+
+.vjs-custom-skin > .video-js .vjs-controls-disabled .vjs-big-play-button {
+  display: none!important
+}
+
+.vjs-custom-skin > .video-js .vjs-control {
+  width: 3em
+}
+
+.vjs-custom-skin > .video-js .vjs-control.vjs-live-control{
+  width: auto;
+  padding-left: .5em;
+  letter-spacing: .1em;
+}
+
+.vjs-custom-skin > .video-js .vjs-menu-button-inline:before {
+  width: 1.5em
+}
+
+.vjs-menu-button-inline .vjs-menu {
+  left: 3em
+}
+
+.vjs-paused.vjs-has-started.vjs-custom-skin > .video-js .vjs-big-play-button,.video-js.vjs-ended .vjs-big-play-button,.video-js.vjs-paused .vjs-big-play-button {
+  display: block
+}
+
+.vjs-custom-skin > .video-js .vjs-load-progress div,.vjs-seeking .vjs-big-play-button,.vjs-waiting .vjs-big-play-button {
+  display: none!important
+}
+
+.vjs-custom-skin > .video-js .vjs-mouse-display:after,.vjs-custom-skin > .video-js .vjs-play-progress:after {
+  padding: 0 .4em .3em
+}
+
+.video-js.vjs-ended .vjs-loading-spinner {
+  display: none;
+}
+
+.video-js.vjs-ended .vjs-big-play-button {
+  display: block !important;
+}
+
+.video-js.vjs-ended .vjs-big-play-button,.video-js.vjs-paused .vjs-big-play-button,.vjs-paused.vjs-has-started.vjs-custom-skin > .video-js .vjs-big-play-button {
+  display: block
+}
+
+.vjs-custom-skin > .video-js .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  margin-left: -1.5em;
+}
+
+.vjs-custom-skin > .video-js .vjs-big-play-button {
+  background-color: rgba(0,0,0,0.45);
+  font-size: 3.5em;
+  /*border-radius: 50%;*/
+  height: 1.5em !important;
+  line-height: 1.5em !important;
+  margin-top: -0.75em !important
+}
+
+.video-js:hover .vjs-big-play-button,.vjs-custom-skin > .video-js .vjs-big-play-button:focus,.vjs-custom-skin > .video-js .vjs-big-play-button:active {
+  background-color: rgba(36,131,213,0.9)
+}
+
+.vjs-custom-skin > .video-js .vjs-loading-spinner {
+  border-color: rgba(36,131,213,0.8)
+}
+
+.vjs-custom-skin > .video-js .vjs-control-bar2 {
+  background-color: #000000
+}
+
+.vjs-custom-skin > .video-js .vjs-control-bar {
+  /*background-color: rgba(0,0,0,0.3) !important;*/
+  color: #ffffff;
+  font-size: 14px
+}
+
+.vjs-custom-skin > .video-js .vjs-play-progress,.vjs-custom-skin > .video-js  .vjs-volume-level {
+  background-color: #2483d5
+}
+
+.vjs-custom-skin > .video-js .vjs-play-progress:before {
+  top: -0.3em;
+}
+
+.vjs-custom-skin > .video-js .vjs-progress-control:hover .vjs-progress-holder {
+  font-size: 1.3em;
+}
+
+.vjs-menu-button-popup.vjs-volume-menu-button-vertical .vjs-menu {
+  left: 0em;
+}
+
+.vjs-custom-skin > .video-js .vjs-menu li {
+  padding: 0;
+  line-height: 2em;
+  font-size: 1.1em;
+  font-family: "PingFang SC","Helvetica Neue","Hiragino Sans GB","Segoe UI","Microsoft YaHei","微软雅黑",sans-serif;
+}
+
+.vjs-custom-skin > .video-js .vjs-time-tooltip,
+.vjs-custom-skin > .video-js .vjs-mouse-display:after,
+.vjs-custom-skin > .video-js .vjs-play-progress:after {
+  border-radius: 0;
+  font-size: 1em;
+  padding: 0;
+  width: 3em;
+  height: 1.5em;
+  line-height: 1.5em;
+  top: -3em;
+}
+
+.vjs-custom-skin > .video-js .vjs-menu-button-popup .vjs-menu {
+  width: 5em;
+  left: -1em;
+}
+
+.vjs-custom-skin > .video-js .vjs-menu-button-popup.vjs-volume-menu-button-vertical .vjs-menu {
+  left: 0;
+}
+
+.vjs-custom-skin > .video-js .vjs-control-bar .vjs-resolution-button .vjs-menu {
+  /*order: 4;*/
+}
+
+/*排序顺序*/
+.vjs-custom-skin > .video-js .vjs-control-bar .vjs-play-control {
+  order: 0;
+}
+
+.vjs-custom-skin > .video-js .vjs-control-bar .vjs-time-control {
+  min-width: 1em;
+  padding: 0;
+  margin: 0 .1em;
+  text-align: center;
+  display: block;
+  order: 1;
+}
+
+.vjs-custom-skin > .video-js .vjs-control-bar .vjs-playback-rate .vjs-playback-rate-value{
+  font-size: 1.2em;
+  line-height: 2.4;
+}
+
+.vjs-custom-skin > .video-js .vjs-progress-control.vjs-control {
+  order: 2;
+}
+
+.vjs-custom-skin > .video-js .vjs-control-bar .vjs-volume-menu-button {
+  order: 3;
+}
+
+.vjs-custom-skin > .video-js .vjs-control-bar .vjs-resolution-button {
+  order: 4;
+}
+
+.vjs-custom-skin > .video-js .vjs-control-bar .vjs-resolution-button .vjs-resolution-button-label {
+  display: block;
+  line-height: 3em;
+}
+
+.vjs-custom-skin > .video-js .vjs-control-bar .vjs-playback-rate {
+  order: 5;
+}
+
+.vjs-custom-skin > .video-js .vjs-control-bar .vjs-fullscreen-control {
+  order: 6;
+}
+
+
 .page1{
   position: absolute;
   bottom: 10px;
@@ -311,6 +501,7 @@ h1{
 
 }
 .second2{
+
   background: transparent;
   position: absolute;
   top:65px;

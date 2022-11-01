@@ -29,14 +29,14 @@
 
 
       <div class="page1">
-        <button>
+        <button class="button_J">
           <a href="#"  v-on:click="prePage">
             <</a>
-        </button>
-        <button v-for="(item, index) in pageNum">
+        </button >
+        <button class="button_J" style="margin-left:5px;" v-for="(item, index) in pageNum">
           <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
         </button>
-        <button>
+        <button class="button_J">
           <a href="#" v-on:click="nextPage">></a>
         </button>
       </div>
@@ -48,8 +48,6 @@
     <!--    第二种方式   还需要布一下局-->
     <div class="second2" v-else-if="isActive==1">
       <div class="test_div">
-
-
         <tr v-for="(item, index) in dataShow1" :class="{ 'alt': index%2==1 }">
           <!--        视频播放器-->
           <!--        但是每次还是要刷新一下才行-->
@@ -67,15 +65,15 @@
           <!--        <td>{{ item.school }}</td>-->
         </tr>
       </div>
-      <div class="page1">
-        <button>
+      <div class="page2">
+        <button class="button_J">
           <a href="#"  v-on:click="prePage">
             <</a>
         </button>
-        <button v-for="(item, index) in pageNum1">
+        <button class="button_J" v-for="(item, index) in pageNum1">
           <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
         </button>
-        <button>
+        <button class="button_J">
           <a href="#" v-on:click="nextPage">></a>
         </button>
       </div>
@@ -103,15 +101,15 @@
           <!--        <td>{{ item.school }}</td>-->
         </tr>
       </div>
-      <div class="page1">
-        <button>
+      <div class="page3">
+        <button class="button_J">
           <a href="#"  v-on:click="prePage">
             <</a>
         </button>
-        <button v-for="(item, index) in pageNum2">
+        <button class="button_J" v-for="(item, index) in pageNum2">
           <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
         </button>
-        <button>
+        <button class="button_J">
           <a href="#" v-on:click="nextPage">></a>
         </button>
       </div>
@@ -139,15 +137,15 @@
           <!--        <td>{{ item.school }}</td>-->
         </tr>
       </div>
-      <div class="page1">
-        <button>
+      <div class="page4">
+        <button class="button_J">
           <a href="#"  v-on:click="prePage">
             <</a>
         </button>
-        <button v-for="(item, index) in pageNum3">
+        <button v-for="(item, index) in pageNum3" class="button_J">
           <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
         </button>
-        <button>
+        <button class="button_J">
           <a href="#" v-on:click="nextPage">></a>
         </button>
       </div>
@@ -283,7 +281,6 @@ export default {
   },
   mounted() {
     this.initVideo();  //初始化视频播放器
-    this.initVideo1();
   },
   computed:{
     dataShow: function(){
@@ -382,12 +379,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+button:hover{
+  ccolor: aliceblue;
+  background-color:#1e6abc;
+}
+button:focus{
+  ccolor: aliceblue;
+  background-color:#1e6abc;
+}
+
+
 .top_show{
   z-index: 99999;
 }
 .test_div{
   z-index: 100;
   display: flex;
+
   justify-content: flex-start;
   flex-wrap: wrap;
   align-content: flex-start;
@@ -574,47 +582,68 @@ export default {
 
 
 .page1{
-  position: absolute;
+  position:relative;
   bottom: 10px;
-  left: 400px;
+  left: 220px;
+
+
+}
+.page2{
+  position:relative;
+  bottom: 9px;
+  left: 500px;
+
+
+}
+.page3{
+  position:relative;
+  bottom: 5px;
+  left: 520px;
+
+
+}
+.page4{
+  position:relative;
+  bottom:1px;
+  left: 520px;
+
 
 }
 .video_text{
   z-index: 100;
-  width:500px;
-  height:500px;
-  margin: 0 auto;
+  width:1200px;
+  height:600px;
 }
 .video_text1{
   z-index: 100;
   position: relative;
-  margin-left: 100px;
-  margin-top: -80px;
+  margin-left:20px;
 
-  width:400px;
-  height:400px;
+
+  width:550px;
+  height:300px;
 
 
 }
 .video_text2{
   z-index: 100;
   position: relative;
-  margin-left: 100px;
-  margin-top: -50px;
+  margin-left: 20px;
+  /*margin-top: -50px;*/
 
-  width:270px;
-  height:270px;
+  width:370px;
+  height:200px;
 
 
 }
 .video_text3{
   z-index: 100;
   position: relative;
-  margin-left: 22px;
-  margin-top: -10px;
+  margin-left: 20px;
+  /*margin-top: -10px;*/
 
   width:270px;
-  height:270px;
+  height:150px;
 
 
 }
@@ -623,25 +652,23 @@ video:focus{
 }
 .video-js{
 
-  width: 1100px;
-  height: 500px;
+  width: 1150px;
+  height: 580px;
 
 }
 .video-js1{
-
-
-  width:400px;
-  height:400px;
+  width:550px;
+  height:290px;
 
 }
 .video-js2{
-  width:250px;
-  height:250px;
+  width:330px;
+  height:200px;
 
 }
 .video-js3{
   width:250px;
-  height:250px;
+  height:150px;
 
 }
 /*.video-js .vjs-big-play-button{*/

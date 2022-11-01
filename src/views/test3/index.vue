@@ -10,19 +10,21 @@
 
     <div>
       <el-image style="width: 30px; height: 31px;" :src="require('@/assets/icon_number@2x.png')" fit="fill" ></el-image>
-      <span  class="span1">7</span>
-      <span  class="span2">点位数量</span>
+      <span  class="span1" style="font-size: 25px">7</span>
+      <span  class="span2" style="color: #1a70ff">点位数量</span>
       <el-image style="width: 29px; height: 29px;" :src="require('@/assets/icon_area@2x.png')" fit="fill" ></el-image>
-      <span  class="span1">4</span>
-      <span  class="span2">涉及区域</span>
+      <span  class="span1" style="font-size: 25px">4</span>
+      <span  class="span2" style="color: #1a70ff">涉及区域</span>
     </div>
+        <span style="position:relative;top:26px;color: #0E2A4F">————————————————</span>
 
     <div>
-      <input style="background:transparent;margin-bottom: 20px;margin-top: 20px" type="text"  maxlength="11"  placeholder="请输入合适的点位"/>
+      <input style="margin-bottom: 20px;margin-top: 20px" type="text"  maxlength="11"  placeholder="请输入合适的点位"/>
     </div>
-    <span></span>
+
 
     <template>
+
       <el-tree style="background:transparent;color: white" :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
     </template>
   </el-card>
@@ -49,6 +51,14 @@
   </el-row>
 </template>
 <style  lang="scss"  scoped>
+::v-deep .el-tree-node:focus > .el-tree-node__content {
+  background-color: transparent;
+
+  color: red; //节点的字体颜色
+  font-weight: bold;
+}
+//失去焦点之后呢
+
 //头
 //.TabsShow{
 //  position: absolute;
@@ -88,21 +98,26 @@ video:focus{
 
 }
 //输入框
+input{
+
+  border: 0;  // 去除未选中状态边框
+  outline: none; // 去除选中状态边框
+
+}
 input[type="text"],input[type="password"],input[type="email"]{
 
   -web-kit-appearance:none;
   -moz-appearance: none;
   outline:0;
+  background-color: #0E2A4F;
 
   box-sizing: border-box;
   text-align:left;
   font-size:1.2em;
   height:2.1em;
   border-radius:5px;
-  border:1px solid #c8cccf;
   color:white;;
   display:block;
-  padding:0 1em;
   text-decoration:none;
   width:100%;
 }

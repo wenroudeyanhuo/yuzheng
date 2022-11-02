@@ -21,7 +21,6 @@
           <!-- background的不透明度有问题 -->
           <div class="cover" id="box">
              <div>
-              <!-- 宽高问题 -->
              <div style=" height: 800px;width: 1400px;">
               <!-- 背景色有问题 -->
                 <div style="height: 60px;width: 1400px;background-color:#003377 ;margin-bottom: 740px">

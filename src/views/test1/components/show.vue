@@ -2,9 +2,11 @@
   <div>
     <div style="background: #003377 ">
     <h1>{{ msg }}</h1>
-    <button class="first" @click="isActive = 0">实时监控</button>
-    <button class="second" @click="isActive = 1">录像回放</button>
-    <button class="third" @click="isActive = 2">预警事件</button>
+    
+    <button class="first"  id = "underline" @click="isActive = 0">实时监控</button>
+    <button class="second" id = "underline" @click="isActive = 1">录像回放</button>
+    <button class="third" id = "underline" @click="isActive = 2">预警事件</button>
+    <el-icon class="el-icon-setting"></el-icon>
     </div>
     <div class="first1" v-if="isActive == 0">
       <!-- 实时监控 -->
@@ -31,7 +33,7 @@
           <!-- 后台数据交互     -->
           <span class="span5">8</span>
         </div>
-
+      
       </div>
        <!-- main设计 -->
      <div  class="outer-container" >
@@ -39,7 +41,7 @@
         <ul class="imgList">
           <li>
             <div>
-              <el-image class="image"
+              <el-image class="images"
                         style="  display: block ;width: 360px;height:180px;margin-bottom: 8px;"
                         :src="require('@/assets/warning.jpg')"
               ></el-image>
@@ -51,7 +53,7 @@
           </li>
           <li>
             <div>
-              <el-image   class="image"
+              <el-image   class="images"
                           style="  display: block ;width: 360px;height:180px;margin-bottom: 8px;"
                           :src="require('@/assets/warning.jpg')"
               ></el-image>
@@ -63,7 +65,7 @@
           </li>
            <li>
             <div>
-              <el-image  class="image"
+              <el-image  class="images"
                          style="  display: block ;width: 360px;height:180px;margin-bottom: 8px;"
                         :src="require('@/assets/warning.jpg')"
               ></el-image>
@@ -75,7 +77,7 @@
           </li>
           <li>
             <div>
-              <el-image  class="image"
+              <el-image  class="images"
                          style="  display: block ;width: 360px;height:180px;margin-bottom: 8px;"
                         :src="require('@/assets/warning.jpg')"
               ></el-image>
@@ -88,7 +90,7 @@
 
           <li>
             <div>
-              <el-image  class="image"
+              <el-image  class="images"
                          style="  display: block ;width: 360px;height:180px;margin-bottom: 8px;"
                         :src="require('@/assets/warning.jpg')"
               ></el-image>
@@ -100,7 +102,7 @@
           </li>
           <li>
             <div>
-              <el-image  class="image"
+              <el-image  class="images"
                          style="  display: block ;width: 360px;height:180px;margin-bottom: 8px;"
                         :src="require('@/assets/warning.jpg')"
               ></el-image>
@@ -112,7 +114,7 @@
           </li>
           <li>
             <div>
-              <el-image  class="image"
+              <el-image  class="images"
                          style="  display: block ;width: 360px;height:180px;margin-bottom: 8px;"
                         :src="require('@/assets/warning.jpg')"
               ></el-image>              <span class="span8">疑似船只
@@ -123,7 +125,7 @@
           </li>
           <li>
             <div>
-              <el-image  class="image"
+              <el-image  class="images"
                          style="  display: block ;width: 360px;height:180px;margin-bottom: 8px;"
                         :src="require('@/assets/warning.jpg')"
               ></el-image>              <span class="span8">疑似船只
@@ -133,7 +135,7 @@
             </div>
           </li>
         </ul>
-        </div>
+        </div> 
       </div>
       <div class="aside" style="display:inline;float: right;">
         <div style="margin-left: 20px;margin-top: 20px;">
@@ -192,6 +194,7 @@
   </div>
 </template>
 
+<!-- 引入jquery -->
 <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
 
 <script>
@@ -232,7 +235,7 @@ export default {
 /*图片点击出现边框样式（一图出现边框，其他图取消边框*/
 $(function () {
 
-var imgs = $(".image");
+var imgs = $(".images");
 for (var i = 0; i < imgs.length; i++) {
   $(imgs[i]).on('click', function () {
     imgs.each(function () {
@@ -242,18 +245,20 @@ for (var i = 0; i < imgs.length; i++) {
     $(this).addClass('border');
   })
 }
+
 })
 
 </script>
 
 <style  lang="scss" scoped>
 .first{
+  top:-10px;
   position: relative;
   color:#d9effe;
   background: transparent;
   border: none;
   margin-left: 800px;
-  top:-10px;
+  cursor:pointer;
 
 }
 .second{
@@ -270,6 +275,37 @@ for (var i = 0; i < imgs.length; i++) {
   background: transparent;
   border: none;
 }
+.first:focus{
+  color: #27c7ca;
+}
+.second:focus{
+  color: #27c7ca; 
+}
+.third:focus{
+  color: #27c7ca;
+}
+//css伪类
+#underline:after{
+  content: "";
+  width: 0px;
+  height: 3px;
+  background-color: #27c7ca;
+  position: absolute;
+  top:100%;
+  left: 50%;
+  right: 50%;
+  margin-top: 10px;
+  // transition: all .8s;
+}
+
+#underline:focus:after{
+  left: 10%;
+  right: 25%;
+  width: 80%;
+}
+// .first:hover{
+//   text-decoration:underline;
+// }
 .first1 {
   position: absolute;
   margin-top: 800px;

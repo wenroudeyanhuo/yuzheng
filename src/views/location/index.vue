@@ -104,7 +104,8 @@
               <el-image  class="image"
                          style="  display: block ;width: 370px;height:180px;margin-bottom: 8px;"
                         :src="require('@/assets/warning.jpg')"
-              ></el-image>              <span class="span8">疑似船只
+              ></el-image>              
+              <span class="span8">疑似船只
                 <span style="font-size: 15px">(类型)</span>
               </span>
               <span class="span9">已处理</span>
@@ -156,26 +157,26 @@
           <!-- 这里的所有数据，后台交互改变数据       -->
           <!--      direction="vertical" 是指文字的排列方式  -->
           <el-descriptions  :column="1" :span="2">
-            <el-descriptions-item label="预警类型"
-                                  label-class-name="my-label"
-                                  content-class-name="my-content"
-            >疑似船只</el-descriptions-item>
-            <el-descriptions-item label="预警方位"
-                                  label-class-name="my-label"
-                                  content-class-name="my-content"
-            > A5</el-descriptions-item>
-            <el-descriptions-item label="预警时间"
-                                  label-class-name="my-label"
-                                  content-class-name="my-content"
-            >2022-08-06 13:40:02</el-descriptions-item>
-            <el-descriptions-item label="预警状态"
-                                  label-class-name="my-label1"
-            ><el-tag size="small">待处理</el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="推送时间"
-                                  label-class-name="my-label"
-                                  content-class-name="my-content"
-            >2022-08-06 13:40:02</el-descriptions-item>
+                <el-descriptions-item label="预警类型"
+                                      label-class-name="my-label"
+                                      content-class-name="my-content"
+                >疑似船只</el-descriptions-item>
+                <el-descriptions-item label="预警方位"
+                                      label-class-name="my-label"
+                                      content-class-name="my-content"
+                > A5</el-descriptions-item>
+                <el-descriptions-item label="预警时间"
+                                      label-class-name="my-label"
+                                      content-class-name="my-content"
+                >2022-08-06 13:40:02</el-descriptions-item>
+                <el-descriptions-item label="预警状态"
+                                      label-class-name="my-label1"
+                ><el-tag size="small">待处理</el-tag>
+                </el-descriptions-item>
+                <el-descriptions-item label="推送时间"
+                                      label-class-name="my-label"
+                                      content-class-name="my-content"
+                >2022-08-06 13:40:02</el-descriptions-item>
             <el-descriptions-item label="负责人"
                                   label-class-name="my-label"
                                   content-class-name="my-content"

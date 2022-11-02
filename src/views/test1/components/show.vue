@@ -227,9 +227,21 @@
           <el-image style="width: 30px; height: 27px;margin-left:8px;vertical-align:middle;" :src="require('@/assets/6.png')" fit="fill" ></el-image>
           <span class="span7">处理详情</span>
         </div>
-          <!-- 描述列表       -->
+<!--       封装 手写时间条-->
+        <div style="position: relative;top:-7px">
+        <div class="line" />
+<!--        圆形图标-->
+        <span style="position:relative;top:40px;left: -32px"><span class="login-cycle"></span></span>
+        <span style="position:relative;top:230px;left: -47px"><span class="login-cycle"></span></span>
+        </div>
+
+
+
+
+        <!-- 描述列表       -->
           <!-- 这里的所有数据，后台交互改变数据       -->
           <!--      direction="vertical" 是指文字的排列方式  -->
+        <div style="position: relative;top:-160px">
           <el-descriptions  :column="1" :span="2">
             <el-descriptions-item label="预警类型"
                                   label-class-name="my-label"
@@ -268,6 +280,7 @@
                                   content-class-name="my-content"
             >-</el-descriptions-item>
           </el-descriptions>
+        </div>
        </div>
     </div>
   </div>
@@ -280,6 +293,13 @@ export default {
   name: 'Show',
   data() {
     return {
+      activities: [{
+        content: '_',
+        color: '#33FFFF'
+      }, {
+        content: '_',
+        color: '#33FFFF'
+      }],
       isActive: -1,
       background1: {
         // 背景图片地址
@@ -328,7 +348,37 @@ for (var i = 0; i < imgs.length; i++) {
 </script>
 
 <style  lang="scss" scoped>
+//圆
+.login-cycle{
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-color: #33FFFF;
+  border-radius: 50%;
+}
+/* 竖线 */
+.line{
+  z-index: 99999;
+  position: relative;
+  top:50px;
+  left: -10px;
+  float: left;
+  width: 0.1em;
+  height: 12em;
+  margin-right: 1em;
+  margin-left: 3.5em;
+  background:#33FFFF;
+}
 
+::v-deep .el-timeline-item__node{
+  margin: 50px;
+}
+.J_block{
+  z-index: 9999;
+  position: relative;
+  top:120px;
+
+}
 
 .mo1{
   position:relative;

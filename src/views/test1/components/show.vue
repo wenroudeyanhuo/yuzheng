@@ -8,6 +8,87 @@
     </div>
     <div class="first1" v-if="isActive == 0">
       <!-- 实时监控 -->
+      <el-col :span="15">
+        <div style="position:relative;top:10px;left:-110px;">
+          <el-image style="vertical-align:middle;" :src="require('@/assets/icon_jiankong.png')"></el-image>
+          <span><font color="#f0f8ff">宁波松岙大阜1</font></span>
+        </div>
+
+        <div>
+          <video style="position:relative;top:25px;left:-110px;width: 850px;">
+            <source :src="require('@/assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4')">
+          </video>
+        </div>
+      </el-col>
+
+      <el-col :span="1">
+        <div class="mo1">
+          <span style="line-height: 30px;margin-left: 20px"><font color="#f0f8ff">云台控制</font></span>
+        </div>
+
+        <div class="mo2">
+          <el-image style="width: 300px;height: 300px;vertical-align:middle;" :src="require('@/assets/bg_bottom(1).png')"></el-image>
+        </div>
+
+        <el-row>
+          <el-col :span="5">
+            <div class="mo3">
+              <el-image style="width: 110px;height: 45px;vertical-align: middle" :src="require('@/assets/ssjk1.png')"></el-image>
+              <el-image style="width: 110px;height: 45px;vertical-align: middle;margin-left: 3px" :src="require('@/assets/ssjk1.png')"></el-image>
+              <!--<el-image style="width: 160px;height: 82px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>-->
+              <div>
+                <el-image style="width: 110px;height: 45px;vertical-align: middle;margin-top: 10px" :src="require('@/assets/ssjk1.png')"></el-image>
+                <el-image style="width: 110px;height: 45px;vertical-align: middle;margin-top: 10px;margin-left: 3px" :src="require('@/assets/ssjk1.png')"></el-image>
+              </div>
+            </div>
+          </el-col>
+          <el-col :span="19">
+            <div>
+              <el-image style="position:relative;left:200px;top:200px;width: 200px;height: 100px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>
+            </div>
+          </el-col>
+        </el-row>
+      </el-col>
+
+      <el-col :span="7">
+        <div class="mo4">
+          <el-image style="width: 70px;height: 70px;vertical-align: middle;" :src="require('@/assets/icon_up.png')"></el-image>
+        </div>
+
+        <div class="mo5">
+          <el-image style="width: 70px;height: 70px;vertical-align: middle;" :src="require('@/assets/icon_left.png')"></el-image>
+          <el-image style="width: 70px;height: 70px;vertical-align: middle;margin-left: 100px" :src="require('@/assets/icon_right.png')"></el-image>
+        </div>
+
+        <div class="mo6">
+          <el-image style="width: 70px;height: 70px;vertical-align: middle;" :src="require('@/assets/icon_down.png')"></el-image>
+        </div>
+
+        <el-row>
+          <el-col>
+            <div class="mo7">
+              <el-button type="text" style="color: #FFFFFF">变倍 +</el-button>
+              <el-button type="text" style="color: #FFFFFF;margin-left: 60px">变倍 -</el-button>
+            </div>
+
+            <div class="mo8">
+              <el-button type="text" style="color: #FFFFFF">变焦 +</el-button>
+              <el-button type="text" style="color: #FFFFFF;margin-left: 60px">变焦 -</el-button>
+            </div>
+          </el-col>
+          <el-col>
+            <div>
+              <el-image style="position:relative;top:-695px;left: 200px;width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+              <el-button type="text" style="position:relative;top:-695px;left: 200px;color: #FFFFFF;">开启激光</el-button>
+
+              <!--    <el-image style="width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+                  <el-button type="text" style="color: #FFFFFF;">开启激光</el-button>-->
+            </div>
+          </el-col>
+        </el-row>
+      </el-col>
+
+
     </div>
     <div class="second2" v-else-if="isActive == 1">
       <!-- 录像回放 -->
@@ -247,6 +328,73 @@ for (var i = 0; i < imgs.length; i++) {
 </script>
 
 <style  lang="scss" scoped>
+
+
+.mo1{
+  position:relative;
+  background-color: #203f5e;
+  height: 30px;
+  width: 450px;
+  top:52px;
+  left:-45px;
+}
+
+.mo2{
+  position:relative;
+  height: 300px;
+  width: 300px;
+  top:150px;
+  left:40px;
+}
+
+.mo3{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:200px;
+  left:-45px;
+}
+
+
+.mo4{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:200px;
+  left:100px;
+}
+
+.mo5{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:50px;
+  left:20px;
+}
+
+.mo6{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-100px;
+  left:100px;
+}
+
+.mo7{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-220px;
+  left:-70px;
+}
+.mo8{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-415px;
+  left:-70px;
+}
+
 .first{
   position: relative;
   color:#d9effe;

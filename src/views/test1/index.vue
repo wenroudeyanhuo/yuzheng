@@ -358,6 +358,13 @@
   </el-row>
 </template>
 <style  lang="scss"  scoped>
+::v-deep .el-tree-node:focus > .el-tree-node__content {
+  background-color: transparent;
+  font-size: 20px;
+
+  color: white; //节点的字体颜色
+  font-weight: bold;
+}
 .tab_title{
   position: relative;
 }

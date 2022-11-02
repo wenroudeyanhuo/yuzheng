@@ -2,27 +2,29 @@
   <el-row>
     <el-col :span="5">
       <el-card class="box-card">
-           <div  style="width: 300px;height: 40px" class="clearfix" :style="background">
+           <div  style="margin:20px;width: 300px;height: 40px;position:relative;top:-10px;left: -20px" class="clearfix" :style="background">
       <!--          style="border: none" align="center"-->
-      <span style="position:absolute;color:white;left:120px;top:30px">监控点位</span>
+      <span style="position:absolute;color:white;left:120px;top:10px">监控点位</span>
 
     </div>
 
     <div>
-      <el-image style="width: 30px; height: 31px;" :src="require('@/assets/icon_number@2x.png')" fit="fill" ></el-image>
-      <span  class="span1">7</span>
-      <span  class="span2">点位数量</span>
-      <el-image style="width: 29px; height: 29px;" :src="require('@/assets/icon_area@2x.png')" fit="fill" ></el-image>
-      <span  class="span1">4</span>
-      <span  class="span2">涉及区域</span>
+      <el-image style="width: 50px; height: 50px;" :src="require('@/assets/icon_number@2x.png')" fit="fill" ></el-image>
+      <span  class="span1" style="position:relative;top:-20px;font-size: 25px">7</span>
+      <span  class="span2" style="position:relative;left:-20px;color: #1a70ff">点位数量</span>
+      <el-image style="left:-20px;width: 50px; height: 50px;" :src="require('@/assets/icon_area@2x.png')" fit="fill" ></el-image>
+      <span  class="span1" style="left:-20px;position:relative;top:-20px;font-size: 25px">4</span>
+      <span  class="span2" style="left:174px;position:relative;top:-25px;color: #1a70ff">涉及区域</span>
     </div>
+        <span style="position:relative;color: #0E2A4F">————————————————</span>
 
     <div>
-      <input style="background:transparent;margin-bottom: 20px;margin-top: 20px" type="text"  maxlength="11"  placeholder="请输入合适的点位"/>
+      <input style="margin-bottom: 20px;" type="text"  maxlength="11"  placeholder="请输入合适的点位"/>
     </div>
-    <span></span>
+
 
     <template>
+
       <el-tree style="background:transparent;color: white" :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
     </template>
   </el-card>
@@ -32,8 +34,7 @@
 <!--        头-->
         <div style="background-color:#409EFF;top:10px;width: 1200px;height: 40px;margin-left: -10px" >
           <el-image style="width: 60px;height: 60px ;position: relative;top:-15px;left: -25px" :src="require('@/assets/icon_title_dianwei@2x.png')" fit="fill"></el-image>
-
-
+          <span class="span" style="font-size: 20px;color: white;position: relative;top:-30px">视频广场</span>
           <div class=TabsShow>
             <TabsShow msg=""/>
           </div>
@@ -49,6 +50,14 @@
   </el-row>
 </template>
 <style  lang="scss"  scoped>
+::v-deep .el-tree-node:focus > .el-tree-node__content {
+  background-color: #3b91b6;
+
+  color: red; //节点的字体颜色
+  font-weight: bold;
+}
+//失去焦点之后呢
+
 //头
 //.TabsShow{
 //  position: absolute;
@@ -88,21 +97,26 @@ video:focus{
 
 }
 //输入框
+input{
+
+  border: 0;  // 去除未选中状态边框
+  outline: none; // 去除选中状态边框
+
+}
 input[type="text"],input[type="password"],input[type="email"]{
 
   -web-kit-appearance:none;
   -moz-appearance: none;
   outline:0;
+  background-color: #0E2A4F;
 
   box-sizing: border-box;
   text-align:left;
   font-size:1.2em;
   height:2.1em;
   border-radius:5px;
-  border:1px solid #c8cccf;
   color:white;;
   display:block;
-  padding:0 1em;
   text-decoration:none;
   width:100%;
 }

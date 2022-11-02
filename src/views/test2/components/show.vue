@@ -7,17 +7,45 @@
     <div class="first1" v-if="isActive == 0">
       <span style="position:relative;left:44px;top:-23px;color: white">事情详情</span>
 
+<!--打算调用一个整体来写-->
+<!--      视频播放器-->
+<!--      <table>-->
+<!--        <tr v-for="(item, index) in listArray">-->
+<!--          &lt;!&ndash;        视频播放器&ndash;&gt;-->
+<!--          &lt;!&ndash;        但是每次还是要刷新一下才行&ndash;&gt;-->
+<!--          <div class="video_text">-->
+<!--            <video-->
+<!--              id="myVideo"-->
+<!--              class="video-js"-->
+<!--            >-->
+<!--              <source-->
+<!--                :src=item.videoUrl-->
+<!--                type="video/mp4"-->
+<!--              >-->
+<!--            </video>-->
+<!--          </div>-->
+<!--          &lt;!&ndash;        <td>{{ item.school }}</td>&ndash;&gt;-->
+<!--        </tr>-->
+<!--      </table>-->
+
 
 <!--      下面图片列表，横向展示-->
       <template>
+
+
+
+        <div style="width: 770px;height: 200px">
       <el-scrollbar>
         <div class="scrollbar-flex-content">
-          <p v-for="item in 50" :key="item" class="scrollbar-demo-item">
-            {{ item }}
+<!--          让其遍历图片-->
+          <p v-for="(item,index) in img_scro" :key="index" class="scrollbar-demo-item">
+            <el-image style="width: 300px;height: 300px" :src="item.img" alt=""></el-image>
           </p>
         </div>
       </el-scrollbar>
+        </div>
       </template>
+
 
 
 
@@ -108,6 +136,113 @@ export default {
   data()
   {
     return{
+      listArray:[
+        {
+          'school':'河南农业大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'郑州大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南工业大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南农业大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        }
+
+      ],
+      img_scro:[
+        {img:require('@/assets/yujing.jpg')},
+        {img:require('@/assets/yujing.jpg')},
+        {img:require('@/assets/yujing.jpg')},
+        {img:require('@/assets/yujing.jpg')},
+        {img:require('@/assets/yujing.jpg')},
+        {img:require('@/assets/yujing.jpg')},
+        {img:require('@/assets/yujing.jpg')},
+        {img:require('@/assets/yujing.jpg')},
+      ],
       background2: {
         // 背景图片地址
         backgroundImage: 'url(' + require('@/assets/bg_title@2x.png') + ')',
@@ -121,24 +256,53 @@ export default {
       },
       isActive: -1,
     }
+  },
+  mounted() {
+    this.initVideo();  //初始化视频播放器
+  },
+  methods: {
+    initVideo() {
+      //初始化视频方法
+      let myPlayer = this.$video(myVideo, {
+        //是否显示控制栏
+        controls: true,
+        //是否自动播放,muted:静音播放
+        autoplay: false,
+        //是否静音播放
+        muted: false,
+        //是否流体自适应容器宽高
+        fluid: true,
+        //设置视频播放器的显示宽度（以像素为单位）
+        width: "800px",
+        //设置视频播放器的显示高度（以像素为单位）
+        height: "400px"
+      });
+    },
   }
+
 }
 
 
 </script>
 
 <style  lang="scss" scoped>
+.video_text{
+  z-index: 100;
+  width:1200px;
+  height:600px;
+}
 .scrollbar-flex-content {
   display: flex;
+  height: 190px;
+  width: 190px;
 }
 .scrollbar-demo-item {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 50px;
-  margin: 10px;
+  width: 190px;
+  height: 190px;
   text-align: center;
   border-radius: 4px;
   background: var(--el-color-danger-light-9);

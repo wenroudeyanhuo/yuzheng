@@ -11,6 +11,12 @@
         <span><font color="#f0f8ff">宁波松岙大阜1</font></span>
       </div>
 
+      <div>
+        <video style="width: 800px;margin-left: 18px">
+          <source :src="require('@/assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4')">
+        </video>
+      </div>
+<!--
       <div class="aside2">
         <div class='video'>
           <video-player class="video-player vjs-custom-skin"
@@ -20,6 +26,7 @@
           </video-player>
         </div>
       </div>
+      -->
     </el-col>
     <!--
           <div class="mo3">
@@ -36,7 +43,7 @@
 
 
     <el-col :span="1">
-
+<!--
       <div style="height: 40px;background-color: #203f5e;width: 460px;">
         <div style="margin-left: 100px">
           <el-button type="text" style="vertical-align:80%; color: #FFFFFF; border-style: none;border-bottom: 5px #58C2D0;margin-left: 100px" >实时监控</el-button>
@@ -45,7 +52,7 @@
           <el-image :src="require('@/assets/youshangjiao.png')" style="width: 40px;height: 40px;" justify="end"></el-image>
         </div>
       </div>
-
+-->
       <div class="mo1">
         <span style="line-height: 30px;margin-left: 20px"><font color="#f0f8ff">云台控制</font></span>
       </div>
@@ -127,8 +134,11 @@
         </el-col>
         <el-col>
           <div>
-            <el-image style="width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
-            <el-button type="text" style="color: #FFFFFF;">开启激光</el-button>
+            <el-image style="position:relative;top:-70px;right:-270px;width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+            <el-button type="text" style="position:relative;top:-70px;right:-270px;color: #FFFFFF;">开启激光</el-button>
+
+        <!--    <el-image style="width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+            <el-button type="text" style="color: #FFFFFF;">开启激光</el-button>-->
           </div>
         </el-col>
       </el-row>
@@ -137,9 +147,231 @@
   </el-row>
 
 </template>
+<!--
+<script>
+export default {
+  name: 'TabsShow',
+  components:{
+  },
+  data() {
+    return {
+      playerOptions:[],
+      //视频存放地址
+      listArray:[
+        {
+          'school':'河南农业大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'郑州大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南工业大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南农业大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school':'河南理工大学',
+          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        }
+
+      ],
+      pageSize:1,
+      currentPage:0,
+      isActive:-1,
+
+
+      pageSize1:4,
+      currentPage1:0,
+      isActive1:-1,
+
+
+      pageSize2:9,
+      currentPage2:0,
+      isActive2:-1,
+
+      pageSize3:16,
+      currentPage3:0,
+      isActive3:-1,
+    };
+  },
+  mounted() {
+    this.initVideo();  //初始化视频播放器
+  },
+  computed:{
+    dataShow: function(){
+      let start = this.currentPage*this.pageSize;
+      let end = Math.min((this.currentPage+1)*this.pageSize, this.listArray.length)
+      return this.listArray.slice(start, end)
+    },
+    pageNum: function(){
+      return Math.ceil(this.listArray.length / this.pageSize) || 1 ;
+    },
+
+
+
+    dataShow1: function(){
+      let start = this.currentPage1*this.pageSize1;
+      let end = Math.min((this.currentPage1+1)*this.pageSize1, this.listArray.length)
+      return this.listArray.slice(start, end)
+    },
+    pageNum1: function(){
+      return Math.ceil(this.listArray.length / this.pageSize1) || 1 ;
+    },
+    dataShow2: function(){
+      let start = this.currentPage2*this.pageSize2;
+      let end = Math.min((this.currentPage2+1)*this.pageSize2, this.listArray.length)
+      return this.listArray.slice(start, end)
+    },
+    pageNum2: function(){
+      return Math.ceil(this.listArray.length / this.pageSize2) || 1 ;
+    },
+    dataShow3: function(){
+      let start = this.currentPage3*this.pageSize3;
+      let end = Math.min((this.currentPage3+1)*this.pageSize3, this.listArray.length)
+      return this.listArray.slice(start, end)
+    },
+    pageNum3: function(){
+      return Math.ceil(this.listArray.length / this.pageSize3) || 1 ;
+    }
+  },
+  methods: {
+    initVideo() {
+      //初始化视频方法
+      let myPlayer = this.$video(myVideo, {
+        //是否显示控制栏
+        controls: true,
+        //是否自动播放,muted:静音播放
+        autoplay: false,
+        //是否静音播放
+        muted: false,
+        //是否流体自适应容器宽高
+        fluid: true,
+        //设置视频播放器的显示宽度（以像素为单位）
+        width: "800px",
+        //设置视频播放器的显示高度（以像素为单位）
+        height: "400px"
+      });
+    },
+    initVideo1() {
+      //初始化视频方法
+      let myPlayer = this.$video(myVideo, {
+        //是否显示控制栏
+        controls: true,
+        //是否自动播放,muted:静音播放
+        autoplay: false,
+        //是否静音播放
+        muted: false,
+        //是否流体自适应容器宽高
+        fluid: true,
+        //设置视频播放器的显示宽度（以像素为单位）
+        width: "100px",
+        //设置视频播放器的显示高度（以像素为单位）
+        height: "100px"
+      });
+    },
+    nextPage: function(){
+      var vm = this;
+      if (vm.currentPage == vm.pageNum - 1) return;
+      vm.currentPage++;
+
+    },
+    prePage: function(){
+      var vm = this;
+      if (vm.currentPage == 0) return;
+      vm.currentPage--;
+
+    },
+    toPage: function(page){
+      var vm = this;
+      vm.currentPage = page
+    }
+  },
+  props: {
+    msg: String,
+  },
+};
+</script>-->
 
 <style>
-
 .aside2 {
   height: 700px;
   width: 1000px;

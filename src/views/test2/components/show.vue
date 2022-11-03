@@ -176,9 +176,9 @@
 
       <el-col :span="1">
         <div class="mo1">
-          <span style="line-height: 30px;margin-left: 20px"><font color="#f0f8ff">云台控制</font></span>
+          <span style="line-height: 30px;margin-left: 10px"><font color="#f0f8ff">云台控制</font></span>
         </div>
-        <div style="position:relative;top:70px;left: -132px;width: 170px">
+        <div style="position:relative;top:70px;left: -142px;width: 170px">
           <el-image style="vertical-align:middle;" :src="require('@/assets/icon_jiankong.png')"></el-image>
           <span style="color: white">宁波松岙大阜1</span>
         </div>
@@ -201,7 +201,7 @@
           </el-col>
           <el-col :span="19">
             <div>
-              <el-image style="position:relative;left:70px;top:190px;width: 170px;height: 90px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>
+              <el-image style="position:relative;left:50px;top:190px;width: 170px;height: 90px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>
             </div>
           </el-col>
         </el-row>
@@ -234,7 +234,7 @@
             </div>
           </el-col>
           <el-col>
-            <div style="position: relative;top:50px;left: -120px">
+            <div style="position: relative;top:50px;left: -150px">
               <el-image style="position:relative;top:-695px;left: 200px;width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
               <el-button type="text" style="position:relative;top:-695px;left: 200px;color: #FFFFFF;">开启激光</el-button>
 
@@ -440,7 +440,7 @@ export default {
   height: 30px;
   width: 450px;
   top:22px;
-  left:-145px;
+  left:-155px;
 }
 
 .mo2{
@@ -448,7 +448,7 @@ export default {
   height: 250px;
   width: 250px;
   top:130px;
-  left:-60px;
+  left:-80px;
 }
 
 .mo3{
@@ -456,7 +456,7 @@ export default {
   height: 250px;
   width: 400px;
   top:190px;
-  left:-135px;
+  left:-155px;
 }
 
 
@@ -465,7 +465,7 @@ export default {
   height: 150px;
   width: 300px;
   top:170px;
-  left:-50px;
+  left:-70px;
 }
 
 .mo5{
@@ -474,7 +474,7 @@ export default {
   height: 250px;
   width: 420px;
   top:110px;
-  left:-130px;
+  left:-150px;
 }
 
 .mo6{
@@ -482,7 +482,7 @@ export default {
   height: 250px;
   width: 400px;
   top:-50px;
-  left:-50px;
+  left:-70px;
 }
 
 .mo7{
@@ -490,19 +490,19 @@ export default {
   height: 250px;
   width: 400px;
   top:-150px;
-  left:-170px;
+  left:-190px;
 }
 .mo8{
   position:relative;
   height: 250px;
   width: 400px;
   top:-355px;
-  left:-170px;
+  left:-190px;
 }
 
 .button_J1{
   top:32px;
-  left: -220px;
+  left: -230px;
   height: 192px;
   position: relative;
 

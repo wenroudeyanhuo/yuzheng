@@ -15,7 +15,8 @@
 <script src="./home.js"></script>
 <style  lang="scss"  scoped>
 .app-wrapper {
-  background-image: url("~@/../public/位图.png");
+  //background-image: url("~@/../public/位图.png");
+  background-color: black;
   height:100vh;
   width: 100%;
   position:fixed;

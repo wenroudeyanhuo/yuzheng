@@ -9,42 +9,81 @@
 
 <!--打算调用一个整体来写-->
 <!--      视频播放器-->
-<!--      <table>-->
-<!--        <tr v-for="(item, index) in listArray">-->
-<!--          &lt;!&ndash;        视频播放器&ndash;&gt;-->
-<!--          &lt;!&ndash;        但是每次还是要刷新一下才行&ndash;&gt;-->
-<!--          <div class="video_text">-->
-<!--            <video-->
-<!--              id="myVideo"-->
-<!--              class="video-js"-->
-<!--            >-->
-<!--              <source-->
-<!--                :src=item.videoUrl-->
-<!--                type="video/mp4"-->
-<!--              >-->
-<!--            </video>-->
+      <table>
+        <tr v-for="(item, index) in dataShow" :class="{ 'alt': index%2==1 }">
+          <!--        视频播放器-->
+          <!--        但是每次还是要刷新一下才行-->
+          <div class="video_text">
+            <video
+              id="myVideo"
+              class="video-js"
+            >
+              <source
+                :src=item.videoUrl
+                type="video/mp4"
+              >
+            </video>
+          </div>
+          <!--        <td>{{ item.school }}</td>-->
+        </tr>
+      </table>
+
+      <div class="page1">
+        <button class="button_J1">
+          <a href="#"  v-on:click="prePage">
+            <</a>
+        </button >
+
+                <div style="position:relative;left:-190px;top:-160px;width: 750px;height: 200px">
+              <el-scrollbar>
+                <div class="scrollbar-flex-content">
+                  <p v-for="(item,index) in img_scro" :key="index" class="scrollbar-demo-item">
+                    <el-image style="width: 300px;height: 300px" :src="item.img" alt=""></el-image>
+                  </p>
+                </div>
+              </el-scrollbar>
+                </div>
+
+
+<!--        <div style="width: 770px;height: 200px">-->
+<!--          <el-scrollbar>-->
+<!--            <div class="scrollbar-flex-content">-->
+
+<!--              <p v-for="(item,index) in img_scro" :key="index" class="scrollbar-demo-item">-->
+<!--                <el-image style="width: 300px;height: 300px" :src="item.img" alt=""></el-image>-->
+<!--              </p>-->
+
+<!--            </div>-->
+<!--          </el-scrollbar>-->
+<!--        </div>-->
+<!--        <el-scrollbar>-->
+<!--          <div class="scrollbar-flex-content">-->
+<!--            <button class="scrollbar-demo-item" style="margin-left:5px;" v-for="(item, index) in pageNum">-->
+<!--              <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>-->
+<!--            </button>-->
+
 <!--          </div>-->
-<!--          &lt;!&ndash;        <td>{{ item.school }}</td>&ndash;&gt;-->
-<!--        </tr>-->
-<!--      </table>-->
+<!--        </el-scrollbar>-->
+
+
+        <button class="button_J">
+          <a href="#" v-on:click="nextPage">></a>
+        </button>
+      </div>
 
 
 <!--      下面图片列表，横向展示-->
-      <template>
-
-
-
-        <div style="width: 770px;height: 200px">
-      <el-scrollbar>
-        <div class="scrollbar-flex-content">
-<!--          让其遍历图片-->
-          <p v-for="(item,index) in img_scro" :key="index" class="scrollbar-demo-item">
-            <el-image style="width: 300px;height: 300px" :src="item.img" alt=""></el-image>
-          </p>
-        </div>
-      </el-scrollbar>
-        </div>
-      </template>
+<!--      <template>-->
+<!--        <div style="width: 770px;height: 200px">-->
+<!--      <el-scrollbar>-->
+<!--        <div class="scrollbar-flex-content">-->
+<!--          <p v-for="(item,index) in img_scro" :key="index" class="scrollbar-demo-item">-->
+<!--            <el-image style="width: 300px;height: 300px" :src="item.img" alt=""></el-image>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </el-scrollbar>-->
+<!--        </div>-->
+<!--      </template>-->
 
 
 
@@ -59,7 +98,7 @@
 
 
 
-      <div style="position: relative;right: 220px;top:-12px">
+      <div style="position: absolute;right: 200px;top:40px">
 
       <div class="aside" style="display:inline;float: right;">
         <div style="margin-left: 20px;margin-top: 20px;">
@@ -115,13 +154,96 @@
           >-</el-descriptions-item>
         </el-descriptions>
         </div>
+
+
+        <el-button style="color:deepskyblue;background-color:transparent;position:relative;right:-300px;bottom: -550px">处理</el-button>
       </div>
 
     </div>
+
+<!--    实时监控-->
     <div class="second2" v-else-if="isActive == 1">
+      <el-col :span="15">
+        <span style="position: relative;color: white;top: -20px;left: 40px">实时监控</span>
 
 
-      <span style="position:relative;left:44px;top:-23px;color: white">实时监控</span>
+        <div>
+          <video style="position:relative;top:25px;left:5px;width: 700px;height: 500px">
+            <source style="height: 700px;width: 700px;" :src="require('@/assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4')">
+          </video>
+        </div>
+      </el-col>
+
+      <el-col :span="1">
+        <div class="mo1">
+          <span style="line-height: 30px;margin-left: 20px"><font color="#f0f8ff">云台控制</font></span>
+        </div>
+        <div style="position:relative;top:70px;left: -132px;width: 170px">
+          <el-image style="vertical-align:middle;" :src="require('@/assets/icon_jiankong.png')"></el-image>
+          <span style="color: white">宁波松岙大阜1</span>
+        </div>
+
+        <div class="mo2">
+          <el-image style="width: 200px;height: 200px;vertical-align:middle;" :src="require('@/assets/bg_bottom(1).png')"></el-image>
+        </div>
+
+        <el-row>
+          <el-col :span="5">
+            <div class="mo3">
+              <el-image style="width: 100px;height: 40px;vertical-align: middle" :src="require('@/assets/ssjk1.png')"></el-image>
+              <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-left: 3px" :src="require('@/assets/ssjk1.png')"></el-image>
+              <!--<el-image style="width: 160px;height: 82px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>-->
+              <div>
+                <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-top: 10px" :src="require('@/assets/ssjk1.png')"></el-image>
+                <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-top: 10px;margin-left: 3px" :src="require('@/assets/ssjk1.png')"></el-image>
+              </div>
+            </div>
+          </el-col>
+          <el-col :span="19">
+            <div>
+              <el-image style="position:relative;left:70px;top:190px;width: 170px;height: 90px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>
+            </div>
+          </el-col>
+        </el-row>
+      </el-col>
+
+      <el-col :span="7">
+        <div class="mo4">
+          <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_up.png')"></el-image>
+        </div>
+
+        <div class="mo5">
+          <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_left.png')"></el-image>
+          <el-image style="width: 60px;height: 60px;vertical-align: middle;margin-left: 100px" :src="require('@/assets/icon_right.png')"></el-image>
+        </div>
+
+        <div class="mo6">
+          <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_down.png')"></el-image>
+        </div>
+
+        <el-row>
+          <el-col>
+            <div class="mo7">
+              <el-button type="text" style="color: #FFFFFF">变倍 +</el-button>
+              <el-button type="text" style="color: #FFFFFF;margin-left: 60px">变倍 -</el-button>
+            </div>
+
+            <div class="mo8">
+              <el-button type="text" style="color: #FFFFFF">变焦 +</el-button>
+              <el-button type="text" style="color: #FFFFFF;margin-left: 60px">变焦 -</el-button>
+            </div>
+          </el-col>
+          <el-col>
+            <div style="position: relative;top:50px;left: -120px">
+              <el-image style="position:relative;top:-695px;left: 200px;width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+              <el-button type="text" style="position:relative;top:-695px;left: 200px;color: #FFFFFF;">开启激光</el-button>
+
+              <!--    <el-image style="width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+                  <el-button type="text" style="color: #FFFFFF;">开启激光</el-button>-->
+            </div>
+          </el-col>
+        </el-row>
+      </el-col>
     </div>
 
 
@@ -133,126 +255,140 @@
 
 export default {
   name: 'Show',
-  data()
-  {
-    return{
-      listArray:[
+  data() {
+    return {
+      pageSize: 1,
+      currentPage: 0,
+      listArray: [
         {
-          'school':'河南农业大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南农业大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'郑州大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '郑州大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南工业大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南工业大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南农业大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南农业大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         },
         {
 
-          'school':'河南理工大学',
-          'videoUrl':require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
         }
 
       ],
-      img_scro:[
-        {img:require('@/assets/yujing.jpg')},
-        {img:require('@/assets/yujing.jpg')},
-        {img:require('@/assets/yujing.jpg')},
-        {img:require('@/assets/yujing.jpg')},
-        {img:require('@/assets/yujing.jpg')},
-        {img:require('@/assets/yujing.jpg')},
-        {img:require('@/assets/yujing.jpg')},
-        {img:require('@/assets/yujing.jpg')},
+      img_scro: [
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
       ],
       background2: {
-        // 背景图片地址
         backgroundImage: 'url(' + require('@/assets/bg_title@2x.png') + ')',
-        // 背景图片是否重复
-        backgroundRepeat:'no-repeat',
-        // 背景图片大小
+        backgroundRepeat: 'no-repeat',
         backgroundSize: '60%',
-        // 背景颜色
-        // 背景图片位置
-        // backgroundPosition: 'center top'
       },
       isActive: -1,
     }
@@ -278,18 +414,128 @@ export default {
         height: "400px"
       });
     },
-  }
+  },
 
+  computed: {
+    dataShow: function () {
+      let start = this.currentPage * this.pageSize;
+      let end = Math.min((this.currentPage + 1) * this.pageSize, this.listArray.length)
+      return this.listArray.slice(start, end)
+    },
+    pageNum: function () {
+      return Math.ceil(this.listArray.length / this.pageSize) || 1;
+    }
+
+  }
 }
 
 
 </script>
 
 <style  lang="scss" scoped>
+
+.mo1{
+  position:relative;
+  background-color: #203f5e;
+  height: 30px;
+  width: 450px;
+  top:22px;
+  left:-145px;
+}
+
+.mo2{
+  position:relative;
+  height: 250px;
+  width: 250px;
+  top:130px;
+  left:-60px;
+}
+
+.mo3{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:190px;
+  left:-135px;
+}
+
+
+.mo4{
+  position:relative;
+  height: 150px;
+  width: 300px;
+  top:170px;
+  left:-50px;
+}
+
+.mo5{
+  position:relative;
+
+  height: 250px;
+  width: 420px;
+  top:110px;
+  left:-130px;
+}
+
+.mo6{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-50px;
+  left:-50px;
+}
+
+.mo7{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-150px;
+  left:-170px;
+}
+.mo8{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-355px;
+  left:-170px;
+}
+
+.button_J1{
+  top:32px;
+  left: -220px;
+  height: 192px;
+  position: relative;
+
+}
+.button_J{
+  left: 560px;
+  position: relative;
+  top:-360px;
+  height: 192px;
+
+
+
+}
+.page1{
+  position:relative;
+  bottom: 10px;
+  left: 220px;
+
+
+}
+video:focus{
+  outline: 0;
+}
+.video-js{
+
+  width: 790px;
+  height: 400px;
+
+}
 .video_text{
   z-index: 100;
-  width:1200px;
-  height:600px;
+  width:800px;
+  height:400px;
 }
 .scrollbar-flex-content {
   display: flex;
@@ -345,7 +591,7 @@ export default {
 .aside{
   height: 800px;
   width: 400px;
-  background-color: rgb(12, 37, 67,0.7);
+  background-color: transparent;
 }
 .first{
   position: relative;

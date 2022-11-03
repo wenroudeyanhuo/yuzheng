@@ -337,23 +337,7 @@ export default {
         height: "400px"
       });
     },
-    initVideo1() {
-      //初始化视频方法
-      let myPlayer = this.$video(myVideo, {
-        //是否显示控制栏
-        controls: true,
-        //是否自动播放,muted:静音播放
-        autoplay: false,
-        //是否静音播放
-        muted: false,
-        //是否流体自适应容器宽高
-        fluid: true,
-        //设置视频播放器的显示宽度（以像素为单位）
-        width: "100px",
-        //设置视频播放器的显示高度（以像素为单位）
-        height: "100px"
-      });
-    },
+
     nextPage: function(){
       var vm = this;
       if (vm.currentPage == vm.pageNum - 1) return;

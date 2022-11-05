@@ -31,7 +31,10 @@ Vue.prototype.$video = Video
 import Treeselect from "@riophae/vue-treeselect";
 import "@riophae/vue-treeselect/dist/vue-treeselect.css";
 Vue.component('treeselect', Treeselect)
-
+import BaiduMap from 'vue-baidu-map'
+Vue.use(BaiduMap, {
+  ak: 'FS9gYWCr1iPh9nGbCUA2F4B0x4Pc20Ya'
+})
 import layer from 'vue-layer'
 import 'vue-layer/lib/vue-layer.css';
 import $ from 'jquery'

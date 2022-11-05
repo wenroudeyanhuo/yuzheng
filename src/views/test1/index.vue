@@ -2,10 +2,7 @@
 
 
   <div>
-    <div style="position: absolute">
-      <el-form>
-        <el-row>
-          <el-col :span="24">
+    <div style="position: absolute;">
             <baidu-map
               class="bm-viewmap"
               ak="FS9gYWCr1iPh9nGbCUA2F4B0x4Pc20Ya"
@@ -15,6 +12,7 @@
               @ready="createMap"
             >
               <el-input
+                style="background-color:black"
                 placeholder="请输入工程名称"
                 v-model="inputValue"
                 clearable
@@ -44,9 +42,6 @@
                 style="display: none"
               ></bm-local-search>
             </baidu-map>
-          </el-col>
-        </el-row>
-      </el-form>
     </div>
 
 

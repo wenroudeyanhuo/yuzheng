@@ -2,7 +2,7 @@
   <div>
     <div style="background: #003377 ">
     <h1>{{ msg }}</h1>
-    
+
     <button class="first"  id = "underline" @click="isActive = 0">实时监控</button>
     <button class="second" id = "underline" @click="isActive = 1">录像回放</button>
     <button class="third" id = "underline" @click="isActive = 2">预警事件</button>
@@ -114,7 +114,7 @@
           <!-- 后台数据交互     -->
           <span class="span5">8</span>
         </div>
-      
+
       </div>
        <!-- main设计 -->
      <div  class="outer-container" >
@@ -216,7 +216,7 @@
             </div>
           </li>
         </ul>
-        </div> 
+        </div>
       </div>
       <div class="aside" style="display:inline;float: right;">
         <div style="margin-left: 20px;margin-top: 20px;">
@@ -477,7 +477,7 @@ for (var i = 0; i < imgs.length; i++) {
   color: #27c7ca;
 }
 .second:focus{
-  color: #27c7ca; 
+  color: #27c7ca;
 }
 .third:focus{
   color: #27c7ca;

@@ -1,16 +1,19 @@
 <template >
 
-  <div  class="bgBackground"  :style="background">
+  <div  class="bgBackground">
 <!--    class="bgBackground"  :style="background"-->
-    <div>
+    <div style="z-index: 101;position: absolute;">
+      <el-image style="position: absolute;top:0px;left: 0px;width: 1540px;height: 60px" :src="require('@/assets/bg_top_title.png')" fit="fill"></el-image>
       <el-image style="width: 400px; height: 50px" :src="require('@/assets/text@2x.png')" fit="fill" class="tupian"></el-image>
-      <el-button id="1" style="border: none" align="center" class="el-icon-liuyanban" @click="redirect('/test1')">人机联防</el-button>
-      <el-button  id="2" style="border: none"align="center"  class="el-icon-liuyanban" @click="redirect('/test2')">预警事件</el-button>
-      <el-button id="3"  style="border: none" align="center"  class="el-icon-liuyanban" @click="redirect('/test3')">视频广场</el-button>
-      <el-button id="4" size="mini" style="border: none" align="center"  class="el-icon-guanli" @click="redirect('/test2')">
+      <div style="position: relative;top:-40px;left: 450px">
+      <el-button id="1" style="border: none;" align="center" class="el-icon-liuyanban" @click="redirect('/test1')">人机联防</el-button>
+      <el-button  id="2" style="border: none;position: relative;top:-35px;left: 200px" align="center"  class="el-icon-liuyanban" @click="redirect('/test2')">预警事件</el-button>
+      <el-button id="3"  style="border: none;position: relative;top:-85px;left: 450px" align="center"  class="el-icon-liuyanban" @click="redirect('/test3')">视频广场</el-button>
+      <el-button id="4" size="mini" style="border: none;position: relative;top:-85px;left: 450px" align="center"  class="el-icon-guanli" @click="redirect('/map')">
         <el-image style="width: 35px; height: 35px" :src="require('@/assets/icon_my@2x.png')" fit="fill" class="tempimg"></el-image>
        <span style="font-size: 19px">超级管理员</span>
       </el-button>
+      </div>
 
     </div>
   </div>
@@ -21,17 +24,7 @@ export default {
   name: 'Header',
   data(){
     return{
-      background: {
-        // 背景图片地址
-        backgroundImage: 'url(' + require('../../../../public/bg_top_title.png') + ')',
-        // 背景图片是否重复
-        backgroundRepeat: 'no-repeat',
-        // 背景图片大小
-        backgroundSize: 'cover',
-        // 背景颜色
-        // 背景图片位置
-        backgroundPosition: 'center top'
-      }
+
     }
   },
   methods: {
@@ -77,6 +70,8 @@ export default {
 
 }
 .bgBackground {
+  position: absolute;
+
   width: 100%;
   height:100%;
 }

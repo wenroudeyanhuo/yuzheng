@@ -1,6 +1,57 @@
 <template>
-  <el-row>
-    <el-col :span="19" class="el-col-cock1">
+
+
+  <div>
+    <div style="position: absolute">
+      <el-form>
+        <el-row>
+          <el-col :span="24">
+            <baidu-map
+              class="bm-viewmap"
+              ak="FS9gYWCr1iPh9nGbCUA2F4B0x4Pc20Ya"
+              :zoom="zoom"
+              :scroll-wheel-zoom="true"
+              center="宁波"
+              @ready="createMap"
+            >
+              <el-input
+                placeholder="请输入工程名称"
+                v-model="inputValue"
+                clearable
+                class="seach-view"
+              >
+                <template slot="append">
+                  <el-button
+                    type="primary"
+                    icon="el-icon-search"
+                    class="search-button"
+                    @click="search"
+                  ></el-button>
+                </template>
+              </el-input>
+              <bm-map-type
+                :map-types="mapType"
+                anchor="BMAP_ANCHOR_TOP_RIGHT"
+              ></bm-map-type>
+              <!--地图搜索功能，绑定上面的input，-->
+              <!--display: none样式很关键，因为下面默认会有地址提示信息很长，很烦，这样搜索会很舒服，-->
+              <!--zoom是搜索结果的视图比例，个人觉得12.8很舒服显示-->
+              <bm-local-search
+                :keyword="keyword"
+                :auto-viewport="true"
+                :location="location"
+                zoom="12.8"
+                style="display: none"
+              ></bm-local-search>
+            </baidu-map>
+          </el-col>
+        </el-row>
+      </el-form>
+    </div>
+
+
+    <!--    ：span分开这里了-->
+    <div class="el-col-cock1">
       <el-card class="box-card">
         <div  class="clearfix" :style="background">
           <!--          style="border: none" align="center"-->
@@ -23,7 +74,7 @@
              <div>
              <div style=" height: 800px;width: 1400px;">
               <!-- 背景色有问题 -->
-                <div style="height: 60px;width: 1400px;background-color:#003377 ;margin-bottom: 740px">
+                <div style="position:absolute;height: 60px;width: 1400px;background-color:#003377;top:30px">
                   <span class="span">   点位详情</span>
                   <el-image style="position:relative;left:-150px;height: 60px;width:60px;margin-right: 60px;background: transparent" :src="require('@/assets/icon_title_dianwei@2x.png')" fit="fill"></el-image>
                   <div class=Show>
@@ -259,11 +310,13 @@
         </el-row>
 
       </el-card>
-    </el-col>
+    </div>
 
-    <el-col :span="1" class="el-col-cock2" style="position:relative;">
+
+<!--    ：span分开这里了-->
+    <div>
+    <div class="el-col-cock2" style="position:absolute;">
       <el-card class="box-card4">
-
         <template>
           <el-radio  class="card_bottom" v-model="radio" label="1">点位显示</el-radio>
           <el-radio class="card_bottom" v-model="radio" label="2">覆盖范围</el-radio>
@@ -271,10 +324,13 @@
           <el-radio class="card_bottom" v-model="radio" label="4">热力图</el-radio>
         </template>
       </el-card>
-    </el-col>
 
+    </div>
 
-    <el-col :span="4" class="el-col-cock3">
+    <!--    ：span分开这里了-->
+
+<div class="el-col-cock3" style="position: absolute">
+
       <el-card class="box-card1">
         <div :style="background" style="position: relative;">
           <!--          style="border: none" align="center"-->
@@ -322,13 +378,13 @@
 
 
 
-
+<div style="position: relative;top:-15px">
         <div  class="clearfix" :style="background">
           <!--          style="border: none" align="center"-->
           <el-image style="width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
           <span class="span">                   事件趋势日历</span>
         </div>
-        <div class="home">
+        <div>
           <Calendar
             :date="new Date()"
             @enter="mouseenter"
@@ -342,6 +398,7 @@
             </template>
           </Calendar>
         </div>
+</div>
         <!--        <div>-->
         <!--          <el-calendar v-model="valueData">-->
         <!--            <template-->
@@ -356,8 +413,10 @@
         <!--        </div>-->
 
       </el-card>
-    </el-col>
-  </el-row>
+
+</div>
+    </div>
+  </div>
 </template>
 <style  lang="scss"  scoped>
 ::v-deep .el-tree-node:focus > .el-tree-node__content {
@@ -391,13 +450,21 @@
 
 ::v-deep .el-col-cock1{
   position: relative;
+  top: 90px;
+  left: 20px;
   z-index:101;
 }
 ::v-deep.el-col-cock2{
-  z-index:100;
+  top:-15px;
+
+  right: 330px;
+  z-index:101;
 }
 ::v-deep.el-col-cock3{
-  z-index:100;
+  top:90px;
+  right: 10px;
+
+  z-index:101;
 }
 //手写弹窗1
 .main {
@@ -422,6 +489,7 @@
   height: 100%;
   background:black;
   z-index: 99999;
+  opacity: 0.9;
 }
 
 .cover>div {
@@ -967,7 +1035,7 @@ input::-webkit-input-placeholder{
   //margin-bottom: 20px;
   background-color:#000088 ;
   opacity:0.7;
-  height:800px;
+  height:700px;
   width: 300px;
 
   padding: 0px 0px;
@@ -979,7 +1047,7 @@ input::-webkit-input-placeholder{
   //margin-bottom: 20px;
   background-color:#000088 ;
   opacity:0.7;
-  height:800px;
+  height:700px;
   width: 300px;
 
   padding: 0px 0px;
@@ -993,7 +1061,7 @@ input::-webkit-input-placeholder{
   margin-bottom: 20px;
   background-color:#000088 ;
   opacity:0.7;
-  height:800px;
+  height:700px;
   width: 300px;
 
   padding: 0px 0px;
@@ -1020,8 +1088,8 @@ input::-webkit-input-placeholder{
 {
   //display: flex;
   position:absolute;
-  margin-top:600px;
-  //margin-right:500px;
+  top:610px;
+
   left: -200px;
   right: 100px;
   height:200px;
@@ -1146,25 +1214,62 @@ import {getOrderDate,updateWorkdate }from "@/api/calendar";
 import Calendar from '@/components/Calendar.vue'
 import Show from "@/views/test1/components/show";
 import moment from 'moment';
-
+import BaiduMap from "vue-baidu-map/components/map/Map.vue";
+import {
+  BmScale,
+  BmNavigation,
+  BmMarkerClusterer,
+  BmMarker,
+  BmInfoWindow,
+  BmMapType,
+  BmLocalSearch,
+  BmView,
+} from "vue-baidu-map";
 
 export default {
 
   name: 'home',
+  props: [""],
   components: {
     Header,
     Calendar,
     Show,
+    BmLocalSearch,
+    BmMapType,
+    BaiduMap,
+    BmScale,
+    BmNavigation,
+    BmMarkerClusterer,
+    BmMarker,
+    BmInfoWindow,
+    BmView,
   },
   data(){
 
     return{
+      //地图
+      mapType:['BMAP_NORMAL_MAP', 'BMAP_HYBRID_MAP'],
+      location: "",
+      keyword: "",
+      inputValue:"",
+      markers: [],
+      center: { lng: 0, lat: 0 },
+      zoom: 10,
+      model: {
+        lng: "",
+        lat: "",
+        address: "",
+      },
+      formLabelWidth: "100px",
+      dialogFormVisible: false,
+      belongsList: "",
+      item: null,
+      innerVisible: false,
       tab:0, //默认选中第一个tab
       //手写弹窗的数据
       box:document.getElementById('box'),
       hide:document.getElementById('hide'),
       CloseHide:document.getElementById('Closehide'),
-      innerVisible: false,
       //
       radio:'1',
       //for_barch
@@ -1250,12 +1355,72 @@ export default {
   mounted() {
 
   },
+  computed: {},
+  beforeMount() {},
   beforeDestroy() {
   },
   created() {
 
   },
   methods: {
+    //地图
+    createMap({ BMap, map }) {
+      map.setMapType(BMAP_HYBRID_MAP);
+      map.enableScrollWheelZoom(true);
+      this.zoom = this.zoom;
+      listproject().then((res) => {
+        var that = this;
+        that.markerArr = res.data.data;
+        for (var i = 0; i < this.markerArr.length; i++) {
+          var myIcon = new BMap.Icon(
+            "http://api.map.baidu.com/img/markers.png",
+            new BMap.Size(23, 25),
+            {
+              offset: new BMap.Size(10, 25), // 指定定位位置
+              imageOffset: new BMap.Size(0, 0 - i * 25), // 设置图片偏移
+            }
+          );
+          var p0 = this.markerArr[i].longitude;
+          var p1 = this.markerArr[i].latitude;
+          var point = new Array(); //存放标注点经纬信息的数组
+          var marker = new Array(); //存放标注点对象的数组
+          point[i] = new BMap.Point(p0, p1);
+          marker[i] = new BMap.Marker(point[i], { icon: myIcon });
+          map.addOverlay(marker[i]);
+          var markerData = this.markerArr[i];
+          var maker = marker[i];
+          addClickHandler(maker, markerData); //开启信息窗口
+        }
+      });
+      // 放到循环外面，解决窗口只显示最后一个位置的bug
+      function addClickHandler(maker, markerData) {
+        maker.addEventListener("mouseover", function () {
+          showInfo(this, markerData);
+        });
+      }
+      function showInfo(thisMaker, markerData) {
+        var sContent =
+          '<ul style="margin:0 0 5px 0;padding:0.2em 0">' +
+          '<li style="line-height: 26px;font-size: 15px;">' +
+          '<span style="width: 50px;display: inline-block;">名称：</span>' +
+          markerData.name +
+          "</li>" +
+          '<li style="line-height: 26px;font-size: 15px;">' +
+          '<span style="width: 50px;display: inline-block;">经度：</span>' +
+          markerData.longitude +
+          "</li>" +
+          '<li style="line-height: 26px;font-size: 15px;">' +
+          '<span style="width: 50px;display: inline-block;">纬度：</span>' +
+          markerData.latitude +
+          "</li>";
+        ("</ul>");
+        var infoWindow = new BMap.InfoWindow(sContent); // 创建信息窗口对象
+        thisMaker.openInfoWindow(infoWindow); //图片加载完毕重绘infowindow
+      }
+    },
+    search(){
+      this.keyword=this.inputValue
+    },
     hide_onclick()
     {
       box.style.display = "block";
@@ -1443,7 +1608,8 @@ export default {
          }
        },*/
 
-  }
+  },
+  watch: {},
 };
 
 

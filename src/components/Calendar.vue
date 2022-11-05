@@ -1,5 +1,5 @@
 <template>
-  <div class="cal_con">
+  <div class="cal_con" style="height: 300px;">
     <div class="cal_header">
       <div class="cal_h_left">
         <div
@@ -266,7 +266,7 @@ export default {
 <style scoped lang="scss">
 .cal_con {
   width: 100%;
-  height: 100%;
+  height: 70%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

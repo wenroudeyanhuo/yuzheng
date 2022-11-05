@@ -16,15 +16,19 @@
 <style  lang="scss"  scoped>
 .app-wrapper {
   //background-image: url("~@/../public/位图.png");
-  background-color: black;
-  height:100vh;
-  width: 100%;
-  position:fixed;
-  background-size:100% 100%;
+
 }
 .el-header{
+  z-index: 101;
+
+  position: absolute;
+  top:0px;
+  left: 0px;
+  padding: 0px !important;
+
 }
 .el-footer {
+  padding: 0px !important;
   background-color: #b3c0d1;
   color: #333;
   text-align: center;
@@ -32,6 +36,7 @@
 }
 
 .el-aside {
+  padding: 0px !important;
   background-color: #d3dce6;
   color: #333;
   text-align: center;
@@ -39,6 +44,11 @@
 }
 
 .el-main {
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding: 0px !important;
 }
 
 </style>

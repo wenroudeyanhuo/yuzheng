@@ -116,6 +116,15 @@ export const constantRoutes = [
         },
         component: () => import('@/views/test3/index'),
       },
+      ,
+      {
+        path: '/map',
+        name: 'map',
+        meta: {
+          title: 'map'
+        },
+        component: () => import('@/views/map/test'),
+      }
     ]
   },
 

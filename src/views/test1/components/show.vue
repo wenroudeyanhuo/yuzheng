@@ -629,6 +629,7 @@ ul .imgList li span{
 }
 .aside{
   width: 450px;
+  height: 580px;
   background-color: rgb(12, 37, 67,0.7);
 }
 ::v-deep .el-descriptions__body {

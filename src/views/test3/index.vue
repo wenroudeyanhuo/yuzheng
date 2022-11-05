@@ -33,9 +33,9 @@
       <el-card class="box-card1">
 <!--        头-->
         <div style="background-color:#409EFF;top:10px;width: 1200px;height: 40px;margin-left: -10px" >
-          <el-image style="width: 60px;height: 60px ;position: relative;top:-15px;left: -25px" :src="require('@/assets/icon_title_dianwei@2x.png')" fit="fill"></el-image>
-          <span class="span" style="font-size: 20px;color: white;position: relative;top:-30px">视频广场</span>
-          <div class=TabsShow>
+          <el-image style="width: 60px;height: 60px ;position: relative;top:-15px;left: -25px;" :src="require('@/assets/icon_title_dianwei@2x.png')" fit="fill"></el-image>
+          <span class="span" style="font-size: 20px;color: white;position: relative;top:-30px;">视频广场</span>
+          <div class=TabsShow style="position: relative;">
             <TabsShow msg=""/>
           </div>
         </div>

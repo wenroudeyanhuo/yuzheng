@@ -31,7 +31,7 @@
       <div class="page1">
         <button class="button_J">
           <a href="#"  v-on:click="prePage">
-            <</a>
+            </a>
         </button >
         <button class="button_J" style="margin-left:5px;" v-for="(item, index) in pageNum">
           <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
@@ -68,7 +68,7 @@
       <div class="page2">
         <button class="button_J">
           <a href="#"  v-on:click="prePage">
-            <</a>
+            </a>
         </button>
         <button class="button_J" v-for="(item, index) in pageNum1">
           <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
@@ -104,7 +104,7 @@
       <div class="page3">
         <button class="button_J">
           <a href="#"  v-on:click="prePage">
-            <</a>
+            </a>
         </button>
         <button class="button_J" v-for="(item, index) in pageNum2">
           <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
@@ -140,7 +140,7 @@
       <div class="page4">
         <button class="button_J">
           <a href="#"  v-on:click="prePage">
-            <</a>
+            </a>
         </button>
         <button v-for="(item, index) in pageNum3" class="button_J">
           <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
@@ -676,7 +676,7 @@ h1{
   font-family:"宋体"
 }
 .first{
-  top:22px;
+  top:-84px;
   right: 440px;
   position: absolute;
 
@@ -685,7 +685,7 @@ h1{
   line-height:30px;
 }
 .second{
-  top:22px;
+  top:-84px;
   right: 310px;
   position: absolute;
   background-color: pink;
@@ -693,7 +693,7 @@ h1{
   line-height:30px;
 }
 .third{
-  top:22px;
+  top:-84px;
   right: 180px;
   position: absolute;
   background-color: rgb(197, 248, 184);
@@ -701,7 +701,7 @@ h1{
   line-height:30px;
 }
 .fourth{
-  top:22px;
+  top:-84px;
   right: 50px;
   position: absolute;
   background-color: rgb(241, 241, 188);

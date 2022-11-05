@@ -261,7 +261,7 @@
       </el-card>
     </el-col>
 
-    <el-col :span="1" class="el-col-cock2">
+    <el-col :span="1" class="el-col-cock2" style="position:relative;">
       <el-card class="box-card4">
 
         <template>
@@ -276,7 +276,7 @@
 
     <el-col :span="4" class="el-col-cock3">
       <el-card class="box-card1">
-        <div :style="background">
+        <div :style="background" style="position: relative;">
           <!--          style="border: none" align="center"-->
           <el-image style="width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
           <span class="span">                   预警数统计</span>
@@ -296,26 +296,28 @@
           </div>
         </div>
 
-        <div  class="clearfix" :style="background">
-          <!--          style="border: none" align="center"-->
-          <el-image style="width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
-          <span class="span">                   处理数统计</span>
-        </div>
-        <div>
-          <el-image style="width: 135px; height: 120px" :src="require('@/assets/4.png')" fit="fill" class="tempimg"></el-image>
-          <div class="wenzi_4">
-            <span class="span">今日处理数  </span>
-            <span style="color: yellow;">6</span>
+          <div  class="clearfix" :style="background">
+            <!--          style="border: none" align="center"-->
+            <el-image style="width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
+            <span class="span">                   处理数统计</span>
           </div>
-          <div class="wenzi_5">
-            <span class="span">本月处理数  </span>
-            <span style="color: yellow;">6</span>
+          <div style="position:relative;">
+            <el-image style="width: 135px; height: 120px;display: inline-block;" :src="require('@/assets/4.png')" fit="fill" class="tempimg"></el-image>
+            <div class="wenzi_4">
+              <span class="span">今日处理数  </span>
+              <span style="color: yellow;">6</span>
+            </div>
+            <div class="wenzi_5">
+              <span class="span">本月处理数  </span>
+              <span style="color: yellow;">6</span>
+            </div>
+            <div class="wenzi_6">
+              <span class="span">累计处理数  </span>
+              <span style="color: yellow;">6</span>
+            </div>
           </div>
-          <div class="wenzi_6">
-            <span class="span">累计处理数  </span>
-            <span style="color: yellow;">6</span>
-          </div>
-        </div>
+        <!-- </div> -->
+
 
 
 
@@ -836,39 +838,44 @@ li{
 }
 .wenzi_1{
   position: absolute;
-  left:1360px; //只是假定的值，具体需测量
-  top:80px;
+  left:140px; //只是假定的值，具体需测量
+  top:70px;
   z-index:101;
 }
 .wenzi_2{
   position: absolute;
-  left:1360px; //只是假定的值，具体需测量
-  top:110px;
+  left:140px; //只是假定的值，具体需测量
+  top:100px;
   z-index:101;
 }
 .wenzi_3{
   position: absolute;
-  left:1360px; //只是假定的值，具体需测量
-  top:140px;
+  left:140px; //只是假定的值，具体需测量
+  top:130px;
   z-index:101;
 }
 //第二个区块
 .wenzi_4{
   position: absolute;
-  left:1360px; //只是假定的值，具体需测量
-  top:240px;
+  // left:140px; //只是假定的值，具体需测量
+  right: 20px;
+  top:20px;
   z-index:101;
 }
 .wenzi_5{
   position: absolute;
-  left:1360px; //只是假定的值，具体需测量
-  top:270px;
+  // left:140px; //只是假定的值，具体需测量
+  // top:270px;
+  right: 20px;
+  top:50px;
   z-index:101;
 }
 .wenzi_6{
   position: absolute;
-  left:1360px; //只是假定的值，具体需测量
-  top:300px;
+  // left:140px; //只是假定的值，具体需测量
+  // top:300px;
+  right: 20px;
+  top:80px;
   z-index:101;
 }
 .index_backcol{
@@ -1015,7 +1022,8 @@ input::-webkit-input-placeholder{
   position:absolute;
   margin-top:600px;
   //margin-right:500px;
-  right: 350px;
+  left: -200px;
+  right: 100px;
   height:200px;
   width: 150px;
   padding: 0px 0px;
@@ -1026,6 +1034,25 @@ input::-webkit-input-placeholder{
 .card_bottom{
   line-height: 40px;
 }
+// // radio选中改为勾勾
+// .el-radio__input.is-checked .el-radio__inner::after {
+//   content: "";
+//   width: 10px;
+//   height: 5px;
+//   border: 2px solid white;
+//   border-top: transparent;
+//   border-right: transparent;
+//   text-align: center;
+//   display: inline-block;
+//   position: absolute;
+//   top:600px;
+//   left: -200px;
+//   vertical-align: middle;
+//   transform: rotate(-45deg);
+//   border-radius: 0px;
+//   background: none;
+// }
+
 .app-wrapper {
   background-image: url("~@/../public/位图.png");
   height:100vh;

@@ -138,7 +138,7 @@
             </div>
 
             <div>
-              <input style="background:transparent;margin-bottom: 20px;margin-top: 20px" type="text"  maxlength="11"  placeholder="输入点位关键词"> </input>
+              <input style="background:transparent;margin-bottom: 20px;margin-top: 20px;width:265px;height:35px;" type="text"  maxlength="11"  placeholder="输入点位关键词"> </input>
             </div>
             <span></span>
 
@@ -418,6 +418,13 @@
   </div>
 </template>
 <style  lang="scss"  scoped>
+
+input::-webkit-input-placeholder {
+    /* placeholder颜色 */
+    color: #aab2bd;
+    /* placeholder字体大小 */
+    font-size: 12px;
+}
 ::v-deep .el-tree-node:focus > .el-tree-node__content {
   background-color: transparent;
   font-size: 20px;
@@ -1015,7 +1022,7 @@ input::-webkit-input-placeholder{
   color:#FFFFFF;
   display: inline-block;
   overflow: hidden;
-  color: #4274b4;
+  color: #71a3db;
   font-size: 14px;
 }
 ::v-deep .item {

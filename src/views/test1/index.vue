@@ -125,12 +125,16 @@
         <el-row v-if="cardType">
           <el-card class="box-card2">
             <div>
-              <el-image style="width: 30px; height: 31px;" :src="require('@/assets/icon_number@2x.png')" fit="fill" ></el-image>
+              <el-image style="width: 45px; height: 45px;" :src="require('@/assets/icon_number@2x.png')" fit="fill" ></el-image>
+              <div style="display:inline-block;height:20px;width:60px;margin-right:65px">
               <span  class="span1">7</span>
               <span  class="span2">点位数量</span>
-              <el-image style="width: 29px; height: 29px;" :src="require('@/assets/icon_area@2x.png')" fit="fill" ></el-image>
+              </div>
+              <el-image style="width: 45px; height: 45px;" :src="require('@/assets/icon_area@2x.png')" fit="fill" ></el-image>
+            <div style="display:inline-block;height:20px;width:60px;">
               <span  class="span1">4</span>
               <span  class="span2">涉及区域</span>
+            </div>
             </div>
 
             <div>
@@ -1006,7 +1010,7 @@ input::-webkit-input-placeholder{
   overflow: hidden;
 }
 .span2{
-  margin-top: 5px;
+  // margin-top: 5px;
   color:#FFFFFF;
   display: inline-block;
   overflow: hidden;
@@ -1024,7 +1028,6 @@ input::-webkit-input-placeholder{
 .clearfix:after {
   clear: both
 }
-
 .box-card {
 
   //margin-bottom: 20px;
@@ -1062,6 +1065,13 @@ input::-webkit-input-placeholder{
   padding: 0px 0px;
   border: none;
 }
+.box-card2 ::v-dee.el-card__body{
+    // padding: 20px;
+    padding-top: 20px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
 .box-card3{
   z-index: 100;
   position: relative;
@@ -1079,6 +1089,7 @@ input::-webkit-input-placeholder{
   padding: 0px 0px;
 
 }
+
 .box-card4
 {
   //display: flex;

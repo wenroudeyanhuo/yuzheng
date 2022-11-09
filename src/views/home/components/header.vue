@@ -6,10 +6,10 @@
       <el-image style="position: absolute;top:0px;left: 0px;width: 1540px;height: 60px" :src="require('@/assets/bg_top_title.png')" fit="fill"></el-image>
       <el-image style="width: 400px; height: 50px" :src="require('@/assets/text@2x.png')" fit="fill" class="tupian"></el-image>
       <div style="position: relative;top:-40px;left: 450px">
-      <el-button id="1" style="border: none;" align="center" class="el-icon-liuyanban" @click="redirect('/test1')">人机联防</el-button>
-      <el-button  id="2" style="border: none;position: relative;top:-35px;left: 200px" align="center"  class="el-icon-liuyanban" @click="redirect('/test2')">预警事件</el-button>
-      <el-button id="3"  style="border: none;position: relative;top:-85px;left: 450px" align="center"  class="el-icon-liuyanban" @click="redirect('/test3')">视频广场</el-button>
-      <el-button id="4" size="mini" style="border: none;position: relative;top:-85px;left: 450px" align="center"  class="el-icon-guanli" @click="redirect('/map')">
+      <el-button id="1" style="border: none;" align="center" class="el-icon-liuyanban" :plain="isPlainDefault" @click="redirect('/test1');btnGroup(null)">人机联防</el-button>
+      <el-button  id="2" style="border: none;position: relative;top:-35px;left: 200px" align="center" :plain="isPlain[0]"  class="el-icon-liuyanban"  @click="redirect('/test2');btnGroup(1)">预警事件</el-button>
+      <el-button id="3"  style="border: none;position: relative;top:-85px;left: 450px" align="center"  :plain="isPlain[1]" class="el-icon-liuyanban" @click="redirect('/test3');btnGroup(2)">视频广场</el-button>
+      <el-button id="4" size="mini" style="border: none;position: relative;top:-85px;left: 450px" align="center"  :plain="isPlain[2]" class="el-icon-guanli"  @click="redirect('/map');btnGroup(3)">
         <el-image style="width: 35px; height: 35px" :src="require('@/assets/icon_my@2x.png')" fit="fill" class="tempimg"></el-image>
        <span style="font-size: 19px">超级管理员</span>
       </el-button>
@@ -24,10 +24,25 @@ export default {
   name: 'Header',
   data(){
     return{
+      isPlain: [], // 控制按钮组是否为朴素按钮
+      isPlainDefault: false, // 默认为非朴素按钮
 
     }
   },
+  mounted() {
+    this.btnGroup()
+  },
   methods: {
+    // 按钮组
+    btnGroup (index) {
+      this.isPlainDefault = false // 每次点击按钮调用方法的时候给默认按钮重新赋予默认值
+      this.isPlain = [true, true, true] // 设置按钮组默认为true（默认为朴素按钮）（有几个按钮写几个）
+      if (index != null) { // 如果传入的值不是null 那么代表是其他按钮触发的
+        this.isPlain[index - 1] = this.isPlainDefault // 将点击的按钮设置为非朴素按钮（plain的值为false）
+        this.isPlainDefault = !this.isPlainDefault // 将默认的按钮赋值为true（变成朴素按钮）
+      }
+    },
+
     redirect (path) {
       if (path) {
         this.$router.push({ path: path })
@@ -54,16 +69,17 @@ export default {
   background-color:transparent;
   color: #FFFFBB!important;
   font-weight: bold;
-  border-color: #FFFFFF !important;
+  border-color:transparent;
+
+
 }
 /*按钮点击*/
-.el-button:focus {
+ .el-button:focus {
   /*background-color:transparent;*/
   color:#FFFFBB;
   background-color:transparent;
   font-weight: bold;
-
-  border-color: #01a8f9 !important;
+  border-color: transparent;
 }
 .tupian{
   z-index:100;
@@ -85,10 +101,18 @@ export default {
   /*border: 2px dashed;*/
 }
 .el-icon-liuyanban:hover{
+  background-color: transparent;
 
   background-image: url('~@/../src/assets/icon_select_pre@2x.png');
 
 }
+.el-icon-liuyanban:focus{
+  background-color: transparent;
+
+  background-image: url('~@/../src/assets/icon_select_pre@2x.png');
+
+}
+
 
 .el-icon-guanli{
   color: white;
@@ -97,6 +121,13 @@ export default {
   width:165px;
   height:48px;
   /*border: 2px dashed;*/
+
+}
+.el-icon-guanli:hover{
+  background-color: transparent;
+}
+.el-icon-guanli:focus{
+  background-color: transparent;
 
 }
 .el-icon-monan2{

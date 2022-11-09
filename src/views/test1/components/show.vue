@@ -3,9 +3,9 @@
     <div style="background: #003377 ">
     <h1>{{ msg }}</h1>
 
-    <button class="first"  id = "underline" @click="isActive = 0">实时监控</button>
-    <button class="second" id = "underline" @click="isActive = 1">录像回放</button>
-    <button class="third" id = "underline" @click="isActive = 2">预警事件</button>
+    <el-button class="first" :plain="isPlainDefault"  @click="isActive = 0;btnGroup(null)">实时监控</el-button>
+    <el-button class="second" :plain="isPlain[0]"  @click="isActive = 1;btnGroup(1)">录像回放</el-button>
+    <el-button class="third" :plain="isPlain[1]"  @click="isActive = 2;btnGroup(2)">预警事件</el-button>
     <el-icon class="el-icon-setting"></el-icon>
     </div>
     <div class="first1" v-if="isActive == 0">
@@ -296,6 +296,9 @@ export default {
   name: 'Show',
   data() {
     return {
+      isPlain: [], // 控制按钮组是否为朴素按钮
+      isPlainDefault: false, // 默认为非朴素按钮
+
       activities: [{
         content: '_',
         color: '#33FFFF'
@@ -331,6 +334,20 @@ export default {
   props: {
     msg: String,
   },
+  mounted() {
+    this.btnGroup()
+  },
+  methods:{
+    // 按钮组
+    btnGroup (index) {
+      this.isPlainDefault = false // 每次点击按钮调用方法的时候给默认按钮重新赋予默认值
+      this.isPlain = [true, true, true] // 设置按钮组默认为true（默认为朴素按钮）（有几个按钮写几个）
+      if (index != null) { // 如果传入的值不是null 那么代表是其他按钮触发的
+        this.isPlain[index - 1] = this.isPlainDefault // 将点击的按钮设置为非朴素按钮（plain的值为false）
+        this.isPlainDefault = !this.isPlainDefault // 将默认的按钮赋值为true（变成朴素按钮）
+      }
+    },
+  }
 };
 
 /*图片点击出现边框样式（一图出现边框，其他图取消边框*/
@@ -459,6 +476,7 @@ for (var i = 0; i < imgs.length; i++) {
   cursor:pointer;
 
 }
+
 .second{
   top:-10px;
   position: relative;

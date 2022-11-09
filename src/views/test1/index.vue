@@ -425,13 +425,28 @@ input::-webkit-input-placeholder {
     /* placeholder字体大小 */
     font-size: 12px;
 }
-::v-deep .el-tree-node:focus > .el-tree-node__content {
+::v-deep .el-tree-node > .el-tree-node__content {
+  background-color: transparent;
+  color: white; //节点的字体颜色
+  margin-top: 10px;
+}
+::v-deep .el-tree-node:hover > .el-tree-node__content {
   background-color: transparent;
   font-size: 20px;
-
   color: white; //节点的字体颜色
+  background-color:#1a578b;
   font-weight: bold;
 }
+
+::v-deep .el-tree-node.is-current:focus > .el-tree-node__content {
+  background-color: transparent;
+  font-size: 20px;
+  color: white; //节点的字体颜色
+  background-color:#1a578b;
+  font-weight: bold;
+}
+
+
 .tab_title{
   position: relative;
 }

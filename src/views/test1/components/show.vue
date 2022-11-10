@@ -1,12 +1,14 @@
 <template>
-  <div>
-    <div style="background: #003377 ">
-    <h1>{{ msg }}</h1>
-
-    <el-button class="first" :plain="isPlainDefault"  @click="isActive = 0;btnGroup(null)">实时监控</el-button>
-    <el-button class="second" :plain="isPlain[0]"  @click="isActive = 1;btnGroup(1)">录像回放</el-button>
-    <el-button class="third" :plain="isPlain[1]"  @click="isActive = 2;btnGroup(2)">预警事件</el-button>
-    <el-icon class="el-icon-setting"></el-icon>
+  <div style="position: absolute">
+    <div style="position:absolute;width:1380px;height:40px;top:-350px;background: #003377 ">
+      <span style="color: white;position: absolute;left: 100px;top:10px;font-size: 18px">   点位详情</span>
+      <el-image style="position:absolute;left:-10px;top:-10px;height: 60px;width:60px;background: transparent" :src="require('@/assets/icon_title_dianwei@2x.png')" fit="fill"></el-image>
+      <div style="position: absolute;left: 150px">
+      <el-button class="first" :plain="isPlainDefault"  @click="isActive = 0;btnGroup(null)">实时监控</el-button>
+      <el-button class="second" :plain="isPlain[0]"  @click="isActive = 1;btnGroup(1)">录像回放</el-button>
+      <el-button class="third" :plain="isPlain[1]"  @click="isActive = 2;btnGroup(2)">预警事件</el-button>
+<!--      <el-icon class="el-icon-setting"></el-icon>-->
+      </div>
     </div>
     <div class="first1" v-if="isActive == 0">
       <!-- 实时监控 -->

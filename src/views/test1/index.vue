@@ -2,6 +2,7 @@
 
 
   <div>
+<!--    地图-->
     <div style="position: absolute;">
             <baidu-map
               class="bm-viewmap"
@@ -12,7 +13,6 @@
               @ready="createMap"
             >
               <el-input
-                style="background-color:black"
                 placeholder="请输入工程名称"
                 v-model="inputValue"
                 clearable
@@ -44,6 +44,9 @@
             </baidu-map>
     </div>
 
+    <div>
+<!--      整个界面的块-->
+
 
     <!--    ：span分开这里了-->
     <div class="el-col-cock1">
@@ -58,6 +61,7 @@
 
         <!--        统筹整个块-->
         <div style="margin: 30px">
+<!--          弹窗-->
           <!--        第一个图片点击事件-->
           <div class="main" style="width: 30px; height: 31px;">
             <el-button id="hide" @click="hide_onclick" style="width: 30px; height: 31px;"></el-button>
@@ -67,15 +71,13 @@
           <!-- background的不透明度有问题 -->
           <div class="cover" id="box">
              <div>
-             <div style=" height: 800px;width: 1400px;">
+             <div style=" height: 700px;width: 1400px;">
               <!-- 背景色有问题 -->
-                <div style="position:absolute;height: 60px;width: 1400px;background-color:#003377;top:30px">
-                  <span class="span">   点位详情</span>
-                  <el-image style="position:relative;left:-150px;height: 60px;width:60px;margin-right: 60px;background: transparent" :src="require('@/assets/icon_title_dianwei@2x.png')" fit="fill"></el-image>
+                <div style="position:absolute;">
                   <div class=Show>
                     <Show msg=""/>
                   </div>
-                  <el-image  style="position:relative;top:10px;right:-10px;width: 30px;height: 30px" id="Closehide" @click="Closehide_onclick" :src="require('@/assets/chahao.png')" fit="fill"></el-image>
+                  <el-image  style="position:absolute;top:-350px;left:650px;width: 30px;height: 30px" id="Closehide" @click="Closehide_onclick" :src="require('@/assets/chahao.png')" fit="fill"></el-image>
                 </div>
              </div>
              </div>
@@ -274,7 +276,7 @@
                   <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
-              <li v>
+              <li >
                 <div>
                   <span class="span">文字                                                      文字1</span>
                   <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
@@ -313,8 +315,8 @@
 
 
 <!--    ：span分开这里了-->
-    <div>
-    <div class="el-col-cock2" style="position:absolute;">
+    <div style="z-index: 101">
+      <div class="el-col-cock2" style="position:absolute;">
       <el-card class="box-card4">
         <template>
           <el-radio  class="card_bottom" v-model="radio" label="1">点位显示</el-radio>
@@ -324,11 +326,11 @@
         </template>
       </el-card>
 
-    </div>
+      </div>
 
     <!--    ：span分开这里了-->
 
-<div class="el-col-cock3" style="position: absolute">
+      <div class="el-col-cock3" style="position: absolute">
 
       <el-card class="box-card1">
         <div :style="background" style="position: relative;">
@@ -413,7 +415,8 @@
 
       </el-card>
 
-</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -470,10 +473,10 @@ input::-webkit-input-placeholder {
 //el-col  z-index问题
 
 ::v-deep .el-col-cock1{
-  position: relative;
+  position: absolute;
   top: 90px;
   left: 20px;
-  z-index:101;
+  z-index:102;
 }
 ::v-deep.el-col-cock2{
   top:-15px;

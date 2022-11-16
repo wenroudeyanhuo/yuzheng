@@ -516,10 +516,8 @@ export default {
 
         // 视频进度改变 -- 播放即触发
         this.videoPlayer.addEventListener("timeupdate", (e) => {
-          // console.log(this.videoPlayer.currentTime,'currentTime') //当前播放进度
-          // console.log(this.videoPlayer.duration,'duration') //当前播放进度
-          sessionStorage.setItem("currentTime", this.videoPlayer.currentTime);
-          sessionStorage.setItem("duration", this.videoPlayer.duration);
+          // sessionStorage.setItem("currentTime", this.videoPlayer.currentTime);
+          // sessionStorage.setItem("duration", this.videoPlayer.duration);
         });
 
         //视频暂停 --  点击暂停（退出也会触发并记录时间）
@@ -542,7 +540,7 @@ export default {
 
         // 视频播放 -- 播放结束
         this.videoPlayer.addEventListener("ended", (e) => {
-          console.log(this.videoPlayer.currentTime, "ended 播放完成");
+          // console.log(this.videoPlayer.currentTime, "ended 播放完成");
         });
 
         //   // 禁止快进
@@ -558,13 +556,13 @@ export default {
     },
     // 进度记录更新 - 记录当前播放附件的时长
     fileTimelengthRecord() {
-      let stat = sessionStorage.getItem("currentTime");
-      let end = sessionStorage.getItem("duration");
-      if (stat > 0) {
-        this.ifopen();
-      } else {
-        this.videoPlayer.currentTime = 0;
-      }
+      // let stat = sessionStorage.getItem("currentTime");
+      // let end = sessionStorage.getItem("duration");
+      // if (stat > 0) {
+      //   this.ifopen();
+      // } else {
+      //   // this.videoPlayer.currentTime = 0;
+      // }
     },
     ifopen() {
       this.$confirm("是否从上次的记录开始播放?", "提示", {
@@ -573,19 +571,19 @@ export default {
         type: "warning",
       })
         .then(() => {
-          let stat = sessionStorage.getItem("currentTime");
-          this.videoPlayer.currentTime = stat;
+          // let stat = sessionStorage.getItem("currentTime");
+          // this.videoPlayer.currentTime = stat;
           this.videoPlayer.play();
         })
         .catch(() => {
-          this.videoPlayer.currentTime = 0;
+          // this.videoPlayer.currentTime = 0;
           this.videoPlayer.pause();
         });
     },
 
     open(it, id) {
       // sessionStorage.setItem('arrylistId',id)
-      sessionStorage.setItem("currentTime", 0);
+      // sessionStorage.setItem("currentTime", 0);
       sessionStorage.setItem("duration", 0);
       this.activeIndex = id;
     },
@@ -615,21 +613,21 @@ window.onload = function () {
     console.log(newLeft);
   }
   // 向左按钮
-  btn_page[0].onclick = function () {
-    if (left_number == 0) {
-      btn_page[0].style.disabled = true;
-    } else {
-      animate(433);
-    }
-  };
+  // btn_page[0].onclick = function () {
+  //   if (left_number == 0) {
+  //     btn_page[0].style.disabled = true;
+  //   } else {
+  //     animate(433);
+  //   }
+  // };
   // 向右按钮
-  btn_page[1].onclick = function () {
-    if (left_number <= -1299) {
-      btn_page[1].style.disabled = true;
-    } else {
-      animate(-433);
-    }
-  };
+  // btn_page[1].onclick = function () {
+  //   if (left_number <= -1299) {
+  //     btn_page[1].style.disabled = true;
+  //   } else {
+  //     animate(-433);
+  //   }
+  // };
 
 };
 

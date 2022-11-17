@@ -9,8 +9,8 @@
       </div>
       <div style="width:100%;z-index: 101;position: absolute;top:500px;left: 100px">
         <input type="button"  @click="openHeatmap();" value="显示热力图"/><input type="button"  @click="closeHeatmap();" value="关闭热力图"/>
+      </div>
     </div>
-  </div>
   </div>
 
 </template>
@@ -33,25 +33,25 @@ export default {
       this.heatmapOverlay.hide();
     },
     setGradient(){
-    /*格式如下所示:
-  {
-    0:'rgb(102, 255, 0)',
-      .5:'rgb(255, 170, 0)',
-     1:'rgb(255, 0, 0)'
-    }*/
-  var gradient = {};
-  var colors = document.querySelectorAll("input[type='color']");
-  colors = [].slice.call(colors,0);
-  colors.forEach(function(ele){
-    gradient[ele.getAttribute("data-key")] = ele.value;
-  });
+      /*格式如下所示:
+    {
+      0:'rgb(102, 255, 0)',
+        .5:'rgb(255, 170, 0)',
+       1:'rgb(255, 0, 0)'
+      }*/
+      var gradient = {};
+      var colors = document.querySelectorAll("input[type='color']");
+      colors = [].slice.call(colors,0);
+      colors.forEach(function(ele){
+        gradient[ele.getAttribute("data-key")] = ele.value;
+      });
       this.heatmapOverlay.setOptions({"gradient":gradient});
-},
+    },
 //判断浏览区是否支持canvas
-  isSupportCanvas(){
-  var elem = document.createElement('canvas');
-  return !!(elem.getContext && elem.getContext('2d'));
-  }
+    isSupportCanvas(){
+      var elem = document.createElement('canvas');
+      return !!(elem.getContext && elem.getContext('2d'));
+    }
 
   },
   mounted() {
@@ -184,7 +184,7 @@ export default {
       // {"lng":116.424579,"lat":39.914987,"count":57},
       // {"lng":116.42076,"lat":39.915251,"count":70},
       // {"lng":116.425867,"lat":39.918989,"count":8}
-      ];
+    ];
     var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
     map.addOverlay(this.heatmapOverlay);
     this.heatmapOverlay.setDataSet({data:points,max:100});
@@ -254,9 +254,9 @@ export default {
       // map.addOverlay(marker);            //增加点
 
 
-    //  取出储存的点
-    //   console.log(markers[0])
-    //   console.log(markers.length);
+      //  取出储存的点
+      //   console.log(markers[0])
+      //   console.log(markers.length);
       for(var j=0;j<markers.length;j++){
         // console.log(markers[j]);
         map.addOverlay(markers[j]);

@@ -7,6 +7,10 @@
 
       <div style="width:1533px; height: 790px;">
         <div  style="width: 100%; height: 100%" id="map" class="map"></div>
+        <div style="width:100%;z-index: 101;position: absolute;top:450px;left: 500px">
+          <input id="add_overlay" type="button" onclick="add_overlay();" value="添加覆盖物" />
+          <input id="remove_overlay" type="button" onclick="remove_overlay();" value="删除覆盖物" />
+        </div>
         <div id="r-result" style="width:100%;z-index: 101;position: absolute;top:500px;left: 500px">
           <input type="button"  @click="openHeatmap();" value="显示热力图"/><input type="button"  @click="closeHeatmap();" value="关闭热力图"/>
         </div>
@@ -1503,49 +1507,74 @@ export default {
       [121.564926, 29.531904],
       [121.526053, 29.510957],
     ];
-    var img = new Image();
-    var randomCount = test_flag.length;
-    img.src = require("@/assets/flag.png");
-    img.onload = function () {
-      // console.log(img)
-      // 构造数据
-      for (var i in test_flag) {
-        data.push({
-          geometry: {
-            type: "Point",
-            //这肯定是一个坐标
-            coordinates: [test_flag[i][0], test_flag[i][1]],
-          },
-          deg: 360 * Math.random(),
-          // 支持image对象和url两种方式
-          icon: [img, img, img][randomCount % 3],
-          width: 20,
-          height: randomCount % 3 === 1 ? 30 : 20,
-        });
-      }
-      var dataSet = new mapv.DataSet(data);
-      var options = {
-        draw: "icon",
-        methods: {
-          click: function (item) {
-            // console.log(item);
-          },
-        },
-        size: 10,
-        width: 10,
-        height: 10,
-        // sx: 10,
-        // sy: 10,
-        // swidth: 50,
-        // sheight: 50,
-      };
-      var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+    var markers=[];
+    for (var i=0;i<7;i++){
+      // console.log(i)
+      var marker=new BMap.Marker(new BMap.Point(test_flag[i][0], test_flag[i][1]));//创建点
+      // console.log(marker);
+      markers.push(marker);
+    }
+    // var img = new Image();
+    // var randomCount = test_flag.length;
+    // img.src = require("@/assets/flag.png");
+    // img.onload = function () {
+    //   // console.log(img)
+    //   // 构造数据
+    //   for (var i in test_flag) {
+    //     data.push({
+    //       geometry: {
+    //         type: "Point",
+    //         //这肯定是一个坐标
+    //         coordinates: [test_flag[i][0], test_flag[i][1]],
+    //       },
+    //       deg: 360 * Math.random(),
+    //       // 支持image对象和url两种方式
+    //       icon: [img, img, img][randomCount % 3],
+    //       width: 20,
+    //       height: randomCount % 3 === 1 ? 30 : 20,
+    //     });
+    //   }
+    //   var dataSet = new mapv.DataSet(data);
+    //   var options = {
+    //     draw: "icon",
+    //     methods: {
+    //       click: function (item) {
+    //         // console.log(item);
+    //       },
+    //     },
+    //     size: 10,
+    //     width: 10,
+    //     height: 10,
+    //     // sx: 10,
+    //     // sy: 10,
+    //     // swidth: 50,
+    //     // sheight: 50,
+    //   };
+    //   var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+    //
+    //   // var options = {
+    //   //     draw: 'simple'
+    //   // }
+    //   // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+    // };
+    //添加覆盖物
+    document.getElementById("add_overlay").onclick=function add_overlay(){
+      // console.log(markers);
+      // map.addOverlay(marker);            //增加点
 
-      // var options = {
-      //     draw: 'simple'
-      // }
-      // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
-    };
+
+      //  取出储存的点
+      //   console.log(markers[0])
+      //   console.log(markers.length);
+      for(var j=0;j<markers.length;j++){
+        // console.log(markers[j]);
+        map.addOverlay(markers[j]);
+      }
+    }
+//清除覆盖物
+    document.getElementById("remove_overlay").onclick=function remove_overlay(){
+      map.clearOverlays();
+    }
   },
   // watch:{
   //   radio: function (curval,oldval){
@@ -1560,14 +1589,14 @@ export default {
   //         new BMapGL.Point(121.898617,29.742795)
   //     ];
 
-  //     //创建函数 画圆	
+  //     //创建函数 画圆
   //       function  fn1(point1){
-  //         map.addOverlay( 
+  //         map.addOverlay(
   //           new BMapGL.Circle(point1,1000,{
-  //             strokeColor:"blue", 
-  //             strokeWeight:2, 
+  //             strokeColor:"blue",
+  //             strokeWeight:2,
   //             strokeOpacity:0.5,
-  //             fillColor:'red'}));   
+  //             fillColor:'red'}));
   //       }
   //     //循环圆心
   //         for (var i = 0; i < pois.length; i ++) {

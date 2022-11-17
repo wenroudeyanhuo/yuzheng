@@ -110,7 +110,7 @@
             </div>
 
             <div>
-              <input style="background:transparent;margin-bottom: 20px;margin-top: 20px;width:265px;height:35px;" type="text"  maxlength="11"  placeholder="输入点位关键词"> </input>
+              <input style="background:transparent;margin-bottom: 20px;margin-top: 20px;width:265px;height:35px;" type="text"  maxlength="11"  placeholder="输入点位关键词"></input>
             </div>
             <span></span>
 
@@ -407,10 +407,10 @@
 }
 
 input::-webkit-input-placeholder {
-    /* placeholder颜色 */
-    color: #aab2bd;
-    /* placeholder字体大小 */
-    font-size: 12px;
+  /* placeholder颜色 */
+  color: #aab2bd;
+  /* placeholder字体大小 */
+  font-size: 12px;
 }
 ::v-deep .el-tree-node > .el-tree-node__content {
   background-color: transparent;
@@ -421,7 +421,7 @@ input::-webkit-input-placeholder {
   background-color: transparent;
   font-size: 20px;
   color: white; //节点的字体颜色
-  background-color:#1a578b;
+  background-color: #1a578b;
   font-weight: bold;
 }
 
@@ -429,50 +429,49 @@ input::-webkit-input-placeholder {
   background-color: transparent;
   font-size: 20px;
   color: white; //节点的字体颜色
-  background-color:#1a578b;
+  background-color: #1a578b;
   font-weight: bold;
 }
 
-
-.tab_title{
+.tab_title {
   position: relative;
 }
 //
-.position-button-group{
+.position-button-group {
   height: 30px;
   width: 30px;
   position: relative;
-  top:-70px;
+  top: -70px;
   left: 100px;
   z-index: 101;
 }
 
 //切换表格
-::v-deep .change{
-  background-image:url("/../../assets/icon_type@3x.png");
+::v-deep .change {
+  background-image: url("/../../assets/icon_type@3x.png");
 }
 //.card-toggle-table{
 //  position: fixed;
 //}
 //el-col  z-index问题
 
-::v-deep .el-col-cock1{
+::v-deep .el-col-cock1 {
   position: absolute;
   top: 90px;
   left: 20px;
-  z-index:102;
+  z-index: 102;
 }
-::v-deep.el-col-cock2{
-  top:-15px;
+::v-deep.el-col-cock2 {
+  top: -15px;
 
   right: 330px;
-  z-index:101;
+  z-index: 101;
 }
-::v-deep.el-col-cock3{
-  top:90px;
+::v-deep.el-col-cock3 {
+  top: 90px;
   right: 10px;
 
-  z-index:101;
+  z-index: 101;
 }
 //手写弹窗1
 .main {
@@ -486,7 +485,6 @@ input::-webkit-input-placeholder {
 .main span {
   font-size: 18px;
   color: #fff;
-
 }
 
 .cover {
@@ -495,12 +493,12 @@ input::-webkit-input-placeholder {
   left: 0;
   width: 100%;
   height: 100%;
-  background:black;
+  background: black;
   z-index: 99999;
   opacity: 0.9;
 }
 
-.cover>div {
+.cover > div {
   height: 100%;
   display: flex;
   align-items: center;
@@ -526,12 +524,11 @@ input::-webkit-input-placeholder {
   z-index: 99999;
 }
 
-#box{
+#box {
   display: none;
 }
 
-::v-deep .el-descriptions__body
-{
+::v-deep .el-descriptions__body {
   background: transparent;
 }
 //::v-deep .el-descriptions-item{
@@ -545,23 +542,22 @@ input::-webkit-input-placeholder {
   padding: 4px 12px;
 }
 //点击前的样式
-::v-deep
-.el-radio__inner{
-  border-radius:0;
+::v-deep .el-radio__inner {
+  border-radius: 0;
   width: 20px;
   height: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .el-radio__inner::after {
   width: 22px;
   height: 22px;
   //让圆框变成方框
   border-radius: 0;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 //点击后的字体颜色
-.el-radio__input.is-checked+.el-radio__label {
-  color: #FFFFFF;
+.el-radio__input.is-checked + .el-radio__label {
+  color: #ffffff;
 }
 //::v-deep .el-card__body{
 //  //padding: 0px 0px;
@@ -575,9 +571,9 @@ input::-webkit-input-placeholder {
   overflow: scroll;
 }
 .li1 {
-  color: #FFFFFF;
+  color: #ffffff;
 
-  width:230px;
+  width: 230px;
   //line-height: 50px;
 }
 /* 滚动条 */
@@ -601,7 +597,7 @@ body *::-webkit-scrollbar-corner {
   background: #fff;
 }
 .table {
-  color: #FFFFFF;
+  color: #ffffff;
   height: 700px;
   overflow: hidden;
 }
@@ -614,17 +610,17 @@ body *::-webkit-scrollbar-corner {
   overflow-y: auto;
 }
 //懒加载
-img[lazy="loading"]{
-  display:block;
-  width:150px !important;
-  height:150px !important;
-  margin:0 auto;
+img[lazy="loading"] {
+  display: block;
+  width: 150px !important;
+  height: 150px !important;
+  margin: 0 auto;
 }
 
 //for_brach
 .demo-image__lazy {
   font-size: 15px;
-  color: #FFFFFF;
+  color: #ffffff;
   position: relative;
   top: 130px;
   height: 500px;
@@ -638,22 +634,22 @@ img[lazy="loading"]{
 .demo-image__lazy .el-image:last-child {
   margin-bottom: 0;
 }
-.for_brach{
+.for_brach {
   top: 300px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .block1 {
   padding: 10px 0px;
   background: transparent;
-  color: #FFFFFF;
+  color: #ffffff;
 }
-::v-deep .el-range-input{
-  color: #FFFFFF;
+::v-deep .el-range-input {
+  color: #ffffff;
   background: transparent;
 }
-::v-deep .el-range-separator{
+::v-deep .el-range-separator {
   background: transparent;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 //输入框
@@ -666,26 +662,26 @@ img[lazy="loading"]{
 }
 ::v-deep
   //下拉框面板
-.el-select-dropdown{
+.el-select-dropdown {
   font-size: 30px;
   color: black;
   //background-color:transparent;
 }
-::v-deep .el-popper{
+::v-deep .el-popper {
   color: black;
 }
-::v-deep .el-select-dropdown__item{
+::v-deep .el-select-dropdown__item {
   color: black;
 }
 //选中时的样式
-::v-deep .el-select-dropdown__item.hover{
+::v-deep .el-select-dropdown__item.hover {
   background: transparent;
 }
-::v-deep .el-scrollbar{
+::v-deep .el-scrollbar {
   color: black;
 }
 
-.select_shijian{
+.select_shijian {
   //color: #FFFFFF;
   background: transparent;
   width: 260px;
@@ -693,43 +689,42 @@ img[lazy="loading"]{
   top: -10px;
   left: 0px;
   //right: 0px;
-
 }
 
-.select_shebei{
+.select_shebei {
   background: transparent;
   width: 130px;
   position: absolute;
-  top:100px;
+  top: 100px;
   left: 0px;
 }
-.select_chulizhuangtai{
+.select_chulizhuangtai {
   background: transparent;
   width: 130px;
   position: absolute;
-  top:100px;
+  top: 100px;
   left: 130px;
 }
 
-*{
-  padding: 0;    //去掉默认内边距，也就是ul标签左边的内边距40px；
-  margin:0;    //去掉li的外边距。
+* {
+  padding: 0; //去掉默认内边距，也就是ul标签左边的内边距40px；
+  margin: 0; //去掉li的外边距。
 }
-ul{
-  list-style:none;    //去掉标签默认的左边符号
-  flex-wrap:wrap;
+ul {
+  list-style: none; //去掉标签默认的左边符号
+  flex-wrap: wrap;
 }
-li{
-  list-style-type:none;    //去掉标签默认的左边符号
+li {
+  list-style-type: none; //去掉标签默认的左边符号
 }
 .el-dropdown-link {
   cursor: pointer;
-  color: #409EFF;
+  color: #409eff;
 }
 .el-icon-arrow-down {
   font-size: 12px;
 }
-::v-deep  .el-calendar__header {
+::v-deep .el-calendar__header {
   padding: 0px;
 }
 
@@ -756,14 +751,14 @@ li{
   margin-bottom: 6px;
 }
 
-::v-deep .el-calendar-table thead>th{
-  color: #00928C;
-  border-bottom: 1px solid #00928C;
+::v-deep .el-calendar-table thead > th {
+  color: #00928c;
+  border-bottom: 1px solid #00928c;
 }
 
 ::v-deep .el-calendar-table td.is-selected {
   // background: transparent;
-  color: #00928C;
+  color: #00928c;
   font-weight: 500;
 }
 
@@ -775,11 +770,11 @@ li{
   padding: 0px 6px 0px;
 }
 
-::v-deep .el-calendar-table .el-calendar-day{
+::v-deep .el-calendar-table .el-calendar-day {
   width: 33px;
   height: 30px;
 }
-::v-deep .el-calendar__title{
+::v-deep .el-calendar__title {
   display: none;
 }
 // 日历内容部分
@@ -844,18 +839,17 @@ li{
 
 //第二张图片作用在点击上
 >>> .el-button-group > .el-button:first-child:before {
-  content:  url('~@/assets/icon_type@3x.png');
+  content: url("~@/assets/icon_type@3x.png");
 }
 
 >>> .el-button-group > .el-button:last-child:before {
-  content: url('~@/assets/icon_type@3x.png');
+  content: url("~@/assets/icon_type@3x.png");
 }
 
 >>> .el-button-group > .el-button:first-child span,
 >>> .el-button-group > .el-button:last-child span {
   display: none;
 }
-
 
 >>> .el-button {
   border: 0;
@@ -890,79 +884,75 @@ li{
   background: rgba(253, 227, 228, 0.8);
   border-radius: 8px;
 }
-.tupian{
-  z-index:100;
+.tupian {
+  z-index: 100;
   position: absolute;
-  left:1360px; //只是假定的值，具体需测量
-  top:80px;
-
+  left: 1360px; //只是假定的值，具体需测量
+  top: 80px;
 }
 //点击事件中的图片
-.tupian2{
-  z-index:100;
+.tupian2 {
+  z-index: 100;
   position: absolute;
-  left:110px; //只是假定的值，具体需测量
-  top:45px;
-
+  left: 110px; //只是假定的值，具体需测量
+  top: 45px;
 }
-.tupian3{
-  z-index:100;
+.tupian3 {
+  z-index: 100;
   position: absolute;
-  left:200px; //只是假定的值，具体需测量
-  top:40px;
-
+  left: 200px; //只是假定的值，具体需测量
+  top: 40px;
 }
-.wenzi_1{
+.wenzi_1 {
   position: absolute;
-  left:140px; //只是假定的值，具体需测量
-  top:70px;
-  z-index:101;
+  left: 140px; //只是假定的值，具体需测量
+  top: 70px;
+  z-index: 101;
 }
-.wenzi_2{
+.wenzi_2 {
   position: absolute;
-  left:140px; //只是假定的值，具体需测量
-  top:100px;
-  z-index:101;
+  left: 140px; //只是假定的值，具体需测量
+  top: 100px;
+  z-index: 101;
 }
-.wenzi_3{
+.wenzi_3 {
   position: absolute;
-  left:140px; //只是假定的值，具体需测量
-  top:130px;
-  z-index:101;
+  left: 140px; //只是假定的值，具体需测量
+  top: 130px;
+  z-index: 101;
 }
 //第二个区块
-.wenzi_4{
+.wenzi_4 {
   position: absolute;
   // left:140px; //只是假定的值，具体需测量
   right: 20px;
-  top:20px;
-  z-index:101;
+  top: 20px;
+  z-index: 101;
 }
-.wenzi_5{
+.wenzi_5 {
   position: absolute;
   // left:140px; //只是假定的值，具体需测量
   // top:270px;
   right: 20px;
-  top:50px;
-  z-index:101;
+  top: 50px;
+  z-index: 101;
 }
-.wenzi_6{
+.wenzi_6 {
   position: absolute;
   // left:140px; //只是假定的值，具体需测量
   // top:300px;
   right: 20px;
-  top:80px;
-  z-index:101;
+  top: 80px;
+  z-index: 101;
 }
-.index_backcol{
-  background-color:#000088 ;
-  color:#FFFFFF;
+.index_backcol {
+  background-color: #000088;
+  color: #ffffff;
 }
 
-::v-deep
-.collapse-title {
-  color:#FFFFFF;
-  background-color:#000088 ;
+::v-deep .collapse-title {
+  color: #ffffff;
+  background-color: #000088;
   flex: 1 0 90%;
   order: 1;
   .el-collapse-item__header {
@@ -970,58 +960,55 @@ li{
     flex: 1 0 auto;
     //order: 0;
     background: transparent;
-
   }
 }
 .el-collapse-item__arrow {
-  display: none
+  display: none;
 }
 .el-icon-arrow-right:before {
   content: "" !important;
 }
 
-
-
-
-input[type="text"],input[type="password"],input[type="email"]{
-
-  -web-kit-appearance:none;
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  -web-kit-appearance: none;
   -moz-appearance: none;
-  outline:0;
+  outline: 0;
 
   box-sizing: border-box;
-  text-align:left;
-  font-size:1.2em;
-  height:2.1em;
-  border-radius:5px;
-  border:1px solid #c8cccf;
-  color:white;;
-  display:block;
-  padding:0 1em;
-  text-decoration:none;
-  width:100%;
+  text-align: left;
+  font-size: 1.2em;
+  height: 2.1em;
+  border-radius: 5px;
+  border: 1px solid #c8cccf;
+  color: white;
+  display: block;
+  padding: 0 1em;
+  text-decoration: none;
+  width: 100%;
 }
-input::-webkit-input-placeholder{
+input::-webkit-input-placeholder {
   color: white;
 }
 
 .text {
   font-size: 14px;
 }
-.span{
-  color:#FFFFFF;
+.span {
+  color: #ffffff;
   white-space: pre;
-  font-weight:bold;
+  font-weight: bold;
 }
-.span1{
-  color:#FFFFFF;
+.span1 {
+  color: #ffffff;
   display: inline-block;
   overflow: hidden;
   font-size: 20px;
 }
-.span2{
+.span2 {
   // margin-top: 5px;
-  color:#FFFFFF;
+  color: #ffffff;
   display: inline-block;
   overflow: hidden;
   color: #71a3db;
@@ -1038,14 +1025,13 @@ input::-webkit-input-placeholder{
   content: "";
 }
 .clearfix:after {
-  clear: both
+  clear: both;
 }
 .box-card {
-
   //margin-bottom: 20px;
-  background-color:#000088 ;
-  opacity:0.7;
-  height:700px;
+  background-color: #000088;
+  opacity: 0.7;
+  height: 700px;
   width: 300px;
 
   padding: 0px 0px;
@@ -1053,11 +1039,10 @@ input::-webkit-input-placeholder{
   z-index: 101;
 }
 .box-card1 {
-
   //margin-bottom: 20px;
-  background-color:#000088 ;
-  opacity:0.7;
-  height:700px;
+  background-color: #000088;
+  opacity: 0.7;
+  height: 700px;
   width: 300px;
 
   padding: 0px 0px;
@@ -1069,55 +1054,52 @@ input::-webkit-input-placeholder{
   margin-top: -70px;
 
   margin-bottom: 20px;
-  background-color:#000088 ;
-  opacity:0.7;
-  height:700px;
+  background-color: #000088;
+  opacity: 0.7;
+  height: 700px;
   width: 300px;
 
   padding: 0px 0px;
   border: none;
 }
-.box-card2 ::v-deep .el-card__body{
-    // padding: 20px;
-    padding-top: 20px;
-    padding-right: 0px;
-    padding-bottom: 5px;
-    padding-left: 0px;
+.box-card2 ::v-deep .el-card__body {
+  // padding: 20px;
+  padding-top: 20px;
+  padding-right: 0px;
+  padding-bottom: 5px;
+  padding-left: 0px;
 }
-.box-card3{
+.box-card3 {
   z-index: 100;
   position: relative;
   margin-top: 130px;
-  height:700px;
+  height: 700px;
   width: 320px;
 
   border: 3px;
-  border-color: #FFFFFF;
-  background-color:#000088 ;
+  border-color: #ffffff;
+  background-color: #000088;
   padding: 1px 1px;
-
 }
-.box-card3 ::v-deep .el-card__body{
+.box-card3 ::v-deep .el-card__body {
   padding: 0px 0px;
-
 }
 
-.box-card4
-{
+.box-card4 {
   //display: flex;
-  position:absolute;
-  top:610px;
+  position: absolute;
+  top: 610px;
 
   left: -200px;
   right: 100px;
-  height:200px;
+  height: 200px;
   width: 150px;
   padding: 0px 0px;
   border: none;
-  background-color:#000088 ;
-  opacity:0.7;
+  background-color: #000000;
+  opacity: 0.7;
 }
-.card_bottom{
+.card_bottom {
   line-height: 40px;
 }
 // // radio选中改为勾勾
@@ -1141,12 +1123,12 @@ input::-webkit-input-placeholder{
 
 .app-wrapper {
   background-image: url("~@/../public/位图.png");
-  height:100vh;
+  height: 100vh;
   width: 100%;
-  position:fixed;
-  background-size:100% 100%;
+  position: fixed;
+  background-size: 100% 100%;
 }
-.el-header{
+.el-header {
 }
 .el-footer {
   background-color: #b3c0d1;
@@ -1166,7 +1148,7 @@ input::-webkit-input-placeholder{
 }
 
 body > .el-container {
-  margin-bottom:  30px;
+  margin-bottom: 30px;
 }
 
 .el-container:nth-child(5) .el-aside,
@@ -1185,29 +1167,27 @@ body > .el-container {
 //  height: 2px;
 //
 //}
-.el-icon-2{
+.el-icon-2 {
   border: none;
-  opacity:0.3;
+  opacity: 0.3;
 }
 
-
-
-.el-icon-monan{
-  background: url('~@/../public/icon_jiankong.png');
-  width:15px;
+.el-icon-monan {
+  background: url("~@/../public/icon_jiankong.png");
+  width: 15px;
   height: 28px;
   /*border: 2px dashed;*/
   border-radius: 20px;
 }
-.el-icon-monan2{
-  background: url('~@/../public/icon_type@3x.png');
-  width:15px;
-  height:21px;
+.el-icon-monan2 {
+  background: url("~@/../public/icon_type@3x.png");
+  width: 15px;
+  height: 21px;
   /*border: 2px dashed;*/
   border-radius: 20px;
 }
-.el-icon-liuyanban{
-  background: url('~@/../public/9.png');
+.el-icon-liuyanban {
+  background: url("~@/../public/9.png");
   width: 15px;
   height: 22px;
   /*border: 2px dashed;*/
@@ -1219,132 +1199,170 @@ body > .el-container {
   width: 155px;
   height: 100px;
   padding: 10px;
-  border:  2px solid green;
+  border: 2px solid green;
   background: blue;
   overflow: auto;
+}
+
+.el-checkbox__input.is-disabled + span.el-checkbox__label {
+  color: hsl(0, 100%, 100%);
+  cursor: not-allowed;
 }
 </style>
 
 <script>
-
-import Header from '../home/components/header'
-import {getOrderDate,updateWorkdate }from "@/api/calendar";
-import Calendar from '@/components/Calendar.vue'
+import Header from "../home/components/header";
+import { getOrderDate, updateWorkdate } from "@/api/calendar";
+import Calendar from "@/components/Calendar.vue";
 import Show from "@/views/test1/components/show";
-import moment from 'moment';
-
+import moment from "moment";
 
 export default {
-
-  name: 'home',
+  name: "home",
   props: [""],
   components: {
     Header,
     Calendar,
     Show,
   },
-  data(){
-
-    return{
+  data() {
+    return {
       //多选
-      checkList: ['复选框 A'],
+      checkList: ["复选框 A"],
       //地图
-      heatmapOverlay:new BMapLib.HeatmapOverlay({"radius":20}),
+      heatmapOverlay: new BMapLib.HeatmapOverlay({ radius: 20 }),
 
       innerVisible: false,
-      tab:0, //默认选中第一个tab
+      tab: 0, //默认选中第一个tab
       //手写弹窗的数据
-      box:document.getElementById('box'),
-      hide:document.getElementById('hide'),
-      CloseHide:document.getElementById('Closehide'),
+      box: document.getElementById("box"),
+      hide: document.getElementById("hide"),
+      CloseHide: document.getElementById("Closehide"),
       //
-      radio:'1',
+      radio: "1",
       //for_barch
-      for_brach:[{title:'1',src:require('@/assets/for_brach/1.jpg'),key:0},{title:'2',src:require('@/assets/for_brach/2.jpg'),key:1},{title:'3',src:require('@/assets/for_brach/3.jpg'),key: 2}],
-      urls:['',
-        'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
-        'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
-        'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
-        'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
-        'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
-        'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg',],
-      urls_test:[{title:'1',url:"https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg"},{title:'2',url:"https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg"}],
+      for_brach: [
+        { title: "1", src: require("@/assets/for_brach/1.jpg"), key: 0 },
+        { title: "2", src: require("@/assets/for_brach/2.jpg"), key: 1 },
+        { title: "3", src: require("@/assets/for_brach/3.jpg"), key: 2 },
+      ],
+      urls: [
+        "",
+        "https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg",
+        "https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg",
+        "https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg",
+        "https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg",
+        "https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg",
+        "https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg",
+      ],
+      urls_test: [
+        {
+          title: "1",
+          url: "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
+        },
+        {
+          title: "2",
+          url: "https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg",
+        },
+      ],
       //日期范围选择
-      startDate: '',
+      startDate: "",
 
       // selectedArray: [],
-      aString:['宁波松岙大埠1','宁波松岙大埠1','宁波松岙大埠3'],
-      aString1:['海曙大埠1','海曙大埠2','海曙大埠3'],
-      aString2:['镇海大埠1','镇海大埠2','镇海大埠3'],
+      aString: ["宁波松岙大埠1", "宁波松岙大埠1", "宁波松岙大埠3"],
+      aString1: ["海曙大埠1", "海曙大埠2", "海曙大埠3"],
+      aString2: ["镇海大埠1", "镇海大埠2", "镇海大埠3"],
       cardType: true,
       /*测试弹框添加的新内容*/
       currentDay: new Date(),
       currentDateList: [],
       value: new Date(),
-      ruleForm:{
-        shebei:{},
-        cities:{},
-        chulizhuangtai:{}
+      ruleForm: {
+        shebei: {},
+        cities: {},
+        chulizhuangtai: {},
       },
       background: {
         // 背景图片地址
-        backgroundImage: 'url(' + require('../../../public/bg_title@2x.png') + ')',
+        backgroundImage:
+          "url(" + require("../../../public/bg_title@2x.png") + ")",
         // 背景图片是否重复
         // 背景图片大小
-        backgroundSize: 'cover',
+        backgroundSize: "cover",
         // 背景颜色
         // 背景图片位置
-        backgroundPosition: 'center top'
+        backgroundPosition: "center top",
       },
-      cities:[{'value':'疑似船只','label':'事件类型'},{'value':'测试船只','label':'事件类型'},{'value':'确认船只','label':'事件类型'}],
-      shebei:[{'value':'设备1','label':'1'},{'value':'设备2','label':'2'},{'value':'设备3','label':'3'}],
-      chulizhuangtai:[{'value':'待处理','label':'1'},{'value':'已处理','label':'2'}],
-      data: [{
-        label: '鄞州区',
-        children: [{
-          label: '宁波松岙大埠1',
-        },{
-          label: '宁波松岙大埠2',
-        },{
-          label: '宁波松岙大埠3',
-        }]
-      },
+      cities: [
+        { value: "疑似船只", label: "事件类型" },
+        { value: "测试船只", label: "事件类型" },
+        { value: "确认船只", label: "事件类型" },
+      ],
+      shebei: [
+        { value: "设备1", label: "1" },
+        { value: "设备2", label: "2" },
+        { value: "设备3", label: "3" },
+      ],
+      chulizhuangtai: [
+        { value: "待处理", label: "1" },
+        { value: "已处理", label: "2" },
+      ],
+      data: [
         {
-          label: '海曙区',
-          children: [{
-            label: '海曙大埠1',
-          }, {
-            label: '海曙大埠2',
-          }, {
-            label: '海曙大埠3',
-          }]
+          label: "鄞州区",
+          children: [
+            {
+              label: "宁波松岙大埠1",
+            },
+            {
+              label: "宁波松岙大埠2",
+            },
+            {
+              label: "宁波松岙大埠3",
+            },
+          ],
         },
         {
-          label: '镇海区',
-          children: [{
-            label: '镇海大埠1',
-          }, {
-            label: '镇海大埠2',
-
-          }, {
-            label: '镇海大埠3',
-
-          }]
-        }],
+          label: "海曙区",
+          children: [
+            {
+              label: "海曙大埠1",
+            },
+            {
+              label: "海曙大埠2",
+            },
+            {
+              label: "海曙大埠3",
+            },
+          ],
+        },
+        {
+          label: "镇海区",
+          children: [
+            {
+              label: "镇海大埠1",
+            },
+            {
+              label: "镇海大埠2",
+            },
+            {
+              label: "镇海大埠3",
+            },
+          ],
+        },
+      ],
       defaultProps: {
-        children: 'children',
-        label: 'label'
-      }
-    }
-      ;
-
+        children: "children",
+        label: "label",
+      },
+    };
   },
   mounted() {
     // 创建Map实例
     var map = new BMap.Map("map");
     // 初始化地图,设置中心点坐标和地图级别
-    map.centerAndZoom(new BMap.Point(121.573215,29.507074), 14);
-    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    map.centerAndZoom(new BMap.Point(121.573215, 29.507074), 14);
+    map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
     // map.centerAndZoom：第一个参数可以是根据之前创建好的一个点为中心，创建出地图，也可以根据城市地区的中文名称创建地图。第二个参数是地图缩放级别，最大为19，最小为0
     // map.addControl(//添加地图类型控件
     //   new BMap.MapTypeControl({
@@ -1360,70 +1378,69 @@ export default {
     // });
     //这些热力图点位数据  解释  lng lat  为坐标    count为权重
     //121.459663,29.462414
-    var points =[
+    var points = [
       //宁海互通点
-      {"lng":121.459519,"lat":29.476439,"count":50},
-      {"lng":121.451902,"lat":29.463075,"count":51},
-      {"lng":121.442272,"lat":29.463326,"count":15},
-      {"lng":121.450608,"lat":29.469081,"count":40},
-      {"lng":121.449314,"lat":29.476501,"count":100},
-      {"lng":121.4611,"lat":29.468578,"count":6},
-      {"lng":121.463112,"lat":29.472225,"count":18},
-      {"lng":121.459663,"lat":29.462414,"count":80},
+      { lng: 121.459519, lat: 29.476439, count: 50 },
+      { lng: 121.451902, lat: 29.463075, count: 51 },
+      { lng: 121.442272, lat: 29.463326, count: 15 },
+      { lng: 121.450608, lat: 29.469081, count: 40 },
+      { lng: 121.449314, lat: 29.476501, count: 100 },
+      { lng: 121.4611, lat: 29.468578, count: 6 },
+      { lng: 121.463112, lat: 29.472225, count: 18 },
+      { lng: 121.459663, lat: 29.462414, count: 80 },
       //望台山左121.519867,29.512371
-      {"lng":121.527754,"lat":29.506336,"count":11},
-      {"lng":121.527754,"lat":29.517149,"count":7},
-      {"lng":121.52143,"lat":29.509102,"count":42},
-      {"lng":121.525563,"lat":29.510139,"count":4},
-      {"lng":121.525868,"lat":29.512245,"count":27},
-      {"lng":121.52373,"lat":29.510941,"count":23},
-      {"lng":121.523227,"lat":29.511774,"count":60},
-      {"lng":121.52603,"lat":29.509401,"count":8},
-      {"lng":121.519867,"lat":29.512371,"count":15},
+      { lng: 121.527754, lat: 29.506336, count: 11 },
+      { lng: 121.527754, lat: 29.517149, count: 7 },
+      { lng: 121.52143, lat: 29.509102, count: 42 },
+      { lng: 121.525563, lat: 29.510139, count: 4 },
+      { lng: 121.525868, lat: 29.512245, count: 27 },
+      { lng: 121.52373, lat: 29.510941, count: 23 },
+      { lng: 121.523227, lat: 29.511774, count: 60 },
+      { lng: 121.52603, lat: 29.509401, count: 8 },
+      { lng: 121.519867, lat: 29.512371, count: 15 },
       //悬山左121.564531,29.529924
-      {"lng":121.560471,"lat":29.532281,"count":25},
-      {"lng":121.565825,"lat":29.531464,"count":21},
-      {"lng":121.563309,"lat":29.530584,"count":1},
-      {"lng":121.563777,"lat":29.53093,"count":51},
-      {"lng":121.564387,"lat":29.532407,"count":7},
-      {"lng":121.565789,"lat":29.534512,"count":11},
-      {"lng":121.567945,"lat":29.534449,"count":35},
-      {"lng":121.565573,"lat":29.530804,"count":22},
-      {"lng":121.564531,"lat":29.529924,"count":4},
+      { lng: 121.560471, lat: 29.532281, count: 25 },
+      { lng: 121.565825, lat: 29.531464, count: 21 },
+      { lng: 121.563309, lat: 29.530584, count: 1 },
+      { lng: 121.563777, lat: 29.53093, count: 51 },
+      { lng: 121.564387, lat: 29.532407, count: 7 },
+      { lng: 121.565789, lat: 29.534512, count: 11 },
+      { lng: 121.567945, lat: 29.534449, count: 35 },
+      { lng: 121.565573, lat: 29.530804, count: 22 },
+      { lng: 121.564531, lat: 29.529924, count: 4 },
       //东升岛 121.657137,29.549909
 
-
-      {"lng":121.654748,"lat":29.551499,"count":25},
-      {"lng":121.654353,"lat":29.549457,"count":3},
-      {"lng":121.654999,"lat":29.550086,"count":100},
-      {"lng":121.654353,"lat":29.549457,"count":87},
-      {"lng":121.655556,"lat":29.550337,"count":32},
-      {"lng":121.657137,"lat":29.549909,"count":44},
+      { lng: 121.654748, lat: 29.551499, count: 25 },
+      { lng: 121.654353, lat: 29.549457, count: 3 },
+      { lng: 121.654999, lat: 29.550086, count: 100 },
+      { lng: 121.654353, lat: 29.549457, count: 87 },
+      { lng: 121.655556, lat: 29.550337, count: 32 },
+      { lng: 121.657137, lat: 29.549909, count: 44 },
       //乌沙山右前 121.690498,29.524298  摄像头左标
       // 121.681751,29.535235
-      {"lng":121.685542,"lat":29.523246,"count":21},
-      {"lng":121.679092,"lat":29.527001,"count":80},
-      {"lng":121.681392,"lat":29.522853,"count":32},
-      {"lng":121.695333,"lat":29.533852,"count":26},
-      {"lng":121.68865,"lat":29.528384,"count":17},
-      {"lng":121.681751,"lat":29.535235,"count":17},
+      { lng: 121.685542, lat: 29.523246, count: 21 },
+      { lng: 121.679092, lat: 29.527001, count: 80 },
+      { lng: 121.681392, lat: 29.522853, count: 32 },
+      { lng: 121.695333, lat: 29.533852, count: 26 },
+      { lng: 121.68865, lat: 29.528384, count: 17 },
+      { lng: 121.681751, lat: 29.535235, count: 17 },
 
       //咸祥公园附近 121.829001,29.679995
       //121.822677,29.655517
-      {"lng":121.82972,"lat":29.680372,"count":25},
-      {"lng":121.839925,"lat":29.667192,"count":100},
-      {"lng":121.821815,"lat":29.6751,"count":39},
-      {"lng":121.846967,"lat":29.681878,"count":11},
-      {"lng":121.832882,"lat":29.676481,"count":9},
-      {"lng":121.822677,"lat":29.655517,"count":47},
+      { lng: 121.82972, lat: 29.680372, count: 25 },
+      { lng: 121.839925, lat: 29.667192, count: 100 },
+      { lng: 121.821815, lat: 29.6751, count: 39 },
+      { lng: 121.846967, lat: 29.681878, count: 11 },
+      { lng: 121.832882, lat: 29.676481, count: 9 },
+      { lng: 121.822677, lat: 29.655517, count: 47 },
 
       //梅山大桥那边 121.933061,29.756154
       //121.929468,29.75352  121.937229,29.753896  121.932917,29.760042 121.93378,29.749757
 
-      {"lng":121.929468,"lat":29.75352,"count":52},
-      {"lng":121.937229,"lat":29.753896,"count":100},
-      {"lng":121.932917,"lat":29.760042,"count":46},
-      {"lng":121.93378,"lat":29.749757,"count":9},
+      { lng: 121.929468, lat: 29.75352, count: 52 },
+      { lng: 121.937229, lat: 29.753896, count: 100 },
+      { lng: 121.932917, lat: 29.760042, count: 46 },
+      { lng: 121.93378, lat: 29.749757, count: 9 },
 
       //提供测试数据
       // {"lng":116.419916,"lat":39.924055,"count":8},
@@ -1470,42 +1487,49 @@ export default {
       // {"lng":116.42076,"lat":39.915251,"count":70},
       // {"lng":116.425867,"lat":39.918989,"count":8}
     ];
-    var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+    var heatmapOverlay = new BMapLib.HeatmapOverlay({ radius: 20 });
     map.addOverlay(this.heatmapOverlay);
-    this.heatmapOverlay.setDataSet({data:points,max:100});
+    this.heatmapOverlay.setDataSet({ data: points, max: 100 });
     //是否显示热力图
-
 
     var data = [];
     //二维数组储存点位信息
-    var test_flag=[[121.829001,29.679995],[121.438685,29.470983],[121.933061,29.756154],[121.690498,29.524298],[121.654586,29.550258],[121.564926,29.531904],[121.526053,29.510957]];
+    var test_flag = [
+      [121.829001, 29.679995],
+      [121.438685, 29.470983],
+      [121.933061, 29.756154],
+      [121.690498, 29.524298],
+      [121.654586, 29.550258],
+      [121.564926, 29.531904],
+      [121.526053, 29.510957],
+    ];
     var img = new Image();
-    var randomCount =test_flag.length ;
-    img.src=require("@/assets/flag.png");
-    img.onload = function() {
+    var randomCount = test_flag.length;
+    img.src = require("@/assets/flag.png");
+    img.onload = function () {
       // console.log(img)
       // 构造数据
-      for (var i in test_flag){
+      for (var i in test_flag) {
         data.push({
           geometry: {
-            type: 'Point',
+            type: "Point",
             //这肯定是一个坐标
-            coordinates:[test_flag[i][0] ,test_flag[i][1] ]
+            coordinates: [test_flag[i][0], test_flag[i][1]],
           },
           deg: 360 * Math.random(),
           // 支持image对象和url两种方式
-          icon: [img,img,img][randomCount % 3],
+          icon: [img, img, img][randomCount % 3],
           width: 20,
-          height: randomCount % 3 === 1 ? 30 : 20
+          height: randomCount % 3 === 1 ? 30 : 20,
         });
       }
       var dataSet = new mapv.DataSet(data);
       var options = {
-        draw: 'icon',
+        draw: "icon",
         methods: {
           click: function (item) {
             // console.log(item);
-          }
+          },
         },
         size: 10,
         width: 10,
@@ -1514,35 +1538,30 @@ export default {
         // sy: 10,
         // swidth: 50,
         // sheight: 50,
-      }
+      };
       var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
 
       // var options = {
       //     draw: 'simple'
       // }
       // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
-    }
+    };
   },
-  computed: {
-
-  },
+  computed: {},
   beforeMount() {},
-  beforeDestroy() {
-  },
-  created() {
-
-  },
+  beforeDestroy() {},
+  created() {},
   methods: {
     //热力图
-    openHeatmap(){
+    openHeatmap() {
       // alert("打开");
       this.heatmapOverlay.show();
     },
-    closeHeatmap(){
+    closeHeatmap() {
       // alert("关闭");
       this.heatmapOverlay.hide();
     },
-    setGradient(){
+    setGradient() {
       /*格式如下所示:
     {
       0:'rgb(102, 255, 0)',
@@ -1551,69 +1570,64 @@ export default {
       }*/
       var gradient = {};
       var colors = document.querySelectorAll("input[type='color']");
-      colors = [].slice.call(colors,0);
-      colors.forEach(function(ele){
+      colors = [].slice.call(colors, 0);
+      colors.forEach(function (ele) {
         gradient[ele.getAttribute("data-key")] = ele.value;
       });
-      this.heatmapOverlay.setOptions({"gradient":gradient});
+      this.heatmapOverlay.setOptions({ gradient: gradient });
     },
-//判断浏览区是否支持canvas
-    isSupportCanvas(){
-      var elem = document.createElement('canvas');
-      return !!(elem.getContext && elem.getContext('2d'));
+    //判断浏览区是否支持canvas
+    isSupportCanvas() {
+      var elem = document.createElement("canvas");
+      return !!(elem.getContext && elem.getContext("2d"));
     },
     //树形控件点击事件
-    handleNodeClick()
-    {
-
-    },
+    handleNodeClick() {},
 
     //地图
 
-    hide_onclick()
-    {
+    hide_onclick() {
       box.style.display = "block";
     },
-    Closehide_onclick()
-    {
+    Closehide_onclick() {
       box.style.display = "none";
     },
 
     handleStartDateChange() {
       if (this.startDate && this.startDate.length > 0) {
-        const timestampBegin = +new Date(this.startDate[0])
-        const timestampEnd = +new Date(this.startDate[1])
+        const timestampBegin = +new Date(this.startDate[0]);
+        const timestampEnd = +new Date(this.startDate[1]);
         if (timestampEnd > timestampBegin + 3600 * 1000 * 24 * 10) {
-          this.$alert('规定为日期的起止时间跨度不能超过10天', '提示', {
-            confirmButtonText: '确定',
-            type: 'warning'
+          this.$alert("规定为日期的起止时间跨度不能超过10天", "提示", {
+            confirmButtonText: "确定",
+            type: "warning",
           })
             .then(() => (this.startDate = null))
-            .catch(() => (this.startDate = null))
+            .catch(() => (this.startDate = null));
         }
       }
     },
 
-    mouseenter (event, dateInfo) {
-      console.log("悬浮进入", event, dateInfo)
+    mouseenter(event, dateInfo) {
+      console.log("悬浮进入", event, dateInfo);
     },
-    mouseleave (event, dateInfo) {
-      console.log("悬浮离开", event, dateInfo)
+    mouseleave(event, dateInfo) {
+      console.log("悬浮离开", event, dateInfo);
     },
-    changeMonth (start, end) {
-      console.log("开始:", start)
-      console.log("结束:", end)
+    changeMonth(start, end) {
+      console.log("开始:", start);
+      console.log("结束:", end);
     },
 
-
-    getMethod () {      //点击事件的时候去寻找相应的方法，在底层做转换直接写方法名，大括号里面写相应的业务逻辑
-      console.log('11');
+    getMethod() {
+      //点击事件的时候去寻找相应的方法，在底层做转换直接写方法名，大括号里面写相应的业务逻辑
+      console.log("11");
     },
     handleCommand(command) {
-      this.$message('click on item ' + command);
+      this.$message("click on item " + command);
     },
     toggle() {
-      this.cardType = !this.cardType
+      this.cardType = !this.cardType;
     },
     // 获取数据的方法
     init() {
@@ -1719,7 +1733,7 @@ export default {
       // 更改过后返回Object：公立日期、农历日期
       return {
         solarDate: lunarDay.date,
-        lunarDate: lunarDay.lunarDate
+        lunarDate: lunarDay.lunarDate,
       };
     },
     // 这个方法是我自己后面添加的，判断是否是公休日。在calendar的文件中也做了
@@ -1729,14 +1743,13 @@ export default {
     isVacation(date, data) {
       let obj = this.isFestival(date, data);
 
-      let valSolar = obj.solarDate.slice(5) ;
-      let valLunar = obj.lunarDate.slice(5) ;
+      let valSolar = obj.solarDate.slice(5);
+      let valLunar = obj.lunarDate.slice(5);
 
       let solar = calendar.isSolarPublicHoliday(valSolar);
       let lunar = calendar.isLunarPublicHoliday(valLunar);
 
-      if(solar || lunar)
-        return true;
+      if (solar || lunar) return true;
       return false;
     },
     /*新添加的东西*/
@@ -1756,12 +1769,7 @@ export default {
            menu.style.display='block'
          }
        },*/
-
   },
   watch: {},
 };
-
-
-
-
 </script>

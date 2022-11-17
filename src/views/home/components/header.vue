@@ -9,7 +9,7 @@
       <el-button id="1" style="border: none;" align="center" class="el-icon-liuyanban" :plain="isPlainDefault" @click="redirect('/test1');btnGroup(null)">人机联防</el-button>
       <el-button  id="2" style="border: none;position: relative;top:-35px;left: 200px" align="center" :plain="isPlain[0]"  class="el-icon-liuyanban"  @click="redirect('/test2');btnGroup(1)">预警事件</el-button>
       <el-button id="3"  style="border: none;position: relative;top:-85px;left: 450px" align="center"  :plain="isPlain[1]" class="el-icon-liuyanban" @click="redirect('/test3');btnGroup(2)">视频广场</el-button>
-      <el-button id="4" size="mini" style="border: none;position: relative;top:-85px;left: 450px" align="center"  :plain="isPlain[2]" class="el-icon-guanli"  @click="redirect('/map');btnGroup(3)">
+      <el-button id="4" size="mini" style="border: none;position: relative;top:-85px;left: 450px" align="center"  :plain="isPlain[2]" class="el-icon-guanli"  @click="redirect('/map/mao');btnGroup(3)">
         <el-image style="width: 35px; height: 35px" :src="require('@/assets/icon_my@2x.png')" fit="fill" class="tempimg"></el-image>
        <span style="font-size: 19px">超级管理员</span>
       </el-button>

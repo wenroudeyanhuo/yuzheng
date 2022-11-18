@@ -13,6 +13,8 @@
         </div>
         <div id="r-result" style="width:100%;z-index: 101;position: absolute;top:500px;left: 500px">
           <input type="button"  @click="openHeatmap();" value="显示热力图"/><input type="button"  @click="closeHeatmap();" value="关闭热力图"/>
+          <input id="ad_overlay" type="button" onclick="ad_overlay();" value="添加覆盖物1" />
+          <input id="move_overlay" type="button" onclick="move_overlay();" value="删除覆盖物1" />
           <!-- <input type="button" onclick="add_overlay();" value="添加覆盖物" /><input type="button" onclick="remove_overlay();" value="删除覆盖物" /> -->
         </div>
       </div>
@@ -1638,6 +1640,38 @@ export default {
       }
     }
 
+    //创建圆心坐标点
+      var pois = [
+        new BMap.Point(121.829001, 29.679995),
+        new BMap.Point(121.438685, 29.470983),
+        new BMap.Point(121.933061, 29.756154),
+        new BMap.Point(121.690498, 29.524298),
+        new BMap.Point(121.654586, 29.550258),
+        new BMap.Point(121.564926, 29.531904),
+        new BMap.Point(121.526053, 29.510957)
+      ];
+      var circles=[];
+      for(var j=0;j<pois.length;j++){
+        var circle = new BMap.Circle(pois[j],1000,
+            {
+              strokeColor:'#8bc46d',
+              strokeWeight:2, 
+              strokeOpacity:0.5,
+              fillColor:'#8bc46d',
+              setTop:true
+            });   
+        circles.push(circle);
+      }
+    //添加覆盖物
+    document.getElementById("ad_overlay").onclick=function ad_overlay(){
+      for(var j=0;j<circles.length;j++){
+        map.addOverlay(circles[j]);
+      }
+    }
+   //清除覆盖物
+    document.getElementById("move_overlay").onclick=function move_overlay(){
+      map.clearOverlays();
+    }
       // var options = {
       //     draw: 'simple'
       // }
@@ -1660,7 +1694,6 @@ export default {
       // for (var i = 0; i < pois.length; i ++) {
       //     fn1(pois[i])
       // }
-      
 
   },
   computed: {},

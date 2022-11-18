@@ -7,7 +7,15 @@
         <input id="add_overlay" type="button" onclick="add_overlay();" value="添加覆盖物" />
         <input id="remove_overlay" type="button" onclick="remove_overlay();" value="删除覆盖物" />
       </div>
+
+
       <div style="width:100%;z-index: 101;position: absolute;top:500px;left: 100px">
+        <input id="add_shijian" type="button" onclick="add_shijian();" value="添加事件" />
+        <input id="remove_shijian" type="button" onclick="remove_shijian();" value="删除事件" />
+      </div>
+
+
+      <div style="width:100%;z-index: 101;position: absolute;top:550px;left: 100px">
         <input type="button"  @click="openHeatmap();" value="显示热力图"/><input type="button"  @click="closeHeatmap();" value="关闭热力图"/>
     </div>
   </div>
@@ -58,6 +66,7 @@
 
 </style>
 <script>
+import flag from "@/assets/flag.png"
 export default {
   data(){
     return{
@@ -99,7 +108,9 @@ export default {
   },
   mounted() {
     // 创建Map实例
+    var mapvLayer=null;
     var map = new BMap.Map("map");
+
     // 初始化地图,设置中心点坐标和地图级别
     map.centerAndZoom(new BMap.Point(121.573215,29.507074), 12);
     map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
@@ -113,6 +124,7 @@ export default {
     map.setMapType(BMAP_HYBRID_MAP);
     map.setCurrentCity("宁波"); // 设置地图显示的城市 此项是必须设置的
     map.enableScrollWheelZoom(true);
+
     // map.addEventListener('click', function (e) {
     //   alert('点击位置经纬度：' + e.latlng.lng + ',' + e.latlng.lat);
     // });
@@ -248,49 +260,12 @@ export default {
     }
 
 
-    //     var img = new Image();
-    // var randomCount =test_flag.length ;
-    // img.src=require("@/assets/flag.png");
-    // img.onload = function() {
-    //   // console.log(img)
-    //   // 构造数据
-    //   for (var i in test_flag){
-    //     data.push({
-    //       geometry: {
-    //         type: 'Point',
-    //         //这肯定是一个坐标
-    //         coordinates:[test_flag[i][0] ,test_flag[i][1] ]
-    //       },
-    //       deg: 360 * Math.random(),
-    //       // 支持image对象和url两种方式
-    //       icon: [img,img,img][randomCount % 3],
-    //       width: 20,
-    //       height: randomCount % 3 === 1 ? 30 : 20
-    //     });
-    //   }
-    //   var dataSet = new mapv.DataSet(data);
-    //   var options = {
-    //     draw: 'icon',
-    //     methods: {
-    //       click: function (item) {
-    //         // console.log(item);
-    //       }
-    //     },
-    //     size: 10,
-    //     width: 10,
-    //     height: 10,
-    //     // sx: 10,
-    //     // sy: 10,
-    //     // swidth: 50,
-    //     // sheight: 50,
-    //   }
-    //   var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
-    //
-    //   // var options = {
-    //   //     draw: 'simple'
-    //   // }
-    //   // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
-    // }
+
+
+
+
+
+
 
     //覆盖物的点击事件
     var clickEvts = ['click', 'dblclick', 'rightclick'];
@@ -355,11 +330,89 @@ export default {
     }
 //清除覆盖物
     document.getElementById("remove_overlay").onclick=function remove_overlay(){
+
+
       map.clearOverlays();
     }
-    document.getElementById('btn_test').onclick=function btn_test(){
-      alert("触发了")
+    // document.getElementById('btn_test').onclick=function btn_test(){
+    //   alert("触发了")
+    // }
+
+
+
+
+
+    //添加事件
+    document.getElementById("add_shijian").onclick=function add_shijian(){
+      if(mapvLayer==null)
+      {
+        console.log(this.mapvLayer)
+        var img = new Image();
+        var data=[];
+        var randomCount =points.length ;
+        // console.log(randomCount)
+        // console.log(points)
+        // console.log(points[1])
+        img.src=require("@/assets/实时点位.png");
+        img.onload = function() {
+          // console.log(img)
+          // 构造数据
+          for (var i=0;i<points.length;i++){
+            data.push({
+              geometry: {
+                type: 'Point',
+                //这肯定是一个坐标
+                coordinates:[points[i]["lng"] ,points[i]["lat"] ]
+              },
+              deg: 360 * Math.random(),
+              // 支持image对象和url两种方式
+              icon: [img,img,img][randomCount % 3],
+              width: 20,
+              height: randomCount % 3 === 1 ? 30 : 20
+            });
+          }
+          var dataSet = new mapv.DataSet(data);
+          var options = {
+            draw: 'icon',
+            methods: {
+              click: function (item) {
+                // console.log(item);
+              }
+            },
+            size: 10,
+            width: 10,
+            height: 10,
+            // sx: 10,
+            // sy: 10,
+            // swidth: 50,
+            // sheight: 50,
+          }
+          mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+          mapvLayer.show(); // 显示图层
+
+          // var options = {
+          //     draw: 'simple'
+          // }
+          // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+        }
+      }
+
     }
+    //清除事件
+    document.getElementById("remove_shijian").onclick=function remove_shijian() {
+      if(mapvLayer!=null){
+        mapvLayer.hide();
+
+      }
+    }
+
+
+
+
+
+    // document.getElementById('btn_test').onclick=function btn_test(){
+    //   alert("触发了")
+    // }
 
 
   }

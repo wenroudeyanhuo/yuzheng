@@ -9,6 +9,7 @@
         <div  style="width: 100%; height: 100%" id="map" class="map"></div>
         <div id="r-result" style="width:100%;z-index: 101;position: absolute;top:500px;left: 500px">
           <input type="button"  @click="openHeatmap();" value="显示热力图"/><input type="button"  @click="closeHeatmap();" value="关闭热力图"/>
+          <!-- <input type="button" onclick="add_overlay();" value="添加覆盖物" /><input type="button" onclick="remove_overlay();" value="删除覆盖物" /> -->
         </div>
       </div>
     </div>
@@ -1546,36 +1547,26 @@ export default {
       // }
       // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
     };
-  },
-  // watch:{
-  //   radio: function (curval,oldval){
-  //     if(curval == 1){
-  //       console.log("这是1")
-  //       // [121.820428,29.684074],[121.438685,29.470983],[121.898617,29.742795],[122.15043,29.892702],[121.690498,29.524298],[121.856648,29.986717],[121.746839,29.976706],[121.655284,29.555344],[121.655284,29.555344],[121.546769,29.519647],[122.033003,29.834571],[121.525353,29.510972]
-  //     }else if(curval == 2){
-  //       //创建圆心坐标点
-  //       var pois = [
-  //         new BMapGL.Point(121.820428,29.684074),
-  //         new BMapGL.Point(121.438685,29.470983),
-  //         new BMapGL.Point(121.898617,29.742795)
-  //     ];
+    	//创建圆心坐标点
+      var pois = [
+        new BMap.Point(121.829001, 29.679995),
+        new BMap.Point(121.438685, 29.470983),
+        new BMap.Point(121.933061, 29.756154),
+        new BMap.Point(121.690498, 29.524298),
+        new BMap.Point(121.654586, 29.550258),
+        new BMap.Point(121.564926, 29.531904),
+        new BMap.Point(121.526053, 29.510957)
+      ];
+      function fn1(point1){
+          map.addOverlay( new BMap.Circle(point1,1000,{strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5,fillColor:'red'}));   
+      }
+        //循环圆心
+      for (var i = 0; i < pois.length; i ++) {
+          fn1(pois[i])
+      }
+      
 
-  //     //创建函数 画圆	
-  //       function  fn1(point1){
-  //         map.addOverlay( 
-  //           new BMapGL.Circle(point1,1000,{
-  //             strokeColor:"blue", 
-  //             strokeWeight:2, 
-  //             strokeOpacity:0.5,
-  //             fillColor:'red'}));   
-  //       }
-  //     //循环圆心
-  //         for (var i = 0; i < pois.length; i ++) {
-  //         fn1(pois[i])
-  //       }
-  //     }
-  //   }
-  // },
+  },
   computed: {},
   beforeMount() {},
   beforeDestroy() {},

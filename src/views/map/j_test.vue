@@ -9,54 +9,11 @@
       </div>
       <div style="width:100%;z-index: 101;position: absolute;top:500px;left: 100px">
         <input type="button"  @click="openHeatmap();" value="显示热力图"/><input type="button"  @click="closeHeatmap();" value="关闭热力图"/>
+      </div>
     </div>
-  </div>
   </div>
 
 </template>
-<style lang="scss"  scoped>
-
-/* 隐藏四个边角 */
-.BMap_pop div:nth-child(1) {
-  display:none;
-}
-.BMap_pop div:nth-child(3) {
-  display:none;
-}
-.BMap_pop div:nth-child(5) {
-  display:none;
-}
-.BMap_pop div:nth-child(7) {
-  display:none;
-}
-
-
-::v-deep .BMap_pop img,
-::v-deep .BMap_top,
-::v-deep .BMap_center,
-::v-deep .BMap_bottom,
-::v-deep .BMap_pop > div {
-  &:not(:nth-child(9)) {
-    display: none;
-  }
-}
-
-::v-deep .BMap_pop div:nth-child(9) {
-  //top: 30px !important;
-}
-::v-deep .BMap_bubble_content {
-  background-image: url("~@/assets/8.png");
-  //border-top: 3px solid #377abd;
-  border-radius: 8px;
-  background-color:#000088 ;
-  opacity: 0.8;
-  overflow: hidden;
-  padding: 8px 5px;
-  width: 255px !important;
-  height: 205px !important;
-}
-
-</style>
 <script>
 export default {
   data(){
@@ -76,25 +33,25 @@ export default {
       this.heatmapOverlay.hide();
     },
     setGradient(){
-    /*格式如下所示:
-  {
-    0:'rgb(102, 255, 0)',
-      .5:'rgb(255, 170, 0)',
-     1:'rgb(255, 0, 0)'
-    }*/
-  var gradient = {};
-  var colors = document.querySelectorAll("input[type='color']");
-  colors = [].slice.call(colors,0);
-  colors.forEach(function(ele){
-    gradient[ele.getAttribute("data-key")] = ele.value;
-  });
+      /*格式如下所示:
+    {
+      0:'rgb(102, 255, 0)',
+        .5:'rgb(255, 170, 0)',
+       1:'rgb(255, 0, 0)'
+      }*/
+      var gradient = {};
+      var colors = document.querySelectorAll("input[type='color']");
+      colors = [].slice.call(colors,0);
+      colors.forEach(function(ele){
+        gradient[ele.getAttribute("data-key")] = ele.value;
+      });
       this.heatmapOverlay.setOptions({"gradient":gradient});
-},
+    },
 //判断浏览区是否支持canvas
-  isSupportCanvas(){
-  var elem = document.createElement('canvas');
-  return !!(elem.getContext && elem.getContext('2d'));
-  }
+    isSupportCanvas(){
+      var elem = document.createElement('canvas');
+      return !!(elem.getContext && elem.getContext('2d'));
+    }
 
   },
   mounted() {
@@ -227,7 +184,7 @@ export default {
       // {"lng":116.424579,"lat":39.914987,"count":57},
       // {"lng":116.42076,"lat":39.915251,"count":70},
       // {"lng":116.425867,"lat":39.918989,"count":8}
-      ];
+    ];
     var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
     map.addOverlay(this.heatmapOverlay);
     this.heatmapOverlay.setDataSet({data:points,max:100});
@@ -291,63 +248,15 @@ export default {
     //   // }
     //   // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
     // }
-
-    //覆盖物的点击事件
-    var clickEvts = ['click', 'dblclick', 'rightclick'];
-    for (let k = 0; k< clickEvts.length; k++) {
-      const event = clickEvts[k];
-      for (let jl = 0; jl < markers.length; jl++) {
-        const overlay = markers[jl];
-        overlay.addEventListener(event, e => {
-          switch (event) {
-            case 'click':
-              var opts = {
-                width : 255,     // 信息窗口宽度
-                height: 205,     // 信息窗口高度
-              }
-              var infoWindow = new BMap.InfoWindow(
-                `<span style='margin:50px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位名称：</span>`+1+
-                "<br/>" +
-                `<span style='margin:50px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位状态：</span>` +
-                1+
-                "<br/>" +
-                `<span style='margin:50px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>所属区域：</span>` +
-                1 +
-                "<br/>" +
-                `<span style='margin:50px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>负责人：</span>`+
-                1 +
-                "<br/>" +
-                '<div class="flex">' +
-                `<span style='margin:50px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位详情：</span>`+
-                `<el-buuton id="btn_test">查看详情</el-buuton>`+
-                '</div>',
-                opts
-
-
-
-              );  // 创建信息窗口对象
-              map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
-              break;
-            case 'dbclick':
-              var res = overlay.toString() + '被双击!';
-              break;
-            case 'rightclick':
-              var res = overlay.toString() + '被右击!';
-          }
-        });
-      }
-    }
-
-
     //添加覆盖物
     document.getElementById("add_overlay").onclick=function add_overlay(){
       // console.log(markers);
       // map.addOverlay(marker);            //增加点
 
 
-    //  取出储存的点
-    //   console.log(markers[0])
-    //   console.log(markers.length);
+      //  取出储存的点
+      //   console.log(markers[0])
+      //   console.log(markers.length);
       for(var j=0;j<markers.length;j++){
         // console.log(markers[j]);
         map.addOverlay(markers[j]);
@@ -357,10 +266,6 @@ export default {
     document.getElementById("remove_overlay").onclick=function remove_overlay(){
       map.clearOverlays();
     }
-    document.getElementById('btn_test').onclick=function btn_test(){
-      alert("触发了")
-    }
-
 
   }
 

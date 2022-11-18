@@ -7,6 +7,10 @@
 
       <div style="width:1533px; height: 790px;">
         <div  style="width: 100%; height: 100%" id="map" class="map"></div>
+        <div style="width:100%;z-index: 101;position: absolute;top:450px;left: 500px">
+          <input id="add_overlay" type="button" onclick="add_overlay();" value="添加覆盖物" />
+          <input id="remove_overlay" type="button" onclick="remove_overlay();" value="删除覆盖物" />
+        </div>
         <div id="r-result" style="width:100%;z-index: 101;position: absolute;top:500px;left: 500px">
           <input type="button"  @click="openHeatmap();" value="显示热力图"/><input type="button"  @click="closeHeatmap();" value="关闭热力图"/>
           <!-- <input type="button" onclick="add_overlay();" value="添加覆盖物" /><input type="button" onclick="remove_overlay();" value="删除覆盖物" /> -->
@@ -398,6 +402,46 @@
 </template>
 <style  lang="scss"  scoped>
 //地图
+
+/* 隐藏四个边角 */
+.BMap_pop div:nth-child(1) {
+  display:none;
+}
+.BMap_pop div:nth-child(3) {
+  display:none;
+}
+.BMap_pop div:nth-child(5) {
+  display:none;
+}
+.BMap_pop div:nth-child(7) {
+  display:none;
+}
+
+//弹出框内容
+::v-deep .BMap_pop img,
+::v-deep .BMap_top,
+::v-deep .BMap_center,
+::v-deep .BMap_bottom,
+::v-deep .BMap_pop > div {
+  &:not(:nth-child(9)) {
+    display: none;
+  }
+}
+
+::v-deep .BMap_pop div:nth-child(9) {
+  //top: 30px !important;
+}
+::v-deep .BMap_bubble_content {
+  background-image: url("~@/assets/8.png");
+  //border-top: 3px solid #377abd;
+  border-radius: 8px;
+  background-color:#000088 ;
+  opacity: 0.8;
+  overflow: hidden;
+  padding: 8px 5px;
+  width: 255px !important;
+  height: 205px !important;
+}
 
 //去掉版权
 ::v-deep .BMap_cpyCtrl {
@@ -1310,45 +1354,40 @@ export default {
       ],
       data: [
         {
-          label: "鄞州区",
+          label: "宁海湾横山岛区",
           children: [
             {
-              label: "宁波松岙大埠1",
+              label: "宁海北互通",
             },
             {
-              label: "宁波松岙大埠2",
+              label: "望台山",
             },
             {
-              label: "宁波松岙大埠3",
+              label: "悬山左",
             },
           ],
         },
         {
-          label: "海曙区",
+          label: "沿海中线",
           children: [
             {
-              label: "海曙大埠1",
+              label: "胆山",
             },
             {
-              label: "海曙大埠2",
-            },
-            {
-              label: "海曙大埠3",
-            },
+              label: "乌沙山",
+            }
           ],
         },
         {
-          label: "镇海区",
+          label: "滨海经济开发区",
           children: [
             {
-              label: "镇海大埠1",
+              label: "咸祥渔业公园",
             },
             {
-              label: "镇海大埠2",
+              label: "梅山湾",
             },
-            {
-              label: "镇海大埠3",
-            },
+
           ],
         },
       ],
@@ -1504,66 +1543,123 @@ export default {
       [121.564926, 29.531904],
       [121.526053, 29.510957],
     ];
-    var img = new Image();
-    var randomCount = test_flag.length;
-    img.src = require("@/assets/flag.png");
-    img.onload = function () {
-      // console.log(img)
-      // 构造数据
-      for (var i in test_flag) {
-        data.push({
-          geometry: {
-            type: "Point",
-            //这肯定是一个坐标
-            coordinates: [test_flag[i][0], test_flag[i][1]],
-          },
-          deg: 360 * Math.random(),
-          // 支持image对象和url两种方式
-          icon: [img, img, img][randomCount % 3],
-          width: 20,
-          height: randomCount % 3 === 1 ? 30 : 20,
+    var markers=[];
+    for (var i=0;i<7;i++){
+      // console.log(i)
+      var marker=new BMap.Marker(new BMap.Point(test_flag[i][0], test_flag[i][1]));//创建点
+      // console.log(marker);
+      markers.push(marker);
+    }
+    // var img = new Image();
+    // var randomCount = test_flag.length;
+    // img.src = require("@/assets/flag.png");
+    // img.onload = function () {
+    //   // console.log(img)
+    //   // 构造数据
+    //   for (var i in test_flag) {
+    //     data.push({
+    //       geometry: {
+    //         type: "Point",
+    //         //这肯定是一个坐标
+    //         coordinates: [test_flag[i][0], test_flag[i][1]],
+    //       },
+    //       deg: 360 * Math.random(),
+    //       // 支持image对象和url两种方式
+    //       icon: [img, img, img][randomCount % 3],
+    //       width: 20,
+    //       height: randomCount % 3 === 1 ? 30 : 20,
+    //     });
+    //   }
+    //   var dataSet = new mapv.DataSet(data);
+    //   var options = {
+    //     draw: "icon",
+    //     methods: {
+    //       click: function (item) {
+    //         // console.log(item);
+    //       },
+    //     },
+    //     size: 10,
+    //     width: 10,
+    //     height: 10,
+    //     // sx: 10,
+    //     // sy: 10,
+    //     // swidth: 50,
+    //     // sheight: 50,
+    //   };
+    //   var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+    //
+    //   // var options = {
+    //   //     draw: 'simple'
+    //   // }
+    //   // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+    // };
+    //覆盖物的点击事件
+    var clickEvts = ['click', 'dblclick', 'rightclick'];
+    for (let k = 0; k< clickEvts.length; k++) {
+      const event = clickEvts[k];
+      for (let jl = 0; jl < markers.length; jl++) {
+        const overlay = markers[jl];
+        overlay.addEventListener(event, e => {
+          switch (event) {
+            case 'click':
+              var opts = {
+                width : 255,     // 信息窗口宽度
+                height: 205,     // 信息窗口高度
+              }
+              var infoWindow = new BMap.InfoWindow(
+                `<span style='margin:20px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位名称：</span>`+1+
+                "<br/>" +
+                `<span style='margin:20px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位状态：</span>` +
+                1+
+                "<br/>" +
+                `<span style='margin:20px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>所属区域：</span>` +
+                1 +
+                "<br/>" +
+                `<span style='margin:20px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>负责人：</span>`+
+                1 +
+                "<br/>" +
+                '<div class="flex">' +
+                `<span style='margin:20px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位详情：</span>`+
+                '<div style="padding: 10Px 20Px;margin: 10Px;line-height:18Px;color: white;">查看详情</div>' +
+                '</div>',
+                opts
+
+
+              );  // 创建信息窗口对象
+              map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
+              break;
+            case 'dbclick':
+              var res = overlay.toString() + '被双击!';
+              break;
+            case 'rightclick':
+              var res = overlay.toString() + '被右击!';
+          }
         });
       }
-      var dataSet = new mapv.DataSet(data);
-      var options = {
-        draw: "icon",
-        methods: {
-          click: function (item) {
-            // console.log(item);
-          },
-        },
-        size: 10,
-        width: 10,
-        height: 10,
-        // sx: 10,
-        // sy: 10,
-        // swidth: 50,
-        // sheight: 50,
-      };
-      var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+    }
 
       // var options = {
       //     draw: 'simple'
       // }
       // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
-    };
-    	//创建圆心坐标点
-      var pois = [
-        new BMap.Point(121.829001, 29.679995),
-        new BMap.Point(121.438685, 29.470983),
-        new BMap.Point(121.933061, 29.756154),
-        new BMap.Point(121.690498, 29.524298),
-        new BMap.Point(121.654586, 29.550258),
-        new BMap.Point(121.564926, 29.531904),
-        new BMap.Point(121.526053, 29.510957)
-      ];
-      function fn1(point1){
-          map.addOverlay( new BMap.Circle(point1,1000,{strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5,fillColor:'red'}));   
-      }
-        //循环圆心
-      for (var i = 0; i < pois.length; i ++) {
-          fn1(pois[i])
-      }
+    // },
+    	// //创建圆心坐标点
+      // var pois = [
+      //   new BMap.Point(121.829001, 29.679995),
+      //   new BMap.Point(121.438685, 29.470983),
+      //   new BMap.Point(121.933061, 29.756154),
+      //   new BMap.Point(121.690498, 29.524298),
+      //   new BMap.Point(121.654586, 29.550258),
+      //   new BMap.Point(121.564926, 29.531904),
+      //   new BMap.Point(121.526053, 29.510957)
+      // ];
+      // function fn1(point1){
+      //     map.addOverlay( new BMap.Circle(point1,1000,{strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5,fillColor:'red'}));   
+      // }
+      //   //循环圆心
+      // for (var i = 0; i < pois.length; i ++) {
+      //     fn1(pois[i])
+      // }
       
 
   },

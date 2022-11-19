@@ -16,9 +16,15 @@
           <input id="add_shijian" type="button" onclick="add_shijian();" value="添加事件" />
           <input id="remove_shijian" type="button" onclick="remove_shijian();" value="删除事件" />
         </div>
+        <div style="width:100%;z-index: 101;position: absolute;top:550px;left: 500px">
+          <input id="ad_overlay" type="button" onclick="ad_overlay();" value="添加范围" />
+          <input id="move_overlay" type="button" onclick="move_overlay();" value="删除范围" />
+        </div>
 
-        <div id="r-result" style="width:100%;z-index: 101;position: absolute;top:550px;left: 500px">
+        <div id="r-result" style="width:100%;z-index: 101;position: absolute;top:600px;left: 500px">
           <input type="button"  @click="openHeatmap();" value="显示热力图"/><input type="button"  @click="closeHeatmap();" value="关闭热力图"/>
+          \
+          <!-- <input type="button" onclick="add_overlay();" value="添加覆盖物" /><input type="button" onclick="remove_overlay();" value="删除覆盖物" /> -->
         </div>
       </div>
     </div>
@@ -1428,68 +1434,68 @@ export default {
     //121.459663,29.462414
     var points =[
       //宁海互通点
-      {"lng":121.459519,"lat":29.476439,"count":50},
-      {"lng":121.451902,"lat":29.463075,"count":51},
-      {"lng":121.442272,"lat":29.463326,"count":15},
-      {"lng":121.450608,"lat":29.469081,"count":40},
-      {"lng":121.449314,"lat":29.476501,"count":100},
-      {"lng":121.4611,"lat":29.468578,"count":6},
-      {"lng":121.463112,"lat":29.472225,"count":18},
-      {"lng":121.459663,"lat":29.462414,"count":80},
+      {"lng":121.459519,"lat":29.476439,"count":50,"start":"2022-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.451902,"lat":29.463075,"count":51,"start":"2022-09-23","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.442272,"lat":29.463326,"count":15,"start":"2022-09-24","time":"10:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.450608,"lat":29.469081,"count":40,"start":"2022-09-25","time":"11:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.449314,"lat":29.476501,"count":100,"start":"2022-09-26","time":"12:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.4611,"lat":29.468578,"count":6,"start":"2022-09-27","time":"13:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.463112,"lat":29.472225,"count":18,"start":"2022-09-28","time":"14:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.459663,"lat":29.462414,"count":80,"start":"2022-09-29","time":"15:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
       //望台山左121.519867,29.512371
-      {"lng":121.527754,"lat":29.506336,"count":11},
-      {"lng":121.527754,"lat":29.517149,"count":7},
-      {"lng":121.52143,"lat":29.509102,"count":42},
-      {"lng":121.525563,"lat":29.510139,"count":4},
-      {"lng":121.525868,"lat":29.512245,"count":27},
-      {"lng":121.52373,"lat":29.510941,"count":23},
-      {"lng":121.523227,"lat":29.511774,"count":60},
-      {"lng":121.52603,"lat":29.509401,"count":8},
-      {"lng":121.519867,"lat":29.512371,"count":15},
+      {"lng":121.527754,"lat":29.506336,"count":11,"start":"2022-11-30","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.527754,"lat":29.517149,"count":7,"start":"2022-11-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.52143,"lat":29.509102,"count":42,"start":"2022-11-22","time":"10:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.525563,"lat":29.510139,"count":4,"start":"2022-11-22","time":"11:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.525868,"lat":29.512245,"count":27,"start":"2022-11-21","time":"12:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.52373,"lat":29.510941,"count":23,"start":"2022-11-12","time":"13:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.523227,"lat":29.511774,"count":60,"start":"2022-10-2","time":"14:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.52603,"lat":29.509401,"count":8,"start":"2022-10-1","time":"15:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.519867,"lat":29.512371,"count":15,"start":"2022-10-23","time":"16:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
       //悬山左121.564531,29.529924
-      {"lng":121.560471,"lat":29.532281,"count":25},
-      {"lng":121.565825,"lat":29.531464,"count":21},
-      {"lng":121.563309,"lat":29.530584,"count":1},
-      {"lng":121.563777,"lat":29.53093,"count":51},
-      {"lng":121.564387,"lat":29.532407,"count":7},
-      {"lng":121.565789,"lat":29.534512,"count":11},
-      {"lng":121.567945,"lat":29.534449,"count":35},
-      {"lng":121.565573,"lat":29.530804,"count":22},
-      {"lng":121.564531,"lat":29.529924,"count":4},
+      {"lng":121.560471,"lat":29.532281,"count":25,"start":"2022-10-22","time":"10:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.565825,"lat":29.531464,"count":21,"start":"2022-10-22","time":"10:00:58","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.563309,"lat":29.530584,"count":1,"start":"2022-10-22","time":"10:00:59","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.563777,"lat":29.53093,"count":51,"start":"2022-10-22","time":"10:01:00","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.564387,"lat":29.532407,"count":7,"start":"2022-10-22","time":"10:02:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.565789,"lat":29.534512,"count":11,"start":"2022-10-22","time":"10:03:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.567945,"lat":29.534449,"count":35,"start":"2022-10-22","time":"10:40:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.565573,"lat":29.530804,"count":22,"start":"2022-10-22","time":"10:04:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.564531,"lat":29.529924,"count":4,"start":"2022-10-22","time":"09:05:57","zhuangtai":"待处理","leixing":"疑似船只"},
       //东升岛 121.657137,29.549909
 
 
-      {"lng":121.654748,"lat":29.551499,"count":25},
-      {"lng":121.654353,"lat":29.549457,"count":3},
-      {"lng":121.654999,"lat":29.550086,"count":100},
-      {"lng":121.654353,"lat":29.549457,"count":87},
-      {"lng":121.655556,"lat":29.550337,"count":32},
-      {"lng":121.657137,"lat":29.549909,"count":44},
+      {"lng":121.654748,"lat":29.551499,"count":25,"start":"2021-10-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.654353,"lat":29.549457,"count":3,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.654999,"lat":29.550086,"count":100,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.654353,"lat":29.549457,"count":87,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.655556,"lat":29.550337,"count":32,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.657137,"lat":29.549909,"count":44,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
       //乌沙山右前 121.690498,29.524298  摄像头左标
       // 121.681751,29.535235
-      {"lng":121.685542,"lat":29.523246,"count":21},
-      {"lng":121.679092,"lat":29.527001,"count":80},
-      {"lng":121.681392,"lat":29.522853,"count":32},
-      {"lng":121.695333,"lat":29.533852,"count":26},
-      {"lng":121.68865,"lat":29.528384,"count":17},
-      {"lng":121.681751,"lat":29.535235,"count":17},
+      {"lng":121.685542,"lat":29.523246,"count":21,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.679092,"lat":29.527001,"count":80,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.681392,"lat":29.522853,"count":32,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.695333,"lat":29.533852,"count":26,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.68865,"lat":29.528384,"count":17,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.681751,"lat":29.535235,"count":17,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
 
       //咸祥公园附近 121.829001,29.679995
       //121.822677,29.655517
-      {"lng":121.82972,"lat":29.680372,"count":25},
-      {"lng":121.839925,"lat":29.667192,"count":100},
-      {"lng":121.821815,"lat":29.6751,"count":39},
-      {"lng":121.846967,"lat":29.681878,"count":11},
-      {"lng":121.832882,"lat":29.676481,"count":9},
-      {"lng":121.822677,"lat":29.655517,"count":47},
+      {"lng":121.82972,"lat":29.680372,"count":25,"start":"2012-09-22","time":"08:00:45","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.839925,"lat":29.667192,"count":100,"start":"202-09-22","time":"08:00:35","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.821815,"lat":29.6751,"count":39,"start":"2012-09-22","time":"08:00:25","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.846967,"lat":29.681878,"count":11,"start":"2012-09-22","time":"08:00:5","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.832882,"lat":29.676481,"count":9,"start":"2012-09-22","time":"08:00:15","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.822677,"lat":29.655517,"count":47,"start":"2012-09-22","time":"08:00:15","zhuangtai":"待处理","leixing":"疑似船只"},
 
       //梅山大桥那边 121.933061,29.756154
       //121.929468,29.75352  121.937229,29.753896  121.932917,29.760042 121.93378,29.749757
 
-      {"lng":121.929468,"lat":29.75352,"count":52},
-      {"lng":121.937229,"lat":29.753896,"count":100},
-      {"lng":121.932917,"lat":29.760042,"count":46},
-      {"lng":121.93378,"lat":29.749757,"count":9},
+      {"lng":121.929468,"lat":29.75352,"count":52,"start":"2022-1-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.937229,"lat":29.753896,"count":100,"start":"2022-1-22","time":"08:00:58","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.932917,"lat":29.760042,"count":46,"start":"2022-1-22","time":"08:00:59","zhuangtai":"待处理","leixing":"疑似船只"},
+      {"lng":121.93378,"lat":29.749757,"count":9,"start":"2022-1-22","time":"08:00:5","zhuangtai":"待处理","leixing":"疑似船只"},
 
       //提供测试数据
       // {"lng":116.419916,"lat":39.924055,"count":8},
@@ -1544,9 +1550,18 @@ export default {
 
     var data = [];
     //二维数组储存点位信息
+    //摄像头数据
     var test_flag=[[121.829001,29.679995],[121.438685,29.470983],[121.933061,29.756154],[121.690498,29.524298],[121.654586,29.550258],[121.564926,29.531904],[121.526053,29.510957]];
-    // console.log(test_flag[0][0]);
-    // console.log(test_flag[0][1]);
+    var shexiangtou=[
+      {"lng":121.829001,"lat":29.679995,"name":"咸祥公园","zhuangtai":"停用","quyu":"片区1","people":"ces1/17777232"},
+      {"lng":121.438685,"lat":29.470983,"name":"宁海互通","zhuangtai":"开启","quyu":"片区2","people":"ces2/17777232"},
+      {"lng":121.933061,"lat":29.756154,"name":"梅山大桥","zhuangtai":"停用","quyu":"片区3","people":"ces3/17777232"},
+      {"lng":121.690498,"lat":29.524298,"name":"乌沙山右","zhuangtai":"停用","quyu":"片区4","people":"ces4/17777232"},
+      {"lng":121.654586,"lat":29.550258,"name":"东升岛","zhuangtai":"开启","quyu":"片区5","people":"ces5/17777232"},
+      {"lng":121.564926,"lat":29.531904,"name":"悬山左","zhuangtai":"停用","quyu":"片区6","people":"ces6/17777232"},
+      {"lng":121.526053,"lat":29.510957,"name":"望台山","zhuangtai":"开启","quyu":"片区7","people":"ces7/17777232"}
+      //  望台山左121.519867,29.512371v  悬山左121.564531,29.529924 东升岛 121.657137,29.549909 乌沙山右前 121.690498,29.524298  摄像头左标
+    ];
     var markers=[];
     for (var i=0;i<7;i++){
       // console.log(i)
@@ -1572,25 +1587,43 @@ export default {
         overlay.addEventListener(event, e => {
           switch (event) {
             case 'click':
+              //获取点位经纬度
+              var tou_lng=overlay.point["lng"];
+              var tou_lat=overlay.point["lat"];
+              //拿到储存的数据
+              var name;
+              var zhuangtai;
+              var quyu;
+              var peole;
+              //遍寻找
+              for(var J_te=0;J_te<shexiangtou.length;J_te++){
+                if(tou_lng==shexiangtou[J_te]["lng"] && tou_lat==shexiangtou[J_te]["lat"] ){
+                  //  找到
+                  name=shexiangtou[J_te]["name"];
+                  zhuangtai=shexiangtou[J_te]["zhuangtai"];
+                  quyu=shexiangtou[J_te]["quyu"];
+                  peole=shexiangtou[J_te]["people"];
+                }
+              }
+
               var opts = {
                 width : 255,     // 信息窗口宽度
                 height: 205,     // 信息窗口高度
               }
+              //摄像头信息
               var infoWindow = new BMap.InfoWindow(
-                `<span style='margin:50px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位名称：</span>`+1+
+                '<div style="color: white;line-height: 40px;">' +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位名称：</span>`+name+
                 "<br/>" +
-                `<span style='margin:50px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位状态：</span>` +
-                1+
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位状态：</span>` +zhuangtai +
                 "<br/>" +
-                `<span style='margin:50px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>所属区域：</span>` +
-                1 +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>所属区域：</span>` + quyu+
                 "<br/>" +
-                `<span style='margin:50px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>负责人：</span>`+
-                1 +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>负责人：</span>`+ peole+
                 "<br/>" +
-                '<div class="flex">' +
-                `<span style='margin:50px;padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位详情：</span>`+
-                `<el-buuton id="btn_test">查看详情</el-buuton>`+
+                `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"点位详情"+":"+
+                `<div id="btn_test" style="position: relative;top:-20px;left: 100px;">查看详情</div>`+
+                `</div>`+
                 '</div>',
                 opts
 
@@ -1598,6 +1631,11 @@ export default {
 
               );  // 创建信息窗口对象
               map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
+              setTimeout(()=>{
+                document.getElementById('btn_test').onclick=function(){
+                  alert("摄像头")
+                }
+              },100);
               break;
             case 'dbclick':
               var res = overlay.toString() + '被双击!';
@@ -1609,27 +1647,46 @@ export default {
       }
     }
 
-
-    //添加覆盖物
-    document.getElementById("add_overlay").onclick=function add_overlay(){
-      // console.log(markers);
-      // map.addOverlay(marker);            //增加点
-
-
-      //  取出储存的点
-      //   console.log(markers[0])
-      //   console.log(markers.length);
-      for(var j=0;j<markers.length;j++){
-        // console.log(markers[j]);
-        map.addOverlay(markers[j]);
+    //创建圆心坐标点
+      var pois = [
+        new BMap.Point(121.829001, 29.679995),
+        new BMap.Point(121.438685, 29.470983),
+        new BMap.Point(121.933061, 29.756154),
+        new BMap.Point(121.690498, 29.524298),
+        new BMap.Point(121.654586, 29.550258),
+        new BMap.Point(121.564926, 29.531904),
+        new BMap.Point(121.526053, 29.510957)
+      ];
+      var circles=[];
+      for(var j=0;j<pois.length;j++){
+        var circle = new BMap.Circle(pois[j],1000,
+            {
+              strokeColor:'#8bc46d',
+              strokeWeight:2,
+              strokeOpacity:0.5,
+              fillColor:'#8bc46d',
+              setTop:true
+            });
+        circles.push(circle);
+      }
+    //添加范围
+    document.getElementById("ad_overlay").onclick=function ad_overlay(){
+      for(var j=0;j<circles.length;j++){
+        map.addOverlay(circles[j]);
       }
     }
-//清除覆盖物
-    document.getElementById("remove_overlay").onclick=function remove_overlay(){
+
+    //清除范围
+    document.getElementById("move_overlay").onclick=function move_overlay(){
 
 
       map.clearOverlays();
     }
+
+
+
+
+
     // document.getElementById('btn_test').onclick=function btn_test(){
     //   alert("触发了")
     // }
@@ -1647,32 +1704,84 @@ export default {
         // console.log(randomCount)
         // console.log(points)
         // console.log(points[1])
-        img.src=require("@/assets/实时点位.png");
-        img.onload = function() {
-          // console.log(img)
-          // 构造数据
-          for (var i=0;i<points.length;i++){
-            data.push({
-              geometry: {
-                type: 'Point',
-                //这肯定是一个坐标
-                coordinates:[points[i]["lng"] ,points[i]["lat"] ]
-              },
-              deg: 360 * Math.random(),
-              // 支持image对象和url两种方式
-              icon: [img,img,img][randomCount % 3],
-              width: 20,
-              height: randomCount % 3 === 1 ? 30 : 20
-            });
-          }
-          var dataSet = new mapv.DataSet(data);
-          var options = {
-            draw: 'icon',
-            methods: {
-              click: function (item) {
-                // console.log(item);
-              }
+      img.src=require("@/assets/实时点位.png");
+      img.onload = function() {
+        // console.log(img)
+        // 构造数据
+        for (var i=0;i<points.length;i++){
+          data.push({
+            geometry: {
+              type: 'Point',
+              //这肯定是一个坐标
+              coordinates:[points[i]["lng"] ,points[i]["lat"] ]
             },
+            deg: 360 * Math.random(),
+            // 支持image对象和url两种方式
+            icon: [img,img,img][randomCount % 3],
+            width: 30,
+            height: 30
+          });
+        }
+
+        var dataSet = new mapv.DataSet(data);
+        var options = {
+          draw: 'icon',
+          methods: {
+            click: function (item) {
+              //点击图标的函数
+              var X=item.geometry.coordinates[0];
+              var Y=item.geometry.coordinates[1];
+              console.log(X);
+              console.log(Y);
+              var start;
+              var time1;
+              var zhuangtai;
+              var leixing;
+              for (var J_test=0;J_test<points.length;J_test++)
+              {
+                if(X==points[J_test]["lng"] && Y==points[J_test]["lat"] )
+                {
+                  //  找到
+                  start=points[J_test]["start"];
+                  time1=points[J_test]["time"];
+                  zhuangtai=points[J_test]["zhuangtai"];
+                  leixing=points[J_test]["leixing"];
+                }
+              }
+              //  拿到维度
+              //  生成信息窗口
+              var opts = {
+                width : 255,     // 信息窗口宽度
+                height: 205,     // 信息窗口高度
+              }
+              var infoWindow = new BMap.InfoWindow(
+                '<div style="color:white;line-height: 40px;">' +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生日期：</span>`+start+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生时间：</span>` +time1+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>处理状态：</span>` +zhuangtai+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>事件类型：</span>`+leixing+
+                "<br/>" +
+                `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"事件详情："+
+                `<div id="shijian" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
+                `</div>`+
+                '</div>',
+                opts
+
+
+
+              );  // 创建信息窗口对象
+              map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
+              setTimeout(()=>{
+                document.getElementById("shijian").onclick=function (){
+                  alert("事件");
+                }
+              })
+
+            }
+          },
             size: 10,
             width: 10,
             height: 10,
@@ -1696,46 +1805,51 @@ export default {
     document.getElementById("remove_shijian").onclick=function remove_shijian() {
         mapvLayer.hide();
     }
+    //添加覆盖物
+    document.getElementById("add_overlay").onclick=function add_overlay(){
+      // console.log(markers);
+      // map.addOverlay(marker);            //增加点
 
 
+      //  取出储存的点
+      //   console.log(markers[0])
+      //   console.log(markers.length);
+      for(var j=0;j<markers.length;j++){
+        // console.log(markers[j]);
+        map.addOverlay(markers[j]);
+      }
+    }
 
 
-
-    // document.getElementById('btn_test').onclick=function btn_test(){
-    //   alert("触发了")
-    // }
+   //清除覆盖物
+    document.getElementById("remove_overlay").onclick=function remove_overlay(){
+      map.clearOverlays();
+    }
+      // var options = {
+      //     draw: 'simple'
+      // }
+      // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+    // },
+    	// //创建圆心坐标点
+      // var pois = [
+      //   new BMap.Point(121.829001, 29.679995),
+      //   new BMap.Point(121.438685, 29.470983),
+      //   new BMap.Point(121.933061, 29.756154),
+      //   new BMap.Point(121.690498, 29.524298),
+      //   new BMap.Point(121.654586, 29.550258),
+      //   new BMap.Point(121.564926, 29.531904),
+      //   new BMap.Point(121.526053, 29.510957)
+      // ];
+      // function fn1(point1){
+      //     map.addOverlay( new BMap.Circle(point1,1000,{strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5,fillColor:'red'}));
+      // }
+      //   //循环圆心
+      // for (var i = 0; i < pois.length; i ++) {
+      //     fn1(pois[i])
+      // }
 
 
   },
-  // watch:{
-  //   radio: function (curval,oldval){
-  //     if(curval == 1){
-  //       console.log("这是1")
-  //       // [121.820428,29.684074],[121.438685,29.470983],[121.898617,29.742795],[122.15043,29.892702],[121.690498,29.524298],[121.856648,29.986717],[121.746839,29.976706],[121.655284,29.555344],[121.655284,29.555344],[121.546769,29.519647],[122.033003,29.834571],[121.525353,29.510972]
-  //     }else if(curval == 2){
-  //       //创建圆心坐标点
-  //       var pois = [
-  //         new BMapGL.Point(121.820428,29.684074),
-  //         new BMapGL.Point(121.438685,29.470983),
-  //         new BMapGL.Point(121.898617,29.742795)
-  //     ];
-
-  //     //创建函数 画圆
-  //       function  fn1(point1){
-  //         map.addOverlay(
-  //           new BMapGL.Circle(point1,1000,{
-  //             strokeColor:"blue",
-  //             strokeWeight:2,
-  //             strokeOpacity:0.5,
-  //             fillColor:'red'}));
-  //       }
-  //     //循环圆心
-  //         for (var i = 0; i < pois.length; i ++) {
-  //         fn1(pois[i])
-  //       }
-  //     }
-  //   }
-  // },
   computed: {},
   beforeMount() {},
   beforeDestroy() {},

@@ -1571,13 +1571,6 @@ export default {
     }
 
 
-
-
-
-
-
-
-
     //覆盖物的点击事件
     var clickEvts = ['click', 'dblclick', 'rightclick'];
     for (let k = 0; k< clickEvts.length; k++) {
@@ -1697,7 +1690,7 @@ export default {
 
     //添加事件
     document.getElementById("add_shijian").onclick=function add_shijian(){
-        console.log(this.mapvLayer)
+        // console.log(this.mapvLayer)
         var img = new Image();
         var data=[];
         var randomCount =points.length ;
@@ -1705,8 +1698,9 @@ export default {
         // console.log(points)
         // console.log(points[1])
       img.src=require("@/assets/实时点位.png");
+      //加载进去
       img.onload = function() {
-        // console.log(img)
+
         // 构造数据
         for (var i=0;i<points.length;i++){
           data.push({
@@ -1724,15 +1718,21 @@ export default {
         }
 
         var dataSet = new mapv.DataSet(data);
+        // console.log(dataSet)
         var options = {
           draw: 'icon',
           methods: {
             click: function (item) {
-              //点击图标的函数
-              var X=item.geometry.coordinates[0];
-              var Y=item.geometry.coordinates[1];
-              console.log(X);
-              console.log(Y);
+              console.log("确实被点击了");
+              // 点击图标的函数
+              // 这里有问题
+              console.log(item["geometry"]["coordinates"][0])
+              console.log(item["geometry"]["coordinates"][1])
+              var X=item["geometry"]["coordinates"][0];
+              var Y=item["geometry"]["coordinates"][1];
+              // console.log(X);
+              // console.log(Y);
+              // 某些点位有问题
               var start;
               var time1;
               var zhuangtai;
@@ -1748,8 +1748,8 @@ export default {
                   leixing=points[J_test]["leixing"];
                 }
               }
-              //  拿到维度
-              //  生成信息窗口
+               // 拿到维度
+               // 生成信息窗口
               var opts = {
                 width : 255,     // 信息窗口宽度
                 height: 205,     // 信息窗口高度
@@ -1776,21 +1776,45 @@ export default {
               map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
               setTimeout(()=>{
                 document.getElementById("shijian").onclick=function (){
+
                   alert("事件");
                 }
               })
 
             }
           },
-            size: 10,
-            width: 10,
-            height: 10,
+            size: 30,//点击事件的范围
+            width: 5,
+            height: 5,
             // sx: 10,
             // sy: 10,
             // swidth: 50,
             // sheight: 50,
           }
           mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+        //事件图标的点击事件
+        // console.log(markers);
+        // console.log(mapvLayer);
+        // var clickEvts_test = ['click', 'dblclick', 'rightclick'];
+        // for (let k = 0; k< clickEvts.length; k++) {
+        //   const event = clickEvts[k];
+        //   // console.log(mapvLayer["dataSet"])
+        //   for (let jl = 0; jl < mapvLayer["dataSet"]["_data"].length; jl++) {
+        //     const overlay = mapvLayer["dataSet"]["_data"][jl];
+        //     console.log(overlay)
+        //     overlay.addEventListener(event, e => {
+        //       switch (event) {
+        //         case 'click':
+        //           //获取坐标
+        //           console.log(overlay["dataSet"])
+        //           break;
+        //       }
+        //     });
+        //
+        //
+        //   }
+        // }
+
           mapvLayer.show(); // 显示图层
 
           // var options = {
@@ -1800,11 +1824,15 @@ export default {
         }
 
 
+
+
     }
     //清除事件
     document.getElementById("remove_shijian").onclick=function remove_shijian() {
         mapvLayer.hide();
     }
+
+
     //添加覆盖物
     document.getElementById("add_overlay").onclick=function add_overlay(){
       // console.log(markers);
@@ -1819,6 +1847,8 @@ export default {
         map.addOverlay(markers[j]);
       }
     }
+
+
 
 
    //清除覆盖物
@@ -1912,19 +1942,19 @@ export default {
     },
 
     mouseenter(event, dateInfo) {
-      console.log("悬浮进入", event, dateInfo);
+      // console.log("悬浮进入", event, dateInfo);
     },
     mouseleave(event, dateInfo) {
-      console.log("悬浮离开", event, dateInfo);
+      // console.log("悬浮离开", event, dateInfo);
     },
     changeMonth(start, end) {
-      console.log("开始:", start);
-      console.log("结束:", end);
+      // console.log("开始:", start);
+      // console.log("结束:", end);
     },
 
     getMethod() {
       //点击事件的时候去寻找相应的方法，在底层做转换直接写方法名，大括号里面写相应的业务逻辑
-      console.log("11");
+      // console.log("11");
     },
     handleCommand(command) {
       this.$message("click on item " + command);

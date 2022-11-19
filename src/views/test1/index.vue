@@ -103,6 +103,7 @@
 
           <!--          <el-image class="tupian2" style="width: 29px; height: 29px;margin:25px" :src="require('@/assets/icon_type@3x.png')" fit="fill"></el-image>-->
           <!--        第三个图片点击事件 未完成-->
+<!--          点击图片显示定位-->
           <el-image  class="tupian3" style="width: 29px; height: 29px;margin:30px" :src="require('@/assets/9.png')" fit="fill" ></el-image>
 
 
@@ -1626,7 +1627,7 @@ export default {
               map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
               setTimeout(()=>{
                 document.getElementById('btn_test').onclick=function(){
-                  alert("摄像头")
+                  box.style.display = "block";
                 }
               },100);
               break;
@@ -1829,6 +1830,8 @@ export default {
     }
     //清除事件
     document.getElementById("remove_shijian").onclick=function remove_shijian() {
+
+
         mapvLayer.hide();
     }
 

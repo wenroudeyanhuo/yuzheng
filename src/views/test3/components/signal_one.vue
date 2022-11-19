@@ -714,7 +714,7 @@ h1{
   background: transparent;
   height:630px;
   width:1170px;
-  top:65px;
+  top:-35px;
   margin-right: 100px;
   line-height:30px;
   z-index: 100;
@@ -725,7 +725,7 @@ h1{
 
   background: transparent;
   position: absolute;
-  top:65px;
+  top:-35px;
   /*background-color: pink;*/
   height:630px;
   width:1170px;
@@ -736,7 +736,7 @@ h1{
 .third3{
   z-index: 100;
   position: absolute;
-  top:65px;
+  top:-35px;
   background: transparent;
   /*background-color: rgb(197, 248, 184);*/
   height:630px;
@@ -749,7 +749,7 @@ h1{
   z-index: 100;
   background: transparent;
   position: absolute;
-  top:65px;
+  top:-35px;
   /*background-color: rgb(241, 241, 188);*/
   height:630px;
   width:1170px;

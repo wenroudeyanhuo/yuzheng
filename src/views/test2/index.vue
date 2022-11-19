@@ -195,7 +195,7 @@
               width: 60px;
               height: 60px;
               position: relative;
-              top: 100px;
+              top: -10px;
               left: -15px;
             "
             :src="require('@/assets/icon_title_dianwei@2x.png')"

@@ -8,16 +8,16 @@
       <div style="width:1533px; height: 790px;">
         <div  style="width: 100%; height: 100%" id="map" class="map"></div>
         <div style="width:100%;z-index: 101;position: absolute;top:450px;left: 500px">
-          <input id="add_overlay" type="button" onclick="add_overlay();" value="添加覆盖物" />
-          <input id="remove_overlay" type="button" onclick="remove_overlay();" value="删除覆盖物" />
+          <input id="add_overlay" type="button" onclick="add_overlay();" value="点位显示" />
+          <input id="remove_overlay" type="button" onclick="remove_overlay();" value="取消点位" />
         </div>
 
         <div style="width:100%;z-index: 101;position: absolute;top:500px;left: 500px">
-          <input id="add_shijian" type="button" onclick="add_shijian();" value="添加事件" />
+          <input id="add_shijian" type="button" onclick="add_shijian();" value="事件显示" />
           <input id="remove_shijian" type="button" onclick="remove_shijian();" value="删除事件" />
         </div>
         <div style="width:100%;z-index: 101;position: absolute;top:550px;left: 500px">
-          <input id="ad_overlay" type="button" onclick="ad_overlay();" value="添加范围" />
+          <input id="ad_overlay" type="button" onclick="ad_overlay();" value="范围显示" />
           <input id="move_overlay" type="button" onclick="move_overlay();" value="删除范围" />
         </div>
 
@@ -103,8 +103,16 @@
 
           <!--          <el-image class="tupian2" style="width: 29px; height: 29px;margin:25px" :src="require('@/assets/icon_type@3x.png')" fit="fill"></el-image>-->
           <!--        第三个图片点击事件 未完成-->
+          <div style="
+          position: relative;
+          left: -50px;
+          top: -140px;
+          z-index: 99998;">
+
+            <el-image id="add_overlay_zuo"  class="tupian3" style="width: 29px; height: 29px;margin:30px" :src="require('@/assets/9.png')" fit="fill" ></el-image>
+          </div>
 <!--          点击图片显示定位-->
-          <el-image  class="tupian3" style="width: 29px; height: 29px;margin:30px" :src="require('@/assets/9.png')" fit="fill" ></el-image>
+
 
 
         </div>
@@ -1836,7 +1844,7 @@ export default {
     }
 
 
-    //添加覆盖物
+    //添加定位
     document.getElementById("add_overlay").onclick=function add_overlay(){
       // console.log(markers);
       // map.addOverlay(marker);            //增加点
@@ -1850,6 +1858,22 @@ export default {
         map.addOverlay(markers[j]);
       }
     }
+   //   人机联防左边地图按钮设置
+   //  add_overlay_zuo
+    document.getElementById("add_overlay_zuo").onclick=function add_overlay_zuo(){
+      // console.log(markers);
+      // map.addOverlay(marker);            //增加点
+
+
+      //  取出储存的点
+      //   console.log(markers[0])
+      //   console.log(markers.length);
+      for(var j=0;j<markers.length;j++){
+        // console.log(markers[j]);
+        map.addOverlay(markers[j]);
+      }
+    }
+
 
 
 

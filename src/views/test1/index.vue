@@ -76,25 +76,6 @@
           </div>
 
 
-<!--          另一个弹出窗-->
-<!--          <div>-->
-<!--            &lt;!&ndash;-->
-<!--            @click="Open"     用于触发CAlert的isShow，控制CAlert是否显示和隐藏-->
-<!--            &ndash;&gt;-->
-<!--            <button style="position: absolute;" @click="Open" type="danger">click Me</button>-->
-<!--            &lt;!&ndash;-->
-<!--            :isShow="isShow"  用来控制CAlert的显示和隐藏-->
-<!--            title="我是标题"   用于弹窗的标题文字-->
-<!--            @Commit="Commit"  用于处理提交的逻辑-->
-<!--            @Cancel="Cancel"  用于处理取消的逻辑-->
-<!--            slot="content"    用于可以自定义内容-->
-<!--            &ndash;&gt;-->
-<!--            <CAlert :isShow="isShow" title="我是标题" @Commit="Commit" @Cancel="Cancel">-->
-<!--              <div slot="content">-->
-<!--                <div class="test">自定义内容1</div> &lt;!&ndash; 测试使用，自定义时这一行删掉即可 &ndash;&gt;-->
-<!--              </div>-->
-<!--            </CAlert>-->
-<!--          </div>-->
 
 
 
@@ -1168,7 +1149,6 @@ input::-webkit-input-placeholder {
 .box-card1 {
   //margin-bottom: 20px;
   background-color: #000088;
-  opacity: 0.7;
   height: 700px;
   width: 300px;
 

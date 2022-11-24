@@ -8,29 +8,6 @@
       <div style="width:1546px; height: 790px;">
         <div  style="width: 100%; height: 100%" id="map" class="map">
         </div>
-        <div style="width: 1533px">
-          <div style="z-index: 101;position: absolute;top:450px;left: 500px">
-            <input id="add_overlay" type="button" onclick="add_overlay();" value="点位显示" />
-            <input id="remove_overlay" type="button" onclick="remove_overlay();" value="取消点位" />
-          </div>
-
-          <div style="z-index: 101;position: absolute;top:500px;left: 500px">
-            <input id="add_shijian" type="button" onclick="add_shijian();" value="事件显示" />
-            <input id="remove_shijian" type="button" onclick="remove_shijian();" value="删除事件" />
-          </div>
-          <div style="z-index: 101;position: absolute;top:550px;left: 500px">
-            <input id="ad_overlay" type="button" onclick="ad_overlay();" value="范围显示" />
-            <input id="move_overlay" type="button" onclick="move_overlay();" value="删除范围" />
-          </div>
-
-          <div id="r-result" style="z-index: 101;position: absolute;top:600px;left: 500px">
-            <input type="button"  @click="openHeatmap();" value="显示热力图"/><input type="button"  @click="closeHeatmap();" value="关闭热力图"/>
-
-            <!-- <input type="button" onclick="add_overlay();" value="添加覆盖物" /><input type="button" onclick="remove_overlay();" value="删除覆盖物" /> -->
-          </div>
-        </div>
-
-
       </div>
     </div>
 
@@ -143,29 +120,77 @@
             </div>
             </div>
 
-            <div>
-              <input style="background:transparent;margin-bottom: 20px;margin-top: 20px;width:265px;height:35px;" type="text"  maxlength="11"  placeholder="输入点位关键词"></input>
+<!--            检索-->
+
+<!--            <div>-->
+<!--              <input style="background:transparent;margin-bottom: 20px;margin-top: 20px;width:265px;height:35px;" type="text"  maxlength="11"  placeholder="输入点位关键词"></input>-->
+<!--            </div>-->
+
+<!--            <template>-->
+<!--              <el-tree style="background:transparent;color: white" :data="data" :props="defaultProps"-->
+<!--                       @node-click="handleNodeClick">-->
+<!--              </el-tree>-->
+<!--            </template>-->
+            <div style="z-index:102;position:relative" class="about">
+              <!--      // select框绑定的值是selectVal，也就是treeData里的value-->
+              <el-select
+                :popper-append-to-body="false"
+                v-model="selectVal"
+                placeholder="请选择..."
+                size="mini"
+                clearable
+                ref="select"
+                style="width: 270px"
+              >
+                <!--        // 设置一个input框用作模糊搜索选项功能-->
+                <el-input
+                  class="input"
+                  placeholder="请输入要查询的点位"
+                  prefix-icon="el-icon-search"
+                  v-model="treeFilter"
+                  size="mini"
+                  clearable
+                ></el-input>
+                <!--        // 设置一个隐藏的下拉选项，选项显示的是汉字label，值是value-->
+                <!--        // 如果不设置一个下拉选项，下面的树形组件将无法正常使用-->
+                <el-option hidden key="id" :value="selectVal" :label="selectName">
+                </el-option>
+                <!--        // 设置树形控件-->
+                <el-tree
+                  :data="treeData"
+                  :props="defaultProps"
+                  @node-click="handleNodeClick"
+                  :expand-on-click-node="false"
+                  :check-on-click-node="true"
+                  ref="tree"
+                  node-key="id"
+                  :default-expand-all="true"
+                  :filter-node-method="filterNode"
+                >
+                  <!--          // @node-click：树形控件选项点击事件-->
+                  <!--          // :expand-on-click-node：使树形控件只有点箭头图标的时候才会展开或者收缩节点，为false则点文字直接选中该项-->
+                  <!--          // :check-on-click-node：是否在点击节点的时候选中节点，当选项为复选框时有用，这个属性可以删除-->
+                  <!--          // :default-expand-all：默认展开所有节点-->
+                  <!--          // :filter-node-method：实现搜索功能的筛选方法-->
+
+                  <span slot-scope="{ data }">
+<!--        //选项用插槽来显示，匹配搜索功能，并方便增加tag标签需求-->
+          <span>{{ data.label }}</span>
+          <el-tag
+            size="mini"
+            style="margin: 0 10px"
+            v-show="filterorgType(data.tag)"
+          >{{ filterorgType(data.tag) }}</el-tag
+          >
+        </span>
+                </el-tree>
+              </el-select>
             </div>
-            <span></span>
-
-            <template>
-              <el-tree style="background:transparent;color: white" :data="data" :props="defaultProps"
-                       @node-click="handleNodeClick">
-              </el-tree>
-            </template>
-
-            <!--&lt;!&ndash;                弹窗模板&ndash;&gt;-->
-            <!--              <div class="main">-->
-            <!--                <el-image id="hide" @click="hide_onclick" style="width: 30px; height: 31px;margin:25px" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>-->
-            <!--&lt;!&ndash;                <span id="hide" @click="hide_onclick">点开</span>&ndash;&gt;-->
-            <!--              </div>-->
-            <!--              <div class="cover" id="box">-->
-            <!--                <div>-->
-            <!--                  <div>-->
-            <!--                    <span id="Closehide" @click="Closehide_onclick">关闭</span>-->
-            <!--                  </div>-->
-            <!--                </div>-->
-            <!--              </div>-->
+            <div style="z-index: 101">
+                          <el-tree style="background:transparent;color: white" :data="data" :props="defaultProps"
+                                   @node-click="handleNodeClick">
+                          </el-tree>
+            </div>
 
 
 
@@ -322,11 +347,9 @@
     <div style="z-index: 101">
       <div class="el-col-cock2" style="position:absolute;">
       <el-card class="box-card4">
-          <el-checkbox-group style="width: 50px;height: 100px" v-model="checkList">
-            <el-checkbox label="点位显示"></el-checkbox>
-            <el-checkbox label="覆盖范围"></el-checkbox>
-            <el-checkbox label="事件显示"></el-checkbox>
-            <el-checkbox label="热力图" ></el-checkbox>
+<!--        多选框-->
+          <el-checkbox-group style="width: 50px;height: 100px" v-model="checkList" @change="handleCheckedCitiesChange">
+            <el-checkbox v-for="layer in showlayers" :label="layer" :key="layer">{{layer}}</el-checkbox>
           </el-checkbox-group>
       </el-card>
 
@@ -505,21 +528,27 @@ input::-webkit-input-placeholder {
   /* placeholder字体大小 */
   font-size: 12px;
 }
+::v-deep .el-tree{
+  background-color:transparent;
+}
+
 ::v-deep .el-tree-node > .el-tree-node__content {
+  font-size: 20px;
   background-color: transparent;
   color: white; //节点的字体颜色
   margin-top: 10px;
 }
+//选中的时候
 ::v-deep .el-tree-node:hover > .el-tree-node__content {
-  background-color: transparent;
+  //background-color: transparent;
   font-size: 20px;
   color: white; //节点的字体颜色
   background-color: #1a578b;
   font-weight: bold;
 }
-
+//选中的时候
 ::v-deep .el-tree-node.is-current:focus > .el-tree-node__content {
-  background-color: transparent;
+  //background-color: transparent;
   font-size: 20px;
   color: white; //节点的字体颜色
   background-color: #1a578b;
@@ -759,16 +788,18 @@ img[lazy="loading"] {
 }
 
 //输入框
+
 ::v-deep .el-input__inner {
   padding: 0;
-  background: transparent;
-  color: #fff;
+  background-color: transparent;
+  color: white;
   //border: none;
   font-size: 18px;
 }
 ::v-deep
   //下拉框面板
 .el-select-dropdown {
+  background-color:#000088;
   font-size: 30px;
   color: black;
   //background-color:transparent;
@@ -777,6 +808,7 @@ img[lazy="loading"] {
   color: black;
 }
 ::v-deep .el-select-dropdown__item {
+  background-color: transparent;
   color: black;
 }
 //选中时的样式
@@ -1324,6 +1356,8 @@ import Calendar from "@/components/Calendar.vue";
 import Show from "@/views/test1/components/show";
 import moment from "moment";
 import CAlert from "./components/CAlert";
+import Item from "../../layout/components/Sidebar/Item";
+const layersOptions = ['点位显示', '覆盖范围','事件显示','热力图'];
 export default {
   name: "home",
   props: [""],
@@ -1335,9 +1369,73 @@ export default {
   },
   data() {
     return {
+      //检索
+      markers:[],
+      selectVal: "", // select框的绑定值
+      selectName: "", // select框显示的name
+      treeFilter: "", // 搜索框绑定值，用作过滤
+      treeData: [
+        {
+          value: "1",
+          label: "宁海湾横山岛区",
+          children: [
+            {
+              value: "1-1",
+              label: "宁海北互通",
+            },
+            {
+              value: "1-2",
+              label: "望台山",
+            },
+            {
+              value: "1-3",
+              label: "悬山左",
+            },
+          ],
+        },
+        {
+          label: "沿海中线",
+          value: "2",
+          children: [
+            {
+              value: "2-1",
+              label: "胆山",
+            },
+            {
+              value: "2-2",
+              label: "乌沙山",
+            },
+          ],
+        },
+        {
+          value: "3",
+          label: "滨海经济开发区",
+          children: [
+            {
+              value: "3-1",
+              label: "咸祥渔业公园",
+            },
+            {
+              value: "3-2",
+              label: "梅山湾",
+            },
+          ],
+        },
+      ],
+      // defaultProps: {
+      //   children: "children",
+      //   label: "name",
+      // },
+      // 标签数组
+      tagList: [
+        // { value: "wife", label: "老婆" },
+        // { value: "princess", label: "小公主" },
+        // { value: "yyds", label: "天下第一" },
+      ],
       isShow:false,
       //多选
-      checkList: ["复选框 A"],
+      showlayers: layersOptions,
+      checkList: [],
       //地图
       heatmapOverlay: new BMapLib.HeatmapOverlay({ radius: 20 }),
 
@@ -1457,20 +1555,100 @@ export default {
           ],
         },
       ],
+      //地图全局
+      fanweiflag:null,
+      circles:[],
+      map:null,
+      mapvLayer:null,
+
+      shijian_mapvLayer:null,
+
+      points_shuju:[
+        //宁海互通点
+        {"lng":121.459519,"lat":29.476439,"count":50,"start":"2022-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.451902,"lat":29.463075,"count":51,"start":"2022-09-23","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.442272,"lat":29.463326,"count":15,"start":"2022-09-24","time":"10:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.450608,"lat":29.469081,"count":40,"start":"2022-09-25","time":"11:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.449314,"lat":29.476501,"count":100,"start":"2022-09-26","time":"12:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.4611,"lat":29.468578,"count":6,"start":"2022-09-27","time":"13:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.463112,"lat":29.472225,"count":18,"start":"2022-09-28","time":"14:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.459663,"lat":29.462414,"count":80,"start":"2022-09-29","time":"15:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        //望台山左121.519867,29.512371
+        {"lng":121.527754,"lat":29.506336,"count":11,"start":"2022-11-30","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.527754,"lat":29.517149,"count":7,"start":"2022-11-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.52143,"lat":29.509102,"count":42,"start":"2022-11-22","time":"10:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.525563,"lat":29.510139,"count":4,"start":"2022-11-22","time":"11:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.525868,"lat":29.512245,"count":27,"start":"2022-11-21","time":"12:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.52373,"lat":29.510941,"count":23,"start":"2022-11-12","time":"13:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.523227,"lat":29.511774,"count":60,"start":"2022-10-2","time":"14:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.52603,"lat":29.509401,"count":8,"start":"2022-10-1","time":"15:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.519867,"lat":29.512371,"count":15,"start":"2022-10-23","time":"16:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        //悬山左121.564531,29.529924
+        {"lng":121.560471,"lat":29.532281,"count":25,"start":"2022-10-22","time":"10:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.565825,"lat":29.531464,"count":21,"start":"2022-10-22","time":"10:00:58","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.563309,"lat":29.530584,"count":1,"start":"2022-10-22","time":"10:00:59","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.563777,"lat":29.53093,"count":51,"start":"2022-10-22","time":"10:01:00","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.564387,"lat":29.532407,"count":7,"start":"2022-10-22","time":"10:02:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.565789,"lat":29.534512,"count":11,"start":"2022-10-22","time":"10:03:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.567945,"lat":29.534449,"count":35,"start":"2022-10-22","time":"10:40:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.565573,"lat":29.530804,"count":22,"start":"2022-10-22","time":"10:04:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.564531,"lat":29.529924,"count":4,"start":"2022-10-22","time":"09:05:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        //东升岛 121.657137,29.549909
+
+
+        {"lng":121.654748,"lat":29.551499,"count":25,"start":"2021-10-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.654353,"lat":29.549457,"count":3,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.654999,"lat":29.550086,"count":100,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.654353,"lat":29.549457,"count":87,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.655556,"lat":29.550337,"count":32,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.657137,"lat":29.549909,"count":44,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        //乌沙山右前 121.690498,29.524298  摄像头左标
+        // 121.681751,29.535235
+        {"lng":121.685542,"lat":29.523246,"count":21,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.679092,"lat":29.527001,"count":80,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.681392,"lat":29.522853,"count":32,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.695333,"lat":29.533852,"count":26,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.68865,"lat":29.528384,"count":17,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.681751,"lat":29.535235,"count":17,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+
+        //咸祥公园附近 121.829001,29.679995
+        //121.822677,29.655517
+        {"lng":121.82972,"lat":29.680372,"count":25,"start":"2012-09-22","time":"08:00:45","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.839925,"lat":29.667192,"count":100,"start":"202-09-22","time":"08:00:35","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.821815,"lat":29.6751,"count":39,"start":"2012-09-22","time":"08:00:25","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.846967,"lat":29.681878,"count":11,"start":"2012-09-22","time":"08:00:5","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.832882,"lat":29.676481,"count":9,"start":"2012-09-22","time":"08:00:15","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.822677,"lat":29.655517,"count":47,"start":"2012-09-22","time":"08:00:15","zhuangtai":"待处理","leixing":"疑似船只"},
+
+        //梅山大桥那边 121.933061,29.756154
+        //121.929468,29.75352  121.937229,29.753896  121.932917,29.760042 121.93378,29.749757
+
+        {"lng":121.929468,"lat":29.75352,"count":52,"start":"2022-1-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.937229,"lat":29.753896,"count":100,"start":"2022-1-22","time":"08:00:58","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.932917,"lat":29.760042,"count":46,"start":"2022-1-22","time":"08:00:59","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.93378,"lat":29.749757,"count":9,"start":"2022-1-22","time":"08:00:5","zhuangtai":"待处理","leixing":"疑似船只"},
+      ],
       defaultProps: {
         children: "children",
         label: "label",
       },
     };
   },
+  watch: {
+    // 搜索过滤，监听input搜索框绑定的treeFilter
+    treeFilter(val) {
+      this.$refs.tree.filter(val);
+      // 当搜索框键入值改变时，将该值作为入参执行树形控件的过滤事件filterNode
+    },
+  },
   mounted() {
     // 创建Map实例
-    var mapvLayer=null;
-    var map = new BMap.Map("map");
+
+    this.map = new BMap.Map("map");
 
     // 初始化地图,设置中心点坐标和地图级别
-    map.centerAndZoom(new BMap.Point(121.573215,29.507074), 12);
-    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    this.map.centerAndZoom(new BMap.Point(121.573215,29.507074), 12);
+    this.map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
     // map.centerAndZoom：第一个参数可以是根据之前创建好的一个点为中心，创建出地图，也可以根据城市地区的中文名称创建地图。第二个参数是地图缩放级别，最大为19，最小为0
     // map.addControl(//添加地图类型控件
     //   new BMap.MapTypeControl({
@@ -1478,129 +1656,15 @@ export default {
     //   })
     // );
     //BMAP_EARTH_MAP
-    map.setMapType(BMAP_HYBRID_MAP);
-    map.setCurrentCity("宁波"); // 设置地图显示的城市 此项是必须设置的
-    map.enableScrollWheelZoom(true);
+    this.map.setMapType(BMAP_HYBRID_MAP);
+    this.map.setCurrentCity("宁波"); // 设置地图显示的城市 此项是必须设置的
+    this.map.enableScrollWheelZoom(true);
 
     // map.addEventListener('click', function (e) {
     //   alert('点击位置经纬度：' + e.latlng.lng + ',' + e.latlng.lat);
     // });
     //这些热力图点位数据  解释  lng lat  为坐标    count为权重
     //121.459663,29.462414
-    var points =[
-      //宁海互通点
-      {"lng":121.459519,"lat":29.476439,"count":50,"start":"2022-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.451902,"lat":29.463075,"count":51,"start":"2022-09-23","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.442272,"lat":29.463326,"count":15,"start":"2022-09-24","time":"10:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.450608,"lat":29.469081,"count":40,"start":"2022-09-25","time":"11:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.449314,"lat":29.476501,"count":100,"start":"2022-09-26","time":"12:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.4611,"lat":29.468578,"count":6,"start":"2022-09-27","time":"13:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.463112,"lat":29.472225,"count":18,"start":"2022-09-28","time":"14:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.459663,"lat":29.462414,"count":80,"start":"2022-09-29","time":"15:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      //望台山左121.519867,29.512371
-      {"lng":121.527754,"lat":29.506336,"count":11,"start":"2022-11-30","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.527754,"lat":29.517149,"count":7,"start":"2022-11-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.52143,"lat":29.509102,"count":42,"start":"2022-11-22","time":"10:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.525563,"lat":29.510139,"count":4,"start":"2022-11-22","time":"11:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.525868,"lat":29.512245,"count":27,"start":"2022-11-21","time":"12:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.52373,"lat":29.510941,"count":23,"start":"2022-11-12","time":"13:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.523227,"lat":29.511774,"count":60,"start":"2022-10-2","time":"14:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.52603,"lat":29.509401,"count":8,"start":"2022-10-1","time":"15:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.519867,"lat":29.512371,"count":15,"start":"2022-10-23","time":"16:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      //悬山左121.564531,29.529924
-      {"lng":121.560471,"lat":29.532281,"count":25,"start":"2022-10-22","time":"10:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.565825,"lat":29.531464,"count":21,"start":"2022-10-22","time":"10:00:58","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.563309,"lat":29.530584,"count":1,"start":"2022-10-22","time":"10:00:59","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.563777,"lat":29.53093,"count":51,"start":"2022-10-22","time":"10:01:00","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.564387,"lat":29.532407,"count":7,"start":"2022-10-22","time":"10:02:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.565789,"lat":29.534512,"count":11,"start":"2022-10-22","time":"10:03:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.567945,"lat":29.534449,"count":35,"start":"2022-10-22","time":"10:40:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.565573,"lat":29.530804,"count":22,"start":"2022-10-22","time":"10:04:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.564531,"lat":29.529924,"count":4,"start":"2022-10-22","time":"09:05:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      //东升岛 121.657137,29.549909
-
-
-      {"lng":121.654748,"lat":29.551499,"count":25,"start":"2021-10-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.654353,"lat":29.549457,"count":3,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.654999,"lat":29.550086,"count":100,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.654353,"lat":29.549457,"count":87,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.655556,"lat":29.550337,"count":32,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.657137,"lat":29.549909,"count":44,"start":"2021-10-22","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      //乌沙山右前 121.690498,29.524298  摄像头左标
-      // 121.681751,29.535235
-      {"lng":121.685542,"lat":29.523246,"count":21,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.679092,"lat":29.527001,"count":80,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.681392,"lat":29.522853,"count":32,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.695333,"lat":29.533852,"count":26,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.68865,"lat":29.528384,"count":17,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.681751,"lat":29.535235,"count":17,"start":"2002-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-
-      //咸祥公园附近 121.829001,29.679995
-      //121.822677,29.655517
-      {"lng":121.82972,"lat":29.680372,"count":25,"start":"2012-09-22","time":"08:00:45","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.839925,"lat":29.667192,"count":100,"start":"202-09-22","time":"08:00:35","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.821815,"lat":29.6751,"count":39,"start":"2012-09-22","time":"08:00:25","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.846967,"lat":29.681878,"count":11,"start":"2012-09-22","time":"08:00:5","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.832882,"lat":29.676481,"count":9,"start":"2012-09-22","time":"08:00:15","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.822677,"lat":29.655517,"count":47,"start":"2012-09-22","time":"08:00:15","zhuangtai":"待处理","leixing":"疑似船只"},
-
-      //梅山大桥那边 121.933061,29.756154
-      //121.929468,29.75352  121.937229,29.753896  121.932917,29.760042 121.93378,29.749757
-
-      {"lng":121.929468,"lat":29.75352,"count":52,"start":"2022-1-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.937229,"lat":29.753896,"count":100,"start":"2022-1-22","time":"08:00:58","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.932917,"lat":29.760042,"count":46,"start":"2022-1-22","time":"08:00:59","zhuangtai":"待处理","leixing":"疑似船只"},
-      {"lng":121.93378,"lat":29.749757,"count":9,"start":"2022-1-22","time":"08:00:5","zhuangtai":"待处理","leixing":"疑似船只"},
-
-      //提供测试数据
-      // {"lng":116.419916,"lat":39.924055,"count":8},
-      // {"lng":116.42189,"lat":39.921308,"count":11},
-      // {"lng":116.413765,"lat":39.929376,"count":3},
-      // {"lng":116.418232,"lat":39.920348,"count":50},
-      // {"lng":116.417554,"lat":39.930511,"count":15},
-      // {"lng":116.418568,"lat":39.918161,"count":23},
-      // {"lng":116.413461,"lat":39.926306,"count":3},
-      // {"lng":116.42232,"lat":39.92161,"count":13},
-      // {"lng":116.4174,"lat":39.928616,"count":6},
-      // {"lng":116.424679,"lat":39.915499,"count":21},
-      // {"lng":116.42171,"lat":39.915738,"count":29},
-      // {"lng":116.417836,"lat":39.916998,"count":99},
-      // {"lng":116.420755,"lat":39.928001,"count":10},
-      // {"lng":116.414077,"lat":39.930655,"count":14},
-      // {"lng":116.426092,"lat":39.922995,"count":16},
-      // {"lng":116.41535,"lat":39.931054,"count":15},
-      // {"lng":116.413022,"lat":39.921895,"count":13},
-      // {"lng":116.415551,"lat":39.913373,"count":17},
-      // {"lng":116.421191,"lat":39.926572,"count":1},
-      // {"lng":116.419612,"lat":39.917119,"count":9},
-      // {"lng":116.418237,"lat":39.921337,"count":54},
-      // {"lng":116.423776,"lat":39.921919,"count":26},
-      // {"lng":116.417694,"lat":39.92536,"count":17},
-      // {"lng":116.415377,"lat":39.914137,"count":19},
-      // {"lng":116.417434,"lat":39.914394,"count":43},
-      // {"lng":116.42588,"lat":39.922622,"count":27},
-      // {"lng":116.418345,"lat":39.919467,"count":8},
-      // {"lng":116.426883,"lat":39.917171,"count":3},
-      // {"lng":116.423877,"lat":39.916659,"count":34},
-      // {"lng":116.415712,"lat":39.915613,"count":14},
-      // {"lng":116.419869,"lat":39.931416,"count":12},
-      // {"lng":116.416956,"lat":39.925377,"count":11},
-      // {"lng":116.42066,"lat":39.925017,"count":38},
-      // {"lng":116.416244,"lat":39.920215,"count":91},
-      // {"lng":116.41929,"lat":39.915908,"count":54},
-      // {"lng":116.422116,"lat":39.919658,"count":21},
-      // {"lng":116.4183,"lat":39.925015,"count":15},
-      // {"lng":116.421969,"lat":39.913527,"count":3},
-      // {"lng":116.422936,"lat":39.921854,"count":24},
-      // {"lng":116.41905,"lat":39.929217,"count":12},
-      // {"lng":116.424579,"lat":39.914987,"count":57},
-      // {"lng":116.42076,"lat":39.915251,"count":70},
-      // {"lng":116.425867,"lat":39.918989,"count":8}
-    ];
-    var heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
-    map.addOverlay(this.heatmapOverlay);
-    this.heatmapOverlay.setDataSet({data:points,max:100});
-    //是否显示热力图
 
 
     var data = [];
@@ -1617,12 +1681,12 @@ export default {
       {"lng":121.526053,"lat":29.510957,"name":"望台山","zhuangtai":"开启","quyu":"片区7","people":"ces7/17777232"}
       //  望台山左121.519867,29.512371v  悬山左121.564531,29.529924 东升岛 121.657137,29.549909 乌沙山右前 121.690498,29.524298  摄像头左标
     ];
-    var markers=[];
+    // var markers=[];
     for (var i=0;i<7;i++){
       // console.log(i)
       var marker=new BMap.Marker(new BMap.Point(test_flag[i][0], test_flag[i][1]));//创建点
       // console.log(marker);
-      markers.push(marker);
+      this.markers.push(marker);
     }
 
 
@@ -1630,8 +1694,8 @@ export default {
     var clickEvts = ['click', 'dblclick', 'rightclick'];
     for (let k = 0; k< clickEvts.length; k++) {
       const event = clickEvts[k];
-      for (let jl = 0; jl < markers.length; jl++) {
-        const overlay = markers[jl];
+      for (let jl = 0; jl < this.markers.length; jl++) {
+        const overlay = this.markers[jl];
         overlay.addEventListener(event, e => {
           switch (event) {
             case 'click':
@@ -1678,7 +1742,7 @@ export default {
 
 
               );  // 创建信息窗口对象
-              map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
+              this.map.openInfoWindow(infoWindow, this.map.getCenter());      // 打开信息窗口
               setTimeout(()=>{
                 document.getElementById('btn_test').onclick=function(){
                   box.style.display = "block";
@@ -1705,7 +1769,6 @@ export default {
         new BMap.Point(121.564926, 29.531904),
         new BMap.Point(121.526053, 29.510957)
       ];
-      var circles=[];
       for(var j=0;j<pois.length;j++){
         var circle = new BMap.Circle(pois[j],1000,
             {
@@ -1715,21 +1778,21 @@ export default {
               fillColor:'#8bc46d',
               setTop:true
             });
-        circles.push(circle);
+        this.circles.push(circle);
       }
-    //添加范围
-    document.getElementById("ad_overlay").onclick=function ad_overlay(){
-      for(var j=0;j<circles.length;j++){
-        map.addOverlay(circles[j]);
-      }
-    }
+    //添加范围(写到外面去)
+    // document.getElementById("ad_overlay").onclick=function(){
+    //   for(var j=0;j<circles.length;j++){
+    //     this.map.addOverlay(circles[j]);
+    //   }
+    // }
 
-    //清除范围
-    document.getElementById("move_overlay").onclick=function move_overlay(){
-
-
-      map.clearOverlays();
-    }
+    //清除范围(写到外面去)
+    // document.getElementById("move_overlay").onclick=function(){
+    //
+    //
+    //   this.map.clearOverlays();
+    // }
 
 
 
@@ -1743,191 +1806,191 @@ export default {
 
 
 
-    //添加事件
-    document.getElementById("add_shijian").onclick=function add_shijian(){
-        // console.log(this.mapvLayer)
-        var img = new Image();
-        var data=[];
-        var randomCount =points.length ;
-        // console.log(randomCount)
-        // console.log(points)
-        // console.log(points[1])
-      img.src=require("@/assets/实时点位.png");
-      //加载进去
-      img.onload = function() {
-
-        // 构造数据
-        for (var i=0;i<points.length;i++){
-          data.push({
-            geometry: {
-              type: 'Point',
-              //这肯定是一个坐标
-              coordinates:[points[i]["lng"] ,points[i]["lat"] ]
-            },
-            deg: 360 * Math.random(),
-            // 支持image对象和url两种方式
-            icon: [img,img,img][randomCount % 3],
-            width: 30,
-            height: 30
-          });
-        }
-
-        var dataSet = new mapv.DataSet(data);
-        // console.log(dataSet)
-        var options = {
-          draw: 'icon',
-          methods: {
-            click: function (item) {
-              console.log("确实被点击了");
-              // 点击图标的函数
-              // 这里有问题
-              console.log(item["geometry"]["coordinates"][0])
-              console.log(item["geometry"]["coordinates"][1])
-              var X=item["geometry"]["coordinates"][0];
-              var Y=item["geometry"]["coordinates"][1];
-              // console.log(X);
-              // console.log(Y);
-              // 某些点位有问题
-              var start;
-              var time1;
-              var zhuangtai;
-              var leixing;
-              for (var J_test=0;J_test<points.length;J_test++)
-              {
-                if(X==points[J_test]["lng"] && Y==points[J_test]["lat"] )
-                {
-                  //  找到
-                  start=points[J_test]["start"];
-                  time1=points[J_test]["time"];
-                  zhuangtai=points[J_test]["zhuangtai"];
-                  leixing=points[J_test]["leixing"];
-                }
-              }
-               // 拿到维度
-               // 生成信息窗口
-              var opts = {
-                width : 255,     // 信息窗口宽度
-                height: 205,     // 信息窗口高度
-              }
-              var infoWindow = new BMap.InfoWindow(
-                '<div style="color:white;line-height: 40px;">' +
-                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生日期：</span>`+start+
-                "<br/>" +
-                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生时间：</span>` +time1+
-                "<br/>" +
-                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>处理状态：</span>` +zhuangtai+
-                "<br/>" +
-                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>事件类型：</span>`+leixing+
-                "<br/>" +
-                `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"事件详情："+
-                `<div id="shijian" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
-                `</div>`+
-                '</div>',
-                opts
-
-
-
-              );  // 创建信息窗口对象
-              map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
-              setTimeout(()=>{
-                document.getElementById("shijian").onclick=function (){
-
-                  alert("事件");
-                }
-              })
-
-            }
-          },
-            size: 30,//点击事件的范围
-            width: 5,
-            height: 5,
-            // sx: 10,
-            // sy: 10,
-            // swidth: 50,
-            // sheight: 50,
-          }
-          mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
-        //事件图标的点击事件
-        // console.log(markers);
-        // console.log(mapvLayer);
-        // var clickEvts_test = ['click', 'dblclick', 'rightclick'];
-        // for (let k = 0; k< clickEvts.length; k++) {
-        //   const event = clickEvts[k];
-        //   // console.log(mapvLayer["dataSet"])
-        //   for (let jl = 0; jl < mapvLayer["dataSet"]["_data"].length; jl++) {
-        //     const overlay = mapvLayer["dataSet"]["_data"][jl];
-        //     console.log(overlay)
-        //     overlay.addEventListener(event, e => {
-        //       switch (event) {
-        //         case 'click':
-        //           //获取坐标
-        //           console.log(overlay["dataSet"])
-        //           break;
-        //       }
-        //     });
-        //
-        //
-        //   }
-        // }
-
-          mapvLayer.show(); // 显示图层
-
-          // var options = {
-          //     draw: 'simple'
-          // }
-          // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
-        }
-
-
-
-
-    }
-    //清除事件
-    document.getElementById("remove_shijian").onclick=function remove_shijian() {
-
-
-        mapvLayer.hide();
-    }
-
-
-    //添加定位
-    document.getElementById("add_overlay").onclick=function add_overlay(){
-      // console.log(markers);
-      // map.addOverlay(marker);            //增加点
+    //添加事件（写到外面去）
+    // document.getElementById("add_shijian").onclick=function (){
+    //     // console.log(this.mapvLayer)
+    //     var img = new Image();
+    //     var data=[];
+    //     var randomCount =this.points_shuju.length ;
+    //     // console.log(randomCount)
+    //     // console.log(points)
+    //     // console.log(points[1])
+    //   img.src=require("@/assets/实时点位.png");
+    //   //加载进去
+    //   img.onload = function() {
+    //
+    //     // 构造数据
+    //     for (var i=0;i< this.points_shuju.length;i++){
+    //       data.push({
+    //         geometry: {
+    //           type: 'Point',
+    //           //这肯定是一个坐标
+    //           coordinates:[this.points_shuju[i]["lng"] ,this.points_shuju[i]["lat"] ]
+    //         },
+    //         deg: 360 * Math.random(),
+    //         // 支持image对象和url两种方式
+    //         icon: [img,img,img][randomCount % 3],
+    //         width: 30,
+    //         height: 30
+    //       });
+    //     }
+    //
+    //     var dataSet = new mapv.DataSet(data);
+    //     // console.log(dataSet)
+    //     var options = {
+    //       draw: 'icon',
+    //       methods: {
+    //         click: function (item) {
+    //           console.log("确实被点击了");
+    //           // 点击图标的函数
+    //           // 这里有问题
+    //           console.log(item["geometry"]["coordinates"][0])
+    //           console.log(item["geometry"]["coordinates"][1])
+    //           var X=item["geometry"]["coordinates"][0];
+    //           var Y=item["geometry"]["coordinates"][1];
+    //           // console.log(X);
+    //           // console.log(Y);
+    //           // 某些点位有问题
+    //           var start;
+    //           var time1;
+    //           var zhuangtai;
+    //           var leixing;
+    //           for (var J_test=0;J_test<this.points_shuju.length;J_test++)
+    //           {
+    //             if(X==this.points[J_test]["lng"] && Y==this.points[J_test]["lat"] )
+    //             {
+    //               //  找到
+    //               start=this.points_shuju[J_test]["start"];
+    //               time1=this.points_shuju[J_test]["time"];
+    //               zhuangtai=this.points_shuju[J_test]["zhuangtai"];
+    //               leixing=this.points_shuju[J_test]["leixing"];
+    //             }
+    //           }
+    //            // 拿到维度
+    //            // 生成信息窗口
+    //           var opts = {
+    //             width : 255,     // 信息窗口宽度
+    //             height: 205,     // 信息窗口高度
+    //           }
+    //           var infoWindow = new BMap.InfoWindow(
+    //             '<div style="color:white;line-height: 40px;">' +
+    //             `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生日期：</span>`+start+
+    //             "<br/>" +
+    //             `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生时间：</span>` +time1+
+    //             "<br/>" +
+    //             `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>处理状态：</span>` +zhuangtai+
+    //             "<br/>" +
+    //             `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>事件类型：</span>`+leixing+
+    //             "<br/>" +
+    //             `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"事件详情："+
+    //             `<div id="shijian" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
+    //             `</div>`+
+    //             '</div>',
+    //             opts
+    //
+    //
+    //
+    //           );  // 创建信息窗口对象
+    //           this.map.openInfoWindow(infoWindow, this.map.getCenter());      // 打开信息窗口
+    //           setTimeout(()=>{
+    //             document.getElementById("shijian").onclick=function (){
+    //
+    //               alert("事件");
+    //             }
+    //           })
+    //
+    //         }
+    //       },
+    //         size: 30,//点击事件的范围
+    //         width: 5,
+    //         height: 5,
+    //         // sx: 10,
+    //         // sy: 10,
+    //         // swidth: 50,
+    //         // sheight: 50,
+    //       }
+    //       this.mapvLayer = new mapv.baiduMapLayer(this.map, dataSet, options);
+    //     //事件图标的点击事件
+    //     // console.log(markers);
+    //     // console.log(mapvLayer);
+    //     // var clickEvts_test = ['click', 'dblclick', 'rightclick'];
+    //     // for (let k = 0; k< clickEvts.length; k++) {
+    //     //   const event = clickEvts[k];
+    //     //   // console.log(mapvLayer["dataSet"])
+    //     //   for (let jl = 0; jl < mapvLayer["dataSet"]["_data"].length; jl++) {
+    //     //     const overlay = mapvLayer["dataSet"]["_data"][jl];
+    //     //     console.log(overlay)
+    //     //     overlay.addEventListener(event, e => {
+    //     //       switch (event) {
+    //     //         case 'click':
+    //     //           //获取坐标
+    //     //           console.log(overlay["dataSet"])
+    //     //           break;
+    //     //       }
+    //     //     });
+    //     //
+    //     //
+    //     //   }
+    //     // }
+    //
+    //     this.mapvLayer.show(); // 显示图层
+    //
+    //       // var options = {
+    //       //     draw: 'simple'
+    //       // }
+    //       // var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+    //     }
+    //
+    //
+    //
+    //
+    // }
+    //清除事件（写到外面去）
+    // document.getElementById("remove_shijian").onclick=function(){
+    //
+    //
+    //   this.mapvLayer.hide();
+    // }
 
 
-      //  取出储存的点
-      //   console.log(markers[0])
-      //   console.log(markers.length);
-      for(var j=0;j<markers.length;j++){
-        // console.log(markers[j]);
-        map.addOverlay(markers[j]);
-      }
-    }
+    //添加定位（写到外边去）
+    // document.getElementById("add_overlay").onclick=function (){
+    //   // console.log(markers);
+    //   // map.addOverlay(marker);            //增加点
+    //
+    //
+    //   //  取出储存的点
+    //   //   console.log(markers[0])
+    //   //   console.log(markers.length);
+    //   for(var j=0;j<this.markers.length;j++){
+    //     // console.log(markers[j]);
+    //     this.map.addOverlay(this.markers[j]);
+    //   }
+    // }
    //   人机联防左边地图按钮设置
    //  add_overlay_zuo
-    document.getElementById("add_overlay_zuo").onclick=function add_overlay_zuo(){
-      // console.log(markers);
-      // map.addOverlay(marker);            //增加点
+   //  document.getElementById("add_overlay_zuo").onclick=function add_overlay_zuo(){
+   //    // console.log(markers);
+   //    // map.addOverlay(marker);            //增加点
+   //
+   //
+   //    //  取出储存的点
+   //    //   console.log(markers[0])
+   //    //   console.log(markers.length);
+   //    for(var j=0;j<markers.length;j++){
+   //      // console.log(markers[j]);
+   //      map.addOverlay(markers[j]);
+   //    }
+   //  }
 
 
-      //  取出储存的点
-      //   console.log(markers[0])
-      //   console.log(markers.length);
-      for(var j=0;j<markers.length;j++){
-        // console.log(markers[j]);
-        map.addOverlay(markers[j]);
-      }
-    }
 
 
 
-
-
-   //清除覆盖物
-    document.getElementById("remove_overlay").onclick=function remove_overlay(){
-      map.clearOverlays();
-    }
+   //清除覆盖物（写到外面去了）
+   //  document.getElementById("remove_overlay").onclick=function (){
+   //    this.map.clearOverlays();
+   //  }
       // var options = {
       //     draw: 'simple'
       // }
@@ -1958,6 +2021,247 @@ export default {
   beforeDestroy() {},
   created() {},
   methods: {
+    //移除范围
+    move_overlay(){
+      if(this.fanweiflag==null){
+        console.log("还没加呢")
+      }
+      else{
+        this.map.removeOverlay(this.circles)
+        this.fanweiflag=null;
+      }
+
+    },
+    ad_overlay(){
+      this.fanweiflag=1;
+      for(var j=0;j<this.circles.length;j++){
+        this.map.addOverlay(this.circles[j]);
+      }
+    },
+    test_addshijina(){
+      var shuju=Array.from(this.points_shuju)
+      // console.log(shuju)
+      var img = new Image();
+      img.src=require("@/assets/实时点位.png");
+      var data=[];
+      var randomCount =shuju.length ;
+      // 构造数据
+      for (var i=0;i<randomCount;i++){
+        // console.log(this.points_shuju)
+        data.push({
+          geometry: {
+            type: 'Point',
+            //这肯定是一个坐标
+            coordinates:[shuju[i]["lng"] ,shuju[i]["lat"] ]
+          },
+          deg: 360 * Math.random(),
+          // 支持image对象和url两种方式
+          icon: [img,img,img][randomCount % 3],
+          width: 30,
+          height: 30
+        });
+      }
+
+      var dataSet = new mapv.DataSet(data);
+      // console.log(dataSet)
+      var options = {
+        draw: 'icon',
+        methods: {
+          click: function (item) {
+            console.log("确实被点击了");
+            // 点击图标的函数
+            // 这里有问题
+            console.log(item["geometry"]["coordinates"][0])
+            console.log(item["geometry"]["coordinates"][1])
+            var X=item["geometry"]["coordinates"][0];
+            var Y=item["geometry"]["coordinates"][1];
+            // console.log(X);
+            // console.log(Y);
+            // 某些点位有问题
+            var start;
+            var time1;
+            var zhuangtai;
+            var leixing;
+            for (var J_test=0;J_test<randomCount;J_test++)
+            {
+              if(X==shuju[J_test]["lng"] && Y==shuju[J_test]["lat"] )
+              {
+                //  找到
+                start=shuju[J_test]["start"];
+                time1=shuju[J_test]["time"];
+                zhuangtai=shuju[J_test]["zhuangtai"];
+                leixing=shuju[J_test]["leixing"];
+              }
+            }
+            // 拿到维度
+            // 生成信息窗口
+            var opts = {
+              width : 255,     // 信息窗口宽度
+              height: 205,     // 信息窗口高度
+            }
+            var infoWindow = new BMap.InfoWindow(
+              '<div style="color:white;line-height: 40px;">' +
+              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生日期：</span>`+start+
+              "<br/>" +
+              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生时间：</span>` +time1+
+              "<br/>" +
+              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>处理状态：</span>` +zhuangtai+
+              "<br/>" +
+              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>事件类型：</span>`+leixing+
+              "<br/>" +
+              `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"事件详情："+
+              `<div id="shijian" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
+              `</div>`+
+              '</div>',
+              opts
+
+
+
+            );  // 创建信息窗口对象
+            this.map.openInfoWindow(infoWindow, this.map.getCenter());      // 打开信息窗口
+            setTimeout(()=>{
+              document.getElementById("shijian").onclick=function (){
+
+                alert("事件");
+              }
+            })
+
+          }
+        },
+        size: 30,//点击事件的范围
+        width: 5,
+        height: 5,
+        // sx: 10,
+        // sy: 10,
+        // swidth: 50,
+        // sheight: 50,
+      }
+
+
+
+      this.shijian_mapvLayer= new mapv.baiduMapLayer(this.map, dataSet, options);
+    },
+    add_shijian(){
+      //把数据拿过来拷贝
+      var img = new Image();
+      img.src=require("@/assets/实时点位.png");
+      //加载进去
+      img.onload = this.test_addshijina();
+      // this.shijian_mapvLayer=shijian_Layer;
+    },
+    remove_shijian()
+    {
+
+      if(this.shijian_mapvLayer==null)
+      {
+        console.log("还未初始化")
+      }
+      else{
+        this.shijian_mapvLayer.hide()
+      }
+
+    },
+    remove_overlay()
+    {
+      this.map.clearOverlays();
+    },
+    add_overlay(){
+  // console.log(markers);
+  // map.addOverlay(marker);            //增加点
+
+
+  //  取出储存的点
+  //   console.log(markers[0])
+  //   console.log(this.markers.length);
+      for(var j=0;j<this.markers.length;j++){
+          // console.log(markers[j]);
+          this.map.addOverlay(this.markers[j]);
+      }
+    },
+    //热力图
+    openHeatmap() {
+      // alert("打开");
+      this.map.addOverlay(this.heatmapOverlay);
+      this.heatmapOverlay.setDataSet({data:this.points_shuju,max:100});
+      this.heatmapOverlay.show();
+    },
+    closeHeatmap() {
+      // alert("关闭");
+      this.heatmapOverlay.hide();
+    },
+
+    //      checkList: ["点位显示","覆盖范围","事件显示","热力图"],
+    handleCheckedCitiesChange(value) {
+      if(value.length > 0){
+        //全部不显示
+        var dianwei=false;
+
+        this.move_overlay();//移除范围
+        this.closeHeatmap();//移除热力图
+        this.remove_shijian();//移除事件
+        this.remove_overlay();//移除点位
+        //检查是否有点位
+        value.forEach(item=>{
+          switch(item){
+            case '点位显示':
+              dianwei=true;//说明点位在的
+              break;
+          }
+        })
+        if(dianwei)
+        {
+          value.forEach(item =>{
+            // debugger
+            switch(item){
+              case '点位显示':
+                this.add_overlay();
+                // console.log("点位显示")
+
+                break;
+              case '覆盖范围':
+                this.ad_overlay();
+
+                // console.log("覆盖范围")
+                break;
+              case '事件显示':
+                this.add_shijian();
+                // console.log("事件显示")
+                break;
+              case '热力图':
+                this.openHeatmap();
+                // console.log("热力图")
+                break;
+            }
+          });
+        }
+      else {
+          this.checkList=[];
+        }
+
+      }
+    },
+
+    //检索
+    // 结构树点击事件
+    handleNodeClick(data) {
+      this.selectVal = data.value; // select绑定值为点击的选项的value
+      this.selectName = data.label; // input中显示值为label
+      this.treeFilter = ""; // 点击后搜索框清空
+      this.$refs.select.blur(); // 点击后关闭下拉框，因为点击树形控件后select不会自动折叠
+    },
+    // 模糊查询（搜索过滤），实质为筛选出树形控件中符合输入条件的选项，过滤掉其他选项
+    filterNode(value, data) {
+      if (!value) return true;
+      let filterRes = data.label.indexOf(value) !== -1;
+      return filterRes;
+    },
+    // 选项卡标签（可忽略，增值迭代需求）
+    filterorgType(val) {
+      let arr = this.tagList.filter((item) => {
+        return item.value == val;
+      });
+      return arr.length ? arr[0].label : "";
+    },
     Open () {
       this.isShow = true;
 
@@ -1969,15 +2273,6 @@ export default {
     Cancel () {
       this.isShow = false;
 
-    },
-    //热力图
-    openHeatmap() {
-      // alert("打开");
-      this.heatmapOverlay.show();
-    },
-    closeHeatmap() {
-      // alert("关闭");
-      this.heatmapOverlay.hide();
     },
     setGradient() {
       /*格式如下所示:
@@ -2000,7 +2295,7 @@ export default {
       return !!(elem.getContext && elem.getContext("2d"));
     },
     //树形控件点击事件
-    handleNodeClick() {},
+    // handleNodeClick() {},
 
     //地图
 

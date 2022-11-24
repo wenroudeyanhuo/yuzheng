@@ -2,7 +2,7 @@
 
   <div  style="background:transparent;position: relative;top:-50px;">
     <button class="first" style="position: relative;top:1px;right: -40px" @click="isActive = 0">事情详情</button>
-    <button class="second" style="position: relative;top:1px;right: -180px" @click="isActive = 1">实时监控</button>
+    <button class="second" style="position: relative;top:1px;right: -120px" @click="isActive = 1">实时监控</button>
 
     <div class="first1" v-if="isActive == 0">
       <span style="position:relative;left:44px;top:-23px;color: white">事情详情</span>

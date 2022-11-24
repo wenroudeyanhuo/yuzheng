@@ -5,29 +5,35 @@
 <!--    地图-->
     <div style="position: absolute;top:0px;left: 0px">
 
-      <div style="width:1533px; height: 790px;">
-        <div  style="width: 100%; height: 100%" id="map" class="map"></div>
-        <div style="width:100%;z-index: 101;position: absolute;top:450px;left: 500px">
-          <input id="add_overlay" type="button" onclick="add_overlay();" value="点位显示" />
-          <input id="remove_overlay" type="button" onclick="remove_overlay();" value="取消点位" />
+      <div style="width:1546px; height: 790px;">
+        <div  style="width: 100%; height: 100%" id="map" class="map">
+        </div>
+        <div style="width: 1533px">
+          <div style="z-index: 101;position: absolute;top:450px;left: 500px">
+            <input id="add_overlay" type="button" onclick="add_overlay();" value="点位显示" />
+            <input id="remove_overlay" type="button" onclick="remove_overlay();" value="取消点位" />
+          </div>
+
+          <div style="z-index: 101;position: absolute;top:500px;left: 500px">
+            <input id="add_shijian" type="button" onclick="add_shijian();" value="事件显示" />
+            <input id="remove_shijian" type="button" onclick="remove_shijian();" value="删除事件" />
+          </div>
+          <div style="z-index: 101;position: absolute;top:550px;left: 500px">
+            <input id="ad_overlay" type="button" onclick="ad_overlay();" value="范围显示" />
+            <input id="move_overlay" type="button" onclick="move_overlay();" value="删除范围" />
+          </div>
+
+          <div id="r-result" style="z-index: 101;position: absolute;top:600px;left: 500px">
+            <input type="button"  @click="openHeatmap();" value="显示热力图"/><input type="button"  @click="closeHeatmap();" value="关闭热力图"/>
+
+            <!-- <input type="button" onclick="add_overlay();" value="添加覆盖物" /><input type="button" onclick="remove_overlay();" value="删除覆盖物" /> -->
+          </div>
         </div>
 
-        <div style="width:100%;z-index: 101;position: absolute;top:500px;left: 500px">
-          <input id="add_shijian" type="button" onclick="add_shijian();" value="事件显示" />
-          <input id="remove_shijian" type="button" onclick="remove_shijian();" value="删除事件" />
-        </div>
-        <div style="width:100%;z-index: 101;position: absolute;top:550px;left: 500px">
-          <input id="ad_overlay" type="button" onclick="ad_overlay();" value="范围显示" />
-          <input id="move_overlay" type="button" onclick="move_overlay();" value="删除范围" />
-        </div>
 
-        <div id="r-result" style="width:100%;z-index: 101;position: absolute;top:600px;left: 500px">
-          <input type="button"  @click="openHeatmap();" value="显示热力图"/><input type="button"  @click="closeHeatmap();" value="关闭热力图"/>
-          \
-          <!-- <input type="button" onclick="add_overlay();" value="添加覆盖物" /><input type="button" onclick="remove_overlay();" value="删除覆盖物" /> -->
-        </div>
       </div>
     </div>
+
 
 
     <div>
@@ -37,10 +43,10 @@
     <!--    ：span分开这里了-->
     <div class="el-col-cock1">
       <el-card class="box-card">
-        <div  class="clearfix" :style="background">
+        <div  style="height: 50px" :style="background">
           <!--          style="border: none" align="center"-->
-          <el-image style="width: 30px; height: 27px" :src="require('@/assets/2.png')" fit="fill" class="tempimg"></el-image>
-          <span class="span">                 监控/预警/巡检</span>
+          <el-image style="width: 30px; height: 27px;position: relative;left: 10px;top:10px" :src="require('@/assets/2.png')" fit="fill"></el-image>
+          <span  style="position: relative;top:-20px;left: -15px" class="span">                 监控/预警/巡检</span>
         </div>
 
 
@@ -68,6 +74,28 @@
              </div>
              </div>
           </div>
+
+
+<!--          另一个弹出窗-->
+<!--          <div>-->
+<!--            &lt;!&ndash;-->
+<!--            @click="Open"     用于触发CAlert的isShow，控制CAlert是否显示和隐藏-->
+<!--            &ndash;&gt;-->
+<!--            <button style="position: absolute;" @click="Open" type="danger">click Me</button>-->
+<!--            &lt;!&ndash;-->
+<!--            :isShow="isShow"  用来控制CAlert的显示和隐藏-->
+<!--            title="我是标题"   用于弹窗的标题文字-->
+<!--            @Commit="Commit"  用于处理提交的逻辑-->
+<!--            @Cancel="Cancel"  用于处理取消的逻辑-->
+<!--            slot="content"    用于可以自定义内容-->
+<!--            &ndash;&gt;-->
+<!--            <CAlert :isShow="isShow" title="我是标题" @Commit="Commit" @Cancel="Cancel">-->
+<!--              <div slot="content">-->
+<!--                <div class="test">自定义内容1</div> &lt;!&ndash; 测试使用，自定义时这一行删掉即可 &ndash;&gt;-->
+<!--              </div>-->
+<!--            </CAlert>-->
+<!--          </div>-->
+
 
 
 
@@ -242,57 +270,57 @@
             <ul class="ul1">
               <li class="li1">
                 <div>
-                  <span class="span">文字                                                      文字1</span>
-                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                  <span style="font-size: 15px" class="span">文字                                         文字1</span>
+                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
 
               </li>
               <li class="li1">
                 <div>
-                  <span class="span">文字                                                      文字1</span>
-                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                  <span style="font-size: 15px" class="span">文字                                           文字1</span>
+                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
               <li class="li1">
                 <div>
-                  <span class="span">文字                                                      文字1</span>
-                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                  <span style="font-size: 15px" class="span">文字                                           文字1</span>
+                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
               <li class="li1">
                 <div>
-                  <span class="span">文字                                                      文字1</span>
-                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                  <span style="font-size: 15px" class="span">文字                                         文字1</span>
+                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
               <li class="li1">
                 <div>
-                  <span class="span">文字                                                      文字1</span>
-                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                  <span style="font-size: 15px" class="span">文字                                             文字1</span>
+                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
               <li >
                 <div>
-                  <span class="span">文字                                                      文字1</span>
-                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                  <span style="font-size: 15px" class="span">文字                                               文字1</span>
+                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
               <li class="li1">
                 <div>
-                  <span class="span">文字                                                      文字1</span>
-                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                  <span style="font-size: 15px" class="span">文字                                            文字1</span>
+                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
               <li class="li1">
                 <div>
-                  <span class="span">文字                                                      文字1</span>
-                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                  <span style="font-size: 15px" class="span">文字                                                文字1</span>
+                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
               <li class="li1">
                 <div>
-                  <span class="span">文字                                                      文字1</span>
-                  <el-image style="width:260px; height: 235px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
+                  <span style="font-size: 15px" class="span">文字                                             文字1</span>
+                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
                 </div>
               </li>
             </ul>
@@ -319,11 +347,6 @@
             <el-checkbox label="事件显示"></el-checkbox>
             <el-checkbox label="热力图" ></el-checkbox>
           </el-checkbox-group>
-<!--          -->
-<!--          <el-radio  class="card_bottom" v-model="radio" label="1">点位显示</el-radio>-->
-<!--          <el-radio class="card_bottom" v-model="radio" label="2">覆盖范围</el-radio>-->
-<!--          <el-radio class="card_bottom" v-model="radio" label="3">事件显示</el-radio>-->
-<!--          <el-radio class="card_bottom" v-model="radio" label="4">热力图</el-radio>-->
       </el-card>
 
       </div>
@@ -333,44 +356,50 @@
       <div class="el-col-cock3" style="position: absolute">
 
       <el-card class="box-card1">
-        <div :style="background" style="position: relative;">
+        <div style="height: 40px" :style="background">
           <!--          style="border: none" align="center"-->
-          <el-image style="width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
-          <span class="span">                   预警数统计</span>
-
-          <el-image style="width: 135px; height: 120px" :src="require('@/assets/1.png')" fit="fill" class="tempimg"></el-image>
+          <el-image style="position:relative;left:10px;top:5px;width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
+          <span style="font-size: 20px" class="span">            预警数统计</span>
+        </div>
+        <div style="position: relative;">
+          <el-image style="width: 120px; height: 80px" :src="require('@/assets/1.png')" fit="fill" ></el-image>
+          <div style="position: relative;top:-150px">
           <div class="wenzi_1">
-            <span style="color: white;" class="span">今日预警数  </span>
-            <span style="color: yellow;">6</span>
+            <span style="font-size:13px;color: white;" class="span">今日预警数  </span>
+            <span style="font-size:17px;color: yellow;">6</span>
           </div>
           <div class="wenzi_2">
-            <span style="color: white;" class="span">本月预警数  </span>
-            <span style="color: yellow;">6</span>
+            <span style="font-size:13px;color: white;" class="span">本月预警数  </span>
+            <span style="font-size:17px;color: yellow;">89</span>
           </div>
           <div class="wenzi_3">
-            <span style="color: white;" class="span">累计预警数  </span>
-            <span style="color: yellow;">6</span>
+            <span style="font-size:13px;color: white;" class="span">累计预警数  </span>
+            <span style="font-size:17px;color: yellow;">976</span>
+          </div>
           </div>
         </div>
 
-          <div  class="clearfix" :style="background">
+
+          <div  style="height: 40px" :style="background">
             <!--          style="border: none" align="center"-->
-            <el-image style="width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
-            <span class="span">                   处理数统计</span>
+            <el-image style="position:relative;left:10px;top:5px;width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" ></el-image>
+            <span  style="font-size: 20px" class="span">           处理数统计</span>
           </div>
           <div style="position:relative;">
-            <el-image style="width: 135px; height: 120px;display: inline-block;" :src="require('@/assets/4.png')" fit="fill" class="tempimg"></el-image>
+            <el-image style="width: 120px; height: 110px;display: inline-block;" :src="require('@/assets/4.png')" fit="fill" class="tempimg"></el-image>
+            <div style="position: relative;left:-15px;top:-120px">
             <div class="wenzi_4">
-              <span class="span">今日处理数  </span>
-              <span style="color: yellow;">6</span>
+              <span style="font-size:13px;color: white;" class="span">今日处理数  </span>
+              <span style="font-size:17px;color: yellow;">0</span>
             </div>
             <div class="wenzi_5">
-              <span class="span">本月处理数  </span>
-              <span style="color: yellow;">6</span>
+              <span style="font-size:13px;color: white;" class="span">本月处理数  </span>
+              <span style="font-size:17px;color: yellow;">2</span>
             </div>
             <div class="wenzi_6">
-              <span class="span">累计处理数  </span>
-              <span style="color: yellow;">6</span>
+              <span style="font-size:13px;color: white;" class="span">累计处理数  </span>
+              <span style="font-size:17px;color: yellow;">53</span>
+            </div>
             </div>
           </div>
         <!-- </div> -->
@@ -379,11 +408,11 @@
 
 
 
-<div style="position: relative;top:-15px">
-        <div  class="clearfix" :style="background">
+      <div style="position: relative;top:-15px">
+        <div  style="height: 40px" :style="background">
           <!--          style="border: none" align="center"-->
-          <el-image style="width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
-          <span class="span">                   事件趋势日历</span>
+          <el-image style="position:relative;left:10px;top:5px;width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
+          <span style="font-size: 20px" class="span">            事件趋势日历</span>
         </div>
         <div>
           <Calendar
@@ -421,6 +450,24 @@
   </div>
 </template>
 <style  lang="scss"  scoped>
+::v-deep .el-range-separator{
+  font-size: 15px;
+  position: relative;
+  top:3px;
+  right: 3px;
+}
+//input 字体大小
+::v-deep input::-webkit-input-placeholder {
+  /* placeholder颜色  */
+  color: white;
+  /* placeholder字体大小  */
+  font-size: 15px;
+}
+.test{
+  width: 500px;
+  height: 300px;
+  background-color: #eee;
+}
 //地图
 
 /* 隐藏四个边角 */
@@ -527,7 +574,7 @@ input::-webkit-input-placeholder {
   z-index: 102;
 }
 ::v-deep.el-col-cock2 {
-  top: -15px;
+  top: -55px;
 
   right: 330px;
   z-index: 101;
@@ -551,6 +598,19 @@ input::-webkit-input-placeholder {
   font-size: 18px;
   color: #fff;
 }
+.main2 {
+  background-color: transparent;
+  position: relative;
+  left: 10px;
+  top: 200px;
+  z-index: 99999;
+}
+
+.main2 span {
+  font-size: 18px;
+  color: #fff;
+}
+
 
 .cover {
   position: fixed;
@@ -560,7 +620,7 @@ input::-webkit-input-placeholder {
   height: 100%;
   background: black;
   z-index: 99999;
-  opacity: 0.9;
+  //opacity: 1.5;
 }
 
 .cover > div {
@@ -748,6 +808,7 @@ img[lazy="loading"] {
 
 .select_shijian {
   //color: #FFFFFF;
+  font-size: 10px;
   background: transparent;
   width: 260px;
   position: absolute;
@@ -758,14 +819,13 @@ img[lazy="loading"] {
 
 .select_shebei {
   background: transparent;
-  width: 130px;
+  width: 125px;
   position: absolute;
   top: 100px;
-  left: 0px;
 }
 .select_chulizhuangtai {
   background: transparent;
-  width: 130px;
+  width: 125px;
   position: absolute;
   top: 100px;
   left: 130px;
@@ -1006,9 +1066,10 @@ li {
   position: absolute;
   // left:140px; //只是假定的值，具体需测量
   // top:300px;
-  right: 20px;
+  right: 12px;
   top: 80px;
   z-index: 101;
+
 }
 .index_backcol {
   background-color: #000088;
@@ -1061,6 +1122,7 @@ input::-webkit-input-placeholder {
   font-size: 14px;
 }
 .span {
+  font-size: 24px;
   color: #ffffff;
   white-space: pre;
   font-weight: bold;
@@ -1095,7 +1157,7 @@ input::-webkit-input-placeholder {
 .box-card {
   //margin-bottom: 20px;
   background-color: #000088;
-  opacity: 0.7;
+  opacity: 0.9;
   height: 700px;
   width: 300px;
 
@@ -1281,7 +1343,7 @@ import { getOrderDate, updateWorkdate } from "@/api/calendar";
 import Calendar from "@/components/Calendar.vue";
 import Show from "@/views/test1/components/show";
 import moment from "moment";
-
+import CAlert from "./components/CAlert";
 export default {
   name: "home",
   props: [""],
@@ -1289,9 +1351,11 @@ export default {
     Header,
     Calendar,
     Show,
+    CAlert
   },
   data() {
     return {
+      isShow:false,
       //多选
       checkList: ["复选框 A"],
       //地图
@@ -1302,7 +1366,9 @@ export default {
       //手写弹窗的数据
       box: document.getElementById("box"),
       hide: document.getElementById("hide"),
+
       CloseHide: document.getElementById("Closehide"),
+
       //
       radio: "1",
       //for_barch
@@ -1912,6 +1978,18 @@ export default {
   beforeDestroy() {},
   created() {},
   methods: {
+    Open () {
+      this.isShow = true;
+
+    },
+    Commit () {
+      this.isShow = false;
+
+    },
+    Cancel () {
+      this.isShow = false;
+
+    },
     //热力图
     openHeatmap() {
       // alert("打开");
@@ -1952,6 +2030,7 @@ export default {
     Closehide_onclick() {
       box.style.display = "none";
     },
+
 
     handleStartDateChange() {
       if (this.startDate && this.startDate.length > 0) {

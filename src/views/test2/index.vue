@@ -27,8 +27,8 @@
             fit="fill"
           ></el-image>
           <span style="position: absolute; color: white; left: 120px; top: 10px"
-            >预警事件</span
-          >
+            >预警事件</span>
+          <span style="font-size:15px;color: yellow;position: relative;left: 240px">5</span>
           <div style="position: relative; top: -50px">
             <div class="block" style="position: relative; top: 80px">
               <el-date-picker v-model="value1" type="date" placeholder="日期">
@@ -226,6 +226,7 @@
 <style  lang="scss"  scoped>
 ::v-deep .el-input__inner {
   width: 100px;
+  background-color: transparent !important;
 }
 
 //识别空格

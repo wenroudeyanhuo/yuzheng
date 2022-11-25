@@ -422,7 +422,6 @@
 </template>
 <style  lang="scss"  scoped>
 //地图
-
 /* 隐藏四个边角 */
 .BMap_pop div:nth-child(1) {
   display:none;
@@ -527,14 +526,16 @@ input::-webkit-input-placeholder {
   z-index: 102;
 }
 ::v-deep.el-col-cock2 {
-  top: -15px;
-
-  right: 330px;
+  top: -20px;
+  left:1200px;
+  right:200px;
+  //330px
   z-index: 101;
 }
 ::v-deep.el-col-cock3 {
   top: 90px;
-  right: 10px;
+  left: 1200px;
+  right:10px;
 
   z-index: 101;
 }

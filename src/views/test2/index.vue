@@ -203,7 +203,7 @@
           ></el-image>
           <div style="height: 800px; width: 1400px">
             <!-- 背景色有问题 -->
-            <Show msg="" />
+            <Show />
           </div>
           <el-image
             style="

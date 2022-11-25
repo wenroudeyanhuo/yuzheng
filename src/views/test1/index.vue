@@ -44,13 +44,30 @@
               <!-- 背景色有问题 -->
                 <div style="position:absolute;">
                   <div class=Show>
-                    <Show msg=""/>
+                    <Show />
                   </div>
                   <el-image  style="position:absolute;top:-350px;left:650px;width: 30px;height: 30px" id="Closehide" @click="Closehide_onclick" :src="require('@/assets/chahao.png')" fit="fill"></el-image>
                 </div>
              </div>
              </div>
           </div>
+
+<!--          事件弹窗-->
+          <div style="z-index:105;position: relative;left: 100px;top:500px">
+            <div class = "cov">
+              <div class = "con">
+<!--                内容-->
+                <div style="position:relative;left:100px;top:50px;width: 1350px;height: 700px;background-color: blue">
+                  <span>1111</span>
+
+                </div>
+
+
+                <button  @click= "closeCon();" class = "dbt">确定</button >
+              </div>
+            </div>
+          </div>
+
 
 
 
@@ -93,7 +110,7 @@
           position: relative;
           left: -50px;
           top: -140px;
-          z-index: 99998;">
+          z-index: 103;">
 
             <el-image id="add_overlay_zuo"  class="tupian3" style="width: 29px; height: 29px;margin:30px" :src="require('@/assets/9.png')" fit="fill" ></el-image>
           </div>
@@ -133,7 +150,9 @@
 <!--            </template>-->
             <div style="z-index:102;position:relative" class="about">
               <!--      // select框绑定的值是selectVal，也就是treeData里的value-->
+
               <el-select
+
                 :popper-append-to-body="false"
                 v-model="selectVal"
                 placeholder="请选择..."
@@ -187,7 +206,7 @@
               </el-select>
             </div>
             <div style="z-index: 101">
-                          <el-tree style="background:transparent;color: white" :data="data" :props="defaultProps"
+                          <el-tree style="background:transparent;color: white" :data="treeData" :props="defaultProps"
                                    @node-click="handleNodeClick">
                           </el-tree>
             </div>
@@ -454,6 +473,41 @@
   </div>
 </template>
 <style  lang="scss"  scoped>
+//事件弹窗
+.cov{
+  background-color:rgba(0, 0, 0, 0.5);
+  z-index:99999;
+  display:none;
+  text-align:center;
+  font-size: 16px;
+}
+.con{
+  z-index:99999;
+  width:1550px;
+  height:800px;
+  background-color:black;
+  position:fixed;
+  right:0%;
+  top:0%;
+}
+.ptitle{
+  width:100%;
+  height:35px;
+  background-color:#3daae9;
+  color:white;
+  line-height:35px;
+}
+.dbt{
+  border-radius: 5px;
+  width: 70px;
+  height:30px;
+  background-color:#3daae9;
+  right:20px;
+  bottom:20px;
+  position:absolute;
+  line-height:30px;
+  color:white;
+}
 ::v-deep .el-range-separator{
   font-size: 15px;
   position: relative;
@@ -489,7 +543,13 @@
 }
 
 //弹出框内容
-::v-deep .BMap_pop img,
+::v-deep .BMap_pop img{
+  top:20px !important;
+  left: 250px !important;
+  width: 15px !important;
+  height: 15px  !important;
+;
+}
 ::v-deep .BMap_top,
 ::v-deep .BMap_center,
 ::v-deep .BMap_bottom,
@@ -601,7 +661,7 @@ input::-webkit-input-placeholder {
   position: relative;
   left: 10px;
   top: -10px;
-  z-index: 99998;
+  z-index: 102;
 }
 
 .main span {
@@ -1374,6 +1434,8 @@ export default {
       selectVal: "", // select框的绑定值
       selectName: "", // select框显示的name
       treeFilter: "", // 搜索框绑定值，用作过滤
+      //value 与data相对应
+      tree_value_label:[{"1":"宁海湾横山岛区"},{"1-1":"宁海互通"},{"1-2":"望台山"},{"1-3":"悬山左"},{"2":"沿海中线"},{"2-1":"乌沙山右"},{"2-2":"乌沙山"},{"3":"滨海经济开发区"},{"3-1":"咸祥公园"},{"3-2":"梅山大桥"}],
       treeData: [
         {
           value: "1",
@@ -1628,6 +1690,18 @@ export default {
         {"lng":121.932917,"lat":29.760042,"count":46,"start":"2022-1-22","time":"08:00:59","zhuangtai":"待处理","leixing":"疑似船只"},
         {"lng":121.93378,"lat":29.749757,"count":9,"start":"2022-1-22","time":"08:00:5","zhuangtai":"待处理","leixing":"疑似船只"},
       ],
+      //摄像头
+      shexiangtou:[
+        {"lng":121.829001,"lat":29.679995,"name":"咸祥公园","zhuangtai":"停用","quyu":"片区1","people":"ces1/17777232"},
+        {"lng":121.438685,"lat":29.470983,"name":"宁海互通","zhuangtai":"开启","quyu":"片区2","people":"ces2/17777232"},
+        {"lng":121.933061,"lat":29.756154,"name":"梅山大桥","zhuangtai":"停用","quyu":"片区3","people":"ces3/17777232"},
+        {"lng":121.690498,"lat":29.524298,"name":"乌沙山右","zhuangtai":"停用","quyu":"片区4","people":"ces4/17777232"},
+        {"lng":121.654586,"lat":29.550258,"name":"东升岛","zhuangtai":"开启","quyu":"片区5","people":"ces5/17777232"},
+        {"lng":121.564926,"lat":29.531904,"name":"悬山左","zhuangtai":"停用","quyu":"片区6","people":"ces6/17777232"},
+        {"lng":121.526053,"lat":29.510957,"name":"望台山","zhuangtai":"开启","quyu":"片区7","people":"ces7/17777232"}
+        //  望台山左121.519867,29.512371v  悬山左121.564531,29.529924 东升岛 121.657137,29.549909 乌沙山右前 121.690498,29.524298  摄像头左标
+      ],
+      test_flag:[[121.829001,29.679995],[121.438685,29.470983],[121.933061,29.756154],[121.690498,29.524298],[121.654586,29.550258],[121.564926,29.531904],[121.526053,29.510957]],
       defaultProps: {
         children: "children",
         label: "label",
@@ -1635,6 +1709,51 @@ export default {
     };
   },
   watch: {
+    //    tree_value_label:[{"1":"宁海湾横山岛区"},{"1-1":"宁海互通"},{"1-2":"望台山"},{"1-3":"悬山左"},{"2":"沿海中线"},{"2-1":"乌沙山右"},{"2-2":"乌沙山"},{"3":"滨海经济开发区"},{"3-1":"咸祥公园"},{"3-2":"梅山大桥"}],
+    // shexiangtou:[
+    //   {"lng":121.829001,"lat":29.679995,"name":"咸祥公园","zhuangtai":"停用","quyu":"片区1","people":"ces1/17777232"},
+    //   {"lng":121.438685,"lat":29.470983,"name":"宁海互通","zhuangtai":"开启","quyu":"片区2","people":"ces2/17777232"},
+    //   {"lng":121.933061,"lat":29.756154,"name":"梅山大桥","zhuangtai":"停用","quyu":"片区3","people":"ces3/17777232"},
+    //   {"lng":121.690498,"lat":29.524298,"name":"乌沙山右","zhuangtai":"停用","quyu":"片区4","people":"ces4/17777232"},
+    //   {"lng":121.654586,"lat":29.550258,"name":"东升岛","zhuangtai":"开启","quyu":"片区5","people":"ces5/17777232"},
+    //   {"lng":121.564926,"lat":29.531904,"name":"悬山左","zhuangtai":"停用","quyu":"片区6","people":"ces6/17777232"},
+    //   {"lng":121.526053,"lat":29.510957,"name":"望台山","zhuangtai":"开启","quyu":"片区7","people":"ces7/17777232"}
+    //   //  望台山左121.519867,29.512371v  悬山左121.564531,29.529924 东升岛 121.657137,29.549909 乌沙山右前 121.690498,29.524298  摄像头左标
+    // ],
+    selectVal(val){
+      if(val.toString().length<=1)
+      {
+        //  啥也不做
+
+      }
+      else{
+        var str_value=null;
+        var lat;
+        var lng;
+        for(let i of this.tree_value_label)
+        {
+          if(i[val]){
+            str_value=i[val]
+            //将经纬度赋值下去
+            for(let y of this.shexiangtou)
+            {
+              if(y["name"]==str_value){
+                lng=y["lng"];
+                lat=y["lat"];
+                //拿到
+              }
+            }
+
+          }
+        }
+
+        //转移视野
+        this.map.centerAndZoom(new BMap.Point(lng,lat), 16);
+
+      }
+
+
+    },
     // 搜索过滤，监听input搜索框绑定的treeFilter
     treeFilter(val) {
       this.$refs.tree.filter(val);
@@ -1670,21 +1789,21 @@ export default {
     var data = [];
     //二维数组储存点位信息
     //摄像头数据
-    var test_flag=[[121.829001,29.679995],[121.438685,29.470983],[121.933061,29.756154],[121.690498,29.524298],[121.654586,29.550258],[121.564926,29.531904],[121.526053,29.510957]];
-    var shexiangtou=[
-      {"lng":121.829001,"lat":29.679995,"name":"咸祥公园","zhuangtai":"停用","quyu":"片区1","people":"ces1/17777232"},
-      {"lng":121.438685,"lat":29.470983,"name":"宁海互通","zhuangtai":"开启","quyu":"片区2","people":"ces2/17777232"},
-      {"lng":121.933061,"lat":29.756154,"name":"梅山大桥","zhuangtai":"停用","quyu":"片区3","people":"ces3/17777232"},
-      {"lng":121.690498,"lat":29.524298,"name":"乌沙山右","zhuangtai":"停用","quyu":"片区4","people":"ces4/17777232"},
-      {"lng":121.654586,"lat":29.550258,"name":"东升岛","zhuangtai":"开启","quyu":"片区5","people":"ces5/17777232"},
-      {"lng":121.564926,"lat":29.531904,"name":"悬山左","zhuangtai":"停用","quyu":"片区6","people":"ces6/17777232"},
-      {"lng":121.526053,"lat":29.510957,"name":"望台山","zhuangtai":"开启","quyu":"片区7","people":"ces7/17777232"}
-      //  望台山左121.519867,29.512371v  悬山左121.564531,29.529924 东升岛 121.657137,29.549909 乌沙山右前 121.690498,29.524298  摄像头左标
-    ];
+    // var test_flag=[[121.829001,29.679995],[121.438685,29.470983],[121.933061,29.756154],[121.690498,29.524298],[121.654586,29.550258],[121.564926,29.531904],[121.526053,29.510957]];
+    // var shexiangtou=[
+    //   {"lng":121.829001,"lat":29.679995,"name":"咸祥公园","zhuangtai":"停用","quyu":"片区1","people":"ces1/17777232"},
+    //   {"lng":121.438685,"lat":29.470983,"name":"宁海互通","zhuangtai":"开启","quyu":"片区2","people":"ces2/17777232"},
+    //   {"lng":121.933061,"lat":29.756154,"name":"梅山大桥","zhuangtai":"停用","quyu":"片区3","people":"ces3/17777232"},
+    //   {"lng":121.690498,"lat":29.524298,"name":"乌沙山右","zhuangtai":"停用","quyu":"片区4","people":"ces4/17777232"},
+    //   {"lng":121.654586,"lat":29.550258,"name":"东升岛","zhuangtai":"开启","quyu":"片区5","people":"ces5/17777232"},
+    //   {"lng":121.564926,"lat":29.531904,"name":"悬山左","zhuangtai":"停用","quyu":"片区6","people":"ces6/17777232"},
+    //   {"lng":121.526053,"lat":29.510957,"name":"望台山","zhuangtai":"开启","quyu":"片区7","people":"ces7/17777232"}
+    //   //  望台山左121.519867,29.512371v  悬山左121.564531,29.529924 东升岛 121.657137,29.549909 乌沙山右前 121.690498,29.524298  摄像头左标
+    // ];
     // var markers=[];
     for (var i=0;i<7;i++){
       // console.log(i)
-      var marker=new BMap.Marker(new BMap.Point(test_flag[i][0], test_flag[i][1]));//创建点
+      var marker=new BMap.Marker(new BMap.Point(this.test_flag[i][0], this.test_flag[i][1]));//创建点
       // console.log(marker);
       this.markers.push(marker);
     }
@@ -1708,13 +1827,13 @@ export default {
               var quyu;
               var peole;
               //遍寻找
-              for(var J_te=0;J_te<shexiangtou.length;J_te++){
-                if(tou_lng==shexiangtou[J_te]["lng"] && tou_lat==shexiangtou[J_te]["lat"] ){
+              for(var J_te=0;J_te<this.shexiangtou.length;J_te++){
+                if(tou_lng==this.shexiangtou[J_te]["lng"] && tou_lat==this.shexiangtou[J_te]["lat"] ){
                   //  找到
-                  name=shexiangtou[J_te]["name"];
-                  zhuangtai=shexiangtou[J_te]["zhuangtai"];
-                  quyu=shexiangtou[J_te]["quyu"];
-                  peole=shexiangtou[J_te]["people"];
+                  name=this.shexiangtou[J_te]["name"];
+                  zhuangtai=this.shexiangtou[J_te]["zhuangtai"];
+                  quyu=this.shexiangtou[J_te]["quyu"];
+                  peole=this.shexiangtou[J_te]["people"];
                 }
               }
 
@@ -2021,6 +2140,12 @@ export default {
   beforeDestroy() {},
   created() {},
   methods: {
+    showCon(){
+      $(".cov").show();
+    },
+    closeCon(){
+      $(".cov").hide();
+    },
     //移除范围
     move_overlay(){
       if(this.fanweiflag==null){
@@ -2038,7 +2163,11 @@ export default {
         this.map.addOverlay(this.circles[j]);
       }
     },
-    test_addshijina(){
+    shijian_click()
+    {
+
+    },
+    test_addshijina(map){
       var shuju=Array.from(this.points_shuju)
       // console.log(shuju)
       var img = new Image();
@@ -2068,15 +2197,15 @@ export default {
         draw: 'icon',
         methods: {
           click: function (item) {
-            console.log("确实被点击了");
+            // console.log("确实被点击了");
             // 点击图标的函数
             // 这里有问题
-            console.log(item["geometry"]["coordinates"][0])
-            console.log(item["geometry"]["coordinates"][1])
+            // console.log(item)
+            // console.log(item["geometry"]["coordinates"][1])
             var X=item["geometry"]["coordinates"][0];
             var Y=item["geometry"]["coordinates"][1];
-            // console.log(X);
-            // console.log(Y);
+            console.log(X);
+            console.log(Y);
             // 某些点位有问题
             var start;
             var time1;
@@ -2118,19 +2247,22 @@ export default {
 
 
             );  // 创建信息窗口对象
-            this.map.openInfoWindow(infoWindow, this.map.getCenter());      // 打开信息窗口
+
+
+            map.openInfoWindow(infoWindow,map.getCenter());      // 打开信息窗口
             setTimeout(()=>{
               document.getElementById("shijian").onclick=function (){
-
+                //这里放一个方法控制事件页面的展示
+                // this.showCon();
                 alert("事件");
               }
             })
 
           }
         },
-        size: 30,//点击事件的范围
-        width: 5,
-        height: 5,
+        size: 40,//点击事件的范围
+        width: 1,
+        height: 1,
         // sx: 10,
         // sy: 10,
         // swidth: 50,
@@ -2139,14 +2271,14 @@ export default {
 
 
 
-      this.shijian_mapvLayer= new mapv.baiduMapLayer(this.map, dataSet, options);
+      this.shijian_mapvLayer= new mapv.baiduMapLayer(map, dataSet, options);
     },
-    add_shijian(){
+    add_shijian(map){
       //把数据拿过来拷贝
       var img = new Image();
       img.src=require("@/assets/实时点位.png");
       //加载进去
-      img.onload = this.test_addshijina();
+      img.onload = this.test_addshijina(map);
       // this.shijian_mapvLayer=shijian_Layer;
     },
     remove_shijian()
@@ -2224,7 +2356,7 @@ export default {
                 // console.log("覆盖范围")
                 break;
               case '事件显示':
-                this.add_shijian();
+                this.add_shijian(this.map);
                 // console.log("事件显示")
                 break;
               case '热力图':

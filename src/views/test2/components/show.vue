@@ -483,8 +483,6 @@ export default {
   position:relative;
   bottom: 10px;
   left: 220px;
-
-
 }
 video:focus{
   outline: 0;

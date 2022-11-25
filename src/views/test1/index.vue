@@ -222,7 +222,6 @@
         <el-row
           v-else
           ref="ruleForm"
-          :data="roles"
           style="width: 100%; font-size: 13px;position:relative;top: -50px"
           :model="ruleForm"
         >
@@ -233,8 +232,8 @@
               :label="item.label"
               :value="item"
             >
-              <span style="float: left">{{ item.label }}</span>
-              <span style="float: right;font-size: 13px;">{{ item.value }}</span>
+              <span style="color:white;float: left">{{ item.label }}</span>
+              <span style="color:white;float: right;font-size: 13px;">{{ item.value }}</span>
             </el-option>
           </el-select>
 
@@ -247,8 +246,8 @@
               :key="item.value"
               :label="item.label"
               :value="item">
-              <span style="float: left">{{ item.label }}</span>
-              <span style="float: right;font-size: 13px">{{ item.value }}</span>
+              <span style="color:white;float: left">{{ item.label }}</span>
+              <span style="color:white;float: right;font-size: 13px">{{ item.value }}</span>
             </el-option>
           </el-select>
 
@@ -269,8 +268,8 @@
               :key="item.value"
               :label="item.label"
               :value="item">
-              <span style="float: left">{{ item.label }}</span>
-              <span style="float: right;font-size: 13px">{{ item.value }}</span>
+              <span style="color:white;float: left">{{ item.label }}</span>
+              <span style="color:white;float: right;font-size: 13px">{{ item.value }}</span>
             </el-option>
           </el-select>
 
@@ -292,64 +291,38 @@
           <!--          这里我打算继续用卡片-->
           <el-card class="box-card3">
             <div>
-            <ul class="ul1">
-              <li class="li1">
-                <div>
-                  <span style="font-size: 15px" class="span">文字                                         文字1</span>
-                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-                </div>
+<!--              遍历事件中的数据-->
+<!--     points_shuju:[
+        //宁海互通点
+        {"lng":121.459519,"lat":29.476439,"count":50,"start":"2022-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.451902,"lat":29.463075,"count":51,"start":"2022-09-23","time":"09:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.442272,"lat":29.463326,"count":15,"start":"2022-09-24","time":"10:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.450608,"lat":29.469081,"count":40,"start":"2022-09-25","time":"11:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.449314,"lat":29.476501,"count":100,"start":"2022-09-26","time":"12:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.4611,"lat":29.468578,"count":6,"start":"2022-09-27","time":"13:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.463112,"lat":29.472225,"count":18,"start":"2022-09-28","time":"14:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        {"lng":121.459663,"lat":29.462414,"count":80,"start":"2022-09-29","time":"15:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
+        //望台山左121.519867,29.512371-->
+              <div>
+                <ul class="ul1">
 
-              </li>
-              <li class="li1">
-                <div>
-                  <span style="font-size: 15px" class="span">文字                                           文字1</span>
-                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-                </div>
-              </li>
-              <li class="li1">
-                <div>
-                  <span style="font-size: 15px" class="span">文字                                           文字1</span>
-                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-                </div>
-              </li>
-              <li class="li1">
-                <div>
-                  <span style="font-size: 15px" class="span">文字                                         文字1</span>
-                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-                </div>
-              </li>
-              <li class="li1">
-                <div>
-                  <span style="font-size: 15px" class="span">文字                                             文字1</span>
-                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-                </div>
-              </li>
-              <li >
-                <div>
-                  <span style="font-size: 15px" class="span">文字                                               文字1</span>
-                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-                </div>
-              </li>
-              <li class="li1">
-                <div>
-                  <span style="font-size: 15px" class="span">文字                                            文字1</span>
-                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-                </div>
-              </li>
-              <li class="li1">
-                <div>
-                  <span style="font-size: 15px" class="span">文字                                                文字1</span>
-                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-                </div>
-              </li>
-              <li class="li1">
-                <div>
-                  <span style="font-size: 15px" class="span">文字                                             文字1</span>
-                  <el-image style="width:260px; height: 175px;" :src="require('@/assets/for_brach/1.jpg')" fit="fill" ></el-image>
-                </div>
-              </li>
-            </ul>
-          </div>
+                <li v-model="shijian_weizhi" v-for="lan in points_shuju">
+<!--                  给图片添加一个点击事件-->
+                  <el-image @click="shijian_click(lan)"  style="width:270px; height: 180px;" :src="require('@/assets/yujing.jpg')" fit="fill" ></el-image>
+
+                  <div style="font-size:15px;position:relative;top:6px;color:white;">
+                    {{lan.leixing}}
+                   </div>
+                  <div style="width:41px;height:15px;background-color:red;position:relative;top:-9px;left:230px;color:white;">
+                  {{lan.zhuangtai}}
+                  </div>
+
+                </li>
+                </ul>
+              </div>
+
+
+            </div>
           </el-card>
 
 
@@ -1622,9 +1595,11 @@ export default {
       circles:[],
       map:null,
       mapvLayer:null,
+      dianwei:false,
+      shijian:false,
 
       shijian_mapvLayer:null,
-
+      shijian_weizhi:null,
       points_shuju:[
         //宁海互通点
         {"lng":121.459519,"lat":29.476439,"count":50,"start":"2022-09-22","time":"08:00:57","zhuangtai":"待处理","leixing":"疑似船只"},
@@ -1721,36 +1696,44 @@ export default {
     //   //  望台山左121.519867,29.512371v  悬山左121.564531,29.529924 东升岛 121.657137,29.549909 乌沙山右前 121.690498,29.524298  摄像头左标
     // ],
     selectVal(val){
-      if(val.toString().length<=1)
+      //检查点位是否开启
+      if(this.dianwei)
       {
-        //  啥也不做
+        if(val.toString().length<=1)
+        {
+          //  啥也不做
 
+        }
+        else{
+          var str_value=null;
+          var lat;
+          var lng;
+          for(let i of this.tree_value_label)
+          {
+            if(i[val]){
+              str_value=i[val]
+              //将经纬度赋值下去
+              for(let y of this.shexiangtou)
+              {
+                if(y["name"]==str_value){
+                  lng=y["lng"];
+                  lat=y["lat"];
+                  //拿到
+                }
+              }
+
+            }
+          }
+
+          //转移视野
+          this.map.centerAndZoom(new BMap.Point(lng,lat), 16);
+
+        }
       }
       else{
-        var str_value=null;
-        var lat;
-        var lng;
-        for(let i of this.tree_value_label)
-        {
-          if(i[val]){
-            str_value=i[val]
-            //将经纬度赋值下去
-            for(let y of this.shexiangtou)
-            {
-              if(y["name"]==str_value){
-                lng=y["lng"];
-                lat=y["lat"];
-                //拿到
-              }
-            }
-
-          }
-        }
-
-        //转移视野
-        this.map.centerAndZoom(new BMap.Point(lng,lat), 16);
-
+        console.log("点位选项没有开启")
       }
+
 
 
     },
@@ -2163,8 +2146,23 @@ export default {
         this.map.addOverlay(this.circles[j]);
       }
     },
-    shijian_click()
+    //事件列表点击定位到位置
+    shijian_click(lan)
     {
+      // 看一下这个的值
+      if(this.shijian)
+      {
+        //  移动到指定的地点
+        var lng=lan.lng;
+        var lat=lan.lat;
+        //转移视野
+        this.map.centerAndZoom(new BMap.Point(lng,lat), 16);
+      }
+      else{
+        console.log("事件选项没有开启")
+      }
+
+
 
     },
     test_addshijina(map){
@@ -2326,7 +2324,8 @@ export default {
     handleCheckedCitiesChange(value) {
       if(value.length > 0){
         //全部不显示
-        var dianwei=false;
+        this.dianwei=false;
+        this.shijian=false;
 
         this.move_overlay();//移除范围
         this.closeHeatmap();//移除热力图
@@ -2336,11 +2335,14 @@ export default {
         value.forEach(item=>{
           switch(item){
             case '点位显示':
-              dianwei=true;//说明点位在的
+              this.dianwei=true;//说明点位在的
+              break;
+            case '事件显示':
+              this.shijian=true;//说明事件在的
               break;
           }
         })
-        if(dianwei)
+        if(this.dianwei)
         {
           value.forEach(item =>{
             // debugger

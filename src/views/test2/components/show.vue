@@ -2,7 +2,7 @@
 
   <div  style="background:transparent;position: relative;top:-50px;">
     <button class="first" style="position: relative;top:1px;right: -40px" @click="isActive = 0">事情详情</button>
-    <button class="second" style="position: relative;top:1px;right: -180px" @click="isActive = 1">实时监控</button>
+    <button class="second" style="position: relative;top:1px;right: -120px" @click="isActive = 1">实时监控</button>
 
     <div class="first1" v-if="isActive == 0">
       <span style="position:relative;left:44px;top:-23px;color: white">事情详情</span>
@@ -43,29 +43,6 @@
                 </div>
               </el-scrollbar>
                 </div>
-
-
-<!--        <div style="width: 770px;height: 200px">-->
-<!--          <el-scrollbar>-->
-<!--            <div class="scrollbar-flex-content">-->
-
-<!--              <p v-for="(item,index) in img_scro" :key="index" class="scrollbar-demo-item">-->
-<!--                <el-image style="width: 300px;height: 300px" :src="item.img" alt=""></el-image>-->
-<!--              </p>-->
-
-<!--            </div>-->
-<!--          </el-scrollbar>-->
-<!--        </div>-->
-<!--        <el-scrollbar>-->
-<!--          <div class="scrollbar-flex-content">-->
-<!--            <button class="scrollbar-demo-item" style="margin-left:5px;" v-for="(item, index) in pageNum">-->
-<!--              <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>-->
-<!--            </button>-->
-
-<!--          </div>-->
-<!--        </el-scrollbar>-->
-
-
         <button class="button_J">
           <a href="#" v-on:click="nextPage">></a>
         </button>
@@ -84,20 +61,6 @@
 <!--      </el-scrollbar>-->
 <!--        </div>-->
 <!--      </template>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div style="position: absolute;right: 200px;top:40px">
 
       <div class="aside" style="display:inline;float: right;">

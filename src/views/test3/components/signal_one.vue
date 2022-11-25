@@ -67,7 +67,7 @@
       </div>
       <div class="page2">
         <button class="button_J">
-          <a href="#"  v-on:click="prePage">
+          <a href="#"  v-on:click="prePage"><
             </a>
         </button>
         <button class="button_J" v-for="(item, index) in pageNum1">

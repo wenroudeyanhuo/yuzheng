@@ -676,7 +676,6 @@
   background-color: #eee;
 }
 //地图
-
 /* 隐藏四个边角 */
 .BMap_pop div:nth-child(1) {
   display:none;
@@ -793,6 +792,10 @@ input::-webkit-input-placeholder {
   z-index: 102;
 }
 ::v-deep.el-col-cock2 {
+  top: -20px;
+  left:1200px;
+  right:200px;
+  //330px
   top: -55px;
 
   right: 330px;
@@ -800,7 +803,8 @@ input::-webkit-input-placeholder {
 }
 ::v-deep.el-col-cock3 {
   top: 90px;
-  right: 10px;
+  left: 1200px;
+  right:10px;
 
   z-index: 101;
 }

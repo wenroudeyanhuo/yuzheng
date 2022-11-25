@@ -58,7 +58,119 @@
               <div class = "con">
 <!--                内容-->
                 <div style="position:relative;left:100px;top:50px;width: 1350px;height: 700px;background-color: blue">
-                  <span>1111</span>
+                  <div style="width:1350px;background-color:#2D93CA;height: 40px">
+                    <el-image
+                      style="
+                      width: 60px;
+                      height: 60px;
+                      position: relative;
+                      top: -10px;
+                      left: -185px;
+                      "
+                      :src="require('@/assets/icon_title_dianwei@2x.png')"
+                      fit="fill"
+                    ></el-image>
+                    <button class="first" style="position: relative;top:-20px" @click="isActive = 0">事情详情</button>
+                    <button class="second" style="position: relative;top:-20px;left: 150px" @click="isActive = 1">实时监控</button>
+                  </div>
+
+                  <div  v-if="isActive == 0">
+
+                    <span style="position:relative;top:-30px;left:-570px;color: white">事情详情</span>
+
+
+                    <table>
+                      <tr v-for="(item, index) in dataShow" :class="{ 'alt': index%2==1 }">
+                        <!--        视频播放器-->
+                        <!--        但是每次还是要刷新一下才行-->
+                        <div class="video_text">
+                          <video
+                            id="myVideo"
+                            class="video-js"
+                          >
+                            <source
+                              :src=item.videoUrl
+                              type="video/mp4"
+                            >
+                          </video>
+                        </div>
+                        <!--        <td>{{ item.school }}</td>-->
+                      </tr>
+                    </table>
+<!--                    控制按钮-->
+
+
+
+
+                    <div style="position: absolute;right: 200px;top:40px">
+
+                      <div class="aside" style="display:inline;float: right;">
+                        <div style="margin-left: 20px;margin-top: 20px;">
+                          <el-image style="vertical-align:middle;" :src="require('@/assets/icon_jiankong.png')"></el-image>
+                          <span class="span6">nb市</span>
+                        </div>
+
+
+                        <div :style="background2" style="height:40px;width: 450px;margin-left: 20px">
+                          <!--         vertical-align:middle;图片和文字居中 -->
+                          <el-image style="width: 30px; height: 27px;margin-left:8px;vertical-align:middle;" :src="require('@/assets/6.png')" fit="fill" ></el-image>
+                          <span class="span7">处理详情</span>
+                        </div>
+                        <!-- 描述列表       -->
+                        <!-- 这里的所有数据，后台交互改变数据       -->
+                        <!--      direction="vertical" 是指文字的排列方式  -->
+                        <el-descriptions  :column="1" :span="2">
+                          <el-descriptions-item label="预警类型"
+                                                label-class-name="my-label"
+                                                content-class-name="my-content"
+                          >疑似船只</el-descriptions-item>
+                          <el-descriptions-item label="预警方位"
+                                                label-class-name="my-label"
+                                                content-class-name="my-content"
+                          > A5</el-descriptions-item>
+                          <el-descriptions-item label="预警时间"
+                                                label-class-name="my-label"
+                                                content-class-name="my-content"
+                          >2022-08-06 13:40:02</el-descriptions-item>
+                          <el-descriptions-item label="预警状态"
+                                                label-class-name="my-label1"
+                          ><el-tag size="small">待处理</el-tag>
+                          </el-descriptions-item>
+                          <el-descriptions-item label="推送时间"
+                                                label-class-name="my-label"
+                                                content-class-name="my-content"
+                          >2022-08-06 13:40:02</el-descriptions-item>
+                          <el-descriptions-item label="负责人"
+                                                label-class-name="my-label"
+                                                content-class-name="my-content"
+                          >田七</el-descriptions-item>
+                          <el-descriptions-item label="联系方式"
+                                                label-class-name="my-label"
+                                                content-class-name="my-content"
+                          >12345678909</el-descriptions-item>
+                          <el-descriptions-item label="推送内容"
+                                                label-class-name="my-label"
+                                                content-class-name="my-content"
+                          >有疑似报警</el-descriptions-item>
+                          <el-descriptions-item label="反馈信息"
+                                                label-class-name="my-label"
+                                                content-class-name="my-content"
+                          >-</el-descriptions-item>
+                        </el-descriptions>
+                      </div>
+
+
+                      <el-button style="color:deepskyblue;background-color:transparent;position:relative;right:-300px;bottom: -550px">处理</el-button>
+                    </div>
+                  </div>
+
+
+
+                  <div class="second2" v-else-if="isActive == 1">
+                    <span style="position:relative;color: white">实时监控</span>
+
+                  </div>
+
 
                 </div>
 
@@ -447,6 +559,70 @@
 </template>
 <style  lang="scss"  scoped>
 //事件弹窗
+.scrollbar-flex-content {
+  display: flex;
+  height: 190px;
+  width: 190px;
+}
+.scrollbar-demo-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
+  height: 190px;
+  text-align: center;
+  border-radius: 4px;
+  background: var(--el-color-danger-light-9);
+  color: var(--el-color-danger);
+}
+.aside{
+  height: 800px;
+  width: 400px;
+  background-color: transparent;
+}
+.span6{
+  color:#dce7e7;
+  /*解决父子元素margin叠加问题*/
+  display:inline-block;
+  margin: 30px 0px 30px 10px;
+}
+.span7{
+  /*  !*解决父子元素margin叠加问题*!
+    display:inline-block;*/
+  margin-left:40px;
+  /*  margin-bottom: 30px;*/
+  line-height: 40px;
+  color:#dce7e7;
+  font-size: 18px;
+}
+.video-js{
+
+  width: 790px;
+  height: 400px;
+
+}
+.video_text{
+  z-index: 100;
+  width:800px;
+  height:400px;
+}
+.first{
+  position: relative;
+  color:#d9effe;
+  background: transparent;
+  border: none;
+  margin-left: 800px;
+  top:-10px;
+
+}
+.second{
+  top:-10px;
+  position: relative;
+  color:#d9effe;
+  background: transparent;
+  border: none;
+}
 .cov{
   background-color:rgba(0, 0, 0, 0.5);
   z-index:99999;
@@ -1380,6 +1556,7 @@ body > .el-container {
   color: hsl(0, 100%, 100%);
   cursor: not-allowed;
 }
+
 </style>
 
 <script>
@@ -1402,6 +1579,136 @@ export default {
   },
   data() {
     return {
+      // 时间弹窗
+      pageSize: 1,
+      currentPage: 0,
+      listArray: [
+        {
+          'school': '河南农业大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '郑州大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南工业大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南农业大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        },
+        {
+
+          'school': '河南理工大学',
+          'img':require('@/assets/yujing.jpg'),
+          'videoUrl': require("../../assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4")
+        }
+
+      ],
+      img_scro: [
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+        {img: require('@/assets/yujing.jpg')},
+      ],
+      isActive:0,//默认开启第一个
       //检索
       markers:[],
       selectVal: "", // select框的绑定值
@@ -2118,7 +2425,16 @@ export default {
 
 
   },
-  computed: {},
+  computed: {
+    dataShow: function () {
+      let start = this.currentPage * this.pageSize;
+      let end = Math.min((this.currentPage + 1) * this.pageSize, this.listArray.length)
+      return this.listArray.slice(start, end)
+    },
+    pageNum: function () {
+      return Math.ceil(this.listArray.length / this.pageSize) || 1;
+    }
+  },
   beforeMount() {},
   beforeDestroy() {},
   created() {},
@@ -2237,7 +2553,7 @@ export default {
               `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>事件类型：</span>`+leixing+
               "<br/>" +
               `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"事件详情："+
-              `<div id="shijian" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
+              `<div id="shijian" @click="showCon()" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
               `</div>`+
               '</div>',
               opts
@@ -2252,7 +2568,8 @@ export default {
               document.getElementById("shijian").onclick=function (){
                 //这里放一个方法控制事件页面的展示
                 // this.showCon();
-                alert("事件");
+                $(".cov").show();
+                // alert("事件");
               }
             })
 

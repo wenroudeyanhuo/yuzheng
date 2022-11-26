@@ -2314,6 +2314,7 @@ export default {
                 height: 205,     // 信息窗口高度
               }
               //摄像头信息
+              this.map.closeInfoWindow();//窗口关闭
               var infoWindow = new BMap.InfoWindow(
                 '<div style="color: white;line-height: 40px;">' +
                 `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位名称：</span>`+name+
@@ -2333,12 +2334,31 @@ export default {
 
 
               );  // 创建信息窗口对象
+              console.log(infoWindow.isOpen())
               this.map.openInfoWindow(infoWindow, this.map.getCenter());      // 打开信息窗口
-              setTimeout(()=>{
-                document.getElementById('btn_test').onclick=function(){
+              // setTimeout(()=>{
+              //   document.getElementById('btn_test').onclick=function(){
+              //     box.style.display = "block";
+              //   }
+              // },100);
+              var that=this;
+              if(!infoWindow.isOpen())
+              {
+                infoWindow.addEventListener("open",function (e){
+                  document.getElementById("btn_test").onclick=function ()
+                  {
+
+                    box.style.display = "block";
+                  }
+
+                });
+              }
+              else{
+                var btn=document.getElementById("btn_test");
+                btn.onclick=function (){
                   box.style.display = "block";
                 }
-              },100);
+              }
               break;
             case 'dbclick':
               var res = overlay.toString() + '被双击!';
@@ -2693,67 +2713,98 @@ export default {
         draw: 'icon',
         methods: {
           click: function (item) {
+            map.closeInfoWindow();//窗口关闭
             // console.log("确实被点击了");
             // 点击图标的函数
             // 这里有问题
-            // console.log(item)
-            // console.log(item["geometry"]["coordinates"][1])
-            var X=item["geometry"]["coordinates"][0];
-            var Y=item["geometry"]["coordinates"][1];
-            console.log(X);
-            console.log(Y);
-            // 某些点位有问题
-            var start;
-            var time1;
-            var zhuangtai;
-            var leixing;
-            for (var J_test=0;J_test<randomCount;J_test++)
+            if(item==null)
             {
-              if(X==shuju[J_test]["lng"] && Y==shuju[J_test]["lat"] )
+              //空的不做事
+            }
+            else{
+              //有数据那么做事情
+              var X=item["geometry"]["coordinates"][0];
+              var Y=item["geometry"]["coordinates"][1];
+              console.log(X);
+              console.log(Y);
+              // 某些点位有问题
+              //明明有数据但是显示不出来窗口
+              var start;
+              var time1;
+              var zhuangtai;
+              var leixing;
+              for (var J_test=0;J_test<randomCount;J_test++)
               {
-                //  找到
-                start=shuju[J_test]["start"];
-                time1=shuju[J_test]["time"];
-                zhuangtai=shuju[J_test]["zhuangtai"];
-                leixing=shuju[J_test]["leixing"];
+                if(X==shuju[J_test]["lng"] && Y==shuju[J_test]["lat"] )
+                {
+                  //  找到
+                  start=shuju[J_test]["start"];
+                  time1=shuju[J_test]["time"];
+                  zhuangtai=shuju[J_test]["zhuangtai"];
+                  leixing=shuju[J_test]["leixing"];
+                }
               }
-            }
-            // 拿到维度
-            // 生成信息窗口
-            var opts = {
-              width : 255,     // 信息窗口宽度
-              height: 205,     // 信息窗口高度
-            }
-            var infoWindow = new BMap.InfoWindow(
-              '<div style="color:white;line-height: 40px;">' +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生日期：</span>`+start+
-              "<br/>" +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生时间：</span>` +time1+
-              "<br/>" +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>处理状态：</span>` +zhuangtai+
-              "<br/>" +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>事件类型：</span>`+leixing+
-              "<br/>" +
-              `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"事件详情："+
-              `<div id="shijian" @click="showCon()" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
-              `</div>`+
-              '</div>',
-              opts
-
-
-
-            );  // 创建信息窗口对象
-
-
-            map.openInfoWindow(infoWindow,map.getCenter());      // 打开信息窗口
-            setTimeout(()=>{
-              document.getElementById("shijian").onclick=function (){
-                //这里放一个方法控制事件页面的展示
-                // this.showCon();
-                $(".cov").show();
-                // alert("事件");
+              // 拿到维度
+              // 生成信息窗口
+              var opts = {
+                width : 255,     // 信息窗口宽度
+                height: 205,     // 信息窗口高度
               }
-            })
+              var infoWindow = new BMap.InfoWindow(
+                '<div style="color:white;line-height: 40px;">' +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生日期：</span>`+start+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生时间：</span>` +time1+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>处理状态：</span>` +zhuangtai+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>事件类型：</span>`+leixing+
+                "<br/>" +
+                `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"事件详情："+
+                `<div id="shijian" onclick="detailMsg" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
+                `</div>`+
+                '</div>',
+                opts
+
+
+
+              );  // 创建信息窗口对象
+              console.log(infoWindow.isOpen())
+
+
+              map.openInfoWindow(infoWindow,map.getCenter());      // 打开信息窗口
+              setTimeout(()=>{
+                document.getElementById("shijian").onclick=function (){
+                  //这里放一个方法控制事件页面的展示
+                  // this.showCon();
+                  $(".cov").show();
+                  // alert("事件");
+                }
+              },100)
+              // var that=this;
+              // console.log(infoWindow.isOpen())
+              // if(!infoWindow.isOpen())
+              // {
+              //   infoWindow.addEventListener("open",function (e){
+              //     document.getElementById("shijian").onclick=function ()
+              //     {
+              //
+              //       $(".cov").show();
+              //     }
+              //
+              //   });
+              // }
+              // else{
+              //   var btn=document.getElementById("shijian");
+              //   btn.onclick=function (){
+              //     $(".cov").show();
+              //   }
+              // }
+
+            }
+
+            // console.log(item["geometry"]["coordinates"][1])
+
 
           }
         },

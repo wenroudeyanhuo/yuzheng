@@ -70,8 +70,8 @@
                       :src="require('@/assets/icon_title_dianwei@2x.png')"
                       fit="fill"
                     ></el-image>
-                    <button class="first" style="position: relative;top:-20px" @click="isActive = 0">事情详情</button>
-                    <button class="second" style="position: relative;top:-20px;left: 150px" @click="isActive = 1">实时监控</button>
+                    <button class="first" style="position: relative;top:-30px" @click="isActive = 0">事情详情</button>
+                    <button class="second" style="position: relative;top:-30px;left: 150px" @click="isActive = 1">实时监控</button>
                   </div>
 
                   <div  v-if="isActive == 0">
@@ -102,6 +102,7 @@
 
 
 
+
                     <div style="position: absolute;right: 200px;top:40px">
 
                       <div class="aside" style="display:inline;float: right;">
@@ -111,14 +112,17 @@
                         </div>
 
 
-                        <div :style="background2" style="height:40px;width: 450px;margin-left: 20px">
+                        <div :style="background2" style="position:relative;left:150px;height:40px;width: 450px;margin-left: 20px">
                           <!--         vertical-align:middle;图片和文字居中 -->
-                          <el-image style="width: 30px; height: 27px;margin-left:8px;vertical-align:middle;" :src="require('@/assets/6.png')" fit="fill" ></el-image>
+                          <el-image style="width: 30px; height: 27px;margin-left:-308px;vertical-align:middle;" :src="require('@/assets/6.png')" fit="fill" ></el-image>
                           <span class="span7">处理详情</span>
                         </div>
                         <!-- 描述列表       -->
                         <!-- 这里的所有数据，后台交互改变数据       -->
                         <!--      direction="vertical" 是指文字的排列方式  -->
+                        <div style="position: relative;left: 230px;top:30px">
+
+
                         <el-descriptions  :column="1" :span="2">
                           <el-descriptions-item label="预警类型"
                                                 label-class-name="my-label"
@@ -157,17 +161,104 @@
                                                 content-class-name="my-content"
                           >-</el-descriptions-item>
                         </el-descriptions>
+                        </div>
                       </div>
 
 
-                      <el-button style="color:deepskyblue;background-color:transparent;position:relative;right:-300px;bottom: -550px">处理</el-button>
+
+
+                      <el-button style="color:deepskyblue;background-color:transparent;position:relative;right:-500px;bottom: -600px">处理</el-button>
+
                     </div>
                   </div>
 
 
 
                   <div class="second2" v-else-if="isActive == 1">
-                    <span style="position:relative;color: white">实时监控</span>
+                    <el-col :span="15">
+                      <span style="position: relative;color: white;top: -20px;left: -360px">实时监控</span>
+
+
+                      <div>
+                        <video style="position:relative;top:25px;left:5px;width: 700px;height: 500px">
+                          <source style="height: 700px;width: 700px;" :src="require('@/assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4')">
+                        </video>
+                      </div>
+                    </el-col>
+<!--                    <span style="position:relative;left:-500px;top:-20px;color: white">实时监控</span>-->
+                    <el-col :span="1">
+                      <div class="mo1">
+                        <span style="line-height: 30px;margin-left: -480px"><font color="#f0f8ff">云台控制</font></span>
+                      </div>
+                      <div style="position:relative;top:70px;left: -62px;width: 170px">
+                        <el-image style="vertical-align:middle;" :src="require('@/assets/icon_jiankong.png')"></el-image>
+                        <span style="color: white">宁波松岙大阜1</span>
+                      </div>
+
+                      <div class="mo2">
+                        <el-image style="width: 200px;height: 200px;vertical-align:middle;" :src="require('@/assets/bg_bottom(1).png')"></el-image>
+                      </div>
+
+                      <el-row>
+                        <el-col :span="5">
+                          <div class="mo3">
+                            <el-image style="width: 100px;height: 40px;vertical-align: middle" :src="require('@/assets/ssjk1.png')"></el-image>
+                            <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-left: 3px" :src="require('@/assets/ssjk1.png')"></el-image>
+                            <!--<el-image style="width: 160px;height: 82px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>-->
+                            <div>
+                              <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-top: 10px" :src="require('@/assets/ssjk1.png')"></el-image>
+                              <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-top: 10px;margin-left: 3px" :src="require('@/assets/ssjk1.png')"></el-image>
+                            </div>
+                          </div>
+                        </el-col>
+                        <el-col :span="19">
+                          <div>
+                            <el-image style="position:relative;left:150px;top:190px;width: 170px;height: 90px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>
+                          </div>
+                        </el-col>
+                      </el-row>
+                    </el-col>
+
+                    <el-col :span="7">
+                      <div class="mo4">
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_up.png')"></el-image>
+                      </div>
+
+                      <div class="mo5">
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_left.png')"></el-image>
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;margin-left: 125px" :src="require('@/assets/icon_right.png')"></el-image>
+                      </div>
+
+                      <div class="mo6">
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_down.png')"></el-image>
+                      </div>
+
+                      <el-row>
+                        <el-col>
+                          <div class="mo7">
+                            <el-button type="text" style="color: #FFFFFF">变倍 +</el-button>
+                            <el-button type="text" style="color: #FFFFFF;margin-left: 60px">变倍 -</el-button>
+                          </div>
+
+                          <div class="mo8">
+                            <el-button type="text" style="color: #FFFFFF">变焦 +</el-button>
+                            <el-button type="text" style="color: #FFFFFF;margin-left: 60px">变焦 -</el-button>
+                          </div>
+                        </el-col>
+                        <el-col>
+                          <div style="position: relative;top:50px;left: -190px">
+                            <el-image style="position:relative;top:-695px;left: 200px;width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+                            <el-button type="text" style="position:relative;top:-695px;left: 200px;color: #FFFFFF;">开启激光</el-button>
+
+                            <!--    <el-image style="width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+                                <el-button type="text" style="color: #FFFFFF;">开启激光</el-button>-->
+                          </div>
+                        </el-col>
+                      </el-row>
+                    </el-col>
+
+
+
 
                   </div>
 
@@ -559,6 +650,85 @@
 </template>
 <style  lang="scss"  scoped>
 //事件弹窗
+.mo1{
+  position:relative;
+  background-color: #203f5e;
+  height: 30px;
+  width: 570px;
+  top:22px;
+  left:-65px;
+}
+
+.mo2{
+  position:relative;
+  height: 250px;
+  width: 250px;
+  top:130px;
+  left:30px;
+}
+
+.mo3{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:190px;
+  left:-155px;
+}
+
+
+.mo4{
+  position:relative;
+  height: 150px;
+  width: 300px;
+  top:170px;
+  left:-50px;
+}
+
+.mo5{
+  position:relative;
+
+  height: 250px;
+  width: 420px;
+  top:110px;
+  left:-110px;
+}
+
+.mo6{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-50px;
+  left:-100px;
+}
+
+.mo7{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-145px;
+  left:-200px;
+}
+.mo8{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-345px;
+  left:-200px;
+}
+
+::v-deep .my-label{
+  margin-bottom: 5px;
+  color: #3fd9d5;
+
+}
+::v-deep .my-label1{
+  margin-bottom: 30px;
+  color: #3fd9d5;
+}
+::v-deep .my-content{
+  margin-bottom: 5px;
+  color:#dce7e7;
+}
 .scrollbar-flex-content {
   display: flex;
   height: 190px;
@@ -579,6 +749,8 @@
 .aside{
   height: 800px;
   width: 400px;
+  position: relative;
+  left: -100px;
   background-color: transparent;
 }
 .span6{
@@ -590,7 +762,8 @@
 .span7{
   /*  !*解决父子元素margin叠加问题*!
     display:inline-block;*/
-  margin-left:40px;
+  position: relative;
+  left: 50px;
   /*  margin-bottom: 30px;*/
   line-height: 40px;
   color:#dce7e7;
@@ -1847,6 +2020,11 @@ export default {
         // 背景颜色
         // 背景图片位置
         backgroundPosition: "center top",
+      },
+      background2: {
+        backgroundImage: 'url(' + require('@/assets/bg_title@2x.png') + ')',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '60%',
       },
       cities: [
         { value: "疑似船只", label: "事件类型" },

@@ -4,12 +4,12 @@
       <el-card class="box-card">
         <div
           style="
-            margin: 20px;
-            width: 300px;
-            height: 40px;
+            margin: 1vw;
+            width: 15.6vw;
+            height: 4vh;
             position: relative;
-            top: -10px;
-            left: -20px;
+            top: -1vh;
+            left: -1vw;
           "
           class="clearfix"
           :style="background"
@@ -17,20 +17,29 @@
           <!--          style="border: none" align="center"-->
           <el-image
             style="
-              width: 30px;
-              height: 30px;
+              width: 1.6vw;
+              height: 3vh;
               position: relative;
-              left: 10px;
-              top: 3px;
+              left: 0.5vw;
+              top: 0.3vh;
             "
             :src="require('@/assets/6.png')"
             fit="fill"
           ></el-image>
-          <span style="position: absolute; color: white; left: 120px; top: 10px"
-            >预警事件</span>
-          <span style="font-size:15px;color: yellow;position: relative;left: 240px">5</span>
-          <div style="position: relative; top: -50px">
-            <div class="block" style="position: relative; top: 80px">
+          <span style="position: absolute; color: white; left: 6.25vw; top: 1vh"
+            >预警事件</span
+          >
+          <span
+            style="
+              font-size: 1.4vh;
+              color: yellow;
+              position: relative;
+              left: 12.5vw;
+            "
+            >5</span
+          >
+          <div style="position: relative; top: -4.6vh">
+            <div class="block" style="position: relative; top: 7.4vh">
               <el-date-picker v-model="value1" type="date" placeholder="日期">
               </el-date-picker>
             </div>
@@ -50,7 +59,7 @@
                 :value="item"
               >
                 <span style="float: left">{{ item.label }}</span>
-                <span style="float: right; font-size: 13px">{{
+                <span style="float: right; font-size: 1.2vh">{{
                   item.value
                 }}</span>
               </el-option>
@@ -71,7 +80,7 @@
                 :value="item"
               >
                 <span style="float: left">{{ item.label }}</span>
-                <span style="float: right; font-size: 13px">{{
+                <span style="float: right; font-size: 1.2vh">{{
                   item.value
                 }}</span>
               </el-option>
@@ -85,7 +94,7 @@
                     <div>
                       <span class="span">文字 文字1</span>
                       <el-image
-                        style="width: 310px; height: 235px"
+                        style="width: 16vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -95,7 +104,7 @@
                     <div>
                       <span class="span">文字 文字1</span>
                       <el-image
-                        style="width: 310px; height: 235px"
+                        style="width: 16vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -105,7 +114,7 @@
                     <div>
                       <span class="span">文字 文字1</span>
                       <el-image
-                        style="width: 310px; height: 235px"
+                        style="width: 16vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -115,7 +124,7 @@
                     <div>
                       <span class="span">文字 文字1</span>
                       <el-image
-                        style="width: 310px; height: 235px"
+                        style="width: 16vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -125,7 +134,7 @@
                     <div>
                       <span class="span">文字 文字1</span>
                       <el-image
-                        style="width: 310px; height: 235px"
+                        style="width: 16vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -135,7 +144,7 @@
                     <div>
                       <span class="span">文字 文字1</span>
                       <el-image
-                        style="width: 310px; height: 235px"
+                        style="width: 16vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -145,7 +154,7 @@
                     <div>
                       <span class="span">文字 文字1</span>
                       <el-image
-                        style="width: 310px; height: 235px"
+                        style="width: 16vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -155,7 +164,7 @@
                     <div>
                       <span class="span">文字 文字1</span>
                       <el-image
-                        style="width: 310px; height: 235px"
+                        style="width: 16vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -165,7 +174,7 @@
                     <div>
                       <span class="span">文字 文字1</span>
                       <el-image
-                        style="width: 310px; height: 235px"
+                        style="width: 16vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -184,34 +193,34 @@
         <div
           style="
             background-color: #003377;
-            top: 10px;
-            width: 1127px;
-            height: 40px;
-            margin-left: -19px;
+            top: 1vh;
+            width: 58.7vw;
+            height: 3.7vh;
+            margin-left: -1vw;
           "
         >
           <el-image
             style="
-              width: 60px;
-              height: 60px;
+              width: 3vw;
+              height: 5.5vh;
               position: relative;
-              top: -10px;
-              left: -15px;
+              top: -1vh;
+              left: -0.8vw;
             "
             :src="require('@/assets/icon_title_dianwei@2x.png')"
             fit="fill"
           ></el-image>
-          <div style="height: 800px; width: 1400px">
+          <div style="height: 74vh; width: 73vw">
             <!-- 背景色有问题 -->
             <Show />
           </div>
           <el-image
             style="
               position: relative;
-              top: 10px;
-              right: -10px;
-              width: 30px;
-              height: 30px;
+              top: 1vh;
+              right: -0.5vw;
+              width: 1.6vw;
+              height: 2.7vh;
             "
             id="Closehide"
             @click="Closehide_onclick"
@@ -225,7 +234,7 @@
 </template>
 <style  lang="scss"  scoped>
 ::v-deep .el-input__inner {
-  width: 100px;
+  width: 9.3vw;
   background-color: transparent !important;
 }
 
@@ -237,38 +246,38 @@
 }
 .ul1 {
   position: relative;
-  width: 400px;
-  height: 500px;
-  margin-left: 0px;
+  width: 3.7vw;
+  height: 46.3vh;
+  margin-left: 0vw;
   overflow: scroll;
 }
 .li1 {
   color: #ffffff;
 
-  width: 230px;
+  width: 21.3vw;
   //line-height: 50px;
 }
 ::v-deep .box-card3 {
   z-index: 100;
   position: relative;
-  top: 50px;
-  left: -40px;
+  top: 4.6vw;
+  left: -3.7vw;
 
-  height: 900px;
-  width: 400px;
+  height: 46.9vh;
+  width: 37vw;
 
-  border: 3px;
+  border: 0.3vw;
   border-color: #ffffff;
   background-color: #000088;
-  padding: 1px 1px;
+  padding: 0.1vw 0.1vw;
 }
 .box-card3 ::v-deep .el-card__body {
-  padding: 0px 0px;
+  padding: 0vw 0vw;
 }
 ::v-deep
 //下拉框面板
 .el-select-dropdown {
-  font-size: 30px;
+  font-size: 1.6vh;
   color: black;
   //background-color:transparent;
 }
@@ -289,41 +298,41 @@
   //color: #FFFFFF;
 
   background: transparent;
-  width: 90px;
+  width: 4.7vw;
   position: relative;
-  right: -210px;
-  top: 40px;
+  right: -11vw;
+  top: 2.1vh;
   //right: 0px;
 }
 
 .select_shebei {
   background: transparent;
-  width: 90px;
+  width: 4.7vw;
   position: relative;
-  top: 40px;
-  right: -10px;
+  top: 2.1h;
+  right: -0.5vw;
 }
 .box-card {
   //margin-bottom: 20px;
   margin-top: 15%;
   background-color: #000088;
   opacity: 0.7;
-  height: 700px;
-  width: 340px;
-  padding: 0px 0px;
+  height: 65vh;
+  width: 17.7vw;
+  padding: 0vw 0vw;
   border: none;
   z-index: 100;
 }
 .box-card1 {
   z-index: 100;
   margin-top: 5%;
-  margin-bottom: 20px;
+  margin-bottom: 1.9vh;
   background-color: #000088;
   opacity: 0.7;
-  height: 700px;
-  width: 1130px;
+  height: 65vh;
+  width: 58.9vw;
 
-  padding: 0px 0px;
+  padding: 0vw 0vw;
   border: none;
 }
 </style>

@@ -3,9 +3,9 @@
 
   <div>
 <!--    地图-->
-    <div style="position: absolute;top:0px;left: 0px">
+    <div style="position: absolute;top:0vh;left: 0vw">
 
-      <div style="width:1546px; height: 790px;">
+      <div style="width:80.5vw; height: 73vh;">
         <div  style="width: 100%; height: 100%" id="map" class="map">
         </div>
       </div>
@@ -20,63 +20,63 @@
     <!--    ：span分开这里了-->
     <div class="el-col-cock1">
       <el-card class="box-card">
-        <div  style="height: 50px" :style="background">
+        <div  style="height: 5vh" :style="background">
           <!--          style="border: none" align="center"-->
-          <el-image style="width: 30px; height: 27px;position: relative;left: 10px;top:10px" :src="require('@/assets/2.png')" fit="fill"></el-image>
-          <span  style="position: relative;top:-20px;left: -15px" class="span">                 监控/预警/巡检</span>
+          <el-image style="width: 1.5vw; height: 3vh;position: relative;left: 0.6vw;top:1vh" :src="require('@/assets/2.png')" fit="fill"></el-image>
+          <span  style="position: relative;top:-2.5vh;left: -1vw" class="span">                 监控/预警/巡检</span>
         </div>
 
 
 
         <!--        统筹整个块-->
-        <div style="margin: 30px">
+        <div style="margin: 3vh">
 <!--          弹窗-->
           <!--        第一个图片点击事件-->
-          <div class="main" style="width: 30px; height: 31px;">
-            <el-button id="hide" @click="hide_onclick" style="width: 30px; height: 31px;"></el-button>
-            <!--          <el-image id="hide" @click="hide_onclick" style="width: 30px; height: 31px;" :src="require('@/assets/icon_jiankong.png')" fit="fill" ></el-image>-->
+          <div class="main" style="width:1.5vw; height: 3vh;">
+            <el-button id="hide" @click="hide_onclick" style="width: 1.5vw; height: 3vh;"></el-button>
           </div>
 
           <!-- background的不透明度有问题 -->
           <div class="cover" id="box">
              <div>
-             <div style=" height: 700px;width: 1400px;">
+              <!-- 700,1400 -->
+             <div style=" height: 37vw;width: 73vw;">
               <!-- 背景色有问题 -->
                 <div style="position:absolute;">
                   <div class=Show>
                     <Show />
                   </div>
-                  <el-image  style="position:absolute;top:-350px;left:650px;width: 30px;height: 30px" id="Closehide" @click="Closehide_onclick" :src="require('@/assets/chahao.png')" fit="fill"></el-image>
+                  <el-image  style="position:absolute;top:-32.5vh;left:34vw;width: 1.5vw;height: 3vh" id="Closehide" @click="Closehide_onclick" :src="require('@/assets/chahao.png')" fit="fill"></el-image>
                 </div>
              </div>
              </div>
           </div>
 
 <!--          事件弹窗-->
-          <div style="z-index:105;position: relative;left: 100px;top:500px">
+          <div style="z-index:105;position: relative;left: 5vw;top:50vh">
             <div class = "cov">
               <div class = "con">
 <!--                内容-->
-                <div style="position:relative;left:100px;top:50px;width: 1350px;height: 700px;background-color: blue">
-                  <div style="width:1350px;background-color:#2D93CA;height: 40px">
+                <div style="position:relative;left:5vw;top:5vh;width: 70vw;height: 70vh;background-color: blue">
+                  <div style="width:70vw;background-color:#2D93CA;height: 4vh">
                     <el-image
                       style="
-                      width: 60px;
-                      height: 60px;
+                      width: 3vw;
+                      height: 6vh;
                       position: relative;
-                      top: -10px;
-                      left: -185px;
+                      top: -1vh;
+                      left: -9.5vw;
                       "
                       :src="require('@/assets/icon_title_dianwei@2x.png')"
                       fit="fill"
                     ></el-image>
-                    <button class="first" style="position: relative;top:-20px" @click="isActive = 0">事情详情</button>
-                    <button class="second" style="position: relative;top:-20px;left: 150px" @click="isActive = 1">实时监控</button>
+                    <button class="first" style="position: relative;top:-3vh" @click="isActive = 0">事情详情</button>
+                    <button class="second" style="position: relative;top:-3vh;left: 8vw" @click="isActive = 1">实时监控</button>
                   </div>
 
                   <div  v-if="isActive == 0">
 
-                    <span style="position:relative;top:-30px;left:-570px;color: white">事情详情</span>
+                    <span style="position:relative;top:-3vh;left:-29.5vw;color: white">事情详情</span>
 
 
                     <table>
@@ -102,23 +102,27 @@
 
 
 
-                    <div style="position: absolute;right: 200px;top:40px">
+
+                    <div style="position: absolute;right: 10.5vw;top:4vh">
 
                       <div class="aside" style="display:inline;float: right;">
-                        <div style="margin-left: 20px;margin-top: 20px;">
+                        <div style="margin-left: 1vw;margin-top: 2vh;">
                           <el-image style="vertical-align:middle;" :src="require('@/assets/icon_jiankong.png')"></el-image>
                           <span class="span6">nb市</span>
                         </div>
 
 
-                        <div :style="background2" style="height:40px;width: 450px;margin-left: 20px">
+                        <div :style="background2" style="position:relative;left:150px;height:4vh;width: 23.5vw;margin-left: 1vw">
                           <!--         vertical-align:middle;图片和文字居中 -->
-                          <el-image style="width: 30px; height: 27px;margin-left:8px;vertical-align:middle;" :src="require('@/assets/6.png')" fit="fill" ></el-image>
+                          <el-image style="width: 1.5vw; height: 3vh;margin-left:-300.5vw;vertical-align:middle;" :src="require('@/assets/6.png')" fit="fill" ></el-image>
                           <span class="span7">处理详情</span>
                         </div>
                         <!-- 描述列表       -->
                         <!-- 这里的所有数据，后台交互改变数据       -->
                         <!--      direction="vertical" 是指文字的排列方式  -->
+                        <div style="position: relative;left: 230px;top:30px">
+
+
                         <el-descriptions  :column="1" :span="2">
                           <el-descriptions-item label="预警类型"
                                                 label-class-name="my-label"
@@ -157,17 +161,101 @@
                                                 content-class-name="my-content"
                           >-</el-descriptions-item>
                         </el-descriptions>
+                        </div>
                       </div>
 
 
-                      <el-button style="color:deepskyblue;background-color:transparent;position:relative;right:-300px;bottom: -550px">处理</el-button>
+                      <el-button style="color:deepskyblue;background-color:transparent;position:relative;right:-15.6vw;bottom: -55vh">处理</el-button>
                     </div>
                   </div>
 
 
 
                   <div class="second2" v-else-if="isActive == 1">
-                    <span style="position:relative;color: white">实时监控</span>
+                    <el-col :span="15">
+                      <span style="position: relative;color: white;top: -20px;left: -360px">实时监控</span>
+
+
+                      <div>
+                        <video style="position:relative;top:25px;left:5px;width: 700px;height: 500px">
+                          <source style="height: 700px;width: 700px;" :src="require('@/assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4')">
+                        </video>
+                      </div>
+                    </el-col>
+<!--                    <span style="position:relative;left:-500px;top:-20px;color: white">实时监控</span>-->
+                    <el-col :span="1">
+                      <div class="mo1">
+                        <span style="line-height: 30px;margin-left: -480px"><font color="#f0f8ff">云台控制</font></span>
+                      </div>
+                      <div style="position:relative;top:70px;left: -62px;width: 170px">
+                        <el-image style="vertical-align:middle;" :src="require('@/assets/icon_jiankong.png')"></el-image>
+                        <span style="color: white">宁波松岙大阜1</span>
+                      </div>
+
+                      <div class="mo2">
+                        <el-image style="width: 200px;height: 200px;vertical-align:middle;" :src="require('@/assets/bg_bottom(1).png')"></el-image>
+                      </div>
+
+                      <el-row>
+                        <el-col :span="5">
+                          <div class="mo3">
+                            <el-image style="width: 100px;height: 40px;vertical-align: middle" :src="require('@/assets/ssjk1.png')"></el-image>
+                            <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-left: 3px" :src="require('@/assets/ssjk1.png')"></el-image>
+                            <!--<el-image style="width: 160px;height: 82px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>-->
+                            <div>
+                              <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-top: 10px" :src="require('@/assets/ssjk1.png')"></el-image>
+                              <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-top: 10px;margin-left: 3px" :src="require('@/assets/ssjk1.png')"></el-image>
+                            </div>
+                          </div>
+                        </el-col>
+                        <el-col :span="19">
+                          <div>
+                            <el-image style="position:relative;left:150px;top:190px;width: 170px;height: 90px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>
+                          </div>
+                        </el-col>
+                      </el-row>
+                    </el-col>
+
+                    <el-col :span="7">
+                      <div class="mo4">
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_up.png')"></el-image>
+                      </div>
+
+                      <div class="mo5">
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_left.png')"></el-image>
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;margin-left: 125px" :src="require('@/assets/icon_right.png')"></el-image>
+                      </div>
+
+                      <div class="mo6">
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_down.png')"></el-image>
+                      </div>
+
+                      <el-row>
+                        <el-col>
+                          <div class="mo7">
+                            <el-button type="text" style="color: #FFFFFF">变倍 +</el-button>
+                            <el-button type="text" style="color: #FFFFFF;margin-left: 60px">变倍 -</el-button>
+                          </div>
+
+                          <div class="mo8">
+                            <el-button type="text" style="color: #FFFFFF">变焦 +</el-button>
+                            <el-button type="text" style="color: #FFFFFF;margin-left: 60px">变焦 -</el-button>
+                          </div>
+                        </el-col>
+                        <el-col>
+                          <div style="position: relative;top:50px;left: -190px">
+                            <el-image style="position:relative;top:-695px;left: 200px;width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+                            <el-button type="text" style="position:relative;top:-695px;left: 200px;color: #FFFFFF;">开启激光</el-button>
+
+                            <!--    <el-image style="width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+                                <el-button type="text" style="color: #FFFFFF;">开启激光</el-button>-->
+                          </div>
+                        </el-col>
+                      </el-row>
+                    </el-col>
+
+
+
 
                   </div>
 
@@ -197,7 +285,7 @@
                 placement="top-start"
 
               >
-                <el-button  style="width: 29px; height: 29px;margin:30px" @click="toggle" class="change"/>
+                <el-button  style="width: 1.5vh; height: 3vh;margin:3vh" @click="toggle" class="change"/>
               </el-tooltip>
               <el-tooltip
                 v-else
@@ -209,7 +297,7 @@
 
                   @click="toggle"
                   class="change"
-                  style="width: 29px; height: 29px;margin:30px"
+                  style="width: 1.5vw; height: 3vh;margin:3vh"
                 />
               </el-tooltip>
             </el-button-group>
@@ -220,11 +308,11 @@
           <!--        第三个图片点击事件 未完成-->
           <div style="
           position: relative;
-          left: -50px;
-          top: -140px;
+          left: -2.5vw;
+          top: -14vh;
           z-index: 103;">
 
-            <el-image id="add_overlay_zuo"  class="tupian3" style="width: 29px; height: 29px;margin:30px" :src="require('@/assets/9.png')" fit="fill" ></el-image>
+            <el-image id="add_overlay_zuo"  class="tupian3" style="width: 1.5vw; height: 3vh;margin:3vh" :src="require('@/assets/9.png')" fit="fill" ></el-image>
           </div>
 <!--          点击图片显示定位-->
 
@@ -237,13 +325,13 @@
         <el-row v-if="cardType">
           <el-card class="box-card2">
             <div>
-              <el-image style="width: 45px; height: 45px;" :src="require('@/assets/icon_number@2x.png')" fit="fill" ></el-image>
-              <div style="display:inline-block;height:20px;width:65px;margin-right:40px">
+              <el-image style="width: 2vw; height: 4.5vh;" :src="require('@/assets/icon_number@2x.png')" fit="fill" ></el-image>
+              <div style="display:inline-block;height:2vh;width:3vw;margin-right:2vw">
               <span  class="span1">7</span>
               <span  class="span2">点位数量</span>
               </div>
-              <el-image style="width: 45px; height: 45px;" :src="require('@/assets/icon_area@2x.png')" fit="fill" ></el-image>
-            <div style="display:inline-block;height:20px;width:65px;">
+              <el-image style="width: 2vw; height: 4.5vh;" :src="require('@/assets/icon_area@2x.png')" fit="fill" ></el-image>
+            <div style="display:inline-block;height:2vh;width:3vw;">
               <span  class="span1">4</span>
               <span  class="span2">涉及区域</span>
             </div>
@@ -271,7 +359,7 @@
                 size="mini"
                 clearable
                 ref="select"
-                style="width: 270px"
+                style="width: 14vw"
               >
                 <!--        // 设置一个input框用作模糊搜索选项功能-->
                 <el-input
@@ -309,7 +397,7 @@
           <span>{{ data.label }}</span>
           <el-tag
             size="mini"
-            style="margin: 0 10px"
+            style="margin: 0 1vh"
             v-show="filterorgType(data.tag)"
           >{{ filterorgType(data.tag) }}</el-tag
           >
@@ -334,7 +422,7 @@
         <el-row
           v-else
           ref="ruleForm"
-          style="width: 100%; font-size: 13px;position:relative;top: -50px"
+          style="width: 100%; font-size: 13px;position:relative;top: -5vh"
           :model="ruleForm"
         >
           <el-select   v-model="ruleForm.cities" :popper-append-to-body="false"  clearable prop-class="select-down" placeholder="事件类型"  class="select_shijian" >
@@ -366,7 +454,7 @@
           <!--          日期范围选择-->
           <div class="block1">
             <el-date-picker v-model="startDate" type="daterange" range-separator=" 至 " start-placeholder="开始日期" end-placeholder="结束日期"
-                            style="background: transparent;position: absolute;top: 45px;width:260px;color: #FFFFFF" value-format="yyyy-MM-dd" @change="handleStartDateChange">
+                            style="background: transparent;position: absolute;top: 4.5vh;width:14vw;color: #FFFFFF" value-format="yyyy-MM-dd" @change="handleStartDateChange">
             </el-date-picker>
           </div>
 
@@ -420,12 +508,12 @@
 
                 <li v-model="shijian_weizhi" v-for="lan in points_shuju">
 <!--                  给图片添加一个点击事件-->
-                  <el-image @click="shijian_click(lan)"  style="width:270px; height: 180px;" :src="require('@/assets/yujing.jpg')" fit="fill" ></el-image>
+                  <el-image @click="shijian_click(lan)"  style="width:14vw; height: 18vh;" :src="require('@/assets/yujing.jpg')" fit="fill" ></el-image>
 
-                  <div style="font-size:15px;position:relative;top:6px;color:white;">
+                  <div style="font-size:15px;position:relative;top:0.5vh;color:white;">
                     {{lan.leixing}}
                    </div>
-                  <div style="width:41px;height:15px;background-color:red;position:relative;top:-9px;left:230px;color:white;">
+                  <div style="width:2vw;height:1.5vh;background-color:red;position:relative;top:-1vh;left:12vw;color:white;">
                   {{lan.zhuangtai}}
                   </div>
 
@@ -452,7 +540,7 @@
       <div class="el-col-cock2" style="position:absolute;">
       <el-card class="box-card4">
 <!--        多选框-->
-          <el-checkbox-group style="width: 50px;height: 100px" v-model="checkList" @change="handleCheckedCitiesChange">
+          <el-checkbox-group style="width: 2.5vw;height: 10vh" v-model="checkList" @change="handleCheckedCitiesChange">
             <el-checkbox v-for="layer in showlayers" :label="layer" :key="layer">{{layer}}</el-checkbox>
           </el-checkbox-group>
       </el-card>
@@ -464,14 +552,14 @@
       <div class="el-col-cock3" style="position: absolute">
 
       <el-card class="box-card1">
-        <div style="height: 40px" :style="background">
+        <div style="height: 4vh" :style="background">
           <!--          style="border: none" align="center"-->
-          <el-image style="position:relative;left:10px;top:5px;width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
+          <el-image style="position:relative;left:0.5vw;top:0.5vh;width: 1.5vw; height: 3vh" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
           <span style="font-size: 20px" class="span">            预警数统计</span>
         </div>
         <div style="position: relative;">
-          <el-image style="width: 120px; height: 80px" :src="require('@/assets/1.png')" fit="fill" ></el-image>
-          <div style="position: relative;top:-150px">
+          <el-image style="width: 6vw; height: 8vh" :src="require('@/assets/1.png')" fit="fill" ></el-image>
+          <div style="position: relative;top:-15vh">
           <div class="wenzi_1">
             <span style="font-size:13px;color: white;" class="span">今日预警数  </span>
             <span style="font-size:17px;color: yellow;">6</span>
@@ -488,14 +576,14 @@
         </div>
 
 
-          <div  style="height: 40px" :style="background">
+          <div  style="height: 4vh" :style="background">
             <!--          style="border: none" align="center"-->
-            <el-image style="position:relative;left:10px;top:5px;width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" ></el-image>
+            <el-image style="position:relative;left:10px;top:0.5vh;width: 30px; height: 3vh" :src="require('@/assets/6.png')" fit="fill" ></el-image>
             <span  style="font-size: 20px" class="span">           处理数统计</span>
           </div>
           <div style="position:relative;">
-            <el-image style="width: 120px; height: 110px;display: inline-block;" :src="require('@/assets/4.png')" fit="fill" class="tempimg"></el-image>
-            <div style="position: relative;left:-15px;top:-120px">
+            <el-image style="width: 6vw; height: 11vh;display: inline-block;" :src="require('@/assets/4.png')" fit="fill" class="tempimg"></el-image>
+            <div style="position: relative;left:-1vw;top:-12vh">
             <div class="wenzi_4">
               <span style="font-size:13px;color: white;" class="span">今日处理数  </span>
               <span style="font-size:17px;color: yellow;">0</span>
@@ -516,10 +604,10 @@
 
 
 
-      <div style="position: relative;top:-15px">
-        <div  style="height: 40px" :style="background">
+      <div style="position: relative;top:-1.5vh">
+        <div  style="height: 4vh" :style="background">
           <!--          style="border: none" align="center"-->
-          <el-image style="position:relative;left:10px;top:5px;width: 30px; height: 27px" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
+          <el-image style="position:relative;left:0.5vw;top:0.5vh;width: 1.5vw; height: 3vh" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
           <span style="font-size: 20px" class="span">            事件趋势日历</span>
         </div>
         <div>
@@ -528,11 +616,11 @@
             @enter="mouseenter"
             @leave="mouseleave"
             @changeMonth="changeMonth"
-            style="width:270px;height:400px"
+            style="width:14vw;height:40vh"
           >
             <!-- 可使用动态插槽名设置，v-slot:[slotName] -->
             <template v-slot:2022-5-21>
-              <div style="position:absolute;bottom:-20px">今天</div>
+              <div style="position:absolute;bottom:-2vh">今天</div>
             </template>
           </Calendar>
         </div>
@@ -559,65 +647,146 @@
 </template>
 <style  lang="scss"  scoped>
 //事件弹窗
+.mo1{
+  position:relative;
+  background-color: #203f5e;
+  height: 30px;
+  width: 570px;
+  top:22px;
+  left:-65px;
+}
+
+.mo2{
+  position:relative;
+  height: 250px;
+  width: 250px;
+  top:130px;
+  left:30px;
+}
+
+.mo3{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:190px;
+  left:-155px;
+}
+
+
+.mo4{
+  position:relative;
+  height: 150px;
+  width: 300px;
+  top:170px;
+  left:-50px;
+}
+
+.mo5{
+  position:relative;
+
+  height: 250px;
+  width: 420px;
+  top:110px;
+  left:-110px;
+}
+
+.mo6{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-50px;
+  left:-100px;
+}
+
+.mo7{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-145px;
+  left:-200px;
+}
+.mo8{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-345px;
+  left:-200px;
+}
+
+::v-deep .my-label{
+  margin-bottom: 5px;
+  color: #3fd9d5;
+
+}
+::v-deep .my-label1{
+  margin-bottom: 30px;
+  color: #3fd9d5;
+}
+::v-deep .my-content{
+  margin-bottom: 5px;
+  color:#dce7e7;
+}
 .scrollbar-flex-content {
   display: flex;
-  height: 190px;
-  width: 190px;
+  height: 19vh;
+  width: 10vw;
 }
 .scrollbar-demo-item {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 190px;
-  height: 190px;
+  width: 10vw;
+  height: 19vh;
   text-align: center;
   border-radius: 4px;
   background: var(--el-color-danger-light-9);
   color: var(--el-color-danger);
 }
 .aside{
-  height: 800px;
-  width: 400px;
+  height: 80vh;
+  width: 21vw;
+  position: relative;
+  left: -100px;
   background-color: transparent;
 }
 .span6{
   color:#dce7e7;
   /*解决父子元素margin叠加问题*/
   display:inline-block;
-  margin: 30px 0px 30px 10px;
+  margin: 3vh 0 3vh 0.5vw;
 }
 .span7{
   /*  !*解决父子元素margin叠加问题*!
     display:inline-block;*/
-  margin-left:40px;
+  margin-left:2vw;
   /*  margin-bottom: 30px;*/
-  line-height: 40px;
+  line-height: 4vh;
   color:#dce7e7;
   font-size: 18px;
 }
 .video-js{
 
-  width: 790px;
-  height: 400px;
+  width: 41vw;
+  height: 40vh;
 
 }
 .video_text{
   z-index: 100;
-  width:800px;
-  height:400px;
+  width:41.5vw;
+  height:40vh;
 }
 .first{
   position: relative;
   color:#d9effe;
   background: transparent;
   border: none;
-  margin-left: 800px;
-  top:-10px;
+  margin-left: 41.5vw;
+  top:-1vh;
 
 }
 .second{
-  top:-10px;
+  top:-1vh;
   position: relative;
   color:#d9effe;
   background: transparent;
@@ -632,8 +801,8 @@
 }
 .con{
   z-index:99999;
-  width:1550px;
-  height:800px;
+  width:80.5vw;
+  height:80vh;
   background-color:black;
   position:fixed;
   right:0%;
@@ -641,27 +810,27 @@
 }
 .ptitle{
   width:100%;
-  height:35px;
+  height:3.5vh;
   background-color:#3daae9;
   color:white;
-  line-height:35px;
+  line-height:3.5vh;
 }
 .dbt{
   border-radius: 5px;
-  width: 70px;
-  height:30px;
+  width: 3.5vw;
+  height:3vh;
   background-color:#3daae9;
-  right:20px;
-  bottom:20px;
+  right:1vw;
+  bottom:2vh;
   position:absolute;
-  line-height:30px;
+  line-height:3vh;
   color:white;
 }
 ::v-deep .el-range-separator{
   font-size: 15px;
   position: relative;
-  top:3px;
-  right: 3px;
+  top:0.3vh;
+  right: 0.15vw;
 }
 //input 字体大小
 ::v-deep input::-webkit-input-placeholder {
@@ -671,8 +840,8 @@
   font-size: 15px;
 }
 .test{
-  width: 500px;
-  height: 300px;
+  width: 26vw;
+  height: 30vh;
   background-color: #eee;
 }
 //地图
@@ -692,10 +861,10 @@
 
 //弹出框内容
 ::v-deep .BMap_pop img{
-  top:20px !important;
-  left: 250px !important;
-  width: 15px !important;
-  height: 15px  !important;
+  top:2vh !important;
+  left: 13vw !important;
+  width: 0.8vw !important;
+  height: 1.5vh  !important;
 ;
 }
 ::v-deep .BMap_top,
@@ -718,8 +887,8 @@
   opacity: 0.8;
   overflow: hidden;
   padding: 8px 5px;
-  width: 255px !important;
-  height: 205px !important;
+  width: 13vw !important;
+  height: 20.5vh !important;
 }
 
 //去掉版权
@@ -744,7 +913,7 @@ input::-webkit-input-placeholder {
   font-size: 20px;
   background-color: transparent;
   color: white; //节点的字体颜色
-  margin-top: 10px;
+  margin-top: 1vh;
 }
 //选中的时候
 ::v-deep .el-tree-node:hover > .el-tree-node__content {
@@ -768,11 +937,11 @@ input::-webkit-input-placeholder {
 }
 //
 .position-button-group {
-  height: 30px;
-  width: 30px;
+  height: 3vh;
+  width: 1.5vw;
   position: relative;
-  top: -70px;
-  left: 100px;
+  top: -7vh;
+  left: 5vw;
   z-index: 101;
 }
 
@@ -787,24 +956,24 @@ input::-webkit-input-placeholder {
 
 ::v-deep .el-col-cock1 {
   position: absolute;
-  top: 90px;
-  left: 20px;
+  top: 9vh;
+  left: 1vw;
   z-index: 102;
 }
 ::v-deep.el-col-cock2 {
-  top: -20px;
-  left:1200px;
-  right:200px;
+  top: -2vh;
+  left:62.5vw;
+  right:10.5vw;
   //330px
-  top: -55px;
+  top: -5.5vh;
 
-  right: 330px;
+  right: 17vw;
   z-index: 101;
 }
 ::v-deep.el-col-cock3 {
-  top: 90px;
-  left: 1200px;
-  right:10px;
+  top: 9vh;
+  left: 62.5;
+  right:0.5vw;
 
   z-index: 101;
 }
@@ -812,8 +981,8 @@ input::-webkit-input-placeholder {
 .main {
   background-image: url("~@/assets/icon_jiankong.png");
   position: relative;
-  left: 10px;
-  top: -10px;
+  left: 0.5vw;
+  top: -1vh;
   z-index: 102;
 }
 
@@ -824,8 +993,8 @@ input::-webkit-input-placeholder {
 .main2 {
   background-color: transparent;
   position: relative;
-  left: 10px;
-  top: 200px;
+  left: 0.5vw;
+  top: 20vh;
   z-index: 99999;
 }
 
@@ -892,13 +1061,13 @@ input::-webkit-input-placeholder {
 //点击前的样式
 ::v-deep .el-radio__inner {
   border-radius: 0;
-  width: 20px;
-  height: 20px;
+  width: 1vw;
+  height: 2vh;
   color: #ffffff;
 }
 .el-radio__inner::after {
-  width: 22px;
-  height: 22px;
+  width: 1vw;
+  height: 2vh;
   //让圆框变成方框
   border-radius: 0;
   color: #ffffff;
@@ -913,21 +1082,21 @@ input::-webkit-input-placeholder {
 //}
 .ul1 {
   position: relative;
-  width: 400px;
-  height: 500px;
-  margin-left: 0px;
+  width: 21vw;
+  height: 50vh;
+  margin-left: 0;
   overflow: scroll;
 }
 .li1 {
   color: #ffffff;
 
-  width: 230px;
+  width: 12vw;
   //line-height: 50px;
 }
 /* 滚动条 */
 body *::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 0.25vw;
+  height: 0.5vh;
 }
 body *::-webkit-scrollbar-track {
   background: #fff;
@@ -946,22 +1115,22 @@ body *::-webkit-scrollbar-corner {
 }
 .table {
   color: #ffffff;
-  height: 700px;
+  height: 70vh;
   overflow: hidden;
 }
 .table:hover {
-  height: 700px;
+  height: 70vh;
   overflow-y: auto;
 }
 .el-tab-pane {
-  height: 500px;
+  height: 50vh;
   overflow-y: auto;
 }
 //懒加载
 img[lazy="loading"] {
   display: block;
-  width: 150px !important;
-  height: 150px !important;
+  width: 8vw !important;
+  height: 15vh !important;
   margin: 0 auto;
 }
 
@@ -970,20 +1139,20 @@ img[lazy="loading"] {
   font-size: 15px;
   color: #ffffff;
   position: relative;
-  top: 130px;
-  height: 500px;
+  top: 13vh;
+  height: 50vh;
   overflow-y: auto;
 }
 .demo-image__lazy .el-image {
   display: block;
-  min-height: 200px;
-  margin-bottom: 5px;
+  min-height: 20vh;
+  margin-bottom: 0.5vh;
 }
 .demo-image__lazy .el-image:last-child {
   margin-bottom: 0;
 }
 .for_brach {
-  top: 300px;
+  top: 30vh;
   color: #ffffff;
 }
 .block1 {
@@ -1036,24 +1205,23 @@ img[lazy="loading"] {
   //color: #FFFFFF;
   font-size: 10px;
   background: transparent;
-  width: 260px;
+  width: 11vw;
   position: absolute;
-  top: -10px;
-  left: 0px;
-  //right: 0px;
+  top: -1vh;
+  left: 0;
 }
 
 .select_shebei {
   background: transparent;
-  width: 125px;
+  width: 6.5vw;
   position: absolute;
-  top: 100px;
+  top: 10vh;
 }
 .select_chulizhuangtai {
   background: transparent;
-  width: 125px;
+  width: 6.5vw;
   position: absolute;
-  top: 100px;
+  top: 10vh;
   left: 130px;
 }
 
@@ -1099,7 +1267,7 @@ li {
   background: transparent;
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 6px;
+  margin-bottom: 0.5vh;
 }
 
 ::v-deep .el-calendar-table thead > th {
@@ -1122,8 +1290,8 @@ li {
 }
 
 ::v-deep .el-calendar-table .el-calendar-day {
-  width: 33px;
-  height: 30px;
+  width: 1.5vw;
+  height: 3vh;
 }
 ::v-deep .el-calendar__title {
   display: none;
@@ -1144,19 +1312,19 @@ li {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 20px;
+    top: 2vh;
   }
   .solar-terms {
     z-index: 100;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 20px;
+    bottom: 2vh;
   }
   .festival {
     position: absolute;
     font-weight: bold;
-    margin: 10px 0 0 10px;
+    margin: 1vh 0 0 0.5vw;
     z-index: 100;
   }
   .red-word {
@@ -1167,7 +1335,7 @@ li {
 }
 
 >>> .el-calendar-day {
-  margin: 4px;
+  margin: 0.4vh;
   padding: 0;
   border-radius: 8px;
   background: rgba(202, 249, 240, 0.4);
@@ -1207,7 +1375,7 @@ li {
   background: transparent;
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 6px;
+  margin-bottom: 0.5vh;
 }
 
 >>> .el-calendar-table td {
@@ -1238,62 +1406,57 @@ li {
 .tupian {
   z-index: 100;
   position: absolute;
-  left: 1360px; //只是假定的值，具体需测量
-  top: 80px;
+  left: 71vw; //只是假定的值，具体需测量
+  top: 8vh;
 }
 //点击事件中的图片
 .tupian2 {
   z-index: 100;
   position: absolute;
-  left: 110px; //只是假定的值，具体需测量
-  top: 45px;
+  left: 6vw; //只是假定的值，具体需测量
+  top: 4.5vh;
 }
 .tupian3 {
   z-index: 100;
   position: absolute;
-  left: 200px; //只是假定的值，具体需测量
-  top: 40px;
+  left: 10.5vw; //只是假定的值，具体需测量
+  top: 4vh;
 }
 .wenzi_1 {
   position: absolute;
-  left: 140px; //只是假定的值，具体需测量
-  top: 70px;
+  left: 7vw; //只是假定的值，具体需测量
+  top: 7vh;
   z-index: 101;
 }
 .wenzi_2 {
   position: absolute;
-  left: 140px; //只是假定的值，具体需测量
-  top: 100px;
+  left: 7vw; //只是假定的值，具体需测量
+  top: 10vh;
   z-index: 101;
 }
 .wenzi_3 {
   position: absolute;
-  left: 140px; //只是假定的值，具体需测量
-  top: 130px;
+  left: 7vw; //只是假定的值，具体需测量
+  top: 13vh;
   z-index: 101;
 }
 //第二个区块
 .wenzi_4 {
   position: absolute;
-  // left:140px; //只是假定的值，具体需测量
-  right: 20px;
-  top: 20px;
+  right: 1vw;
+  top: 2vh;
   z-index: 101;
 }
 .wenzi_5 {
   position: absolute;
-  // left:140px; //只是假定的值，具体需测量
-  // top:270px;
-  right: 20px;
-  top: 50px;
+  right: 1vw;
+  top: 5vh;
   z-index: 101;
 }
 .wenzi_6 {
   position: absolute;
-  // left:140px; //只是假定的值，具体需测量
-  // top:300px;
-  right: 12px;
-  top: 80px;
+  right: 0.5vw;
+  top: 8vh;
   z-index: 101;
 
 }
@@ -1360,7 +1523,6 @@ input::-webkit-input-placeholder {
   font-size: 20px;
 }
 .span2 {
-  // margin-top: 5px;
   color: #ffffff;
   display: inline-block;
   overflow: hidden;
@@ -1369,7 +1531,7 @@ input::-webkit-input-placeholder {
 }
 ::v-deep .item {
   background-image: url("/../../assets/icon_type@3x.png");
-  margin-bottom: 18px;
+  margin-bottom: 2vh;
 }
 
 .clearfix:before,
@@ -1381,52 +1543,49 @@ input::-webkit-input-placeholder {
   clear: both;
 }
 .box-card {
-  //margin-bottom: 20px;
   background-color: #000088;
   opacity: 0.9;
-  height: 700px;
-  width: 300px;
+  height: 80vh;
+  width: 15.5vw;
 
-  padding: 0px 0px;
+  padding: 0 0;
   border: none;
   z-index: 101;
 }
 .box-card1 {
-  //margin-bottom: 20px;
   background-color: #000088;
-  height: 700px;
-  width: 300px;
+  height: 80vh;
+  width: 15.5vw;
 
-  padding: 0px 0px;
+  padding: 0 0;
   border: none;
   z-index: 100;
 }
 .box-card2 {
   z-index: 100;
-  margin-top: -70px;
+  margin-top: -7vh;
 
-  margin-bottom: 20px;
+  margin-bottom: 2vh;
   background-color: #000088;
   opacity: 0.7;
-  height: 700px;
-  width: 300px;
+  height: 70vh;
+  width: 15.5vw;
 
-  padding: 0px 0px;
+  padding: 0 0;
   border: none;
 }
 .box-card2 ::v-deep .el-card__body {
-  // padding: 20px;
-  padding-top: 20px;
-  padding-right: 0px;
-  padding-bottom: 5px;
-  padding-left: 0px;
+  padding-top: 2vh;
+  padding-right: 0;
+  padding-bottom: 0.5vh;
+  padding-left: 0;
 }
 .box-card3 {
   z-index: 100;
   position: relative;
-  margin-top: 130px;
-  height: 700px;
-  width: 320px;
+  margin-top: 13vh;
+  height: 70vh;
+  width: 16.5vw;
 
   border: 3px;
   border-color: #ffffff;
@@ -1434,25 +1593,25 @@ input::-webkit-input-placeholder {
   padding: 1px 1px;
 }
 .box-card3 ::v-deep .el-card__body {
-  padding: 0px 0px;
+  padding: 0 0;
 }
 
 .box-card4 {
   //display: flex;
   position: absolute;
-  top: 610px;
+  top: 61vh;
 
-  left: -200px;
-  right: 100px;
-  height: 200px;
-  width: 150px;
-  padding: 0px 0px;
+  left: -10.5vw;
+  right: 5vw;
+  height: 20vh;
+  width: 8vw;
+  padding: 0 0;
   border: none;
   background-color: #000000;
   opacity: 0.7;
 }
 .card_bottom {
-  line-height: 40px;
+  line-height: 4vh;
 }
 // // radio选中改为勾勾
 // .el-radio__input.is-checked .el-radio__inner::after {
@@ -1486,30 +1645,30 @@ input::-webkit-input-placeholder {
   background-color: #b3c0d1;
   color: #333;
   text-align: center;
-  line-height: 60px;
+  line-height: 6vh;
 }
 
 .el-aside {
   background-color: #d3dce6;
   color: #333;
   text-align: center;
-  line-height: 200px;
+  line-height: 20vh;
 }
 
 .el-main {
 }
 
 body > .el-container {
-  margin-bottom: 30px;
+  margin-bottom: 3vh;
 }
 
 .el-container:nth-child(5) .el-aside,
 .el-container:nth-child(6) .el-aside {
-  line-height: 260px;
+  line-height: 26vh;
 }
 
 .el-container:nth-child(7) .el-aside {
-  line-height: 320px;
+  line-height: 32vh;
 }
 //.el-icon-1{
 //
@@ -1526,30 +1685,30 @@ body > .el-container {
 
 .el-icon-monan {
   background: url("~@/../public/icon_jiankong.png");
-  width: 15px;
-  height: 28px;
+  width: 1vw;
+  height: 3vh;
   /*border: 2px dashed;*/
   border-radius: 20px;
 }
 .el-icon-monan2 {
   background: url("~@/../public/icon_type@3x.png");
-  width: 15px;
-  height: 21px;
+  width: 1vw;
+  height: 2vh;
   /*border: 2px dashed;*/
   border-radius: 20px;
 }
 .el-icon-liuyanban {
   background: url("~@/../public/9.png");
-  width: 15px;
-  height: 22px;
+  width: 1vw;
+  height: 2vh;
   /*border: 2px dashed;*/
   border-radius: 20px;
 }
 
 .box {
   box-sizing: border-box;
-  width: 155px;
-  height: 100px;
+  width: 8vw;
+  height: 10vh;
   padding: 10px;
   border: 2px solid green;
   background: blue;
@@ -1848,6 +2007,11 @@ export default {
         // 背景图片位置
         backgroundPosition: "center top",
       },
+      background2: {
+        backgroundImage: 'url(' + require('@/assets/bg_title@2x.png') + ')',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '60%',
+      },
       cities: [
         { value: "疑似船只", label: "事件类型" },
         { value: "测试船只", label: "事件类型" },
@@ -2136,6 +2300,7 @@ export default {
                 height: 205,     // 信息窗口高度
               }
               //摄像头信息
+              this.map.closeInfoWindow();//窗口关闭
               var infoWindow = new BMap.InfoWindow(
                 '<div style="color: white;line-height: 40px;">' +
                 `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位名称：</span>`+name+
@@ -2155,12 +2320,31 @@ export default {
 
 
               );  // 创建信息窗口对象
+              console.log(infoWindow.isOpen())
               this.map.openInfoWindow(infoWindow, this.map.getCenter());      // 打开信息窗口
-              setTimeout(()=>{
-                document.getElementById('btn_test').onclick=function(){
+              // setTimeout(()=>{
+              //   document.getElementById('btn_test').onclick=function(){
+              //     box.style.display = "block";
+              //   }
+              // },100);
+              var that=this;
+              if(!infoWindow.isOpen())
+              {
+                infoWindow.addEventListener("open",function (e){
+                  document.getElementById("btn_test").onclick=function ()
+                  {
+
+                    box.style.display = "block";
+                  }
+
+                });
+              }
+              else{
+                var btn=document.getElementById("btn_test");
+                btn.onclick=function (){
                   box.style.display = "block";
                 }
-              },100);
+              }
               break;
             case 'dbclick':
               var res = overlay.toString() + '被双击!';
@@ -2515,67 +2699,98 @@ export default {
         draw: 'icon',
         methods: {
           click: function (item) {
+            map.closeInfoWindow();//窗口关闭
             // console.log("确实被点击了");
             // 点击图标的函数
             // 这里有问题
-            // console.log(item)
-            // console.log(item["geometry"]["coordinates"][1])
-            var X=item["geometry"]["coordinates"][0];
-            var Y=item["geometry"]["coordinates"][1];
-            console.log(X);
-            console.log(Y);
-            // 某些点位有问题
-            var start;
-            var time1;
-            var zhuangtai;
-            var leixing;
-            for (var J_test=0;J_test<randomCount;J_test++)
+            if(item==null)
             {
-              if(X==shuju[J_test]["lng"] && Y==shuju[J_test]["lat"] )
+              //空的不做事
+            }
+            else{
+              //有数据那么做事情
+              var X=item["geometry"]["coordinates"][0];
+              var Y=item["geometry"]["coordinates"][1];
+              console.log(X);
+              console.log(Y);
+              // 某些点位有问题
+              //明明有数据但是显示不出来窗口
+              var start;
+              var time1;
+              var zhuangtai;
+              var leixing;
+              for (var J_test=0;J_test<randomCount;J_test++)
               {
-                //  找到
-                start=shuju[J_test]["start"];
-                time1=shuju[J_test]["time"];
-                zhuangtai=shuju[J_test]["zhuangtai"];
-                leixing=shuju[J_test]["leixing"];
+                if(X==shuju[J_test]["lng"] && Y==shuju[J_test]["lat"] )
+                {
+                  //  找到
+                  start=shuju[J_test]["start"];
+                  time1=shuju[J_test]["time"];
+                  zhuangtai=shuju[J_test]["zhuangtai"];
+                  leixing=shuju[J_test]["leixing"];
+                }
               }
-            }
-            // 拿到维度
-            // 生成信息窗口
-            var opts = {
-              width : 255,     // 信息窗口宽度
-              height: 205,     // 信息窗口高度
-            }
-            var infoWindow = new BMap.InfoWindow(
-              '<div style="color:white;line-height: 40px;">' +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生日期：</span>`+start+
-              "<br/>" +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生时间：</span>` +time1+
-              "<br/>" +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>处理状态：</span>` +zhuangtai+
-              "<br/>" +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>事件类型：</span>`+leixing+
-              "<br/>" +
-              `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"事件详情："+
-              `<div id="shijian" @click="showCon()" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
-              `</div>`+
-              '</div>',
-              opts
-
-
-
-            );  // 创建信息窗口对象
-
-
-            map.openInfoWindow(infoWindow,map.getCenter());      // 打开信息窗口
-            setTimeout(()=>{
-              document.getElementById("shijian").onclick=function (){
-                //这里放一个方法控制事件页面的展示
-                // this.showCon();
-                $(".cov").show();
-                // alert("事件");
+              // 拿到维度
+              // 生成信息窗口
+              var opts = {
+                width : 255,     // 信息窗口宽度
+                height: 205,     // 信息窗口高度
               }
-            })
+              var infoWindow = new BMap.InfoWindow(
+                '<div style="color:white;line-height: 40px;">' +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生日期：</span>`+start+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生时间：</span>` +time1+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>处理状态：</span>` +zhuangtai+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>事件类型：</span>`+leixing+
+                "<br/>" +
+                `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"事件详情："+
+                `<div id="shijian" onclick="detailMsg" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
+                `</div>`+
+                '</div>',
+                opts
+
+
+
+              );  // 创建信息窗口对象
+              console.log(infoWindow.isOpen())
+
+
+              map.openInfoWindow(infoWindow,map.getCenter());      // 打开信息窗口
+              setTimeout(()=>{
+                document.getElementById("shijian").onclick=function (){
+                  //这里放一个方法控制事件页面的展示
+                  // this.showCon();
+                  $(".cov").show();
+                  // alert("事件");
+                }
+              },100)
+              // var that=this;
+              // console.log(infoWindow.isOpen())
+              // if(!infoWindow.isOpen())
+              // {
+              //   infoWindow.addEventListener("open",function (e){
+              //     document.getElementById("shijian").onclick=function ()
+              //     {
+              //
+              //       $(".cov").show();
+              //     }
+              //
+              //   });
+              // }
+              // else{
+              //   var btn=document.getElementById("shijian");
+              //   btn.onclick=function (){
+              //     $(".cov").show();
+              //   }
+              // }
+
+            }
+
+            // console.log(item["geometry"]["coordinates"][1])
+
 
           }
         },

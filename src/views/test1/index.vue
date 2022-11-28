@@ -70,8 +70,8 @@
                       :src="require('@/assets/icon_title_dianwei@2x.png')"
                       fit="fill"
                     ></el-image>
-                    <button class="first" style="position: relative;top:-2vh" @click="isActive = 0">事情详情</button>
-                    <button class="second" style="position: relative;top:-2vh;left: 8vw" @click="isActive = 1">实时监控</button>
+                    <button class="first" style="position: relative;top:-3vh" @click="isActive = 0">事情详情</button>
+                    <button class="second" style="position: relative;top:-3vh;left: 8vw" @click="isActive = 1">实时监控</button>
                   </div>
 
                   <div  v-if="isActive == 0">
@@ -102,6 +102,7 @@
 
 
 
+
                     <div style="position: absolute;right: 10.5vw;top:4vh">
 
                       <div class="aside" style="display:inline;float: right;">
@@ -111,14 +112,17 @@
                         </div>
 
 
-                        <div :style="background2" style="height:4vh;width: 23.5vw;margin-left: 1vw">
+                        <div :style="background2" style="position:relative;left:150px;height:4vh;width: 23.5vw;margin-left: 1vw">
                           <!--         vertical-align:middle;图片和文字居中 -->
-                          <el-image style="width: 1.5vw; height: 3vh;margin-left:0.5vw;vertical-align:middle;" :src="require('@/assets/6.png')" fit="fill" ></el-image>
+                          <el-image style="width: 1.5vw; height: 3vh;margin-left:-300.5vw;vertical-align:middle;" :src="require('@/assets/6.png')" fit="fill" ></el-image>
                           <span class="span7">处理详情</span>
                         </div>
                         <!-- 描述列表       -->
                         <!-- 这里的所有数据，后台交互改变数据       -->
                         <!--      direction="vertical" 是指文字的排列方式  -->
+                        <div style="position: relative;left: 230px;top:30px">
+
+
                         <el-descriptions  :column="1" :span="2">
                           <el-descriptions-item label="预警类型"
                                                 label-class-name="my-label"
@@ -157,6 +161,7 @@
                                                 content-class-name="my-content"
                           >-</el-descriptions-item>
                         </el-descriptions>
+                        </div>
                       </div>
 
 
@@ -167,7 +172,90 @@
 
 
                   <div class="second2" v-else-if="isActive == 1">
-                    <span style="position:relative;color: white">实时监控</span>
+                    <el-col :span="15">
+                      <span style="position: relative;color: white;top: -20px;left: -360px">实时监控</span>
+
+
+                      <div>
+                        <video style="position:relative;top:25px;left:5px;width: 700px;height: 500px">
+                          <source style="height: 700px;width: 700px;" :src="require('@/assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4')">
+                        </video>
+                      </div>
+                    </el-col>
+<!--                    <span style="position:relative;left:-500px;top:-20px;color: white">实时监控</span>-->
+                    <el-col :span="1">
+                      <div class="mo1">
+                        <span style="line-height: 30px;margin-left: -480px"><font color="#f0f8ff">云台控制</font></span>
+                      </div>
+                      <div style="position:relative;top:70px;left: -62px;width: 170px">
+                        <el-image style="vertical-align:middle;" :src="require('@/assets/icon_jiankong.png')"></el-image>
+                        <span style="color: white">宁波松岙大阜1</span>
+                      </div>
+
+                      <div class="mo2">
+                        <el-image style="width: 200px;height: 200px;vertical-align:middle;" :src="require('@/assets/bg_bottom(1).png')"></el-image>
+                      </div>
+
+                      <el-row>
+                        <el-col :span="5">
+                          <div class="mo3">
+                            <el-image style="width: 100px;height: 40px;vertical-align: middle" :src="require('@/assets/ssjk1.png')"></el-image>
+                            <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-left: 3px" :src="require('@/assets/ssjk1.png')"></el-image>
+                            <!--<el-image style="width: 160px;height: 82px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>-->
+                            <div>
+                              <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-top: 10px" :src="require('@/assets/ssjk1.png')"></el-image>
+                              <el-image style="width: 100px;height: 40px;vertical-align: middle;margin-top: 10px;margin-left: 3px" :src="require('@/assets/ssjk1.png')"></el-image>
+                            </div>
+                          </div>
+                        </el-col>
+                        <el-col :span="19">
+                          <div>
+                            <el-image style="position:relative;left:150px;top:190px;width: 170px;height: 90px;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>
+                          </div>
+                        </el-col>
+                      </el-row>
+                    </el-col>
+
+                    <el-col :span="7">
+                      <div class="mo4">
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_up.png')"></el-image>
+                      </div>
+
+                      <div class="mo5">
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_left.png')"></el-image>
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;margin-left: 125px" :src="require('@/assets/icon_right.png')"></el-image>
+                      </div>
+
+                      <div class="mo6">
+                        <el-image style="width: 60px;height: 60px;vertical-align: middle;" :src="require('@/assets/icon_down.png')"></el-image>
+                      </div>
+
+                      <el-row>
+                        <el-col>
+                          <div class="mo7">
+                            <el-button type="text" style="color: #FFFFFF">变倍 +</el-button>
+                            <el-button type="text" style="color: #FFFFFF;margin-left: 60px">变倍 -</el-button>
+                          </div>
+
+                          <div class="mo8">
+                            <el-button type="text" style="color: #FFFFFF">变焦 +</el-button>
+                            <el-button type="text" style="color: #FFFFFF;margin-left: 60px">变焦 -</el-button>
+                          </div>
+                        </el-col>
+                        <el-col>
+                          <div style="position: relative;top:50px;left: -190px">
+                            <el-image style="position:relative;top:-695px;left: 200px;width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+                            <el-button type="text" style="position:relative;top:-695px;left: 200px;color: #FFFFFF;">开启激光</el-button>
+
+                            <!--    <el-image style="width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
+                                <el-button type="text" style="color: #FFFFFF;">开启激光</el-button>-->
+                          </div>
+                        </el-col>
+                      </el-row>
+                    </el-col>
+
+
+
 
                   </div>
 
@@ -559,6 +647,85 @@
 </template>
 <style  lang="scss"  scoped>
 //事件弹窗
+.mo1{
+  position:relative;
+  background-color: #203f5e;
+  height: 30px;
+  width: 570px;
+  top:22px;
+  left:-65px;
+}
+
+.mo2{
+  position:relative;
+  height: 250px;
+  width: 250px;
+  top:130px;
+  left:30px;
+}
+
+.mo3{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:190px;
+  left:-155px;
+}
+
+
+.mo4{
+  position:relative;
+  height: 150px;
+  width: 300px;
+  top:170px;
+  left:-50px;
+}
+
+.mo5{
+  position:relative;
+
+  height: 250px;
+  width: 420px;
+  top:110px;
+  left:-110px;
+}
+
+.mo6{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-50px;
+  left:-100px;
+}
+
+.mo7{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-145px;
+  left:-200px;
+}
+.mo8{
+  position:relative;
+  height: 250px;
+  width: 400px;
+  top:-345px;
+  left:-200px;
+}
+
+::v-deep .my-label{
+  margin-bottom: 5px;
+  color: #3fd9d5;
+
+}
+::v-deep .my-label1{
+  margin-bottom: 30px;
+  color: #3fd9d5;
+}
+::v-deep .my-content{
+  margin-bottom: 5px;
+  color:#dce7e7;
+}
 .scrollbar-flex-content {
   display: flex;
   height: 19vh;
@@ -579,6 +746,8 @@
 .aside{
   height: 80vh;
   width: 21vw;
+  position: relative;
+  left: -100px;
   background-color: transparent;
 }
 .span6{
@@ -1838,6 +2007,11 @@ export default {
         // 背景图片位置
         backgroundPosition: "center top",
       },
+      background2: {
+        backgroundImage: 'url(' + require('@/assets/bg_title@2x.png') + ')',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '60%',
+      },
       cities: [
         { value: "疑似船只", label: "事件类型" },
         { value: "测试船只", label: "事件类型" },
@@ -2126,6 +2300,7 @@ export default {
                 height: 205,     // 信息窗口高度
               }
               //摄像头信息
+              this.map.closeInfoWindow();//窗口关闭
               var infoWindow = new BMap.InfoWindow(
                 '<div style="color: white;line-height: 40px;">' +
                 `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>点位名称：</span>`+name+
@@ -2145,12 +2320,31 @@ export default {
 
 
               );  // 创建信息窗口对象
+              console.log(infoWindow.isOpen())
               this.map.openInfoWindow(infoWindow, this.map.getCenter());      // 打开信息窗口
-              setTimeout(()=>{
-                document.getElementById('btn_test').onclick=function(){
+              // setTimeout(()=>{
+              //   document.getElementById('btn_test').onclick=function(){
+              //     box.style.display = "block";
+              //   }
+              // },100);
+              var that=this;
+              if(!infoWindow.isOpen())
+              {
+                infoWindow.addEventListener("open",function (e){
+                  document.getElementById("btn_test").onclick=function ()
+                  {
+
+                    box.style.display = "block";
+                  }
+
+                });
+              }
+              else{
+                var btn=document.getElementById("btn_test");
+                btn.onclick=function (){
                   box.style.display = "block";
                 }
-              },100);
+              }
               break;
             case 'dbclick':
               var res = overlay.toString() + '被双击!';
@@ -2505,67 +2699,98 @@ export default {
         draw: 'icon',
         methods: {
           click: function (item) {
+            map.closeInfoWindow();//窗口关闭
             // console.log("确实被点击了");
             // 点击图标的函数
             // 这里有问题
-            // console.log(item)
-            // console.log(item["geometry"]["coordinates"][1])
-            var X=item["geometry"]["coordinates"][0];
-            var Y=item["geometry"]["coordinates"][1];
-            console.log(X);
-            console.log(Y);
-            // 某些点位有问题
-            var start;
-            var time1;
-            var zhuangtai;
-            var leixing;
-            for (var J_test=0;J_test<randomCount;J_test++)
+            if(item==null)
             {
-              if(X==shuju[J_test]["lng"] && Y==shuju[J_test]["lat"] )
+              //空的不做事
+            }
+            else{
+              //有数据那么做事情
+              var X=item["geometry"]["coordinates"][0];
+              var Y=item["geometry"]["coordinates"][1];
+              console.log(X);
+              console.log(Y);
+              // 某些点位有问题
+              //明明有数据但是显示不出来窗口
+              var start;
+              var time1;
+              var zhuangtai;
+              var leixing;
+              for (var J_test=0;J_test<randomCount;J_test++)
               {
-                //  找到
-                start=shuju[J_test]["start"];
-                time1=shuju[J_test]["time"];
-                zhuangtai=shuju[J_test]["zhuangtai"];
-                leixing=shuju[J_test]["leixing"];
+                if(X==shuju[J_test]["lng"] && Y==shuju[J_test]["lat"] )
+                {
+                  //  找到
+                  start=shuju[J_test]["start"];
+                  time1=shuju[J_test]["time"];
+                  zhuangtai=shuju[J_test]["zhuangtai"];
+                  leixing=shuju[J_test]["leixing"];
+                }
               }
-            }
-            // 拿到维度
-            // 生成信息窗口
-            var opts = {
-              width : 255,     // 信息窗口宽度
-              height: 205,     // 信息窗口高度
-            }
-            var infoWindow = new BMap.InfoWindow(
-              '<div style="color:white;line-height: 40px;">' +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生日期：</span>`+start+
-              "<br/>" +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生时间：</span>` +time1+
-              "<br/>" +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>处理状态：</span>` +zhuangtai+
-              "<br/>" +
-              `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>事件类型：</span>`+leixing+
-              "<br/>" +
-              `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"事件详情："+
-              `<div id="shijian" @click="showCon()" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
-              `</div>`+
-              '</div>',
-              opts
-
-
-
-            );  // 创建信息窗口对象
-
-
-            map.openInfoWindow(infoWindow,map.getCenter());      // 打开信息窗口
-            setTimeout(()=>{
-              document.getElementById("shijian").onclick=function (){
-                //这里放一个方法控制事件页面的展示
-                // this.showCon();
-                $(".cov").show();
-                // alert("事件");
+              // 拿到维度
+              // 生成信息窗口
+              var opts = {
+                width : 255,     // 信息窗口宽度
+                height: 205,     // 信息窗口高度
               }
-            })
+              var infoWindow = new BMap.InfoWindow(
+                '<div style="color:white;line-height: 40px;">' +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生日期：</span>`+start+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>发生时间：</span>` +time1+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff '>处理状态：</span>` +zhuangtai+
+                "<br/>" +
+                `<span style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>事件类型：</span>`+leixing+
+                "<br/>" +
+                `<div style='padding: 10Px 20Px;line-height:18Px;width:80px;color: #1a70ff'>`+"事件详情："+
+                `<div id="shijian" onclick="detailMsg" style="position:relative;left:100px;top:-20px;color: white">事件详情</div>`+
+                `</div>`+
+                '</div>',
+                opts
+
+
+
+              );  // 创建信息窗口对象
+              console.log(infoWindow.isOpen())
+
+
+              map.openInfoWindow(infoWindow,map.getCenter());      // 打开信息窗口
+              setTimeout(()=>{
+                document.getElementById("shijian").onclick=function (){
+                  //这里放一个方法控制事件页面的展示
+                  // this.showCon();
+                  $(".cov").show();
+                  // alert("事件");
+                }
+              },100)
+              // var that=this;
+              // console.log(infoWindow.isOpen())
+              // if(!infoWindow.isOpen())
+              // {
+              //   infoWindow.addEventListener("open",function (e){
+              //     document.getElementById("shijian").onclick=function ()
+              //     {
+              //
+              //       $(".cov").show();
+              //     }
+              //
+              //   });
+              // }
+              // else{
+              //   var btn=document.getElementById("shijian");
+              //   btn.onclick=function (){
+              //     $(".cov").show();
+              //   }
+              // }
+
+            }
+
+            // console.log(item["geometry"]["coordinates"][1])
+
 
           }
         },

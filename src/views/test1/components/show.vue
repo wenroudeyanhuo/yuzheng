@@ -5,9 +5,9 @@
     <div
       style="
         position: absolute;
-        width: 73vw;
-        height: 4vh;
-        top: -18.3vw;
+        width: 71.875vw;
+        height:  3.7037037037037033vh;
+        top: -32.407407407407405vh;
         background: #003377;
       "
     >
@@ -15,9 +15,9 @@
         style="
           color: white;
           position: absolute;
-          left: calc(100% - 69vw);
-          top: 1vh;
-          font-size:18px;
+          left: 5.208333333333334vw;
+          top:  0.9259259259259258vh;
+          font-size: 1.6666666666666665vh;
         "
       >
         点位详情</span
@@ -25,16 +25,16 @@
       <el-image
         style="
           position: absolute;
-          left: -1vh;
-          top: -1vh;
-          height: 6vh;
-          width: 6vh;
+          left: -0.5208333333333334vw;
+          top: -0.9259259259259258vh;
+          height: 5.555555555555555vh;
+          width: 3.125vw;
           background: transparent;
         "
         :src="require('@/assets/icon_title_dianwei@2x.png')"
         fit="fill"
       ></el-image>
-      <div style="position: absolute; left: 150px">
+      <div style="position: absolute; left: 7.8125vw">
         <el-button
           class="first"
           :plain="isPlainDefault"
@@ -68,7 +68,7 @@
     <div class="first1" v-if="isActive == 0">
       <!-- 实时监控 -->
       <el-col :span="15">
-        <div style="position: relative; top: 10px; left: -110px">
+        <div style="position: relative; top: 0.9259259259259258vh; left: -5.729166666666667vw">
           <el-image
             style="vertical-align: middle"
             :src="require('@/assets/icon_jiankong.png')"
@@ -78,7 +78,7 @@
 
         <div>
           <video
-            style="position: relative; top: 25px; left: -110px; width: 850px"
+            style="position: relative; top: 2.314814814814815vh; left: -5.729166666666667vw; width: 44.270833333333336vw"
           >
             <source
               :src="
@@ -95,14 +95,14 @@
             <el-divider direction="vertical"></el-divider>
           -->
           <div class="line1" />
-          <span style="line-height: 30px; margin-left: 20px">
+          <span style="line-height: 2.7777777777777777vh; margin-left: 1.0416666666666667vw">
             <font color="#f0f8ff">云台控制</font>
           </span>
         </div>
 
         <div class="mo2">
           <el-image
-            style="width: 300px; height: 300px; vertical-align: middle"
+            style="width: 15.625vw; height: 27.777777777777775vh; vertical-align: middle"
             :src="require('@/assets/bg_bottom(1).png')"
           ></el-image>
         </div>
@@ -111,15 +111,15 @@
           <el-col :span="5">
             <div class="mo3">
               <el-image
-                style="width: 110px; height: 45px; vertical-align: middle"
+                style="width: 110px; height: 4.166666666666666vh; vertical-align: middle"
                 :src="require('@/assets/ssjk1.png')"
               ></el-image>
               <el-image
                 style="
-                  width: 110px;
-                  height: 45px;
+                  width: 5.729166666666667vw;
+                  height:  4.166666666666666vh;
                   vertical-align: middle;
-                  margin-left: 3px;
+                  margin-left:0.15625vw;
                 "
                 :src="require('@/assets/ssjk1.png')"
               ></el-image>
@@ -127,20 +127,20 @@
               <div>
                 <el-image
                   style="
-                    width: 110px;
-                    height: 45px;
+                    width: 5.729166666666667vw;
+                    height: 4.166666666666666vh;
                     vertical-align: middle;
-                    margin-top: 10px;
+                    margin-top:0.9259259259259258vh;
                   "
                   :src="require('@/assets/ssjk1.png')"
                 ></el-image>
                 <el-image
                   style="
-                    width: 110px;
-                    height: 45px;
+                    width: 5.729166666666667vw;
+                    height: 4.166666666666666vh;
                     vertical-align: middle;
-                    margin-top: 10px;
-                    margin-left: 3px;
+                    margin-top: 0.9259259259259258vh;
+                    margin-left: 0.15625vw;
                   "
                   :src="require('@/assets/ssjk1.png')"
                 ></el-image>
@@ -152,10 +152,10 @@
               <el-image
                 style="
                   position: relative;
-                  left: 200px;
-                  top: 200px;
-                  width: 200px;
-                  height: 100px;
+                  left:10.416666666666668vw;
+                  top: 18.51851851851852vh;
+                  width: 10.416666666666668vw;
+                  height:9.25925925925926vh;
                   vertical-align: middle;
                 "
                 :src="require('@/assets/ssjk1.png')"
@@ -168,22 +168,22 @@
       <el-col :span="7">
         <div class="mo4">
           <el-image
-            style="width: 70px; height: 70px; vertical-align: middle"
+            style="width: 3.6458333333333335vw; height:6.481481481481481vh; vertical-align: middle"
             :src="require('@/assets/icon_up.png')"
           ></el-image>
         </div>
 
         <div class="mo5">
           <el-image
-            style="width: 70px; height: 70px; vertical-align: middle"
+            style="width: 3.6458333333333335vw; height:6.481481481481481vh; vertical-align: middle"
             :src="require('@/assets/icon_left.png')"
           ></el-image>
           <el-image
             style="
-              width: 70px;
-              height: 70px;
+              width: 3.6458333333333335vw;
+              height:6.481481481481481vh;
               vertical-align: middle;
-              margin-left: 100px;
+              margin-left: 5.208333333333334vw;
             "
             :src="require('@/assets/icon_right.png')"
           ></el-image>
@@ -191,7 +191,7 @@
 
         <div class="mo6">
           <el-image
-            style="width: 70px; height: 70px; vertical-align: middle"
+            style="width: 3.6458333333333335vw; height: 6.481481481481481vh; vertical-align: middle"
             :src="require('@/assets/icon_down.png')"
           ></el-image>
         </div>
@@ -200,16 +200,15 @@
           <el-col>
             <div class="mo7">
               <el-button type="text" style="color: #ffffff">变倍 +</el-button>
-              <el-button type="text" style="color: #ffffff; margin-left: 60px"
+              <el-button type="text" style="color: #ffffff; margin-left: 3.125vw"
                 >变倍 -</el-button
               >
             </div>
 
             <div class="mo8">
               <el-button type="text" style="color: #ffffff">变焦 +</el-button>
-              <el-button type="text" style="color: #ffffff; margin-left: 60px"
-                >变焦 -</el-button
-              >
+              <el-button type="text" style="color: #ffffff; margin-left: 3.125vw"
+                >变焦 -</el-button>
             </div>
           </el-col>
           <el-col>
@@ -217,10 +216,10 @@
               <el-image
                 style="
                   position: relative;
-                  top: -695px;
-                  left: 200px;
-                  width: 50px;
-                  height: 50px;
+                  top: -64.35185185185185vh;
+                  left: 10.416666666666668vw;
+                  width: 2.604166666666667vw;
+                  height:  4.62962962962963vh;
                   vertical-align: middle;
                 "
                 :src="require('@/assets/ssjk.png')"
@@ -229,12 +228,11 @@
                 type="text"
                 style="
                   position: relative;
-                  top: -695px;
-                  left: 200px;
+                  top: -64.35185185185185vh;
+                  left: 10.416666666666668vw;
                   color: #ffffff;
                 "
-                >开启激光</el-button
-              >
+                >开启激光</el-button>
 
               <!--    <el-image style="width: 50px;height: 50px;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
                   <el-button type="text" style="color: #FFFFFF;">开启激光</el-button>-->
@@ -265,7 +263,7 @@
                   :controls="videolist.controls"
                   :controlslist="videolist.controlslist"
                   :webkit-playsinline="webkitplaysinline"
-                  style="height: 600px; width: 1000px"
+                  style="height:55.55555555555555vh; width: 52.083333333333336vw"
                 ></video>
               </template>
             </div>
@@ -274,7 +272,7 @@
       </div>
 
       <div class="click_page">
-        <div class="center_img" style="left: 0px">
+        <div class="center_img" style="left: 0vw">
           <div class="page_info">
             <a href="javascript:;">
               <video
@@ -338,7 +336,7 @@
       <div>
         <!--        右边-->
         <div class="aside1">
-          <div style="margin-left: 20px; margin-top: 20px">
+          <div style="margin-left: 1.0416666666666667vw; margin-top: 1.8518518518518516vh">
             <el-image
               style="vertical-align: middle; color: #ffffff"
               :src="require('@/assets/icon_jiankong.png')"
@@ -352,17 +350,17 @@
             <span class="span">  事件趋势日历</span>
           </div>
           -->
-          <div style="position: relative; left: 3px">
+          <div style="position: relative; left: 0.15625vw">
             <Calendar
               :date="new Date()"
               @enter="mouseenter"
               @leave="mouseleave"
               @changeMonth="changeMonth"
-              style="width: 400px; height: 400px"
+              style="width: 20.833333333333336vw; height: 37.03703703703704vh"
             >
               <!-- 可使用动态插槽名设置，v-slot:[slotName] -->
               <template v-slot:2022-5-21>
-                <div style="position: absolute; bottom: -10px">今天</div>
+                <div style="position: absolute; bottom: -0.9259259259259258vh">今天</div>
               </template>
             </Calendar>
           </div>
@@ -371,11 +369,11 @@
     </div>
 
     <div class="third3" v-else-if="isActive == 2">
-      <div style="position: absolute; top: -19.2vw; left: 0.5vw">
-        <div style="margin: 25px 0 25px 47px">
+      <div style="position: absolute; top: -34.25925925925926vh; left: 0.5208333333333334vw">
+        <div style="margin: 2.314814814814815vh 0 2.314814814814815vh 2.447916666666667vw">
           <div
             :style="background1"
-            style="height: 9.5vh; width: 11vw; display: inline-block"
+            style="height: 8.796296296296296vh; width: 10.9375vw; display: inline-block"
           >
             <span class="span2">累计预警</span>
             <!-- 后台数据交互     -->
@@ -384,10 +382,10 @@
           <div
             :style="background1"
             style="
-              height: 9.5vh;
-              width: 11vw;
+              height:8.796296296296296vh;
+              width: 10.9375vw;
               display: inline-block;
-              margin: 0px 15px 0px 15px;
+              margin: 0vh 0.78125vw 0vh 0.78125vw;
             "
           >
             <span class="span2">已处理预警</span>
@@ -396,7 +394,7 @@
           </div>
           <div
             :style="background1"
-            style="height: 9.5vh; width: 11vw; display: inline-block"
+            style="height: 8.796296296296296vh; width:10.9375vw; display: inline-block"
           >
             <span class="span2">未处理预警</span>
             <!-- 后台数据交互     -->
@@ -414,14 +412,14 @@
                     style="
                       display: block;
                       width: 18.75vw;
-                      height: 22vh;
-                      margin-bottom: 8px;
+                      height:  16.666666666666664vh;
+                      margin-bottom: 0.7407407407407407vh;
                     "
                     :src="require('@/assets/warning.jpg')"
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size: 15px">(类型)</span>
+                    <span style="font-size: 1.3888888888888888vh">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -433,14 +431,14 @@
                     style="
                       display: block;
                       width: 18.75vw;
-                      height: 22vh;
-                      margin-bottom: 8px;
+                      height:  16.666666666666664vh;
+                      margin-bottom:0.7407407407407407vh;
                     "
                     :src="require('@/assets/warning.jpg')"
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size: 15px">(类型)</span>
+                    <span style="font-size:1.3888888888888888vh">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -452,14 +450,14 @@
                     style="
                       display: block;
                       width: 18.75vw;
-                      height: 22vh;
-                      margin-bottom: 8px;
+                      height: 16.666666666666664vh;
+                      margin-bottom: 1.3888888888888888vh;
                     "
                     :src="require('@/assets/warning.jpg')"
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size: 15px">(类型)</span>
+                    <span style="font-size: 1.3888888888888888vh">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -471,14 +469,14 @@
                     style="
                       display: block;
                       width: 18.75vw;
-                      height: 22vh;
-                      margin-bottom: 8px;
+                      height: 16.666666666666664vh;
+                      margin-bottom:0.7407407407407407vh;
                     "
                     :src="require('@/assets/warning.jpg')"
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size: 15px">(类型)</span>
+                    <span style="font-size: 1.3888888888888888vh">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -491,15 +489,53 @@
                     class="images"
                     style="
                       display: block;
-                      width: 18.75vw;
-                      height: 22vh;
-                      margin-bottom: 8px;
+                      width:18.75vw;
+                      height: 16.666666666666664vh;
+                      margin-bottom: 0.7407407407407407vh;
                     "
                     :src="require('@/assets/warning.jpg')"
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size: 15px">(类型)</span>
+                    <span style="font-size:1.3888888888888888vh">(类型)</span>
+                  </span>
+                  <span class="span9">已处理</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <el-image
+                    class="images"
+                    style="
+                      display: block;
+                      width:  18.75vw;
+                      height: 16.666666666666664vh;
+                      margin-bottom:0.7407407407407407vh;
+                    "
+                    :src="require('@/assets/warning.jpg')"
+                  ></el-image>
+                  <span class="span8"
+                    >疑似船只
+                    <span style="font-size:  1.3888888888888888vh">(类型)</span>
+                  </span>
+                  <span class="span9">已处理</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <el-image
+                    class="images"
+                    style="
+                      display: block;
+                      width:18.75vw;
+                      height:16.666666666666664vh;
+                      margin-bottom: 0.7407407407407407vh;
+                    "
+                    :src="require('@/assets/warning.jpg')"
+                  ></el-image>
+                  <span class="span8"
+                    >疑似船只
+                    <span style="font-size: 1.3888888888888888vh">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -511,52 +547,14 @@
                     style="
                       display: block;
                       width: 18.75vw;
-                      height: 22vh;
-                      margin-bottom: 8px;
+                      height: 16.666666666666664vh;
+                      margin-bottom:0.7407407407407407vh;
                     "
                     :src="require('@/assets/warning.jpg')"
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size: 15px">(类型)</span>
-                  </span>
-                  <span class="span9">已处理</span>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <el-image
-                    class="images"
-                    style="
-                      display: block;
-                      width: 18.75vw;
-                      height: 22vh;
-                      margin-bottom: 8px;
-                    "
-                    :src="require('@/assets/warning.jpg')"
-                  ></el-image>
-                  <span class="span8"
-                    >疑似船只
-                    <span style="font-size: 15px">(类型)</span>
-                  </span>
-                  <span class="span9">已处理</span>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <el-image
-                    class="images"
-                    style="
-                      display: block;
-                      width: 18.75vw;
-                      height: 22vh;
-                      margin-bottom: 8px;
-                    "
-                    :src="require('@/assets/warning.jpg')"
-                  ></el-image>
-                  <span class="span8"
-                    >疑似船只
-                    <span style="font-size: 15px">(类型)</span>
+                    <span style="font-size:1.3888888888888888vh">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -566,9 +564,9 @@
         </div>
         <div
           class="aside"
-          style="position: absolute; top: 8vw; display: inline; float: right"
+          style="position: absolute; top: 13.888888888888888vh; display: inline; float: right"
         >
-          <div style="margin-left: 20px">
+          <div style="margin-left: 1.0416666666666667vw">
             <el-image
               style="vertical-align: middle"
               :src="require('@/assets/icon_jiankong.png')"
@@ -578,14 +576,14 @@
 
           <div
             :style="background2"
-            style="height: 4vh; width: 23.5vw; margin-left: 1vw"
+            style="height: 3.7037037037037033vh; width: 23.4375vw; margin-left: 1.0416666666666667vw"
           >
             <!--         vertical-align:middle;图片和文字居中 -->
             <el-image
               style="
-                width: 30px;
-                height: 27px;
-                margin-left: 8px;
+                width: 1.5625vw;
+                height:2.5vh;
+                margin-left:0.4166666666666667vw;
                 vertical-align: middle;
               "
               :src="require('@/assets/6.png')"
@@ -594,13 +592,13 @@
             <span class="span7">处理详情</span>
           </div>
           <!--       封装 手写时间条-->
-          <div style="position: relative; top: -7px">
+          <div style="position: relative; top: -0.6481481481481481vh">
             <div class="line" />
             <!--        圆形图标-->
-            <span style="position: relative; top: 40px; left: -32px"
+            <span style="position: relative; top:3.7037037037037033vh; left: -1.6666666666666667vw"
               ><span class="login-cycle"></span
             ></span>
-            <span style="position: relative; top: 230px; left: -47px"
+            <span style="position: relative; top: 21.296296296296294vh; left: -2.447916666666667vw"
               ><span class="login-cycle"></span
             ></span>
           </div>
@@ -608,7 +606,7 @@
           <!-- 描述列表       -->
           <!-- 这里的所有数据，后台交互改变数据       -->
           <!--      direction="vertical" 是指文字的排列方式  -->
-          <div style="position: relative; top: -160px">
+          <div style="position: relative; top: -14.814814814814813vh">
             <el-descriptions :column="1" :span="2">
               <el-descriptions-item
                 label="预警类型"
@@ -866,6 +864,7 @@ window.onload = function () {
     //且style.left获取的是字符串，需要用parseInt()取整转化为数字。
     //center_img.style.left需要在center_img节点中添加style的left属性,不然无法获取
     var newLeft = parseInt(center_img.style.left) + offset;
+    //注意！！！这里
     center_img.style.left = newLeft + "px";
     left_number = newLeft;
     console.log(newLeft);
@@ -910,18 +909,18 @@ $(function () {
 
 .aside1 {
   position: absolute;
-  top: -300px;
-  left: 300px;
-  height: 650px;
-  width: 400px;
+  top: -27.777777777777775vh;
+  left:15.625vw;
+  height:60.18518518518518vh;
+  width:20.833333333333336vw;
   overflow: hidden;
 }
 
 .aside2 {
-  height: 700px;
-  width: 1000px;
+  height: 64.81481481481481vh;
+  width: 52.083333333333336vw;
   background-color: #102a4f;
-  margin-top: 10px;
+  margin-top: 0.9259259259259258vh;
   overflow: hidden;
 }
 
@@ -948,28 +947,29 @@ $(function () {
   -webkit-box-shadow: none;
   box-shadow: none;
   background: transparent;
-  border-radius: 4px;
+  //border-radius: 4px;
 }
 
 .cal_con .cal_month[data-v-12cb4c6e] {
   text-align: center;
-  height: calc(100% - 34px);
+  //height: calc(100% - 34px);
+  height: calc(100% - 3.148148148148148vh);
 }
 
 .video_box {
   position: absolute;
-  top: -310px;
-  left: -700px;
-  width: 1400px;
-  height: 20px;
+  top: -28.703703703703702vh;
+  left: -36.458333333333336vw;
+  width: 72.91666666666667vw;
+  height: 1.8518518518518516vh;
   background-color: black;
 }
 .video_center {
   position: absolute;
-  left: 10px;
+  left: 0.5208333333333334vw;
   //background-color: black;
-  width: 8000px;
-  height: 500px;
+  width: 416.6666666666667vw;
+  height: 46.29629629629629vh;
   justify-content: space-between;
 }
 .video-title {
@@ -1033,16 +1033,16 @@ $(function () {
     } */
 
 .pic {
-  height: 300px;
-  width: 300px;
+  height:27.777777777777775vh;
+  width: 27.777777777777775vh;
 }
 
 .click_page {
-  width: 1000px;
-  height: 500px;
+  width: 52.083333333333336vw;
+  height:46.29629629629629vh;
   position: absolute;
-  left: -690px;
-  top: 280px;
+  left: -35.9375vw;
+  top:25.925925925925924vh;
   overflow: hidden;
 }
 .click_page .center_img {
@@ -1055,7 +1055,7 @@ $(function () {
   float: left;
   height: 4.5rem;
   margin: 0.125rem;
-  margin-left: 0px;
+  margin-left: 0vw;
 }
 .click_page .center_img .page_info a {
   color: black;
@@ -1073,8 +1073,8 @@ $(function () {
 }
 //圆
 .login-cycle {
-  width: 10px;
-  height: 10px;
+  width: 0.5208333333333334vw;
+  height: 0.9259259259259258vh;
   display: inline-block;
   background-color: #33ffff;
   border-radius: 50%;
@@ -1083,8 +1083,8 @@ $(function () {
 .line {
   z-index: 99999;
   position: relative;
-  top: 50px;
-  left: -10px;
+  top: 4.62962962962963vh;
+  left: -0.5208333333333334vw;
   float: left;
   width: 0.1em;
   height: 12em;
@@ -1094,106 +1094,107 @@ $(function () {
 }
 
 ::v-deep .el-timeline-item__node {
-  margin: 50px;
+  //margin: 50px;
+  margin: 4.62962962962963vh 2.604166666666667vw 4.62962962962963vh 2.604166666666667vw;
 }
 .J_block {
   z-index: 9999;
   position: relative;
-  top: 120px;
+  top: 11.11111111111111vh;
 }
 
 .mo1 {
   position: relative;
   background-color: #203f5e;
-  height: 30px;
-  width: 450px;
-  top: 52px;
-  left: -45px;
+  height: 2.7777777777777777vh;
+  width: 23.4375vw;
+  top: 4.814814814814815vh;
+  left: -2.34375vw;
 }
 
 .line1 {
   position: relative;
   float: left;
-  width: 2px;
-  height: 25px;
+  width:  0.10416666666666667vw;
+  height: 2.314814814814815vh;
   background: #ffffff;
-  margin-top: 2.5px;
+  margin-top: 0.277777777777777vh;
 }
 
 .mo2 {
   position: relative;
-  height: 300px;
-  width: 300px;
-  top: 150px;
-  left: 40px;
+  height: 27.777777777777775vh;
+  width: 15.625vw;
+  top: 13.888888888888888vh;
+  left: 2.0833333333333335vw;
 }
 
 .mo3 {
   position: relative;
-  height: 250px;
-  width: 400px;
-  top: 200px;
-  left: -45px;
+  height:23.148148148148145vh;
+  width: 20.833333333333336vw;
+  top:18.51851851851852vh;
+  left: -2.34375vw;
 }
 
 .mo4 {
   position: relative;
-  height: 250px;
-  width: 400px;
-  top: 200px;
-  left: 100px;
+  height: 23.148148148148145vh;
+  width: 20.833333333333336vw;
+  top: 18.51851851851852vh;
+  left: 5.208333333333334vw;
 }
 
 .mo5 {
   position: relative;
-  height: 250px;
-  width: 400px;
-  top: 50px;
-  left: 20px;
+  height: 23.148148148148145vh;
+  width: 20.833333333333336vw;
+  top: 4.62962962962963vh;
+  left: 1.0416666666666667vw;
 }
 
 .mo6 {
   position: relative;
-  height: 250px;
-  width: 400px;
-  top: -100px;
-  left: 100px;
+  height: 23.148148148148145vh;
+  width: 20.833333333333336vw;
+  top: -9.25925925925926vh;
+  left: 5.208333333333334vw;
 }
 
 .mo7 {
   position: relative;
-  height: 250px;
-  width: 400px;
-  top: -220px;
-  left: -70px;
+  height: 23.148148148148145vh;
+  width: 20.833333333333336vw;
+  top: -20.37037037037037vh;
+  left: -3.6458333333333335vw;
 }
 .mo8 {
   position: relative;
-  height: 250px;
-  width: 400px;
-  top: -415px;
-  left: -70px;
+  height: 23.148148148148145vh;
+  width: 20.833333333333336vw;
+  top: -38.425925925925924vh;
+  left: -3.6458333333333335vw;
 }
 
 .first {
-  top: -10px;
+  top: -0.9259259259259258vh;
   position: relative;
   color: #d9effe;
   background: transparent;
   border: none;
-  margin-left: 800px;
+  margin-left:41.66666666666667vw;
   cursor: pointer;
 }
 
 .second {
-  top: -10px;
+  top: -0.9259259259259258vh;
   position: relative;
   color: #d9effe;
   background: transparent;
   border: none;
 }
 .third {
-  top: -10px;
+  top: -0.9259259259259258vh;
   position: relative;
   color: #d9effe;
   background: transparent;
@@ -1211,14 +1212,14 @@ $(function () {
 //css伪类
 #underline:after {
   content: "";
-  width: 0px;
-  height: 3px;
+  width: 0vw;
+  height:0.27777777777777773vh;
   background-color: #27c7ca;
   position: absolute;
   top: 100%;
   left: 50%;
   right: 50%;
-  margin-top: 10px;
+  margin-top: 0.9259259259259258vh;
   // transition: all .8s;
 }
 
@@ -1232,10 +1233,10 @@ $(function () {
 // }
 .first1 {
   position: absolute;
-  top: -300px;
-  left: -540px;
-  width: 1300px;
-  height: 700px;
+  top: -27.777777777777775vh;
+  left: -28.125vw;
+  width: 67.70833333333334vw;
+  height:64.81481481481481vh;
 }
 
 
@@ -1243,72 +1244,75 @@ $(function () {
 
 .third3 {
   position: absolute;
-  margin-top: 41vw;
-  margin-right: 10.5vw;
-  width: 68vw;
-  height: 65vh;
+  margin-top: 72.68518518518518vh;
+  margin-right:10.416666666666668vw;
+  width: 67.70833333333334vw;
+  height:64.81481481481481vh;
+  // overflow: hidden;
 }
 .span2 {
   color: #438fc5;
-  font-size: 16px;
-  line-height: 5vh;
-  margin-left: 4.7vw;
+  font-size: 1.4814814814814814vh;
+  line-height:5.092592592592593vh;
+  margin-left:4.6875vw;
   display: block;
 }
 .span3 {
   color: #dfcd63;
-  font-size: 20px;
+  font-size:1.8518518518518516vh;
   font-weight: bold;
-  margin-left: 4.9vw;
+  margin-left: 4.947916666666667vw;
 }
 .span4 {
   color: #45e77e;
-  font-size: 20px;
+  font-size: 1.8518518518518516vh;
   font-weight: bold;
-  margin-left: 5.1vw;
+  margin-left: 5.104166666666667vw;
 }
 .span5 {
   color: #c44c59;
-  font-size: 20px;
+  font-size:1.8518518518518516vh;
   font-weight: bold;
-  margin-left: 5.3vw;
+  margin-left: 5.208333333333334vw;
 }
 .span6 {
   color: #dce7e7;
   /*解决父子元素margin叠加问题*/
   display: inline-block;
-  margin: 30px 0px 30px 10px;
+  margin: 2.7777777777777777vh 0vw 2.7777777777777777vh 0.5208333333333334vw;
 }
 .span7 {
   /*  !*解决父子元素margin叠加问题*!
   display:inline-block;*/
-  margin-left: 40px;
+  margin-left: 2.0833333333333335vw;
   /*  margin-bottom: 30px;*/
-  line-height: 40px;
+  line-height: 3.7037037037037033vh;
   color: #dce7e7;
-  font-size: 18px;
+  font-size: 1.6666666666666665vh;
 }
 .span8 {
   color: #dce7e7;
-  margin: 0 140px 0 20px;
+  margin: 0vh 7.291666666666667vw 0vh 1.0416666666666667vw;
 }
 .span9 {
   /*  height: 10px;
   width: 20px;*/
   color: #dce7e7;
   background-color: #2dc86a;
-  border: 4px solid #2dc86a;
+  //  border: 4px solid #2dc86a;
+
+  border: 0.37037037037037035vh solid #2dc86a;
 }
 .el-icon-setting {
-  margin-left: 6px;
+  margin-left: 0.3125vw;
   color: #3192a4;
 }
 /*main设置*/
 //滚轮设置
 
 .outer-container {
-  width: 830px;
-  height: 520px;
+  width: 43.22916666666667vw;
+  height: 48.148148148148145vh;
   display: inline;
   overflow: hidden;
   position: relative;
@@ -1320,7 +1324,7 @@ $(function () {
   top: 0;
   left: 0;
   bottom: 0;
-  right: -25px;
+  right: -1.3020833333333335vw;
   overflow-y: scroll;
 }
 /*精确测量宽高*/
@@ -1330,14 +1334,14 @@ ul {
 ul.imgList {
   /*  margin: 0 auto;*/
   /*精确*/
-  width: 42vw;
+  width: 41.66666666666667vw;
   overflow: hidden;
 }
 ul.imgList li {
   float: left;
-  padding: 4px 8px;
+  padding: 0.37037037037037035vh 0.4166666666666667vw;
   /*精确*/
-  width: 19vw;
+  width: 19.270833333333336vw;
 }
 ul .imgList li div {
   color: black;
@@ -1346,36 +1350,38 @@ ul .imgList li div {
   margin-right: 10px;
 } */
 ul .imgList li span {
-  font-size: 6px;
+  font-size: 0.5555555555555555vh;
   display: block;
   width: 100%;
-  height: 4vh;
-  line-height: 4vh;
+  height: 3.7037037037037033vh;
+  line-height: 3.7037037037037033vh;
 }
 .border {
-  border: 1px solid #d7ce91;
+
+  //border: 1px solid #d7ce91;
+  border: 0.052083333333333336vw solid #d7ce91;
 }
 .aside {
-  width: 24vw;
-  height: 53vh;
+  width: 23.4375vw;
+  height: 49.07407407407407vh;
   background-color: rgb(12, 37, 67, 0.7);
 }
 ::v-deep .el-descriptions__body {
   background: transparent;
-  margin-left: 60px;
-  margin-top: 30px;
+  margin-left: 3.125vw;
+  margin-top: 2.7777777777777777vh;
   /*  color:#dce7e7;*/
 }
 ::v-deep .my-label {
-  margin-bottom: 5px;
+  margin-bottom: 0.4629629629629629vh;
   color: #3fd9d5;
 }
 ::v-deep .my-label1 {
-  margin-bottom: 30px;
+  margin-bottom: 2.7777777777777777vh;
   color: #3fd9d5;
 }
 ::v-deep .my-content {
-  margin-bottom: 5px;
+  margin-bottom:  0.4629629629629629vh;
   color: #dce7e7;
 }
 </style>

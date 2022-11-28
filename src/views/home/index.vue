@@ -32,7 +32,7 @@
   background-color: #b3c0d1;
   color: #333;
   text-align: center;
-  line-height: 60px;
+
 }
 
 .el-aside {
@@ -40,7 +40,7 @@
   background-color: #d3dce6;
   color: #333;
   text-align: center;
-  line-height: 200px;
+  line-height: 18.51851851851852vh;
 }
 
 .el-main {

@@ -33,7 +33,7 @@
           <a href="#"  v-on:click="prePage">
             </a>
         </button >
-        <button class="button_J" style="margin-left:5px;" v-for="(item, index) in pageNum">
+        <button class="button_J" style="margin-left:0.2604166666666667vw;" v-for="(item, index) in pageNum">
           <a href="#" v-on:click="toPage(index)" :class="{active: currentPage==index}">{{ index+1 }}</a>
         </button>
         <button class="button_J">
@@ -332,9 +332,9 @@ export default {
         //是否流体自适应容器宽高
         fluid: true,
         //设置视频播放器的显示宽度（以像素为单位）
-        width: "800px",
+        width: "41.66666666666667vw",
         //设置视频播放器的显示高度（以像素为单位）
-        height: "400px"
+        height: "37.03703703703704vh"
       });
     },
 
@@ -469,7 +469,7 @@ button:focus{
 .vjs-custom-skin > .video-js .vjs-control-bar {
   /*background-color: rgba(0,0,0,0.3) !important;*/
   color: #ffffff;
-  font-size: 14px
+  font-size:  1.2962962962962963vh;
 }
 
 .vjs-custom-skin > .video-js .vjs-play-progress,.vjs-custom-skin > .video-js  .vjs-volume-level {
@@ -567,67 +567,67 @@ button:focus{
 
 .page1{
   position:relative;
-  bottom: 10px;
-  left: 220px;
+  bottom:0.9259259259259258vh;
+  left: 11.458333333333334vw;
 
 
 }
 .page2{
   position:relative;
-  bottom: 9px;
-  left: 500px;
+  bottom: 0.8333333333333333vh;
+  left: 26.041666666666668vw;
 
 
 }
 .page3{
   position:relative;
-  bottom: 5px;
-  left: 520px;
+  bottom: 0.4629629629629629vh;
+  left:27.083333333333336vw;
 
 
 }
 .page4{
   position:relative;
-  bottom:1px;
-  left: 520px;
+  bottom:0.09259259259259259vh;
+  left:27.083333333333336vw;
 
 
 }
 .video_text{
   z-index: 100;
-  width:1200px;
-  height:600px;
+  width:62.5vw;
+  height:55.55555555555555vh;
 }
 .video_text1{
   z-index: 100;
   position: relative;
-  margin-left:20px;
+  margin-left:1.0416666666666667vw;
 
 
-  width:550px;
-  height:300px;
+  width:28.645834vw;
+  height:27.777777777777775vh;
 
 
 }
 .video_text2{
   z-index: 100;
   position: relative;
-  margin-left: 20px;
+  margin-left:  1.0416666666666667vw;
   /*margin-top: -50px;*/
 
-  width:370px;
-  height:200px;
+  width:19.270833333333336vw;
+  height:18.51851851851852vh;
 
 
 }
 .video_text3{
   z-index: 100;
   position: relative;
-  margin-left: 20px;
+  margin-left: 1.0416666666666667vw;
   /*margin-top: -10px;*/
 
-  width:270px;
-  height:150px;
+  width:14.0625vw;
+  height:13.888888888888888vh;
 
 
 }
@@ -636,23 +636,23 @@ video:focus{
 }
 .video-js{
 
-  width: 1150px;
-  height: 580px;
+  width: 59.895833333333336vw;
+  height: 53.7037037037037vh;
 
 }
 .video-js1{
-  width:550px;
-  height:290px;
+  width:28.645833333333336vw;
+  height:26.85185185185185vh;
 
 }
 .video-js2{
-  width:330px;
-  height:200px;
+  width:17.1875vw;
+  height:18.51851851851852vh;
 
 }
 .video-js3{
-  width:250px;
-  height:150px;
+  width:13.020833333333334vw;
+  height:13.888888888888888vh;
 
 }
 /*.video-js .vjs-big-play-button{*/
@@ -663,60 +663,60 @@ video:focus{
 /*}*/
 .fenye_2{
   position: absolute;
-  bottom: 10px;
-  left:400px;
+  bottom:0.9259259259259258vh;
+  left:20.833333333333336vw;
 }
 .fenye_1{
   position: absolute;
-  bottom: 10px;
-  left:450px;
+  bottom: 0.9259259259259258vh;
+  left:23.4375vw;
 
 }
 h1{
   font-family:"宋体"
 }
 .first{
-  top:-84px;
-  right: 440px;
+  top:-8.842105263157896vh;
+  right:22.916666666666668vw;
   position: absolute;
 
   background-color: rgb(141, 228, 250);
-  width:120px;
-  line-height:30px;
+  width:6.25vw;
+  line-height:3.1578947368421053vh;
 }
 .second{
-  top:-84px;
-  right: 310px;
+  top:-8.842105263157896vh;
+  right: 16.145833333333336vw;
   position: absolute;
   background-color: pink;
-  width:120px;
-  line-height:30px;
+  width:6.25vw;
+  line-height:3.1578947368421053vh;
 }
 .third{
-  top:-84px;
-  right: 180px;
+  top:-8.842105263157896vh;
+  right: 9.375vw;
   position: absolute;
   background-color: rgb(197, 248, 184);
-  width:120px;
-  line-height:30px;
+  width:6.25vw;
+  line-height:3.1578947368421053vh;
 }
 .fourth{
-  top:-84px;
-  right: 50px;
+  top:-8.842105263157896vh;
+  right:2.604vw;
   position: absolute;
   background-color: rgb(241, 241, 188);
-  width:120px;
-  line-height:30px;
+  width:6.25vw;
+  line-height:3.1578947368421053vh;
 }
 .first1{
   position: absolute;
   /*background-color: rgb(141, 228, 250);*/
   background: transparent;
-  height:630px;
-  width:1170px;
-  top:-35px;
-  margin-right: 100px;
-  line-height:30px;
+  height:58.33333333333333vh;
+  width:60.9375vw;
+  top:-3.2407407407407405vh;
+  margin-right: 5.208333333333334vw;
+  line-height:2.7777777777777777vh;
   z-index: 100;
 
 }
@@ -725,36 +725,36 @@ h1{
 
   background: transparent;
   position: absolute;
-  top:-35px;
+  top:-3.2407407407407405vh;
   /*background-color: pink;*/
-  height:630px;
-  width:1170px;
-  margin-right: -20px;
-  line-height:30px;
+  height:58.33333333333333vh;
+  width:60.9375vw;
+  margin-right: -1.0416666666666667vw;
+  line-height:2.7777777777777777vh;
 
 }
 .third3{
   z-index: 100;
   position: absolute;
-  top:-35px;
+  top:-3.2407407407407405vh;
   background: transparent;
   /*background-color: rgb(197, 248, 184);*/
-  height:630px;
-  width:1170px;
-  margin-right: -20px;
-  line-height:30px;
+  height:58.33333333333333vh;
+  width:60.9375vw;
+  margin-right: -1.0416666666666667vw;
+  line-height:2.7777777777777777vh;
 
 }
 .fourth4{
   z-index: 100;
   background: transparent;
   position: absolute;
-  top:-35px;
+  top:-3.2407407407407405vh;
   /*background-color: rgb(241, 241, 188);*/
-  height:630px;
-  width:1170px;
-  margin-right: -20px;
-  line-height:30px;
+  height:58.33333333333333vh;
+  width:60.9375vw;
+  margin-right:-1.0416666666666667vw;
+  line-height:2.7777777777777777vh;
 
 }
 </style>

@@ -1,11 +1,13 @@
 <template>
   <div style="position: absolute">
+    <!-- width: 1380px; -->
+    <!-- top=350px -->
     <div
       style="
         position: absolute;
-        width: 1380px;
-        height: 40px;
-        top: -350px;
+        width: 73vw;
+        height: 4vh;
+        top: -18.3vw;
         background: #003377;
       "
     >
@@ -13,9 +15,9 @@
         style="
           color: white;
           position: absolute;
-          left: 100px;
-          top: 10px;
-          font-size: 18px;
+          left: calc(100% - 69vw);
+          top: 1vh;
+          font-size:18px;
         "
       >
         点位详情</span
@@ -23,10 +25,10 @@
       <el-image
         style="
           position: absolute;
-          left: -10px;
-          top: -10px;
-          height: 60px;
-          width: 60px;
+          left: -1vh;
+          top: -1vh;
+          height: 6vh;
+          width: 6vh;
           background: transparent;
         "
         :src="require('@/assets/icon_title_dianwei@2x.png')"
@@ -369,11 +371,11 @@
     </div>
 
     <div class="third3" v-else-if="isActive == 2">
-      <div style="position: absolute; top: -370px; left: 10px">
+      <div style="position: absolute; top: -19.2vw; left: 0.5vw">
         <div style="margin: 25px 0 25px 47px">
           <div
             :style="background1"
-            style="height: 95px; width: 210px; display: inline-block"
+            style="height: 9.5vh; width: 11vw; display: inline-block"
           >
             <span class="span2">累计预警</span>
             <!-- 后台数据交互     -->
@@ -382,8 +384,8 @@
           <div
             :style="background1"
             style="
-              height: 95px;
-              width: 210px;
+              height: 9.5vh;
+              width: 11vw;
               display: inline-block;
               margin: 0px 15px 0px 15px;
             "
@@ -394,7 +396,7 @@
           </div>
           <div
             :style="background1"
-            style="height: 95px; width: 210px; display: inline-block"
+            style="height: 9.5vh; width: 11vw; display: inline-block"
           >
             <span class="span2">未处理预警</span>
             <!-- 后台数据交互     -->
@@ -411,8 +413,8 @@
                     class="images"
                     style="
                       display: block;
-                      width: 360px;
-                      height: 180px;
+                      width: 18.75vw;
+                      height: 22vh;
                       margin-bottom: 8px;
                     "
                     :src="require('@/assets/warning.jpg')"
@@ -430,8 +432,8 @@
                     class="images"
                     style="
                       display: block;
-                      width: 360px;
-                      height: 180px;
+                      width: 18.75vw;
+                      height: 22vh;
                       margin-bottom: 8px;
                     "
                     :src="require('@/assets/warning.jpg')"
@@ -449,8 +451,8 @@
                     class="images"
                     style="
                       display: block;
-                      width: 360px;
-                      height: 180px;
+                      width: 18.75vw;
+                      height: 22vh;
                       margin-bottom: 8px;
                     "
                     :src="require('@/assets/warning.jpg')"
@@ -468,8 +470,8 @@
                     class="images"
                     style="
                       display: block;
-                      width: 360px;
-                      height: 180px;
+                      width: 18.75vw;
+                      height: 22vh;
                       margin-bottom: 8px;
                     "
                     :src="require('@/assets/warning.jpg')"
@@ -489,8 +491,8 @@
                     class="images"
                     style="
                       display: block;
-                      width: 360px;
-                      height: 180px;
+                      width: 18.75vw;
+                      height: 22vh;
                       margin-bottom: 8px;
                     "
                     :src="require('@/assets/warning.jpg')"
@@ -508,8 +510,8 @@
                     class="images"
                     style="
                       display: block;
-                      width: 360px;
-                      height: 180px;
+                      width: 18.75vw;
+                      height: 22vh;
                       margin-bottom: 8px;
                     "
                     :src="require('@/assets/warning.jpg')"
@@ -527,8 +529,8 @@
                     class="images"
                     style="
                       display: block;
-                      width: 360px;
-                      height: 180px;
+                      width: 18.75vw;
+                      height: 22vh;
                       margin-bottom: 8px;
                     "
                     :src="require('@/assets/warning.jpg')"
@@ -546,8 +548,8 @@
                     class="images"
                     style="
                       display: block;
-                      width: 360px;
-                      height: 180px;
+                      width: 18.75vw;
+                      height: 22vh;
                       margin-bottom: 8px;
                     "
                     :src="require('@/assets/warning.jpg')"
@@ -564,7 +566,7 @@
         </div>
         <div
           class="aside"
-          style="position: absolute; top: 150px; display: inline; float: right"
+          style="position: absolute; top: 8vw; display: inline; float: right"
         >
           <div style="margin-left: 20px">
             <el-image
@@ -576,7 +578,7 @@
 
           <div
             :style="background2"
-            style="height: 40px; width: 450px; margin-left: 20px"
+            style="height: 4vh; width: 23.5vw; margin-left: 1vw"
           >
             <!--         vertical-align:middle;图片和文字居中 -->
             <el-image
@@ -1236,38 +1238,40 @@ $(function () {
   height: 700px;
 }
 
+
+
+
 .third3 {
   position: absolute;
-  margin-top: 785px;
-  margin-right: 200px;
-  width: 1300px;
-  height: 700px;
-  // overflow: hidden;
+  margin-top: 41vw;
+  margin-right: 10.5vw;
+  width: 68vw;
+  height: 65vh;
 }
 .span2 {
   color: #438fc5;
   font-size: 16px;
-  line-height: 55px;
-  margin-left: 90px;
+  line-height: 5vh;
+  margin-left: 4.7vw;
   display: block;
 }
 .span3 {
   color: #dfcd63;
   font-size: 20px;
   font-weight: bold;
-  margin-left: 95px;
+  margin-left: 4.9vw;
 }
 .span4 {
   color: #45e77e;
   font-size: 20px;
   font-weight: bold;
-  margin-left: 98px;
+  margin-left: 5.1vw;
 }
 .span5 {
   color: #c44c59;
   font-size: 20px;
   font-weight: bold;
-  margin-left: 100px;
+  margin-left: 5.3vw;
 }
 .span6 {
   color: #dce7e7;
@@ -1326,14 +1330,14 @@ ul {
 ul.imgList {
   /*  margin: 0 auto;*/
   /*精确*/
-  width: 800px;
+  width: 42vw;
   overflow: hidden;
 }
 ul.imgList li {
   float: left;
   padding: 4px 8px;
   /*精确*/
-  width: 370px;
+  width: 19vw;
 }
 ul .imgList li div {
   color: black;
@@ -1345,15 +1349,15 @@ ul .imgList li span {
   font-size: 6px;
   display: block;
   width: 100%;
-  height: 40px;
-  line-height: 40px;
+  height: 4vh;
+  line-height: 4vh;
 }
 .border {
   border: 1px solid #d7ce91;
 }
 .aside {
-  width: 450px;
-  height: 530px;
+  width: 24vw;
+  height: 53vh;
   background-color: rgb(12, 37, 67, 0.7);
 }
 ::v-deep .el-descriptions__body {

@@ -31,6 +31,7 @@
       <div class="page1">
         <button class="button_J1">
           <a href="#"  v-on:click="prePage">
+            <
             </a>
         </button >
 
@@ -388,6 +389,22 @@ export default {
         height: "37.03703703703704vh"
       });
     },
+    nextPage: function(){
+      var vm = this;
+      if (vm.currentPage == vm.pageNum - 1) return;
+      vm.currentPage++;
+
+    },
+    prePage: function(){
+      var vm = this;
+      if (vm.currentPage == 0) return;
+      vm.currentPage--;
+
+    },
+    toPage: function(page){
+      var vm = this;
+      vm.currentPage = page
+    },
   },
 
   computed: {
@@ -476,7 +493,7 @@ export default {
 
 .button_J1{
   top:5.962962962962963vh;
-  left: -11.979166666666668vw;
+  left: -11.1vw;
   height: 17.777777777777775vh;
   position: relative;
 

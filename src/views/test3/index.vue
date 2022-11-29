@@ -344,7 +344,12 @@ export default {
       },
     };
   },
-  methods: {},
+  methods: {
+    handleNodeClick()
+    {
+    //  树形结点的点击方法
+    }
+  },
 };
 </script>
 

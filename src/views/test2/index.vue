@@ -223,7 +223,6 @@
               height: 2.7vh;
             "
             id="Closehide"
-            @click="Closehide_onclick"
             :src="require('@/assets/chahao.png')"
             fit="fill"
           ></el-image>

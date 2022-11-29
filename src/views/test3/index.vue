@@ -4,7 +4,7 @@
       <el-card class="box-card">
         <div
           style="
-            margin: 20px;
+            margin: 1.8518518518518516vh 1.0416666666666667vw 1.8518518518518516vh 1.0416666666666667vw;
             width: 15.5vw;
             height: 3.7vh;
             position: relative;
@@ -56,7 +56,7 @@
 
         <div>
           <input
-            style="margin-bottom: 20px"
+            style="margin-bottom: 1.8518518518518516vh"
             type="text"
             maxlength="11"
             placeholder="请输入合适的点位"
@@ -80,9 +80,9 @@
           style="
             background-color: #409eff;
             top: 1vh;
-            width: 62.5vw;
-            height: 3.7vh;
-            margin-left: -10px;
+            width: 75.5vw;
+            height: 4.2vh;
+            margin-left: -0.5208333333333334vw;
           "
         >
           <el-image
@@ -225,7 +225,7 @@ input::-webkit-input-placeholder {
   overflow: hidden;
 }
 .span2 {
-  margin-top: 5px;
+  margin-top: 0.4629629629629629vh;
   color: #ffffff;
   display: inline-block;
   overflow: hidden;
@@ -235,7 +235,7 @@ input::-webkit-input-placeholder {
   margin-top: 18%;
   background-color: #000088;
   opacity: 0.7;
-  height: 64.8vh;
+  height: 92.5vh;
   width: 15.5vw;
 
   padding: 0px 0px;
@@ -245,11 +245,11 @@ input::-webkit-input-placeholder {
 .box-card1 {
   z-index: 100;
   margin-top: 5%;
-  margin-bottom: 20px;
+  margin-bottom: 1.8518518518518516vh;
   background-color: #000088;
   opacity: 0.7;
-  height: 64.8vh;
-  width: 60.9vw;
+  height: 90.5vh;
+  width: 75.9vw;
 
   padding: 0px 0px;
   border: none;

@@ -1,11 +1,11 @@
 <template>
 
   <div  style="background:transparent;position: relative;top:-4.62962962962963vh;">
-    <button class="first" style="position: relative;top:0.09259259259259259vh;right: -2.0833333333333335vw" @click="isActive = 0">事情详情</button>
-    <button class="second" style="position: relative;top:0.09259259259259259vh;right: -6.25vw" @click="isActive = 1">实时监控</button>
+    <button class="first" style="position: relative;top:-0.19vh;right: -3.0833333333333335vw" @click="isActive = 0">事情详情</button>
+    <button class="second" style="position: relative;top:-0.19vh;right: -13.25vw" @click="isActive = 1">实时监控</button>
 
     <div class="first1" v-if="isActive == 0">
-      <span style="position:relative;left:2.291666666666667vw;top:-2.1296296296296293vh;color: white">事情详情</span>
+      <span style="position:relative;left:2.291666666666667vw;top:-2.3296296296296293vh;color: white">事情详情</span>
 
       <!--打算调用一个整体来写-->
       <!--      视频播放器-->
@@ -34,7 +34,7 @@
             <</a>
         </button >
 
-        <div style="position:relative;left:-9.895833333333334vw;top:-14.814814814814813vh;width: 39.0625vw;height:18.51851851851852vh">
+        <div style="position:relative;left:-9.895833333333334vw;top:-11.814814814814813vh;width: 44.0625vw;height:18.51851851851852vh">
           <el-scrollbar>
             <div class="scrollbar-flex-content">
               <p v-for="(item,index) in img_scro" :key="index" class="scrollbar-demo-item">
@@ -119,7 +119,7 @@
         </div>
 
 
-        <el-button style="color:deepskyblue;background-color:transparent;position:relative;right:-15.625vw;bottom: -50.925925925925924vh">处理</el-button>
+        <el-button style="color:deepskyblue;background-color:transparent;position:relative;right:-20.625vw;bottom: -70vh">处理</el-button>
       </div>
 
     </div>
@@ -131,7 +131,7 @@
 
 
         <div>
-          <video style="position:relative;top:2.314814814814815vh;left:0.2604166666666667vw;width: 36.458333333333336vw;height:46.29629629629629vh">
+          <video style="background-color:black;position:relative;top:2.314814814814815vh;left:0.2604166666666667vw;width: 50.458333333333336vw;height:80.29629629629629vh">
             <source style="height:  64.81481481481481vh;width: 36.458333333333336vw;" :src="require('@/assets/video/《1024程序员公约》(嘴硬版)(Av901827024,P1).mp4')">
           </video>
         </div>
@@ -141,6 +141,9 @@
         <div class="mo1">
           <span style="line-height: 2.7777777777777777vh;margin-left: 0.5208333333333334vw"><font color="#f0f8ff">云台控制</font></span>
         </div>
+        <div style="position:relative;left: 13.5vw">
+
+
         <div style="position:relative;top:6.481481481481481vh;left: -7.395833333333334vw;width: 8.854166666666668vw">
           <el-image style="vertical-align:middle;" :src="require('@/assets/icon_jiankong.png')"></el-image>
           <span style="color: white">宁波松岙大阜1</span>
@@ -163,13 +166,18 @@
           </el-col>
           <el-col :span="19">
             <div>
-              <el-image style="position:relative;left:2.604166666666667vw;top:17.59259259259259vh;width: 8.854166666666668vw;height: 8.333333333333332vh;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>
+              <el-image style="position:relative;left:2.604166666666667vw;top:30.59259259259259vh;width: 8.854166666666668vw;height: 8.333333333333332vh;vertical-align: middle;" :src="require('@/assets/ssjk1.png')"></el-image>
             </div>
           </el-col>
+
         </el-row>
+        </div>
       </el-col>
 
       <el-col :span="7">
+        <div style="position: relative;left: 14vw;top: 3vh">
+
+
         <div class="mo4">
           <el-image style="width: 3.125vw;height: 5.555555555555555vh;vertical-align: middle;" :src="require('@/assets/icon_up.png')"></el-image>
         </div>
@@ -182,9 +190,14 @@
         <div class="mo6">
           <el-image style="width: 3.125vw;height: 5.555555555555555vh;vertical-align: middle;" :src="require('@/assets/icon_down.png')"></el-image>
         </div>
+        </div>
 
         <el-row>
+          <div style="position: relative;left: 12vw;top:15.7vh">
           <el-col>
+
+
+
             <div class="mo7">
               <el-button type="text" style="color: #FFFFFF">变倍 +</el-button>
               <el-button type="text" style="color: #FFFFFF;margin-left: 3.125vw">变倍 -</el-button>
@@ -196,11 +209,12 @@
             </div>
           </el-col>
           <el-col>
-            <div style="position: relative;top:4.62962962962963vh;left: -7.8125vw">
+            <div style="position: relative;top:5.92962962962963vh;left: -7.8125vw">
               <el-image style="position:relative;top:-64.35185185185185vh;left: 10.416666666666668vw;width: 3.072916666666667vw;height: 4.62962962962963vh;vertical-align: middle" :src="require('@/assets/ssjk.png')"></el-image>
               <el-button type="text" style="position:relative;top:-64.35185185185185vh;left: 10.416666666666668vw;color: #FFFFFF;">开启激光</el-button>
             </div>
           </el-col>
+          </div>
         </el-row>
       </el-col>
     </div>
@@ -349,7 +363,7 @@ export default {
         backgroundRepeat: 'no-repeat',
         backgroundSize: '60%',
       },
-      isActive: -1,
+      isActive: 0,
     }
   },
   mounted() {
@@ -400,7 +414,7 @@ export default {
   height: 2.7777777777777777vh;
   width: 23.4375vw;
   top:2.0370370370370368vh;
-  left:-8.072916666666668vw;
+  left:6.072916666666668vw;
 }
 
 .mo2{
@@ -415,7 +429,7 @@ export default {
   position:relative;
   height: 23.148148148148145vh;
   width: 20.833333333333336vw;
-  top:17.59259259259259vh;
+  top:30.59259259259259vh;
   left:-8.072916666666668vw;
 }
 
@@ -425,7 +439,7 @@ export default {
   height: 13.888888888888888vh;
   width: 15.625vw;
   top:15.74074074074074vh;
-  left:-3.6458333333333335vw;
+  left:-3.9458333333333335vw;
 }
 
 .mo5{
@@ -441,8 +455,8 @@ export default {
   position:relative;
   height: 23.148148148148145vh;
   width: 37.03703703703704vh;
-  top:-2.604166666666667vw;
-  left:-3.6458333333333335vw;
+  top:-2.004166666666667vw;
+  left:-3.7458333333333335vw;
 }
 
 .mo7{
@@ -461,16 +475,16 @@ export default {
 }
 
 .button_J1{
-  top:2.962962962962963vh;
+  top:5.962962962962963vh;
   left: -11.979166666666668vw;
   height: 17.777777777777775vh;
   position: relative;
 
 }
 .button_J{
-  left: 29.166666666666668vw;
+  left: 34.166666666666668vw;
   position: relative;
-  top:-33.33333333333333vh;
+  top:-30.33333333333333vh;
   height: 17.777777777777775vh;
 
 
@@ -486,14 +500,14 @@ video:focus{
 }
 .video-js{
 
-  width: 41.145833333333336vw;
-  height: 37.03703703703704vh;
+  width: 48.145833333333336vw;
+  height: 48.03703703703704vh;
 
 }
 .video_text{
   z-index: 100;
-  width:41.66666666666667vw;
-  height:37.03703703703704vh;
+  width: 47.145833333333336vw;
+  height: 47.03703703703704vh;
 }
 .scrollbar-flex-content {
   display: flex;

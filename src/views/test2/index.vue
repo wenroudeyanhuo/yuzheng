@@ -1,5 +1,5 @@
 <template>
-  <el-row :style="background2">
+  <el-row style="height: 100vh" :style="background2">
     <el-col :span="6">
       <el-card class="box-card">
         <div
@@ -38,8 +38,8 @@
             "
             >5</span
           >
-          <div style="position: relative; top: -4.6vh">
-            <div class="block" style="position: relative; top: 7.4vh">
+          <div style="position: relative; top: -4.6vh;">
+            <div class="block" style="position: relative; top: 7.4vh;width: 4.7vw">
               <el-date-picker v-model="value1" type="date" placeholder="日期">
               </el-date-picker>
             </div>
@@ -194,7 +194,7 @@
           style="
             background-color: #003377;
             top: 1vh;
-            width: 58.7vw;
+            width: 78.7vw;
             height: 3.7vh;
             margin-left: -1vw;
           "
@@ -217,8 +217,8 @@
           <el-image
             style="
               position: relative;
-              top: 1vh;
-              right: -0.5vw;
+              top: -79vh;
+              right: -70.5vw;
               width: 1.6vw;
               height: 2.7vh;
             "
@@ -234,7 +234,7 @@
 </template>
 <style  lang="scss"  scoped>
 ::v-deep .el-input__inner {
-  width: 9.3vw;
+  width: 6vw;
   background-color: transparent !important;
 }
 
@@ -300,7 +300,7 @@
   background: transparent;
   width: 4.7vw;
   position: relative;
-  right: -11vw;
+  right: -15vw;
   top: 2.1vh;
   //right: 0px;
 }
@@ -309,16 +309,16 @@
   background: transparent;
   width: 4.7vw;
   position: relative;
-  top: 2.1h;
-  right: -0.5vw;
+  top: 2.1vh;
+  right: -2.5vw;
 }
 .box-card {
   //margin-bottom: 20px;
   margin-top: 15%;
   background-color: #000088;
   opacity: 0.7;
-  height: 65vh;
-  width: 17.7vw;
+  height: 90vh;
+  width: 22.7vw;
   padding: 0vw 0vw;
   border: none;
   z-index: 100;
@@ -329,8 +329,8 @@
   margin-bottom: 1.9vh;
   background-color: #000088;
   opacity: 0.7;
-  height: 65vh;
-  width: 58.9vw;
+  height: 90vh;
+  width: 72.9vw;
 
   padding: 0vw 0vw;
   border: none;

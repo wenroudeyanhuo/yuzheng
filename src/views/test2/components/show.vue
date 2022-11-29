@@ -1,11 +1,11 @@
 <template>
 
   <div  style="background:transparent;position: relative;top:-4.62962962962963vh;">
-    <button class="first" style="position: relative;top:-0.19vh;right: -3.0833333333333335vw" @click="isActive = 0">事情详情</button>
-    <button class="second" style="position: relative;top:-0.19vh;right: -13.25vw" @click="isActive = 1">实时监控</button>
+    <button class="first" style="position: relative;top:-0.19vh;right: -3.0833333333333335vw;" @click="isActive = 0">事件详情</button>
+    <button class="second" style="position: relative;top:-0.19vh;right: -13.25vw;font-size: calc(0.5rem + 1.5vmin);" @click="isActive = 1">实时监控</button>
 
     <div class="first1" v-if="isActive == 0">
-      <span style="position:relative;left:2.291666666666667vw;top:-2.3296296296296293vh;color: white">事情详情</span>
+      <span style="position:relative;left:2.291666666666667vw;top:-2.3296296296296293vh;color: white;font-size: calc(0.5rem + 1.5vmin);">事件详情</span>
 
       <!--打算调用一个整体来写-->
       <!--      视频播放器-->
@@ -31,7 +31,7 @@
       <div class="page1">
         <button class="button_J1">
           <a href="#"  v-on:click="prePage">
-            <</a>
+            </a>
         </button >
 
         <div style="position:relative;left:-9.895833333333334vw;top:-11.814814814814813vh;width: 44.0625vw;height:18.51851851851852vh">
@@ -119,7 +119,7 @@
         </div>
 
 
-        <el-button style="color:deepskyblue;background-color:transparent;position:relative;right:-20.625vw;bottom: -70vh">处理</el-button>
+        <el-button style="color:deepskyblue;background-color:transparent;position:relative;right:-20.625vw;bottom: -70vh;font-size: calc(0.5rem + 1.5vmin);">处理</el-button>
       </div>
 
     </div>
@@ -127,7 +127,7 @@
     <!--    实时监控-->
     <div class="second2" v-else-if="isActive == 1">
       <el-col :span="15">
-        <span style="position: relative;color: white;top: -1.8518518518518516vh;left: 2.0833333333333335vw">实时监控</span>
+        <span style="position: relative;color: white;top: -1.8518518518518516vh;left: 2.0833333333333335vw;font-size:calc(0.5rem + 1.5vmin);">实时监控</span>
 
 
         <div>
@@ -533,19 +533,23 @@ video:focus{
   /*  color:#dce7e7;*/
 }
 ::v-deep .my-label{
+  font-size: calc(0.4rem + 1vmin);
   margin-bottom: 0.4629629629629629vh;
   color: #3fd9d5;
 
 }
 ::v-deep .my-label1{
+  font-size: calc(0.4rem + 1vmin);
   margin-bottom: 2.7777777777777777vh;
   color: #3fd9d5;
 }
 ::v-deep .my-content{
+  font-size: calc(0.4rem + 1vmin);
   margin-bottom:0.4629629629629629vh;
   color:#dce7e7;
 }
 .span6{
+  font-size: calc(0.5rem + 1.5vmin);
   color:#dce7e7;
   /*解决父子元素margin叠加问题*/
   display:inline-block;
@@ -558,7 +562,7 @@ video:focus{
   /*  margin-bottom: 30px;*/
   line-height: 3.7037037037037033vh;
   color:#dce7e7;
-  font-size: calc(0.5rem + 1vmin);
+  font-size: calc(0.5rem + 1.5vmin);
 }
 .aside{
   height: 74.07407407407408vh;
@@ -568,6 +572,7 @@ video:focus{
 .first{
   position: relative;
   color:#d9effe;
+  font-size: calc(0.5rem + 1.5vmin);
   background: transparent;
   border: none;
   margin-left:41.66666666666667vw;

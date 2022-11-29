@@ -23,7 +23,7 @@
         <div  style="height: 5vh" :style="background">
           <!--          style="border: none" align="center"-->
           <el-image style="width: 1.5vw; height: 3vh;position: relative;left: 0.6vw;top:1vh" :src="require('@/assets/2.png')" fit="fill"></el-image>
-          <span  style="position: relative;top:-2.5vh;left: -1vw" class="span">                 监控/预警/巡检</span>
+          <span  style="position: relative;top:0.5vh;left: 2.2vw" class="span">监控/预警/巡检</span>
         </div>
 
 
@@ -555,22 +555,22 @@
         <div style="height: 4vh" :style="background">
           <!--          style="border: none" align="center"-->
           <el-image style="position:relative;left:0.5vw;top:0.5vh;width: 1.5vw; height: 3vh" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
-          <span style="font-size: calc(0.5rem + 1.5vmin)" class="span">            预警数统计</span>
+          <span style="position:relative;left:3vw;font-size: calc(0.5rem + 1.5vmin)" class="span">预警数统计</span>
         </div>
         <div style="position: relative;">
           <el-image style="width: 6vw; height: 8vh" :src="require('@/assets/1.png')" fit="fill" ></el-image>
           <div style="position: relative;top:-15vh">
           <div class="wenzi_1">
-            <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">今日预警数  </span>
-            <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">6</span>
+            <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">今日预警数</span>
+            <span style="position:relative;left:0vw;top:0vh;font-size:calc(0.5rem + 1vmin);color: yellow;">6</span>
           </div>
           <div class="wenzi_2">
-            <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">本月预警数  </span>
-            <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">89</span>
+            <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">本月预警数</span>
+            <span style="position:relative;left:0vw;top:0vh;font-size:calc(0.5rem + 1vmin);color: yellow;">89</span>
           </div>
           <div class="wenzi_3">
-            <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">累计预警数  </span>
-            <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">976</span>
+            <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">累计预警数</span>
+            <span style="position:relative;left:5.4vw;top:-2vh;font-size:calc(0.5rem + 1vmin);color: yellow;">976</span>
           </div>
           </div>
         </div>
@@ -579,21 +579,21 @@
           <div  style="height: 4vh" :style="background">
             <!--          style="border: none" align="center"-->
             <el-image style="position:relative;left:10px;top:0.5vh;width: 30px; height: 3vh" :src="require('@/assets/6.png')" fit="fill" ></el-image>
-            <span  style="font-size:calc(0.5rem + 1.5vmin)" class="span">           处理数统计</span>
+            <span  style="position:relative;left:2.5vw;font-size:calc(0.5rem + 1.5vmin)" class="span">处理数统计</span>
           </div>
           <div style="position:relative;">
             <el-image style="width: 6vw; height: 11vh;display: inline-block;" :src="require('@/assets/4.png')" fit="fill" class="tempimg"></el-image>
             <div style="position: relative;left:-1vw;top:-12vh">
             <div class="wenzi_4">
-              <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">今日处理数  </span>
+              <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">今日处理数</span>
               <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">0</span>
             </div>
             <div class="wenzi_5">
-              <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">本月处理数  </span>
+              <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">本月处理数</span>
               <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">2</span>
             </div>
             <div class="wenzi_6">
-              <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">累计处理数  </span>
+              <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">累计处理数</span>
               <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">53</span>
             </div>
             </div>
@@ -608,7 +608,7 @@
         <div  style="height: 4vh" :style="background">
           <!--          style="border: none" align="center"-->
           <el-image style="position:relative;left:0.5vw;top:0.5vh;width: 1.5vw; height: 3vh" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
-          <span style="font-size: calc(0.5rem + 1.5vmin)" class="span">            事件趋势日历</span>
+          <span style="position:relative;left:2.9vw;font-size: calc(0.5rem + 1.5vmin)" class="span">事件趋势日历</span>
         </div>
         <div>
           <Calendar
@@ -1424,38 +1424,38 @@ li {
 }
 .wenzi_1 {
   position: absolute;
-  left: 7vw; //只是假定的值，具体需测量
+  left: 6vw; //只是假定的值，具体需测量
   top: 7vh;
   z-index: 101;
 }
 .wenzi_2 {
   position: absolute;
-  left: 7vw; //只是假定的值，具体需测量
+  left: 6vw; //只是假定的值，具体需测量
   top: 10vh;
   z-index: 101;
 }
 .wenzi_3 {
   position: absolute;
-  left: 7vw; //只是假定的值，具体需测量
+  left: 6vw; //只是假定的值，具体需测量
   top: 13vh;
   z-index: 101;
 }
 //第二个区块
 .wenzi_4 {
   position: absolute;
-  right: 1vw;
+  right: 0.1vw;
   top: 2vh;
   z-index: 101;
 }
 .wenzi_5 {
   position: absolute;
-  right: 1vw;
+  right: 0.1vw;
   top: 5vh;
   z-index: 101;
 }
 .wenzi_6 {
   position: absolute;
-  right: 0.5vw;
+  right: -0.4vw;
   top: 8vh;
   z-index: 101;
 

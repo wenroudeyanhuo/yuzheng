@@ -1,11 +1,13 @@
 <template>
   <div class="top_show">
-    <h1>{{ msg }}</h1>
+    <div style="position: relative;top:2.8vh">
+
+
     <button class="first" @click="isActive=0">方式一</button>
     <button class="second" @click="isActive=1">方式二</button>
     <button class="third" @click="isActive=2">方式三</button>
     <button class="fourth" @click="isActive=3">方式四</button>
-
+    </div>
     <div class="first1" v-if="isActive==0">
       <table>
         <tr v-for="(item, index) in dataShow" :class="{ 'alt': index%2==1 }">
@@ -31,6 +33,7 @@
       <div class="page1">
         <button class="button_J">
           <a href="#"  v-on:click="prePage">
+            <
             </a>
         </button >
         <button class="button_J" style="margin-left:0.2604166666666667vw;" v-for="(item, index) in pageNum">
@@ -104,6 +107,7 @@
       <div class="page3">
         <button class="button_J">
           <a href="#"  v-on:click="prePage">
+            <
             </a>
         </button>
         <button class="button_J" v-for="(item, index) in pageNum2">
@@ -140,6 +144,7 @@
       <div class="page4">
         <button class="button_J">
           <a href="#"  v-on:click="prePage">
+            <
             </a>
         </button>
         <button v-for="(item, index) in pageNum3" class="button_J">
@@ -567,28 +572,28 @@ button:focus{
 
 .page1{
   position:relative;
-  bottom:0.9259259259259258vh;
+  bottom:-24.9259259259259258vh;
   left: 11.458333333333334vw;
 
 
 }
 .page2{
   position:relative;
-  bottom: 0.8333333333333333vh;
+  bottom: -5.8333333333333333vh;
   left: 26.041666666666668vw;
 
 
 }
 .page3{
   position:relative;
-  bottom: 0.4629629629629629vh;
+  bottom: -1.4629629629629629vh;
   left:27.083333333333336vw;
 
 
 }
 .page4{
   position:relative;
-  bottom:0.09259259259259259vh;
+  bottom:0.91259259259259259vh;
   left:27.083333333333336vw;
 
 
@@ -604,8 +609,8 @@ button:focus{
   margin-left:1.0416666666666667vw;
 
 
-  width:28.645834vw;
-  height:27.777777777777775vh;
+  width:32vw;
+  height:36vh;
 
 
 }
@@ -615,8 +620,8 @@ button:focus{
   margin-left:  1.0416666666666667vw;
   /*margin-top: -50px;*/
 
-  width:19.270833333333336vw;
-  height:18.51851851851852vh;
+  width:22.670833333333336vw;
+  height:25.51851851851852vh;
 
 
 }
@@ -626,8 +631,8 @@ button:focus{
   margin-left: 1.0416666666666667vw;
   /*margin-top: -10px;*/
 
-  width:14.0625vw;
-  height:13.888888888888888vh;
+  width:16.020833333333334vw;
+  height:20.888888888888888vh;
 
 
 }
@@ -636,23 +641,23 @@ video:focus{
 }
 .video-js{
 
-  width: 59.895833333333336vw;
-  height: 53.7037037037037vh;
+  width: 78vw;
+  height: 78vh;
 
 }
 .video-js1{
-  width:28.645833333333336vw;
-  height:26.85185185185185vh;
+  width:32vw;
+  height:35vh;
 
 }
 .video-js2{
-  width:17.1875vw;
-  height:18.51851851851852vh;
+  width:22.670833333333336vw;
+  height:25.51851851851852vh;
 
 }
 .video-js3{
-  width:13.020833333333334vw;
-  height:13.888888888888888vh;
+  width:16.020833333333334vw;
+  height:20.888888888888888vh;
 
 }
 /*.video-js .vjs-big-play-button{*/
@@ -682,6 +687,7 @@ h1{
 
   background-color: rgb(141, 228, 250);
   width:6.25vw;
+  height: 4vh;
   line-height:3.1578947368421053vh;
 }
 .second{
@@ -690,6 +696,7 @@ h1{
   position: absolute;
   background-color: pink;
   width:6.25vw;
+  height: 4vh;
   line-height:3.1578947368421053vh;
 }
 .third{
@@ -698,6 +705,7 @@ h1{
   position: absolute;
   background-color: rgb(197, 248, 184);
   width:6.25vw;
+  height: 4vh;
   line-height:3.1578947368421053vh;
 }
 .fourth{
@@ -706,15 +714,16 @@ h1{
   position: absolute;
   background-color: rgb(241, 241, 188);
   width:6.25vw;
+  height: 4vh;
   line-height:3.1578947368421053vh;
 }
 .first1{
   position: absolute;
   /*background-color: rgb(141, 228, 250);*/
   background: transparent;
-  height:58.33333333333333vh;
-  width:60.9375vw;
-  top:-3.2407407407407405vh;
+  height:78vh;
+  width:68.9375vw;
+  top:-1.2407407407407405vh;
   margin-right: 5.208333333333334vw;
   line-height:2.7777777777777777vh;
   z-index: 100;
@@ -725,22 +734,23 @@ h1{
 
   background: transparent;
   position: absolute;
-  top:-3.2407407407407405vh;
+  top:-1.2407407407407405vh;
   /*background-color: pink;*/
-  height:58.33333333333333vh;
-  width:60.9375vw;
+  height:78vh;
+  width:68vw;
   margin-right: -1.0416666666666667vw;
   line-height:2.7777777777777777vh;
+  left: 4vw;
 
 }
 .third3{
   z-index: 100;
   position: absolute;
-  top:-3.2407407407407405vh;
+  top:-1.2407407407407405vh;
   background: transparent;
   /*background-color: rgb(197, 248, 184);*/
-  height:58.33333333333333vh;
-  width:60.9375vw;
+  height:78vh;
+  width:72vw;
   margin-right: -1.0416666666666667vw;
   line-height:2.7777777777777777vh;
 
@@ -751,8 +761,9 @@ h1{
   position: absolute;
   top:-3.2407407407407405vh;
   /*background-color: rgb(241, 241, 188);*/
-  height:58.33333333333333vh;
-  width:60.9375vw;
+  height:78vh;
+  width:72vw;
+  left: 2vw;
   margin-right:-1.0416666666666667vw;
   line-height:2.7777777777777777vh;
 

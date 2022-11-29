@@ -92,9 +92,9 @@
                 <ul class="ul1">
                   <li class="li1">
                     <div>
-                      <span class="span">文字 文字1</span>
+                      <span class="monan_wenzi">文字 文字1</span>
                       <el-image
-                        style="width: 16vw; height: 21.8vh"
+                        style="width: 20vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -102,9 +102,9 @@
                   </li>
                   <li class="li1">
                     <div>
-                      <span class="span">文字 文字1</span>
+                      <span class="monan_wenzi">文字 文字1</span>
                       <el-image
-                        style="width: 16vw; height: 21.8vh"
+                        style="width: 20vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -112,9 +112,9 @@
                   </li>
                   <li class="li1">
                     <div>
-                      <span class="span">文字 文字1</span>
+                      <span class="monan_wenzi">文字 文字1</span>
                       <el-image
-                        style="width: 16vw; height: 21.8vh"
+                        style="width: 20vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -122,9 +122,9 @@
                   </li>
                   <li class="li1">
                     <div>
-                      <span class="span">文字 文字1</span>
+                      <span class="monan_wenzi">文字 文字1</span>
                       <el-image
-                        style="width: 16vw; height: 21.8vh"
+                        style="width: 20vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -132,9 +132,9 @@
                   </li>
                   <li class="li1">
                     <div>
-                      <span class="span">文字 文字1</span>
+                      <span class="monan_wenzi">文字 文字1</span>
                       <el-image
-                        style="width: 16vw; height: 21.8vh"
+                        style="width: 20vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -142,9 +142,9 @@
                   </li>
                   <li>
                     <div>
-                      <span class="span">文字 文字1</span>
+                      <span class="monan_wenzi">文字 文字1</span>
                       <el-image
-                        style="width: 16vw; height: 21.8vh"
+                        style="width: 20vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -152,9 +152,9 @@
                   </li>
                   <li class="li1">
                     <div>
-                      <span class="span">文字 文字1</span>
+                      <span class="monan_wenzi">文字 文字1</span>
                       <el-image
-                        style="width: 16vw; height: 21.8vh"
+                        style="width: 20vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -162,9 +162,9 @@
                   </li>
                   <li class="li1">
                     <div>
-                      <span class="span">文字 文字1</span>
+                      <span class="monan_wenzi">文字 文字1</span>
                       <el-image
-                        style="width: 16vw; height: 21.8vh"
+                        style="width: 20vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -172,9 +172,9 @@
                   </li>
                   <li class="li1">
                     <div>
-                      <span class="span">文字 文字1</span>
+                      <span class="monan_wenzi">文字 文字1</span>
                       <el-image
-                        style="width: 16vw; height: 21.8vh"
+                        style="width: 20vw; height: 21.8vh"
                         :src="require('@/assets/yujing.jpg')"
                         fit="fill"
                       ></el-image>
@@ -233,6 +233,13 @@
   </el-row>
 </template>
 <style  lang="scss"  scoped>
+.monan_wenzi
+{
+  position: relative;
+  top:4vh;
+  left: 4vw;
+}
+
 ::v-deep .el-input__inner {
   width: 6vw;
   background-color: transparent !important;
@@ -246,24 +253,27 @@
 }
 .ul1 {
   position: relative;
-  width: 3.7vw;
-  height: 46.3vh;
+  width: 21.3vw;
+  height: 76.3vh;
   margin-left: 0vw;
   overflow: scroll;
 }
 .li1 {
   color: #ffffff;
+  position: relative;
+  left: -5vw;
+  //width: 16vw; height: 21.8vh;
 
   width: 21.3vw;
-  //line-height: 50px;
+  line-height: 10vh;
 }
 ::v-deep .box-card3 {
   z-index: 100;
   position: relative;
-  top: 4.6vw;
-  left: -3.7vw;
+  top: 2.6vh;
+  left: -0.7vw;
 
-  height: 46.9vh;
+  height: 76.9vh;
   width: 37vw;
 
   border: 0.3vw;

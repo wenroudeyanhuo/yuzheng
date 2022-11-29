@@ -65,6 +65,7 @@
         <!--      <el-icon class="el-icon-setting"></el-icon>-->
       </div>
     </div>
+
     <div class="first1" v-if="isActive == 0">
       <!-- 实时监控 -->
       <el-col :span="15">
@@ -73,7 +74,9 @@
             style="vertical-align: middle"
             :src="require('@/assets/icon_jiankong.png')"
           ></el-image>
-          <span><font color="#f0f8ff">宁波松岙大阜1</font></span>
+          <span><font color="#f0f8ff"
+                      style="font-size: calc(0.4rem + 1.5vmin);"
+            >宁波松岙大阜1</font></span>
         </div>
 
         <div>
@@ -96,7 +99,7 @@
           -->
           <div class="line1" />
           <span style="line-height: 2.7777777777777777vh; margin-left: 1.0416666666666667vw">
-            <font color="#f0f8ff">云台控制</font>
+            <font color="#f0f8ff"  style="font-size: calc(0.4rem + 1.5vmin);">云台控制</font>
           </span>
         </div>
 
@@ -199,7 +202,7 @@
         <el-row>
           <el-col>
             <div class="mo7">
-              <el-button type="text" style="color: #ffffff">变倍 +</el-button>
+              <el-button type="text" style="color: #ffffff;">变倍 +</el-button>
               <el-button type="text" style="color: #ffffff; margin-left: 3.125vw"
                 >变倍 -</el-button
               >
@@ -973,6 +976,7 @@ $(function () {
   justify-content: space-between;
 }
 .video-title {
+  font-size: calc(0.4rem + 1.5vmin);
   width: 100%;
   display: none;
   padding: 1rem;
@@ -1178,6 +1182,7 @@ $(function () {
 
 .first {
   top: -0.9259259259259258vh;
+  font-size: calc(0.4rem + 1.5vmin);
   position: relative;
   color: #d9effe;
   background: transparent;
@@ -1188,6 +1193,7 @@ $(function () {
 
 .second {
   top: -0.9259259259259258vh;
+  font-size: calc(0.4rem + 1.5vmin);
   position: relative;
   color: #d9effe;
   background: transparent;
@@ -1195,6 +1201,7 @@ $(function () {
 }
 .third {
   top: -0.9259259259259258vh;
+  font-size: calc(0.4rem + 1.5vmin);
   position: relative;
   color: #d9effe;
   background: transparent;
@@ -1376,14 +1383,17 @@ ul .imgList li span {
   /*  color:#dce7e7;*/
 }
 ::v-deep .my-label {
+  font-size: calc(0.4rem + 1vmin);
   margin-bottom: 0.4629629629629629vh;
   color: #3fd9d5;
 }
 ::v-deep .my-label1 {
+  font-size: calc(0.4rem + 1vmin);
   margin-bottom: 2.7777777777777777vh;
   color: #3fd9d5;
 }
 ::v-deep .my-content {
+  font-size: calc(0.4rem + 1vmin);
   margin-bottom:  0.4629629629629629vh;
   color: #dce7e7;
 }

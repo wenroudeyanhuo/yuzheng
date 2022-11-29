@@ -70,13 +70,13 @@
                       :src="require('@/assets/icon_title_dianwei@2x.png')"
                       fit="fill"
                     ></el-image>
-                    <button class="first" style="position: relative;top:-3vh" @click="isActive = 0">事情详情</button>
-                    <button class="second" style="position: relative;top:-3vh;left: 8vw" @click="isActive = 1">实时监控</button>
+                    <button class="first" style="position: relative;top:-3vh;font-size: calc(0.5rem + 1vmin);" @click="isActive = 0">事情详情</button>
+                    <button class="second" style="position: relative;top:-3vh;left: 8vw;font-size: calc(0.5rem + 1vmin) " @click="isActive = 1">实时监控</button>
                   </div>
 
                   <div  v-if="isActive == 0">
 
-                    <span style="position:relative;top:-3vh;left:-29.5vw;color: white">事情详情</span>
+                    <span style="position:relative;top:-3vh;left:-29.5vw;color: white;font-size: calc(0.5rem + 1vmin)">事情详情</span>
 
 
                     <table>

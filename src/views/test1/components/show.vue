@@ -17,7 +17,7 @@
           position: absolute;
           left: 5.208333333333334vw;
           top:  0.9259259259259258vh;
-          font-size: 1.6666666666666665vh;
+          font-size: calc(0.4rem + 1.5vmin);
         "
       >
         点位详情</span
@@ -419,7 +419,7 @@
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size: 1.3888888888888888vh">(类型)</span>
+                    <span style="font-size:calc(0.5rem + 1vmin )">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -438,7 +438,7 @@
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size:1.3888888888888888vh">(类型)</span>
+                    <span style="font-size:calc(0.5rem + 1vmin )">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -457,7 +457,7 @@
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size: 1.3888888888888888vh">(类型)</span>
+                    <span style="font-size: calc(0.5rem + 1vmin )">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -476,7 +476,7 @@
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size: 1.3888888888888888vh">(类型)</span>
+                    <span style="font-size: calc(0.5rem + 1vmin )">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -497,7 +497,7 @@
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size:1.3888888888888888vh">(类型)</span>
+                    <span style="font-size:calc(0.5rem + 1vmin )">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -516,7 +516,7 @@
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size:  1.3888888888888888vh">(类型)</span>
+                    <span style="font-size: calc(0.5rem + 1vmin )">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -535,7 +535,7 @@
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size: 1.3888888888888888vh">(类型)</span>
+                    <span style="font-size: calc(0.5rem + 1vmin )">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -554,7 +554,7 @@
                   ></el-image>
                   <span class="span8"
                     >疑似船只
-                    <span style="font-size:1.3888888888888888vh">(类型)</span>
+                    <span style="font-size:calc(0.5rem + 1vmin )">(类型)</span>
                   </span>
                   <span class="span9">已处理</span>
                 </div>
@@ -1252,30 +1252,31 @@ $(function () {
 }
 .span2 {
   color: #438fc5;
-  font-size: 1.4814814814814814vh;
+  font-size: calc(0.5rem + 1vmin);
   line-height:5.092592592592593vh;
   margin-left:4.6875vw;
   display: block;
 }
 .span3 {
   color: #dfcd63;
-  font-size:1.8518518518518516vh;
+  font-size:calc(0.4rem + 1.5vmin);
   font-weight: bold;
   margin-left: 4.947916666666667vw;
 }
 .span4 {
   color: #45e77e;
-  font-size: 1.8518518518518516vh;
+  font-size: calc(0.4rem + 1.5vmin);
   font-weight: bold;
   margin-left: 5.104166666666667vw;
 }
 .span5 {
   color: #c44c59;
-  font-size:1.8518518518518516vh;
+  font-size:calc(0.4rem + 1.5vmin);
   font-weight: bold;
   margin-left: 5.208333333333334vw;
 }
 .span6 {
+  font-size: calc(0.5rem + 1.5vmin);
   color: #dce7e7;
   /*解决父子元素margin叠加问题*/
   display: inline-block;
@@ -1288,15 +1289,17 @@ $(function () {
   /*  margin-bottom: 30px;*/
   line-height: 3.7037037037037033vh;
   color: #dce7e7;
-  font-size: 1.6666666666666665vh;
+  font-size: calc(0.5rem + 1.5vmin);
 }
 .span8 {
+  font-size: calc(0.4rem + 1vmin);
   color: #dce7e7;
   margin: 0vh 7.291666666666667vw 0vh 1.0416666666666667vw;
 }
 .span9 {
   /*  height: 10px;
   width: 20px;*/
+  font-size: calc(0.4rem + 1vmin);
   color: #dce7e7;
   background-color: #2dc86a;
   //  border: 4px solid #2dc86a;
@@ -1350,7 +1353,7 @@ ul .imgList li div {
   margin-right: 10px;
 } */
 ul .imgList li span {
-  font-size: 0.5555555555555555vh;
+  font-size: calc(0.3rem + 1vmin);
   display: block;
   width: 100%;
   height: 3.7037037037037033vh;

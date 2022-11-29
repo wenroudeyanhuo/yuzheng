@@ -2858,6 +2858,17 @@ export default {
 
     //      checkList: ["点位显示","覆盖范围","事件显示","热力图"],
     handleCheckedCitiesChange(value) {
+      console.log(value)
+      if(value.length==0)
+      {
+        //全部不显示
+        this.dianwei=false;
+        this.shijian=false;
+        this.move_overlay();//移除范围
+        this.closeHeatmap();//移除热力图
+        this.remove_shijian();//移除事件
+        this.remove_overlay();//移除点位
+      }
       if(value.length > 0){
         //全部不显示
         this.dianwei=false;
@@ -2869,6 +2880,7 @@ export default {
         this.remove_overlay();//移除点位
         //检查是否有点位
         value.forEach(item=>{
+          console.log(item)
           switch(item){
             case '点位显示':
               this.dianwei=true;//说明点位在的

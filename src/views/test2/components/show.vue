@@ -558,7 +558,7 @@ video:focus{
   /*  margin-bottom: 30px;*/
   line-height: 3.7037037037037033vh;
   color:#dce7e7;
-  font-size: 1.6666666666666665vh;
+  font-size: calc(0.5rem + 1vmin);
 }
 .aside{
   height: 74.07407407407408vh;

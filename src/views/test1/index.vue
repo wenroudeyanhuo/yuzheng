@@ -422,7 +422,7 @@
         <el-row
           v-else
           ref="ruleForm"
-          style="width: 100%; font-size: calc(0.7rem + 0.1vmin) ;position:relative;top: -5vh"
+          style="width: 100%; font-size:calc(0.5rem + 1vmin);position:relative;top: -5vh"
           :model="ruleForm"
         >
           <el-select   v-model="ruleForm.cities" :popper-append-to-body="false"  clearable prop-class="select-down" placeholder="事件类型"  class="select_shijian" >
@@ -433,7 +433,7 @@
               :value="item"
             >
               <span style="color:white;float: left">{{ item.label }}</span>
-              <span style="color:white;float: right;font-size: calc(0.65rem + 0.1vmin);">{{ item.value }}</span>
+              <span style="color:white;float: right;font-size: calc(0.5rem + 1vmin);">{{ item.value }}</span>
             </el-option>
           </el-select>
 
@@ -447,7 +447,7 @@
               :label="item.label"
               :value="item">
               <span style="color:white;float: left">{{ item.label }}</span>
-              <span style="color:white;float: right;font-size: calc(0.65rem + 0.1vmin)">{{ item.value }}</span>
+              <span style="color:white;float: right;font-size: calc(0.5rem + 1vmin)">{{ item.value }}</span>
             </el-option>
           </el-select>
 
@@ -469,7 +469,7 @@
               :label="item.label"
               :value="item">
               <span style="color:white;float: left">{{ item.label }}</span>
-              <span style="color:white;float: right;font-size: calc(0.65rem + 0.1vmin)">{{ item.value }}</span>
+              <span style="color:white;float: right;font-size: calc(0.5rem + 1vmin)">{{ item.value }}</span>
             </el-option>
           </el-select>
 
@@ -510,7 +510,7 @@
 <!--                  给图片添加一个点击事件-->
                   <el-image @click="shijian_click(lan)"  style="width:14vw; height: 18vh;" :src="require('@/assets/yujing.jpg')" fit="fill" ></el-image>
 
-                  <div style="font-size:calc(0.9rem + 0.1vmin);position:relative;top:0.5vh;color:white;">
+                  <div style="font-size:calc(0.5rem + 1vmin);position:relative;top:0.5vh;color:white;">
                     {{lan.leixing}}
                    </div>
                   <div style="width:2vw;height:1.5vh;background-color:red;position:relative;top:-1vh;left:12vw;color:white;">
@@ -555,22 +555,22 @@
         <div style="height: 4vh" :style="background">
           <!--          style="border: none" align="center"-->
           <el-image style="position:relative;left:0.5vw;top:0.5vh;width: 1.5vw; height: 3vh" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
-          <span style="font-size: calc(1rem + 0.1vmin)" class="span">            预警数统计</span>
+          <span style="font-size: calc(0.5rem + 1.5vmin)" class="span">            预警数统计</span>
         </div>
         <div style="position: relative;">
           <el-image style="width: 6vw; height: 8vh" :src="require('@/assets/1.png')" fit="fill" ></el-image>
           <div style="position: relative;top:-15vh">
           <div class="wenzi_1">
-            <span style="font-size:calc(0.65rem + 0.1vmin);color: white;" class="span">今日预警数  </span>
-            <span style="font-size:calc(1rem + 0.1vmin);color: yellow;">6</span>
+            <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">今日预警数  </span>
+            <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">6</span>
           </div>
           <div class="wenzi_2">
-            <span style="font-size:calc(0.65rem + 0.1vmin);color: white;" class="span">本月预警数  </span>
-            <span style="font-size:calc(1rem + 0.1vmin);color: yellow;">89</span>
+            <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">本月预警数  </span>
+            <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">89</span>
           </div>
           <div class="wenzi_3">
-            <span style="font-size:calc(0.65rem + 0.1vmin);color: white;" class="span">累计预警数  </span>
-            <span style="font-size:calc(1rem + 0.1vmin);color: yellow;">976</span>
+            <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">累计预警数  </span>
+            <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">976</span>
           </div>
           </div>
         </div>
@@ -579,22 +579,22 @@
           <div  style="height: 4vh" :style="background">
             <!--          style="border: none" align="center"-->
             <el-image style="position:relative;left:10px;top:0.5vh;width: 30px; height: 3vh" :src="require('@/assets/6.png')" fit="fill" ></el-image>
-            <span  style="font-size: calc(1rem + 0.1vmin)" class="span">           处理数统计</span>
+            <span  style="font-size:calc(0.5rem + 1.5vmin)" class="span">           处理数统计</span>
           </div>
           <div style="position:relative;">
             <el-image style="width: 6vw; height: 11vh;display: inline-block;" :src="require('@/assets/4.png')" fit="fill" class="tempimg"></el-image>
             <div style="position: relative;left:-1vw;top:-12vh">
             <div class="wenzi_4">
-              <span style="font-size:calc(0.65rem + 0.1vmin);color: white;" class="span">今日处理数  </span>
-              <span style="font-size:calc(1rem + 0.1vmin);color: yellow;">0</span>
+              <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">今日处理数  </span>
+              <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">0</span>
             </div>
             <div class="wenzi_5">
-              <span style="font-size:calc(0.65rem + 0.1vmin);color: white;" class="span">本月处理数  </span>
-              <span style="font-size:calc(1rem + 0.1vmin);color: yellow;">2</span>
+              <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">本月处理数  </span>
+              <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">2</span>
             </div>
             <div class="wenzi_6">
-              <span style="font-size:calc(0.65rem + 0.1vmin);color: white;" class="span">累计处理数  </span>
-              <span style="font-size:calc(1rem + 0.1vmin);color: yellow;">53</span>
+              <span style="font-size:calc(0.5rem + 1vmin);color: white;" class="span">累计处理数  </span>
+              <span style="font-size:calc(0.5rem + 1vmin);color: yellow;">53</span>
             </div>
             </div>
           </div>
@@ -608,7 +608,7 @@
         <div  style="height: 4vh" :style="background">
           <!--          style="border: none" align="center"-->
           <el-image style="position:relative;left:0.5vw;top:0.5vh;width: 1.5vw; height: 3vh" :src="require('@/assets/6.png')" fit="fill" class="tempimg"></el-image>
-          <span style="font-size: calc(1rem + 0.1vmin)" class="span">            事件趋势日历</span>
+          <span style="font-size: calc(0.5rem + 1.5vmin)" class="span">            事件趋势日历</span>
         </div>
         <div>
           <Calendar
@@ -763,7 +763,7 @@
   /*  margin-bottom: 30px;*/
   line-height: 4vh;
   color:#dce7e7;
-  font-size: calc(1rem + 0.1vmin);
+  font-size: calc(0.5rem + 1vmin);
 }
 .video-js{
 
@@ -797,7 +797,7 @@
   z-index:99999;
   display:none;
   text-align:center;
-  font-size: calc(1rem + 0.1vmin);
+  font-size: calc(0.5rem + 1vmin);
 }
 .con{
   z-index:99999;
@@ -827,7 +827,7 @@
   color:white;
 }
 ::v-deep .el-range-separator{
-  font-size: calc(1rem + 0.1vmin);
+  font-size: calc(0.5rem + 1vmin);
   position: relative;
   top:0.3vh;
   right: 0.15vw;
@@ -837,7 +837,7 @@
   /* placeholder颜色  */
   color: white;
   /* placeholder字体大小  */
-  font-size: calc(1rem + 0.1vmin);
+  font-size:calc(0.5rem + 1vmin);
 }
 .test{
   width: 26vw;
@@ -903,14 +903,14 @@ input::-webkit-input-placeholder {
   /* placeholder颜色 */
   color: #aab2bd;
   /* placeholder字体大小 */
-  font-size: calc(0.75rem + 0.1vmin);
+  font-size: calc(0.5rem + 1vmin);
 }
 ::v-deep .el-tree{
   background-color:transparent;
 }
 
 ::v-deep .el-tree-node > .el-tree-node__content {
-  font-size: calc(1.25rem + 0.1vmin);
+  font-size: calc(0.5rem + 1vmin);
   background-color: transparent;
   color: white; //节点的字体颜色
   margin-top: 1vh;
@@ -918,7 +918,7 @@ input::-webkit-input-placeholder {
 //选中的时候
 ::v-deep .el-tree-node:hover > .el-tree-node__content {
   //background-color: transparent;
-  font-size: calc(1.25rem + 0.1vmin);
+  font-size: calc(0.5rem + 1vmin);
   color: white; //节点的字体颜色
   background-color: #1a578b;
   font-weight: bold;
@@ -926,7 +926,7 @@ input::-webkit-input-placeholder {
 //选中的时候
 ::v-deep .el-tree-node.is-current:focus > .el-tree-node__content {
   //background-color: transparent;
-  font-size: calc(1.25rem + 0.1vmin);
+  font-size: calc(0.5rem + 1vmin);
   color: white; //节点的字体颜色
   background-color: #1a578b;
   font-weight: bold;
@@ -987,7 +987,7 @@ input::-webkit-input-placeholder {
 }
 
 .main span {
-  font-size: calc(1rem + 0.1vmin);
+  font-size: calc(0.5rem + 1vmin);
   color: #fff;
 }
 .main2 {
@@ -999,7 +999,7 @@ input::-webkit-input-placeholder {
 }
 
 .main2 span {
-  font-size: calc(1rem + 0.1vmin);
+  font-size: calc(0.5rem + 1vmin);
   color: #fff;
 }
 
@@ -1037,7 +1037,7 @@ input::-webkit-input-placeholder {
 
 .cover div div span {
   color: white;
-  font-size: calc(1rem + 0.1vmin);
+  font-size: calc(0.5rem + 1vmin);
   z-index: 99999;
 }
 
@@ -1136,7 +1136,7 @@ img[lazy="loading"] {
 
 //for_brach
 .demo-image__lazy {
-  font-size: 15px;
+  font-size: calc(0.5rem + 1vmin);
   color: #ffffff;
   position: relative;
   top: 13vh;
@@ -1176,7 +1176,7 @@ img[lazy="loading"] {
   background-color: transparent;
   color: white;
   //border: none;
-  font-size: 18px;
+  font-size: calc(0.5rem + 1vmin);
 }
 ::v-deep
   //下拉框面板
@@ -1203,7 +1203,7 @@ img[lazy="loading"] {
 
 .select_shijian {
   //color: #FFFFFF;
-  font-size: 10px;
+  font-size: calc(0.5rem + 1vmin);
   background: transparent;
   width: 11vw;
   position: absolute;
@@ -1241,7 +1241,7 @@ li {
   color: #409eff;
 }
 .el-icon-arrow-down {
-  font-size: 12px;
+  font-size: calc(0.5rem + 1vmin);
 }
 ::v-deep .el-calendar__header {
   padding: 0px;
@@ -1265,7 +1265,7 @@ li {
 ::v-deep .el-button {
   border: 0;
   background: transparent;
-  font-size: 18px;
+  font-size: calc(0.5rem + 1vmin);
   font-weight: bold;
   margin-bottom: 0.5vh;
 }
@@ -1305,9 +1305,9 @@ li {
 }
 .word-container {
   height: 100%;
-  font-size: 12px;
+  font-size: calc(0.5rem + 1vmin);
   .date {
-    font-size: 16px;
+    font-size: calc(0.5rem + 1vmin);
     z-index: 100;
     position: absolute;
     left: 50%;
@@ -1373,7 +1373,7 @@ li {
 >>> .el-button {
   border: 0;
   background: transparent;
-  font-size: 18px;
+  font-size: calc(0.5rem + 1vmin);
   font-weight: bold;
   margin-bottom: 0.5vh;
 }
@@ -1508,10 +1508,10 @@ input::-webkit-input-placeholder {
 }
 
 .text {
-  font-size: calc(0.8rem + 0.3vmin);
+  font-size: calc(0.5rem + 1vmin);
 }
 .span {
-  font-size:calc(0.8rem + 0.3vmin);
+  font-size:calc(0.5rem + 1.5vmin);
   color: #ffffff;
   white-space: pre;
   font-weight: bold;
@@ -1520,14 +1520,14 @@ input::-webkit-input-placeholder {
   color: #ffffff;
   display: inline-block;
   overflow: hidden;
-  font-size: calc(1rem + 0.1vmin);
+  font-size: calc(0.5rem + 1vmin);
 }
 .span2 {
   color: #ffffff;
   display: inline-block;
   overflow: hidden;
   color: #71a3db;
-  font-size:calc(0.8rem + 0.1vmin);
+  font-size:calc(0.5rem + 1vmin);
 }
 ::v-deep .item {
   background-image: url("/../../assets/icon_type@3x.png");

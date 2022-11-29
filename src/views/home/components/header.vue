@@ -3,13 +3,13 @@
   <div  class="bgBackground">
 <!--    class="bgBackground"  :style="background"-->
     <div style="z-index: 101;position: absolute;">
-      <el-image style="position: absolute;top:0vh;left: 0vw;width: 80.20833333333334vw;height:5.555555555555555vh" :src="require('@/assets/bg_top_title.png')" fit="fill"></el-image>
-      <el-image style="width: 20.833333333333336vw; height: 4.62962962962963vh" :src="require('@/assets/text@2x.png')" fit="fill" class="tupian"></el-image>
-      <div style="position: relative;top:-3.7037037037037033vh;left: 23.4375vw">
+      <el-image style="position: absolute;top:0vh;left: 0vw;width: 100vw;height:10.955555555555555vh" :src="require('@/assets/bg_top_title.png')" fit="fill"></el-image>
+      <el-image style="position:relative;width: 24.833333333333336vw; height: 6.62962962962963vh" :src="require('@/assets/text@2x.png')" fit="fill" class="tupian"></el-image>
+      <div style="height:10vh;position: relative;top:-3.7037037037037033vh;left: 23.4375vw">
       <el-button id="1" style="border: none;" align="center" class="el-icon-liuyanban" :plain="isPlainDefault" @click="redirect('/test1');btnGroup(null)">人机联防</el-button>
-      <el-button  id="2" style="border: none;position: relative;top:-3.2407407407407405vh;left:10.416666666666668vw" align="center" :plain="isPlain[0]"  class="el-icon-liuyanban"  @click="redirect('/test2');btnGroup(1)">预警事件</el-button>
-      <el-button id="3"  style="border: none;position: relative;top:-7.87037037037037vh;left:  23.4375vw" align="center"  :plain="isPlain[1]" class="el-icon-liuyanban" @click="redirect('/test3');btnGroup(2)">视频广场</el-button>
-      <el-button id="4" size="mini" style="border: none;position: relative;top:-7.87037037037037vh;left: 23.4375vw" align="center"  :plain="isPlain[2]" class="el-icon-guanli"  @click="redirect('/map/mao');btnGroup(3)">
+      <el-button  id="2" style="border: none;position: relative;top:-6.5407407407407405vh;left:17.416666666666668vw" align="center" :plain="isPlain[0]"  class="el-icon-liuyanban"  @click="redirect('/test2');btnGroup(1)">预警事件</el-button>
+      <el-button id="3"  style="border: none;position: relative;top:-12.47037037037037vh;left:  30.4375vw" align="center"  :plain="isPlain[1]" class="el-icon-liuyanban" @click="redirect('/test3');btnGroup(2)">视频广场</el-button>
+      <el-button id="4" size="mini" style="border: none;position: relative;top:-11.87037037037037vh;left: 31.4375vw" align="center"  :plain="isPlain[2]" class="el-icon-guanli"  @click="redirect('/map/mao');btnGroup(3)">
         <el-image style="width: 1.8229166666666667vw; height: 3.2407407407407405vh" :src="require('@/assets/icon_my@2x.png')" fit="fill" class="tempimg"></el-image>
        <span style="font-size: 1.759259259259259vh">超级管理员</span>
       </el-button>
@@ -92,22 +92,27 @@ export default {
   height:100%;
 }
 .el-icon-liuyanban{
+  position: relative;
+  left: 4vw;
+  top:-2vh;
   font-size:1.8518518518518516vh;
   color: white;
   background-color:transparent;
   background-image: url('~@/../public/icon_select@2x.png');
-  width: 10.15625vw;
-  height: 3.4259259259259256vh;
+  width: 12.15625vw;
+  height: 4.4259259259259256vh;
   /*border: 2px dashed;*/
 }
 .el-icon-liuyanban:hover{
   background-color: transparent;
+
 
   background-image: url('~@/../src/assets/icon_select_pre@2x.png');
 
 }
 .el-icon-liuyanban:focus{
   background-color: transparent;
+
 
   background-image: url('~@/../src/assets/icon_select_pre@2x.png');
 
@@ -118,15 +123,17 @@ export default {
   color: white;
   background-color:transparent;
   background-image: url('~@/../public/bg_accout@2x.png');
-  width: 8.59375vw;
-  height: 4.444444444444444vh;
+  width: 10.59375vw;
+  height: 6vh;
   /*border: 2px dashed;*/
 
 }
 .el-icon-guanli:hover{
+
   background-color: transparent;
 }
 .el-icon-guanli:focus{
+
   background-color: transparent;
 
 }

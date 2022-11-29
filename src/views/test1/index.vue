@@ -5,7 +5,7 @@
 <!--    地图-->
     <div style="position: absolute;top:0vh;left: 0vw">
 
-      <div style="width:80.5vw; height: 73vh;">
+      <div style="width:100vw; height: 100vh;">
         <div  style="width: 100%; height: 100%" id="map" class="map">
         </div>
       </div>
@@ -961,18 +961,18 @@ input::-webkit-input-placeholder {
   z-index: 102;
 }
 ::v-deep.el-col-cock2 {
-  top: -2vh;
-  left:62.5vw;
-  right:10.5vw;
+  top: 7.4vh;
+  //left:62.5vw;
+  right:16.5vw;
   //330px
-  top: -5.5vh;
+  //top: -5.5vh;
 
-  right: 17vw;
+  //right: 17vw;
   z-index: 101;
 }
 ::v-deep.el-col-cock3 {
   top: 9vh;
-  left: 62.5;
+  //left: 62.5;
   right:0.5vw;
 
   z-index: 101;
@@ -1546,7 +1546,7 @@ input::-webkit-input-placeholder {
   background-color: #000088;
   opacity: 0.9;
   height: 80vh;
-  width: 15.5vw;
+  width: 16.5vw;
 
   padding: 0 0;
   border: none;

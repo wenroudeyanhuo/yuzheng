@@ -4,51 +4,51 @@
       <el-card class="box-card">
         <div
           style="
-            margin: 20px;
-            width: 300px;
-            height: 40px;
+            margin: 1.8518518518518516vh 1.0416666666666667vw 1.8518518518518516vh 1.0416666666666667vw;
+            width: 15.5vw;
+            height: 3.7vh;
             position: relative;
-            top: -10px;
-            left: -20px;
+            top: -1vh;
+            left: -1vw;
           "
           class="clearfix"
           :style="background"
         >
           <!--          style="border: none" align="center"-->
-          <span style="position: absolute; color: white; left: 120px; top: 10px"
+          <span style="position: absolute; color: white; left: 6.2vw; top: 1vh"
             >监控点位</span
           >
         </div>
 
         <div>
           <el-image
-            style="width: 50px; height: 50px"
+            style="width: 2.6vw; height: 4.6vh"
             :src="require('@/assets/icon_number@2x.png')"
             fit="fill"
           ></el-image>
           <span
             class="span1"
-            style="position: relative; top: -20px; font-size: 25px"
+            style="position: relative; top: -2vh; font-size: 25px"
             >7</span
           >
           <span
             class="span2"
-            style="position: relative; left: -20px; color: #1a70ff"
+            style="position: relative; left: -1vw; color: #1a70ff"
             >点位数量</span
           >
           <el-image
-            style="left: -20px; width: 50px; height: 50px"
+            style="left: -1vw; width: 2.6vw; height: 4.6vh"
             :src="require('@/assets/icon_area@2x.png')"
             fit="fill"
           ></el-image>
           <span
             class="span1"
-            style="left: -20px; position: relative; top: -20px; font-size: 25px"
+            style="left: -1vw; position: relative; top: -2vh; font-size: 25px"
             >4</span
           >
           <span
             class="span2"
-            style="left: 174px; position: relative; top: -25px; color: #1a70ff"
+            style="left: 9vw; position: relative; top: -2.5vh; color: #1a70ff"
             >涉及区域</span
           >
         </div>
@@ -56,7 +56,7 @@
 
         <div>
           <input
-            style="margin-bottom: 20px"
+            style="margin-bottom: 1.8518518518518516vh"
             type="text"
             maxlength="11"
             placeholder="请输入合适的点位"
@@ -79,19 +79,19 @@
         <div
           style="
             background-color: #409eff;
-            top: 10px;
-            width: 1200px;
-            height: 40px;
-            margin-left: -10px;
+            top: 1vh;
+            width: 75.5vw;
+            height: 4.2vh;
+            margin-left: -0.5208333333333334vw;
           "
         >
           <el-image
             style="
-              width: 60px;
-              height: 60px;
+              width: 3.1vw;
+              height: 5.5vh;
               position: relative;
-              top: -15px;
-              left: -25px;
+              top: -1.5vh;
+              left: -1.3vw;
             "
             :src="require('@/assets/icon_title_dianwei@2x.png')"
             fit="fill"
@@ -102,7 +102,7 @@
               font-size: 20px;
               color: white;
               position: relative;
-              top: -30px;
+              top: -3vh;
             "
             >视频广场</span
           >
@@ -144,21 +144,21 @@ video:focus {
 }
 .video-js .vjs-big-play-button {
   /*对播放按钮的样式进行设置*/
-  width: 100px;
-  height: 60px;
+  width: 5.2vw;
+  height: 5.5vh;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
 }
 .demo {
-  height: 450px;
-  width: 450px;
+  height: 41.6vh;
+  width: 23.4vw;
 }
 //分页
 .fenye_1 {
   position: absolute;
-  left: 100px;
+  left: 5.2vw;
 }
 //输入框
 input {
@@ -225,7 +225,7 @@ input::-webkit-input-placeholder {
   overflow: hidden;
 }
 .span2 {
-  margin-top: 5px;
+  margin-top: 0.4629629629629629vh;
   color: #ffffff;
   display: inline-block;
   overflow: hidden;
@@ -235,8 +235,8 @@ input::-webkit-input-placeholder {
   margin-top: 18%;
   background-color: #000088;
   opacity: 0.7;
-  height: 700px;
-  width: 300px;
+  height: 92.5vh;
+  width: 15.5vw;
 
   padding: 0px 0px;
   border: none;
@@ -245,11 +245,11 @@ input::-webkit-input-placeholder {
 .box-card1 {
   z-index: 100;
   margin-top: 5%;
-  margin-bottom: 20px;
+  margin-bottom: 1.8518518518518516vh;
   background-color: #000088;
   opacity: 0.7;
-  height: 700px;
-  width: 1170px;
+  height: 90.5vh;
+  width: 75.9vw;
 
   padding: 0px 0px;
   border: none;

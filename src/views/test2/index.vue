@@ -31,7 +31,7 @@
           >
           <span
             style="
-              font-size: 1.4vh;
+              font-size: calc(0.5rem + 1.5vmin);
               color: yellow;
               position: relative;
               left: 12.5vw;
@@ -59,7 +59,7 @@
                 :value="item"
               >
                 <span style="float: left">{{ item.label }}</span>
-                <span style="float: right; font-size: 1.2vh">{{
+                <span style="float: right; font-size: calc(0.5rem + 1vmin)">{{
                   item.value
                 }}</span>
               </el-option>
@@ -80,7 +80,7 @@
                 :value="item"
               >
                 <span style="float: left">{{ item.label }}</span>
-                <span style="float: right; font-size: 1.2vh">{{
+                <span style="float: right; font-size: calc(0.5rem + 1vmin)">{{
                   item.value
                 }}</span>
               </el-option>
@@ -277,7 +277,7 @@
 ::v-deep
 //下拉框面板
 .el-select-dropdown {
-  font-size: 1.6vh;
+  font-size: calc(0.5rem + 1.5vmin);
   color: black;
   //background-color:transparent;
 }

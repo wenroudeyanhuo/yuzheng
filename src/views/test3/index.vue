@@ -28,7 +28,7 @@
           ></el-image>
           <span
             class="span1"
-            style="position: relative; top: -2vh; font-size: 25px"
+            style="position: relative; top: -2vh; font-size: calc(0.5rem + 1.5vmin)"
             >7</span
           >
           <span
@@ -43,7 +43,7 @@
           ></el-image>
           <span
             class="span1"
-            style="left: -1vw; position: relative; top: -2vh; font-size: 25px"
+            style="left: -1vw; position: relative; top: -2vh; font-size: calc(0.5rem + 1.5vmin)"
             >4</span
           >
           <span
@@ -99,7 +99,7 @@
           <span
             class="span"
             style="
-              font-size: 20px;
+              font-size: calc(0.2rem + 2vmin);
               color: white;
               position: relative;
               top: -3vh;
@@ -175,7 +175,7 @@ input[type="email"] {
 
   box-sizing: border-box;
   text-align: left;
-  font-size: 1.2em;
+  font-size: calc(0.5rem + 1vmin);
   height: 2.1em;
   border-radius: 5px;
   color: white;
@@ -191,12 +191,12 @@ input::-webkit-input-placeholder {
   background: transparent;
   color: #fff;
   //border: none;
-  font-size: 18px;
+  font-size: calc(0.5rem + 1vmin);
 }
 ::v-deep
   //下拉框面板
 .el-select-dropdown {
-  font-size: 30px;
+  font-size: calc(0.5rem + 1vmin);
   color: black;
   //background-color:transparent;
 }
@@ -226,6 +226,7 @@ input::-webkit-input-placeholder {
 }
 .span2 {
   margin-top: 0.4629629629629629vh;
+  font-size: calc(0.5rem + 1vmin);
   color: #ffffff;
   display: inline-block;
   overflow: hidden;
